@@ -74,10 +74,10 @@ const run = async () => {
   await mkdir(build_directory, { recursive: true })
 
   const index_file_path = resolve(cwd(), './build/index.json')
-  await writeFile(index_file_path, JSON.stringify(index, null, 2))
+  await writeFile(index_file_path, JSON.stringify(index))
 
   const phrases_file_path = resolve(cwd(), './build/phrases.json')
-  await writeFile(phrases_file_path, JSON.stringify(phrases, null, 2))
+  await writeFile(phrases_file_path, JSON.stringify(phrases))
 }
 
 run()
