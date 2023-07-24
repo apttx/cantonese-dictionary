@@ -1,0 +1,39 @@
+{
+  "name": "@aptt/cantonese-dictionary-api",
+  "version": "1.0.0",
+  "description": "Source code of https://cantonese-dictionary-api.vercel.app/",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "nodemon scripts/develop.mjs",
+    "build:vercel": "rollup --config rollup.config.mjs",
+    "prettier": "prettier --ignore-path .gitignore --check source/ scripts/",
+    "eslint": "eslint --config .eslintrc.cjs source/* scripts/*",
+    "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint",
+    "vercel": "pnpm build:vercel && vercel deploy vercel/"
+  },
+  "keywords": [
+    "cantonese",
+    "dictionary"
+  ],
+  "author": "aptt",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "graphql": "^16.7.1",
+    "graphql-yoga": "^4.0.3",
+    "lunr": "^2.3.9"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.45.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "rollup": "^3.26.3",
+    "rollup-plugin-copy": "^3.4.0",
+    "vercel": "^31.0.4"
+  }
+}
