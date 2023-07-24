@@ -1,0 +1,67 @@
+name: continuous integration
+jobs:
+  - name: lint
+    needs: []
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        # https://github.com/actions/checkout
+        with:
+          submodules: true
+
+      - name: install dependencies
+        uses: actions/actions/setup-node@v3
+        # https://github.com/actions/setup-node
+        with:
+          node_version: 18
+          cache: pnpm
+        run: pnpm install --frozen-lockfile --recursive
+
+      - name: lint
+        run: pnpm run --recursive lint
+
+  - name: build api
+    needs: []
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        # https://github.com/actions/checkout
+        with:
+          submodules: true
+
+      - name: install dependencies
+        uses: actions/actions/setup-node@v3
+        # https://github.com/actions/setup-node
+        with:
+          node_version: 18
+          cache: pnpm
+        run: |
+          pnpm install --dir packages/search --frozen-lockfile
+          pnpm install --dir packages/api --frozen-lockfile
+
+      - name: build search
+        run: pnpm run --dir packages/search build
+
+      - name: build api
+        run: pnpm run --dir packages/api build:vercel
+
+  - name: build app
+    needs: []
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        # https://github.com/actions/checkout
+        with:
+          submodules: true
+
+      - name: install dependencies
+        uses: actions/actions/setup-node@v3
+        # https://github.com/actions/setup-node
+        with:
+          node_version: 18
+          cache: pnpm
+        run: pnpm install --dir packages/app --frozen-lockfile
+
+      - name: build app
+        run: pnpm run --dir packages/app build
+        needs: []
