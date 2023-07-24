@@ -13,7 +13,7 @@ jobs:
           submodules: true
 
       - name: set up node
-        uses: actions/actions/setup-node@v3
+        uses: actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
           node_version: 18
@@ -37,7 +37,7 @@ jobs:
           submodules: true
 
       - name: set up node
-        uses: actions/actions/setup-node@v3
+        uses: actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
           node_version: 18
@@ -66,7 +66,7 @@ jobs:
           submodules: true
 
       - name: set up node
-        uses: actions/actions/setup-node@v3
+        uses: actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
           node_version: 18
