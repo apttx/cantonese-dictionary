@@ -13,6 +13,8 @@ jobs:
       - name: set up pnpm
         uses: pnpm/action-setup@v2
         # https://github.com/pnpm/action-setup
+        with:
+          version: latest
 
       - name: set up node
         uses: actions/setup-node@v3
@@ -41,6 +43,8 @@ jobs:
       - name: set up pnpm
         uses: pnpm/action-setup@v2
         # https://github.com/pnpm/action-setup
+        with:
+          version: latest
 
       - name: set up node
         uses: actions/setup-node@v3
@@ -72,6 +76,8 @@ jobs:
       - name: set up pnpm
         uses: pnpm/action-setup@v2
         # https://github.com/pnpm/action-setup
+        with:
+          version: latest
 
       - name: set up node
         uses: actions/setup-node@v3
