@@ -1,6 +1,7 @@
 name: continuous integration
 jobs:
-  - name: lint
+  lint:
+    name: lint
     needs: []
     steps:
       - name: checkout
@@ -20,7 +21,8 @@ jobs:
       - name: lint
         run: pnpm run --recursive lint
 
-  - name: build api
+  build_api:
+    name: build api
     needs: []
     steps:
       - name: checkout
@@ -45,7 +47,8 @@ jobs:
       - name: build api
         run: pnpm run --dir packages/api build:vercel
 
-  - name: build app
+  build_app:
+    name: build app
     needs: []
     steps:
       - name: checkout
