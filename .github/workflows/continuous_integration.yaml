@@ -1,4 +1,5 @@
 name: continuous integration
+on: push
 jobs:
   lint:
     name: lint
