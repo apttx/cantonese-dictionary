@@ -7,7 +7,10 @@
   export let data
 </script>
 
-<Head title="Dictionary" description="Browse the CC-Canto dictionary & save phrases to practice your vocabulary." />
+<Head
+  title="Dictionary"
+  description="Browse the CC-Canto dictionary & save phrases to practice your vocabulary."
+/>
 
 {#if data.phrases}
   <ul class="phrases">
@@ -16,7 +19,7 @@
         in:fade|global={{
           delay: index * 20,
           duration: 200,
-          easing: cubicOut
+          easing: cubicOut,
         }}
       >
         <PhraseListItem {phrase} />

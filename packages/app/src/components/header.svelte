@@ -171,8 +171,8 @@
   @media not (min-width: 40rem) {
     a.active {
       background-image: linear-gradient(to bottom, currentColor, currentColor);
-      background-size: 1.75rem var(--underline_thickness);
       background-position: center 2.5rem;
+      background-size: 1.75rem var(--underline_thickness);
       background-repeat: no-repeat;
     }
   }

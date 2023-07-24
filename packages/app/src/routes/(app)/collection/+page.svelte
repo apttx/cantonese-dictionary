@@ -7,7 +7,10 @@
   import Head from '$components/head.svelte'
 </script>
 
-<Head title="Collection" description="Browse your collection of chinese phrases." />
+<Head
+  title="Collection"
+  description="Browse your collection of chinese phrases."
+/>
 
 {#if !$phrases?.length}
   <div

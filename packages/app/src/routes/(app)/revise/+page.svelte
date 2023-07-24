@@ -58,7 +58,10 @@
   const flip_duration = 150
 </script>
 
-<Head title="Revise" description="Practice the phrases you saved." />
+<Head
+  title="Revise"
+  description="Practice the phrases you saved."
+/>
 
 {#if !random_phrase}
   <div
@@ -211,7 +214,7 @@
     padding-bottom: 4rem;
     min-height: calc(100vh - var(--height_header));
   }
-  
+
   .empty_info {
     margin-top: 4rem;
     margin-inline: var(--margin_content_text);

@@ -34,7 +34,7 @@
   }
 
   :global(:root) {
-/** Import string:
+    /** Import string:
  * [{"name":"orange","lightness":{"name":"linear","start":0,"end":1,"min":0.2,"max":0.9},"chroma":{"name":"sine","start":0.2,"end":0.8,"min":0.1,"max":0.2},"hue":{"name":"linear","start":0,"end":1,"min":45,"max":45},"count":5}]
  */
 
@@ -43,10 +43,10 @@
     --color-orange-3: oklch(55% 0.2 45);
     --color-orange-4: oklch(37.5% 0.1685 45);
     --color-orange-5: oklch(20% 0.1 45);
-}
+  }
 
   :global(:root) {
-/** Import string:
+    /** Import string:
  * [{"name":"blue","lightness":{"name":"linear","start":0,"end":1,"min":0.2,"max":0.9},"chroma":{"name":"sine","start":0.2,"end":0.8,"min":0.1,"max":0.2},"hue":{"name":"linear","start":0,"end":1,"min":250,"max":250},"count":5}]
  */
 
@@ -58,7 +58,7 @@
   }
 
   :global(:root) {
-/** Import string:
+    /** Import string:
  * [{"name":"purple","lightness":{"name":"linear","start":0,"end":1,"min":0.2,"max":0.9},"chroma":{"name":"sine","start":0.2,"end":0.8,"min":0.1,"max":0.2},"hue":{"name":"linear","start":0,"end":1,"min":290.2,"max":290.2},"count":5}]
  */
 
@@ -100,7 +100,7 @@
 
     /** secondary */
     --bg_brand-3: var(--color-purple-3);
-    
+
     --margin_screen-borders: 1rem;
     --width_text: 32rem;
     --width_page: 48rem;
@@ -108,7 +108,11 @@
 
     --margin_content_text: clamp(var(--margin_screen-borders), 100%, 50% - var(--width_text) / 2);
     --margin_content_page: clamp(var(--margin_screen-borders), 100%, 50% - var(--width_page) / 2);
-    --margin_content_layout: clamp(var(--margin_screen-borders), 100%, 50% - var(--width_layout) / 2);
+    --margin_content_layout: clamp(
+      var(--margin_screen-borders),
+      100%,
+      50% - var(--width_layout) / 2
+    );
 
     --height_header: 4rem;
   }
@@ -128,11 +132,11 @@
     transition-property: color;
     transition-timing-function: ease-in;
     color: var(--text_primary_onbase);
+    font-weight: 500;
     text-decoration: underline;
     text-decoration: underline;
     text-decoration-thickness: 0.1em;
     text-underline-offset: 0.25em;
-    font-weight: 500;
   }
   :global(.cd_link:hover) {
     transition-timing-function: ease-out;
@@ -160,4 +164,3 @@
     max-width: var(--width_layout);
   }
 </style>
-

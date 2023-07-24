@@ -249,9 +249,9 @@
 
   .search_input {
     display: block;
+    width: 100%;
     min-width: 0px;
     max-width: 100%;
-    width: 100%;
   }
 
   .no_results_text {
