@@ -11,55 +11,58 @@
   export let phrase
 </script>
 
-<div role="presentation" class="phrase">
-<span class="characters">
-          {phrase[$character_set]}
-        </span>
+<div
+  role="presentation"
+  class="phrase"
+>
+  <span class="characters">
+    {phrase[$character_set]}
+  </span>
 
-        {#if $show_pinyin}
-          <span class="pinyin">
-            {phrase.pinyin}
-          </span>
-        {/if}
-        {#if $show_jyutping}
-          <span class="jyutping">
-            {phrase.jyutping}
-          </span>
-        {/if}
+  {#if $show_pinyin}
+    <span class="pinyin">
+      {phrase.pinyin}
+    </span>
+  {/if}
+  {#if $show_jyutping}
+    <span class="jyutping">
+      {phrase.jyutping}
+    </span>
+  {/if}
 
-        <ul class="english">
-          {#each phrase.english.split('/') as sense}
-            <li>
-              {sense}
-            </li>
-          {/each}
-        </ul>
+  <ul class="english">
+    {#each phrase.english.split('/') as sense}
+      <li>
+        {sense}
+      </li>
+    {/each}
+  </ul>
 
-        {#if $has(phrase)}
-          <button
-            class="save_button cd_button"
-            title="Remove from collection"
-            on:click={() => {
-              remove(phrase)
-            }}
-          >
-            <Delete aria-label="Remove from collection" />
-          </button>
-        {:else}
-          <button
-            class="save_button cd_button"
-            title="Save to collection"
-            on:click={() => {
-              add(phrase)
-            }}
-          >
-            <Save aria-label="Save to collection" />
-          </button>
-        {/if}
+  {#if $has(phrase)}
+    <button
+      class="save_button cd_button"
+      title="Remove from collection"
+      on:click={() => {
+        remove(phrase)
+      }}
+    >
+      <Delete aria-label="Remove from collection" />
+    </button>
+  {:else}
+    <button
+      class="save_button cd_button"
+      title="Save to collection"
+      on:click={() => {
+        add(phrase)
+      }}
+    >
+      <Save aria-label="Save to collection" />
+    </button>
+  {/if}
 </div>
 
 <style>
-.phrase {
+  .phrase {
     display: grid;
     position: relative;
     align-content: start;

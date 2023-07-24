@@ -20,11 +20,11 @@
 
 <style>
   h2 {
-    font-size: 1.125rem;
     font-weight: 500;
+    font-size: 1.125rem;
   }
-   
-   p {
+
+  p {
     margin-top: 1rem;
-   }
+  }
 </style>

@@ -2,7 +2,7 @@
   import Footer from '$components/footer.svelte'
   import Header from '$components/header.svelte'
 
-  import {main_inert} from '$stores/main_inert.mjs'
+  import { main_inert } from '$stores/main_inert.mjs'
 </script>
 
 <Header />
