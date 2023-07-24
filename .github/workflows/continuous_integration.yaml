@@ -9,8 +9,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         # https://github.com/actions/checkout
-        with:
-          submodules: true
+
+      - name: set up pnpm
+        uses: pnpm/action-setup@v2
+        # https://github.com/pnpm/action-setup
 
       - name: set up node
         uses: actions/setup-node@v3
@@ -18,10 +20,6 @@ jobs:
         with:
           node-version: "18.x"
           cache: pnpm
-
-      - name: set up pnpm
-        uses: pnpm/action-setup@v2
-        # https://github.com/pnpm/action-setup
 
       - name: install dependencies
         run: pnpm install --frozen-lockfile --recursive
@@ -40,16 +38,16 @@ jobs:
         with:
           submodules: true
 
+      - name: set up pnpm
+        uses: pnpm/action-setup@v2
+        # https://github.com/pnpm/action-setup
+
       - name: set up node
         uses: actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
           node-version: "18.x"
           cache: pnpm
-
-      - name: set up pnpm
-        uses: pnpm/action-setup@v2
-        # https://github.com/pnpm/action-setup
 
       - name: install dependencies
         run: |
@@ -70,8 +68,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         # https://github.com/actions/checkout
-        with:
-          submodules: true
+
+      - name: set up pnpm
+        uses: pnpm/action-setup@v2
+        # https://github.com/pnpm/action-setup
 
       - name: set up node
         uses: actions/setup-node@v3
@@ -79,10 +79,6 @@ jobs:
         with:
           node-version: "18.x"
           cache: pnpm
-
-      - name: set up pnpm
-        uses: pnpm/action-setup@v2
-        # https://github.com/pnpm/action-setup
 
       - name: install dependencies
         run: pnpm install --dir packages/app --frozen-lockfile
