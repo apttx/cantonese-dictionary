@@ -1,0 +1,25 @@
+{
+  "name": "cantonese-dictionary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node scripts/build.mjs",
+    "prettier": "prettier --ignore-path .gitignore --check scripts/",
+    "eslint": "eslint --config .eslintrc.cjs scripts/**/*.*",
+    "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "eslint": "^8.45.0",
+    "lunr": "^2.3.9",
+    "nodemon": "^3.0.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-jsdoc": "^0.4.2"
+  }
+}
