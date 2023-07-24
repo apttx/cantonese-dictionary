@@ -1,9 +1,9 @@
 {
-  "name": "cantonese-dictionary",
+  "name": "@aptt/cantonese-dictionary-search",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Source data processing for https://cantonese-dictionary-app.vercel.app/",
   "type": "module",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node scripts/build.mjs",
@@ -11,9 +11,12 @@
     "eslint": "eslint --config .eslintrc.cjs scripts/**/*.*",
     "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "cantonese",
+    "dictionary"
+  ],
+  "author": "aptt",
+  "license": "GPL-3.0",
   "devDependencies": {
     "concurrently": "^8.2.0",
     "eslint": "^8.45.0",
