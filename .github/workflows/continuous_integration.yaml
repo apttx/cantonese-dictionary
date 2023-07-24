@@ -77,4 +77,3 @@ jobs:
 
       - name: build app
         run: pnpm run --dir packages/app build
-        needs: []
