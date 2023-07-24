@@ -10,12 +10,14 @@ jobs:
         with:
           submodules: true
 
-      - name: install dependencies
+      - name: set up node
         uses: actions/actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
           node_version: 18
           cache: pnpm
+
+      - name: install dependencies
         run: pnpm install --frozen-lockfile --recursive
 
       - name: lint
@@ -31,12 +33,14 @@ jobs:
         with:
           submodules: true
 
-      - name: install dependencies
+      - name: set up node
         uses: actions/actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
           node_version: 18
           cache: pnpm
+
+      - name: install dependencies
         run: |
           pnpm install --dir packages/search --frozen-lockfile
           pnpm install --dir packages/api --frozen-lockfile
@@ -57,12 +61,14 @@ jobs:
         with:
           submodules: true
 
-      - name: install dependencies
+      - name: set up node
         uses: actions/actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
           node_version: 18
           cache: pnpm
+
+      - name: install dependencies
         run: pnpm install --dir packages/app --frozen-lockfile
 
       - name: build app
