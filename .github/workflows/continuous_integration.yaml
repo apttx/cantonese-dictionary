@@ -19,6 +19,10 @@ jobs:
           node-version: "18.x"
           cache: pnpm
 
+      - name: set up pnpm
+        uses: pnpm/action-setup@v2
+        # https://github.com/pnpm/action-setup
+
       - name: install dependencies
         run: pnpm install --frozen-lockfile --recursive
 
@@ -42,6 +46,10 @@ jobs:
         with:
           node-version: "18.x"
           cache: pnpm
+
+      - name: set up pnpm
+        uses: pnpm/action-setup@v2
+        # https://github.com/pnpm/action-setup
 
       - name: install dependencies
         run: |
@@ -71,6 +79,10 @@ jobs:
         with:
           node-version: "18.x"
           cache: pnpm
+
+      - name: set up pnpm
+        uses: pnpm/action-setup@v2
+        # https://github.com/pnpm/action-setup
 
       - name: install dependencies
         run: pnpm install --dir packages/app --frozen-lockfile
