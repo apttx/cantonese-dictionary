@@ -69,7 +69,7 @@ jobs:
         run: pnpm run --dir packages/api build:vercel
 
       - name: deploy api
-        run: pnpm --dir packages/api deploy:vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: pnpm --dir packages/api deploy:vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
         # if: ${{ github.ref == 'refs/heads/default' }}
 
   app:
@@ -106,5 +106,5 @@ jobs:
         run: pnpm run --dir packages/app build
 
       - name: deploy app
-        run: pnpm --dir packages/app deploy:vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: pnpm --dir packages/app deploy:vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
         # if: ${{ github.ref == 'refs/heads/default' }}
