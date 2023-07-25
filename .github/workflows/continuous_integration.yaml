@@ -29,8 +29,8 @@ jobs:
       - name: lint
         run: pnpm run --recursive lint
 
-  build_api:
-    name: build api
+  api:
+    name: build & deploy api
     runs-on: ubuntu-latest
     needs: []
     env:
@@ -72,8 +72,8 @@ jobs:
         run: pnpm --dir packages/api deploy:vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
         # if: ${{ github.ref == 'refs/heads/default' }}
 
-  build_app:
-    name: build app
+  app:
+    name: build & deploy app
     runs-on: ubuntu-latest
     needs: []
     env:
