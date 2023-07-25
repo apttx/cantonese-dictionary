@@ -64,6 +64,10 @@ jobs:
       - name: build api
         run: pnpm run --dir packages/api build:vercel
 
+      - name: deploy api
+        run: pnpm --dir packages/api deploy:vercel --prod
+        # if: ${{ github.ref == 'refs/heads/default' }}
+
   build_app:
     name: build app
     runs-on: ubuntu-latest
@@ -93,3 +97,7 @@ jobs:
 
       - name: build app
         run: pnpm run --dir packages/app build
+
+      - name: deploy api
+        run: pnpm --dir packages/app deploy:vercel --prod
+        # if: ${{ github.ref == 'refs/heads/default' }}
