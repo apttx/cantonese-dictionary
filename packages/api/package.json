@@ -11,7 +11,8 @@
     "prettier": "prettier --ignore-path .gitignore --check source/ scripts/",
     "eslint": "eslint --config .eslintrc.cjs source/* scripts/*",
     "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint",
-    "vercel": "pnpm build:vercel && vercel deploy vercel/"
+    "deploy:vercel": "vercel deploy vercel/",
+    "vercel": "pnpm build:vercel && pnpm vercel:deploy"
   },
   "keywords": [
     "cantonese",
