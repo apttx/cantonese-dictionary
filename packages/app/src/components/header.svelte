@@ -1,7 +1,5 @@
 <script>
-  import { character_set } from '$stores/character_set.mjs'
-  import { show_pinyin } from '$stores/show_pinyin.mjs'
-  import { show_jyutping } from '$stores/show_jyutping.mjs'
+  import { createEventDispatcher } from 'svelte'
 
   import Cog from '~icons/mingcute/settings-5-line'
   import Menu from '~icons/mingcute/menu-line'
@@ -10,12 +8,11 @@
   import Collection from '~icons/mingcute/notebook-2-line'
   import Revise from '~icons/mingcute/book-6-line'
 
-  import Modal from './modal.svelte'
-
   import { page } from '$app/stores'
 
-  /** @type {boolean} */
-  let settings_open = false
+  /** @type {import('svelte').EventDispatcher<{ toggle_settings: void }>} */
+  const dispatch = createEventDispatcher()
+
   /** @type {boolean} */
   let menu_open = false
 </script>
@@ -85,67 +82,13 @@
       class="settings_button"
       title="Settings"
       on:click={() => {
-        settings_open = !settings_open
+        dispatch('toggle_settings')
       }}
     >
       <Cog aria-label="Settings" />
     </button>
   </div>
 </header>
-
-<Modal
-  heading="Site-wide settings"
-  bind:visible={settings_open}
->
-  <form on:submit|preventDefault>
-    <fieldset>
-      <legend>Chinese characters</legend>
-
-      <div
-        role="presentation"
-        class="input_group"
-      >
-        <label>
-          <input
-            type="radio"
-            name="character_set"
-            value="traditional"
-            bind:group={$character_set}
-          />
-          <span>Show traditional</span>
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="character_set"
-            value="simplified"
-            bind:group={$character_set}
-          />
-          <span>Show simplified</span>
-        </label>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Romanization</legend>
-
-      <label>
-        <input
-          type="checkbox"
-          bind:checked={$show_pinyin}
-        />
-        <span>Show pinyin</span>
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          bind:checked={$show_jyutping}
-        />
-        <span>Show jyutping</span>
-      </label>
-    </fieldset>
-  </form>
-</Modal>
 
 <style>
   header {
@@ -242,26 +185,5 @@
   button {
     padding-inline: 1em;
     padding-block: 1em;
-  }
-
-  form {
-    display: grid;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  legend {
-    margin-bottom: 0.25rem;
-    font-weight: 500;
-  }
-
-  label {
-    display: block;
-  }
-
-  .input_group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
   }
 </style>
