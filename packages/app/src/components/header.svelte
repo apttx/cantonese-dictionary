@@ -1,7 +1,7 @@
 <script>
-  import { character_set } from '../stores/character_set.mjs'
-  import { show_pinyin } from '../stores/show_pinyin.mjs'
-  import { show_jyutping } from '../stores/show_jyutping.mjs'
+  import { character_set } from '$stores/character_set.mjs'
+  import { show_pinyin } from '$stores/show_pinyin.mjs'
+  import { show_jyutping } from '$stores/show_jyutping.mjs'
 
   import Cog from '~icons/mingcute/settings-5-line'
   import Menu from '~icons/mingcute/menu-line'
