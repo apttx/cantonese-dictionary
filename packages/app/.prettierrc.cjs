@@ -7,11 +7,7 @@ module.exports = {
   trailingComma: 'all',
   printWidth: 100,
   semi: false,
-  plugins: [
-    require('prettier-plugin-svelte'),
-    require('prettier-plugin-css-order'),
-    require('prettier-plugin-jsdoc'),
-  ],
+  plugins: ['prettier-plugin-svelte', 'prettier-plugin-css-order', 'prettier-plugin-jsdoc'],
   pluginSearchDirs: ['.'],
   overrides: [{ files: '*.svelte', options: { parser: 'svelte' } }],
   singleAttributePerLine: true,

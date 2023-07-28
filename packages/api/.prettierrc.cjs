@@ -7,7 +7,7 @@ module.exports = {
   trailingComma: "all",
   printWidth: 100,
   semi: false,
-  plugins: [require("prettier-plugin-jsdoc")],
+  plugins: ["prettier-plugin-jsdoc"],
   pluginSearchDirs: ["."],
   singleAttributePerLine: true,
 };
