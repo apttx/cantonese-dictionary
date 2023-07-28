@@ -35,6 +35,6 @@
     "prettier-plugin-jsdoc": "^0.4.2",
     "rollup": "^3.26.3",
     "rollup-plugin-copy": "^3.4.0",
-    "vercel": "^31.0.4"
+    "vercel": "^31.1.1"
   }
 }
