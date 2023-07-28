@@ -2,12 +2,11 @@
 module.exports = {
   useTabs: false,
   tabWidth: 2,
-  arrowParens: "always",
+  arrowParens: 'always',
   singleQuote: true,
-  trailingComma: "all",
+  trailingComma: 'all',
   printWidth: 100,
   semi: false,
-  plugins: ["prettier-plugin-jsdoc"],
-  pluginSearchDirs: ["."],
+  plugins: ['prettier-plugin-jsdoc'],
   singleAttributePerLine: true,
-};
+}
