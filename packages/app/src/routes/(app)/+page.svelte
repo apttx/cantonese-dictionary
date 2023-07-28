@@ -9,7 +9,9 @@
   import Head from '$components/head.svelte'
 
   /** @type {string} */
-  let search_input
+  let search_input_string
+  /** @type {HTMLInputElement} */
+  let search_input_element
   /** @type {null | any[]} */
   let results = null
 
@@ -29,13 +31,13 @@
   /** @type {import('./$types').Snapshot<{ search_input: string; results: null | any[] }>} */
   export const snapshot = {
     capture: () => {
-      const snapshot = { search_input, results }
+      const snapshot = { search_input: search_input_string, results }
 
       return snapshot
     },
     restore: (snapshot) => {
       if (snapshot) {
-        search_input = snapshot.search_input
+        search_input_string = snapshot.search_input
         results = snapshot.results
       }
     },
@@ -47,7 +49,7 @@
   /** @type {(query: string) => Promise<any[]>} */
   const search = async () => {
     /** @type {import('@urql/core').OperationResult<{ search: any[] }>} */
-    const result = await client.query(search_query, { query: search_input })
+    const result = await client.query(search_query, { query: search_input_string })
 
     const phrases = result.data?.search.map((phrase) => phrase) ?? []
 
@@ -71,9 +73,12 @@
   <form
     class="search_form"
     on:submit|preventDefault={async () => {
+      // blur input while loading to hide mobile keyboards
+      search_input_element?.blur()
+
       try {
         loading_state = 'pending'
-        const phrases = await search(search_input)
+        const phrases = await search(search_input_string)
 
         results = phrases
 
@@ -81,6 +86,9 @@
       } catch (error) {
         console.error('unable to load:', error)
         loading_state = 'error'
+
+        // focus input on errors, user will most likely want to try typing something else
+        search_input_element?.focus()
       }
     }}
   >
@@ -92,9 +100,10 @@
         class="search_input_loading_wrapper"
       >
         <input
+          bind:this={search_input_element}
           type="search"
           placeholder="中國, 中国, English, jyut6 ping3, pin1 yin1"
-          bind:value={search_input}
+          bind:value={search_input_string}
           class="search_input"
         />
 
