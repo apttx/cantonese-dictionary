@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node scripts/build.mjs",
-    "prettier": "prettier --ignore-path .gitignore --check scripts/",
+    "prettier": "prettier --ignore-path .gitignore --check .",
     "eslint": "eslint --config .eslintrc.cjs scripts/**/*.*",
     "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint"
   },
