@@ -102,7 +102,7 @@
             in:rotate={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
             out:rotate={{ duration: flip_duration, easing: cubicIn }}
           >
-            <span class="characters">{random_phrase[$character_set]}</span>
+            <span class="characters cd_hanzi">{random_phrase[$character_set]}</span>
             {#if $show_pinyin}
               <div>{random_phrase.pinyin}</div>
             {/if}
@@ -163,7 +163,6 @@
 
   .characters {
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
   }
 
   .buttons {
