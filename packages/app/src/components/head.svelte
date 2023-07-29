@@ -14,11 +14,3 @@
 </svelte:head>
 
 <h1 class="screen_reader_only">Dictionary</h1>
-
-<style>
-  .screen_reader_only {
-    position: absolute;
-    visibility: hidden;
-    pointer-events: none;
-  }
-</style>

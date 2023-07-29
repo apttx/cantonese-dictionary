@@ -1,0 +1,5 @@
+.screen_reader_only {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
