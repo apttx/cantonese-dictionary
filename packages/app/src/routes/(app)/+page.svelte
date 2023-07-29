@@ -225,35 +225,6 @@
     justify-items: stretch;
   }
 
-  input {
-    display: block;
-    transition-duration: 150ms;
-    transition-property: border-color, outline-color;
-    transition-timing-function: ease-out;
-    outline-color: transparent;
-    outline-style: none;
-    outline-width: 0.1rem;
-    outline-offset: -0.05rem;
-    border-width: 0.1rem;
-    border-style: solid;
-    border-color: var(--text_neutral-faint_onbase);
-    border-radius: 0.2rem;
-    padding: 0.5rem 1rem;
-  }
-  input:hover {
-    border-color: var(--text_brand-3-subtle_onbase);
-  }
-  input:focus,
-  input:focus-visible {
-    outline-color: transparent;
-    outline-style: solid;
-    outline-width: 0.1rem;
-    border-color: var(--text_brand-3_onbase);
-  }
-  input::placeholder {
-    color: var(--text_neutral-subtle_onbase);
-  }
-
   .search {
     display: grid;
     justify-items: stretch;

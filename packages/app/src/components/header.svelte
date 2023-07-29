@@ -23,7 +23,7 @@
 <header>
   <div
     role="presentation"
-    class="header_bar"
+    class="header_bar colored_brand-1"
     class:menu_open
   >
     <nav>
@@ -163,8 +163,6 @@
     margin-inline: var(--margin_content_layout);
     box-shadow: 0 0.5rem 1.5rem #00000022;
     border-radius: 0.2rem;
-    background-color: var(--bg_primary);
-    color: var(--text_neutral_onprimary);
     line-height: 1rem;
   }
 

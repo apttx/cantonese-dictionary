@@ -1,0 +1,15 @@
+.colored_base {
+  background-color: white;
+  color: var(--color-neutral-5);
+  
+  --context_color_hint: var(--color-red-3);
+  --context_color_interact: var(--color-red-4);
+}
+
+.colored_brand-1 {
+  background-color: var(--color-red-3);
+  color: white;
+  
+  --context_color_hint: var(--color-red-1);
+  --context_color_interact: var(--color-red-2);
+}

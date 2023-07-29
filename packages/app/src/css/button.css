@@ -1,0 +1,27 @@
+@media (pointer: fine) {
+  button {
+    transition-duration: 150ms;
+    transition-property: color;
+    transition-timing-function: ease-in;
+  }
+  button:hover {
+    transition-timing-function: ease-out;
+    color: var(--context_color_hint);
+  }
+  button:active {
+    transition-timing-function: ease-out;
+    color: var(--context_color_interact);
+  }
+}
+
+@media (pointer: coarse) {
+  button {
+    transition-property: color;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(1, 0, 0.5, 1);
+  }
+  button:active {
+    transition-duration: 0ms;
+    color: var(--context_color_interact);
+  }
+}
