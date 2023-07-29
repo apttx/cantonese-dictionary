@@ -57,7 +57,7 @@
       50% - var(--width_layout) / 2
     );
 
-    --height_header: 4rem;
+    --height_header: 5.25rem;
   }
 
   :global(.cd_link) {
