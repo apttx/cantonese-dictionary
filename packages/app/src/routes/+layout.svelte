@@ -12,6 +12,7 @@
   import '$css/document.css'
   import '$css/input.css'
 
+  import '$css/hanzi.utility.css'
   import '$css/colored.utility.css'
   import '$css/screen_reader_only.utility.css'
 </script>

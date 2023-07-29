@@ -15,7 +15,7 @@
   role="presentation"
   class="phrase"
 >
-  <span class="characters">
+  <span class="characters cd_hanzi">
     {phrase[$character_set]}
   </span>
 
@@ -74,8 +74,7 @@
   }
 
   .characters {
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .pinyin,
