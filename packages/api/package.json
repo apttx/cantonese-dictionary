@@ -29,12 +29,12 @@
     "@rollup/plugin-replace": "^5.0.2",
     "@rollup/plugin-terser": "^0.4.3",
     "concurrently": "^8.2.0",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.0",
     "prettier-plugin-jsdoc": "^1.0.1",
-    "rollup": "^3.26.3",
+    "rollup": "^3.27.0",
     "rollup-plugin-copy": "^3.4.0",
-    "vercel": "^31.1.1"
+    "vercel": "^31.2.0"
   }
 }
