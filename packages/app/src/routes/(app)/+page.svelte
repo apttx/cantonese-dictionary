@@ -232,7 +232,7 @@
     transition-property: transform;
     transition-timing-function: ease-in-out;
     margin-top: 2.5rem;
-    margin-inline: var(--margin_content_layout);
+    margin-inline: var(--margin_content_text);
   }
   .search_form {
     display: grid;
@@ -297,7 +297,7 @@
 
   @media (min-width: 30rem) {
     .search_results {
-      grid-template-columns: repeat(auto-fit, 18rem);
+      grid-template-columns: repeat(auto-fit, 20rem);
       justify-content: center;
     }
   }
