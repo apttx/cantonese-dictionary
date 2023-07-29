@@ -13,6 +13,7 @@
   import '$css/input.css'
 
   import '$css/colored.utility.css'
+  import '$css/screen_reader_only.utility.css'
 </script>
 
 <slot />
