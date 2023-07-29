@@ -16,8 +16,8 @@
 
 @media (pointer: coarse) {
   button {
-    transition-property: color;
     transition-duration: 500ms;
+    transition-property: color;
     transition-timing-function: cubic-bezier(1, 0, 0.5, 1);
   }
   button:active {

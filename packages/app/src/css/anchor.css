@@ -16,8 +16,8 @@
 
 @media (pointer: coarse) {
   a {
-    transition-property: color;
     transition-duration: 500ms;
+    transition-property: color;
     transition-timing-function: cubic-bezier(0.5, 0, 0.3, 1);
   }
   a:active {
