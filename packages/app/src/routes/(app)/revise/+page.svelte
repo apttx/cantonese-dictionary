@@ -45,7 +45,7 @@
   const rotate = (_, config) => {
     const { delay, duration, easing } = config
     /** @type {(t: number, u: number) => string} */
-    const css = (_, u) => `position: absolute; transform: rotateY(${u * 90}deg)`
+    const css = (_, u) => `transform: rotateY(${u * 90}deg)`
 
     return {
       delay,
@@ -98,7 +98,7 @@
           </div>
         {:else}
           <div
-            class="phrase"
+            class="phrase colored_base"
             in:rotate={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
             out:rotate={{ duration: flip_duration, easing: cubicIn }}
           >
@@ -116,7 +116,7 @@
 
     <div
       role="presentation"
-      class="buttons"
+      class="buttons colored_brand-1"
     >
       <button
         title="Flip"
@@ -153,11 +153,9 @@
     margin: auto;
     box-shadow: 0 0.2rem 0.5rem #00000022;
     border-radius: 0.2rem;
-    background-color: var(--bg_base);
     padding: 2rem;
     min-width: 16rem;
     min-height: 8rem;
-    color: var(--text_neutral_onbase);
     text-align: center;
   }
 
@@ -170,7 +168,7 @@
     --button_inline_padding: 1.5rem;
 
     display: grid;
-    position: sticky;
+    position: absolute;
     grid-template-columns:
       calc(var(--icon_size) + var(--button_inline_padding))
       1fr
@@ -178,13 +176,11 @@
     grid-template-areas: 'previous flip next';
     justify-items: center;
     inset-inline: 0;
-    bottom: 2rem;
+    top: calc(100vh - 2.5rem - 2rem);
     margin-inline: auto;
     box-shadow: 0 0.2rem 0.5rem #00000022;
     border-radius: 100vw;
-    background-color: var(--bg_primary);
     max-width: 12rem;
-    color: var(--text_neutral_onprimary);
   }
 
   button {
