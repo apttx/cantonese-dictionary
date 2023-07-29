@@ -268,10 +268,9 @@
     border-width: 0.1rem;
     border-color: currentColor;
     border-color: var(--text_neutral-faint_onbase);
-
     border-radius: 0.2rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
   .search_submit_button:hover {
     border-color: var(--text_primary-faint_onbase);
