@@ -47,7 +47,7 @@
     --margin_screen-borders: 1rem;
     --width_text: 32rem;
     --width_page: 48rem;
-    --width_layout: 100rem;
+    --width_layout: 64rem;
 
     --margin_content_text: clamp(var(--margin_screen-borders), 100%, 50% - var(--width_text) / 2);
     --margin_content_page: clamp(var(--margin_screen-borders), 100%, 50% - var(--width_page) / 2);
