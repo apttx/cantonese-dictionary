@@ -93,6 +93,7 @@
   class:centered={center_search_form}
 >
   <form
+    inert={loading_state === 'pending'}
     class="search_form"
     on:submit|preventDefault={on_submit}
   >
@@ -112,6 +113,7 @@
         />
 
         <span
+          aria-hidden="true"
           class="loading"
           class:active={loading_state === 'pending'}
         >
@@ -127,6 +129,16 @@
       <Search aria-label="Submit search" />
     </button>
   </form>
+
+  {#if loading_state === 'pending'}
+    <p
+      role="status"
+      aria-live="polite"
+      class="screen_reader_only"
+    >
+      Loading search results...
+    </p>
+  {/if}
 
   {#if loading_state === 'error'}
     <p
