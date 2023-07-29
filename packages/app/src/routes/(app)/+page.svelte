@@ -2,9 +2,11 @@
   import { fade } from 'svelte/transition'
   import { cubicOut } from 'svelte/easing'
 
+  import Loading from '~icons/mingcute/loading-fill'
+  import Search from '~icons/mingcute/search-2-line'
+
   import { gql, client } from '../../graphql.mjs'
 
-  import Loading from '~icons/mingcute/loading-fill'
   import PhraseListItem from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
 
@@ -58,6 +60,26 @@
 
   // present emtpy search nicely
   $: center_search_form = results === null
+
+  const on_submit = async () => {
+    // blur input while loading to hide mobile keyboards
+    search_input_element?.blur()
+
+    try {
+      loading_state = 'pending'
+      const phrases = await search(search_input_string)
+
+      results = phrases
+
+      loading_state = 'idle'
+    } catch (error) {
+      console.error('unable to load:', error)
+      loading_state = 'error'
+
+      // focus input on errors, user will most likely want to try typing something else
+      search_input_element?.focus()
+    }
+  }
 </script>
 
 <Head
@@ -72,25 +94,7 @@
 >
   <form
     class="search_form"
-    on:submit|preventDefault={async () => {
-      // blur input while loading to hide mobile keyboards
-      search_input_element?.blur()
-
-      try {
-        loading_state = 'pending'
-        const phrases = await search(search_input_string)
-
-        results = phrases
-
-        loading_state = 'idle'
-      } catch (error) {
-        console.error('unable to load:', error)
-        loading_state = 'error'
-
-        // focus input on errors, user will most likely want to try typing something else
-        search_input_element?.focus()
-      }
-    }}
+    on:submit|preventDefault={on_submit}
   >
     <label class="search_label">
       <span class="search_label_text">Search the dictionary</span>
@@ -115,6 +119,13 @@
         </span>
       </div>
     </label>
+
+    <button
+      type="submit"
+      class="search_submit_button cd_button"
+    >
+      <Search aria-label="Submit search" />
+    </button>
   </form>
 
   {#if loading_state === 'error'}
@@ -242,7 +253,10 @@
   }
   .search_form {
     display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
     justify-items: stretch;
+    gap: 0.5rem;
   }
   .search.centered {
     transform: translateY(calc(45vh - 100% - 5rem));
@@ -261,6 +275,30 @@
     width: 100%;
     min-width: 0px;
     max-width: 100%;
+  }
+
+  .search_submit_button {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    transition-property: color, border-color;
+    border-width: 0.1rem;
+    border-color: currentColor;
+    border-color: var(--text_neutral-faint_onbase);
+
+    border-radius: 0.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .search_submit_button:hover {
+    border-color: var(--text_primary-faint_onbase);
+  }
+  .search_submit_button:focus,
+  .search_submit_button:focus-visible {
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0.1rem;
+    border-color: var(--text_primary_onbase);
   }
 
   .no_results_text {
