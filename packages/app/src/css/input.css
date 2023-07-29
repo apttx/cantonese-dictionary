@@ -12,9 +12,9 @@
   border-color: var(--text_neutral-faint_onbase);
   border-radius: 0.2rem;
   padding: 0.6rem 0.8rem;
+  height: 2.75rem;
   font-size: 1rem;
   line-height: 1;
-  height: 2.75rem;
 }
 
 .cd_input:hover {
