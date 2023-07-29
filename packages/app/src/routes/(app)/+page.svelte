@@ -109,7 +109,7 @@
           type="search"
           placeholder="中國, 中国, English, jyut6 ping3, pin1 yin1"
           bind:value={search_input_string}
-          class="search_input"
+          class="search_input cd_input"
         />
 
         <span

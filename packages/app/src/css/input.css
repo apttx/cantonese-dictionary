@@ -1,4 +1,4 @@
-input {
+.cd_input {
   display: block;
   transition-duration: 150ms;
   transition-property: border-color, outline-color;
@@ -17,18 +17,18 @@ input {
   height: 2.75rem;
 }
 
-input:hover {
+.cd_input:hover {
   border-color: var(--text_brand-3-subtle_onbase);
 }
 
-input:focus,
-input:focus-visible {
+.cd_input:focus,
+.cd_input:focus-visible {
   outline-color: transparent;
   outline-style: solid;
   outline-width: 0.1rem;
   border-color: var(--text_brand-3_onbase);
 }
 
-input::placeholder {
+.cd_input::placeholder {
   color: var(--text_neutral-subtle_onbase);
 }
