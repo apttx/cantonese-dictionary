@@ -14,6 +14,7 @@
 <div
   role="presentation"
   class="phrase"
+  class:saved={$has(phrase)}
 >
   <span class="characters cd_hanzi">
     {phrase[$character_set]}
@@ -40,7 +41,7 @@
 
   {#if $has(phrase)}
     <button
-      class="save_button cd_button"
+      class="delete_button cd_button"
       title="Remove from collection"
       on:click={() => {
         remove(phrase)
@@ -66,11 +67,20 @@
     display: grid;
     position: relative;
     align-content: start;
+    transition-duration: 150ms;
+    transition-property: border-color;
+    transition-timing-function: ease-out;
     box-shadow: 0 0.2rem 0.5rem #00000022;
+    border-bottom-width: 0.2rem;
+    border-color: transparent;
     border-radius: 0.2rem;
     background-color: var(--bg_base);
     padding: 1rem;
     color: var(--text_neutral_onbase);
+  }
+
+  .saved {
+    border-color: var(--color-red-3);
   }
 
   .characters {
@@ -86,9 +96,11 @@
     margin-top: 0.75rem;
   }
 
-  .save_button {
+  .save_button,
+  .delete_button {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0rem;
+    right: 0rem;
+    padding: 1rem;
   }
 </style>
