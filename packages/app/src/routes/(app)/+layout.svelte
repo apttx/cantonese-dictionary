@@ -15,7 +15,7 @@
   }}
 />
 
-<SettingsModal open={settings_open} />
+<SettingsModal bind:open={settings_open} />
 
 <main inert={$main_inert}>
   <slot />
