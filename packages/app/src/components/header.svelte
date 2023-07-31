@@ -15,7 +15,19 @@
 
   /** @type {boolean} */
   let menu_open = false
+
+  const close_menu = () => {
+    menu_open = false
+  }
 </script>
+
+<svelte:window
+  on:keydown={(event) => {
+    if (event.key === 'Escape') {
+      menu_open = false
+    }
+  }}
+/>
 
 <header>
   <div
@@ -24,45 +36,49 @@
     class:menu_open
   >
     <nav>
-      <ul>
+      <ul class:open={menu_open}>
         <li>
           <a
             href="/"
+            on:click={close_menu}
             class:active={$page.url.pathname === '/'}
           >
             <Search aria-label="Search" />
 
-            <span>Search</span>
+            <span class="link_text">Search</span>
           </a>
         </li>
         <li>
           <a
             href="/dictionary"
+            on:click={close_menu}
             class:active={$page.url.pathname === '/dictionary'}
           >
             <Dictionary aria-label="Dictionary" />
 
-            <span>Dictionary</span>
+            <span class="link_text">Dictionary</span>
           </a>
         </li>
         <li>
           <a
             href="/collection"
+            on:click={close_menu}
             class:active={$page.url.pathname === '/collection'}
           >
             <Collection aria-label="Collection" />
 
-            <span>Collection</span>
+            <span class="link_text">Collection</span>
           </a>
         </li>
         <li>
           <a
             href="/revise"
+            on:click={close_menu}
             class:active={$page.url.pathname === '/revise'}
           >
             <Revise aria-label="Revise" />
 
-            <span>Revise</span>
+            <span class="link_text">Revise</span>
           </a>
         </li>
       </ul>
@@ -82,6 +98,7 @@
       class="settings_button"
       title="Settings"
       on:click={() => {
+        close_menu()
         dispatch('toggle_settings')
       }}
     >
@@ -103,19 +120,11 @@
     grid-template-columns: 1fr auto;
     grid-template-areas: 'navigation settings';
     grid-auto-flow: column;
+    align-items: start;
     margin-inline: var(--margin_content_layout);
     box-shadow: 0 0.5rem 1.5rem #00000022;
     border-radius: 0.2rem;
     line-height: 1rem;
-  }
-
-  @media not (min-width: 40rem) {
-    a.active {
-      background-image: linear-gradient(to bottom, currentColor, currentColor);
-      background-position: center 2.5rem;
-      background-size: 1.75rem var(--underline_thickness);
-      background-repeat: no-repeat;
-    }
   }
 
   ul {
@@ -126,7 +135,26 @@
   }
 
   @media not (min-width: 40rem) {
-    a > span {
+    ul.open {
+      grid-auto-flow: row;
+    }
+
+    ul.open .link_text {
+      position: initial;
+      visibility: initial;
+      pointer-events: all;
+    }
+
+    ul:not(.open) a.active {
+      background-image: linear-gradient(to bottom, currentColor, currentColor);
+      background-position: center 2.5rem;
+      background-size: 1.75rem var(--underline_thickness);
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media not (min-width: 40rem) {
+    .link_text {
       position: absolute;
       visibility: hidden;
       pointer-events: none;
@@ -137,15 +165,16 @@
     --underline_thickness: 0.15rem;
 
     display: grid;
-    grid-auto-flow: row;
-    gap: 0.4em;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 0.75em;
     padding-inline: 1em;
     padding-block: 1em;
     font-weight: 700;
   }
 
   @media not (min-width: 40rem) {
-    a > span {
+    .link_text {
       position: absolute;
       visibility: hidden;
       pointer-events: none;
@@ -154,7 +183,7 @@
 
   @media (min-width: 40rem) {
     a {
-      grid-auto-flow: column;
+      gap: 0.5em;
       writing-mode: horizontal-tb;
     }
   }
