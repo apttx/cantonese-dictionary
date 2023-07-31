@@ -15,7 +15,24 @@
   import '$css/hanzi.utility.css'
   import '$css/colored.utility.css'
   import '$css/screen_reader_only.utility.css'
+
+  import { assets } from '$app/paths'
 </script>
+
+<svelte:head>
+  <link
+    rel="icon"
+    href="{assets}/favicon.png"
+  />
+  {#each [16, 32, 64, 128, 256, 512] as size}
+    <link
+      rel="icon"
+      href="{assets}/favicon_{size}.png"
+      sizes="{size}x{size}"
+      type="image/png"
+    />
+  {/each}
+</svelte:head>
 
 <slot />
 
