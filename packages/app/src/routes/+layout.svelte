@@ -24,6 +24,12 @@
     rel="icon"
     href="{assets}/favicon.png"
   />
+  <link
+    rel="icon"
+    href="{assets}/favicon.svg"
+    type="image/svg+xml"
+  />
+
   {#each [16, 32, 64, 128, 256, 512] as size}
     <link
       rel="icon"
