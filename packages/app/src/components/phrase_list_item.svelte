@@ -41,7 +41,7 @@
 
   {#if $has(phrase)}
     <button
-      class="delete_button cd_button"
+      class="delete_button"
       title="Remove from collection"
       on:click={() => {
         remove(phrase)
@@ -51,7 +51,7 @@
     </button>
   {:else}
     <button
-      class="save_button cd_button"
+      class="save_button"
       title="Save to collection"
       on:click={() => {
         add(phrase)

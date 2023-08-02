@@ -55,7 +55,7 @@
         on:click={() => {
           visible = false
         }}
-        class="close_button cd_button"
+        class="close_button"
       >
         <Close aria-label="close" />
       </button>
