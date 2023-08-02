@@ -31,9 +31,17 @@
 <style>
   .phrases {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
     margin-top: 2rem;
+    margin-inline: var(--margin_content_layout);
     margin-bottom: 4rem;
-    margin-inline: var(--margin_content_text);
+  }
+
+  @media (min-width: 30rem) {
+    .phrases {
+      grid-template-columns: repeat(auto-fit, 20rem);
+      justify-content: center;
+    }
   }
 </style>
