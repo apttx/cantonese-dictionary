@@ -8,9 +8,9 @@
     <div role="presentation">
       <h2 class="open_source_heading">
         Built with Open Source
-        <span class="screen_reader_only">(</span>
+        <span class="screen_reader_only">&lpar;</span>
         <ThankYou aria-label="Thank you!" />
-        <span class="screen_reader_only">(</span>
+        <span class="screen_reader_only">&rpar;</span>
       </h2>
 
       <ul class="open_source_links">
