@@ -100,33 +100,34 @@
     <label class="search_label">
       <span class="search_label_text">Search the dictionary</span>
 
-      <div
-        role="presentation"
-        class="search_input_loading_wrapper"
-      >
-        <input
-          bind:this={search_input_element}
-          type="search"
-          placeholder="中國, 中国, English, jyut6 ping3, pin1 yin1"
-          bind:value={search_input_string}
-          class="search_input cd_input"
-        />
-
-        <span
-          aria-hidden="true"
-          class="loading"
-          class:active={loading_state === 'pending'}
-        >
-          <Loading />
-        </span>
-      </div>
+      <input
+        bind:this={search_input_element}
+        type="search"
+        placeholder="中國, 中国, English, jyut6 ping3, pin1 yin1"
+        bind:value={search_input_string}
+        class="search_input cd_input"
+      />
     </label>
 
     <button
       type="submit"
-      class="search_submit_button cd_button"
+      class="search_submit_button cd_bordered_button"
+      disabled={loading_state === 'pending'}
     >
-      <Search aria-label="Submit search" />
+      <span
+        aria-hidden="true"
+        class="loading_icon"
+        class:active={loading_state === 'pending'}
+      >
+        <Loading />
+      </span>
+
+      <span
+        class="search_icon"
+        class:hidden={loading_state === 'pending'}
+      >
+        <Search aria-label="Submit search" />
+      </span>
     </button>
   </form>
 
@@ -189,42 +190,6 @@
     }
   }
 
-  .search_input_loading_wrapper {
-    position: relative;
-    margin-top: 0.5rem;
-  }
-
-  .loading {
-    position: absolute;
-    opacity: 0;
-    inset-block: 0;
-    right: 0.5rem;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-fill-mode: backwards;
-    animation-play-state: paused;
-    animation-name: loading;
-    transition-duration: 100ms;
-    transition-property: opacity;
-    transition-timing-function: ease-in;
-    margin: auto;
-    width: 1.5rem;
-    height: 1.5rem;
-    color: var(--text_brand-3_onbase);
-  }
-
-  .loading.active {
-    opacity: 1;
-    animation-play-state: running;
-    transition-timing-function: ease-out;
-  }
-
-  .loading :global(svg) {
-    width: 100%;
-    height: 100%;
-  }
-
   label {
     justify-items: stretch;
   }
@@ -238,15 +203,17 @@
     margin-top: 2.5rem;
     margin-inline: var(--margin_content_text);
   }
+
+  .search.centered {
+    transform: translateY(calc(45vh - 100% - 5rem));
+  }
+
   .search_form {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: end;
     justify-items: stretch;
     gap: 0.5rem;
-  }
-  .search.centered {
-    transform: translateY(calc(45vh - 100% - 5rem));
   }
 
   .search_label {
@@ -259,6 +226,7 @@
 
   .search_input {
     display: block;
+    margin-top: 0.5rem;
     width: 100%;
     min-width: 0px;
     max-width: 100%;
@@ -266,25 +234,54 @@
 
   .search_submit_button {
     display: grid;
+    position: relative;
     align-content: center;
     justify-content: center;
-    transition-property: color, border-color;
-    border-width: 0.1rem;
-    border-color: currentColor;
-    border-color: var(--text_neutral-faint_onbase);
-    border-radius: 0.2rem;
     width: 2.75rem;
     height: 2.75rem;
   }
-  .search_submit_button:hover {
-    border-color: var(--text_primary-faint_onbase);
+
+  .search_icon {
+    transition-duration: 150ms;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
   }
-  .search_submit_button:focus,
-  .search_submit_button:focus-visible {
-    outline-color: transparent;
-    outline-style: solid;
-    outline-width: 0.1rem;
-    border-color: var(--text_primary_onbase);
+
+  .search_icon.hidden {
+    opacity: 0;
+  }
+
+  .loading_icon {
+    display: grid;
+    position: absolute;
+    align-content: center;
+    justify-content: center;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+    animation-name: loading;
+    transition-duration: 100ms;
+    transition-property: opacity;
+    transition-timing-function: ease-in;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    color: var(--context_color_hint);
+  }
+
+  .loading_icon.active {
+    opacity: 1;
+    animation-play-state: running;
+    transition-timing-function: ease-out;
+  }
+
+  .loading_icon :global(svg) {
+    width: 100%;
+    height: 100%;
   }
 
   .no_results_text {

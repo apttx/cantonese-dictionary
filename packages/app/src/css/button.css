@@ -1,27 +1,75 @@
 @media (pointer: fine) {
+  .cd_bordered_button,
   button {
     transition-duration: 150ms;
     transition-property: color;
     transition-timing-function: ease-in;
   }
+
+  .cd_bordered_button:hover,
   button:hover {
     transition-timing-function: ease-out;
     color: var(--context_color_hint);
   }
+
+  .cd_bordered_button:active,
   button:active {
     transition-timing-function: ease-out;
+    color: var(--context_color_interact);
+  }
+
+  /* button with border */
+  .cd_bordered_button {
+    transition-property: color, border-color;
+    border-width: 0.1rem;
+    border-color: currentColor;
+    border-color: var(--text_neutral-faint_onbase);
+    border-radius: 0.2rem;
+  }
+
+  .cd_bordered_button:hover {
+    border-color: var(--text_primary-faint_onbase);
+  }
+
+  .cd_bordered_button:active {
+    transition-timing-function: ease-out;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0.1rem;
+    border-color: var(--text_primary_onbase);
     color: var(--context_color_interact);
   }
 }
 
 @media (pointer: coarse) {
+  .cd_bordered_button,
   button {
     transition-duration: 500ms;
     transition-property: color;
     transition-timing-function: cubic-bezier(1, 0, 0.5, 1);
   }
+
+  .cd_bordered_button:active,
   button:active {
     transition-duration: 0ms;
+    color: var(--context_color_interact);
+  }
+
+  /* button with border */
+  .cd_bordered_button {
+    transition-property: color, border-color;
+    border-width: 0.1rem;
+    border-color: currentColor;
+    border-color: var(--text_neutral-faint_onbase);
+    border-radius: 0.2rem;
+  }
+
+  .cd_bordered_button:active {
+    transition-timing-function: ease-out;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0.1rem;
+    border-color: var(--text_primary_onbase);
     color: var(--context_color_interact);
   }
 }
