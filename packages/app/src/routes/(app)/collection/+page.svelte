@@ -13,14 +13,16 @@
 />
 
 {#if !$phrases?.length}
+  <!-- transition error in when user navigated to page or last phrase was deleted -->
   <div
     role="presentation"
-    in:fly={{ y: 20, duration: 200, easing: cubicOut, delay: 200 }}
+    in:fly|global={{ y: 20, duration: 200, easing: cubicOut, delay: 200 }}
     class="empty_info"
   >
     <EmptyCollectionInfo />
   </div>
 {:else}
+  <!-- transition list out when last phrase was deleted -->
   <ul
     out:fade={{ duration: 200 }}
     class="search_results"
