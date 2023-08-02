@@ -11,6 +11,7 @@
   import '$css/button.css'
   import '$css/document.css'
   import '$css/input.css'
+  import '$css/svg.css'
 
   import '$css/hanzi.utility.css'
   import '$css/colored.utility.css'
