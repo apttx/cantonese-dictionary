@@ -120,7 +120,7 @@
     >
       <button
         title="Flip"
-        class="cd_button flip"
+        class="flip"
         on:click={() => {
           card_side_visible = card_side_visible === 'chinese' ? 'native' : 'chinese'
         }}
@@ -129,7 +129,7 @@
       </button>
       <button
         title="Next"
-        class="cd_button next"
+        class="next"
         on:click={() => {
           card_side_visible = $revise_direction === 'chinese_to_native' ? 'chinese' : 'native'
           random_phrase = pick_random($phrases)
