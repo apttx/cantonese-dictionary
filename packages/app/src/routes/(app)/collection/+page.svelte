@@ -25,7 +25,7 @@
   <!-- transition list out when last phrase was deleted -->
   <ul
     out:fade={{ duration: 200 }}
-    class="search_results"
+    class="phrases"
   >
     {#each $phrases as phrase, index (phrase.id)}
       <li
@@ -44,12 +44,19 @@
     margin-inline: var(--margin_content_text);
   }
 
-  .search_results {
+  .phrases {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 18rem);
-    justify-content: center;
+    grid-template-columns: 1fr;
     gap: 1rem;
-    margin: 2rem auto 4rem;
-    max-width: calc(70rem - 2rem);
+    margin-top: 2rem;
+    margin-inline: var(--margin_content_layout);
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 30rem) {
+    .phrases {
+      grid-template-columns: repeat(auto-fit, 20rem);
+      justify-content: center;
+    }
   }
 </style>
