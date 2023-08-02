@@ -160,7 +160,11 @@
 </div>
 
 {#if results}
-  <ul class="search_results">
+  <ul
+    class="search_results"
+    aria-live="polite"
+    aria-busy={loading_state === 'pending'}
+  >
     {#each results as phrase, index (phrase.id)}
       <li
         in:fade|global={{
