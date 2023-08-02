@@ -16,7 +16,7 @@ this is mostly a leisure project to help me learn and satisfy my insatiable desi
 - [fontsource](https://fontsource.org/)
 - [iconify](https://iconify.design/) via [unplugin icons](https://github.com/antfu/unplugin-icons)
 
-hosted on vercel
+hosted on [vercel](https://vercel.com/)
 
 ### development
 
