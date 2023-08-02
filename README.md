@@ -14,7 +14,7 @@ this is mostly a leisure project to help me learn and satisfy my insatiable desi
 - [lunr](https://github.com/olivernn/lunr.js/)
 - [sveltekit](https://github.com/sveltejs/kit)
 - [fontsource](https://fontsource.org/)
-- [iconify](https://iconify.design/) via [unplugin icons](https://github.com/antfu/unplugin-icons)
+- [mingcute](https://github.com/Richard9394/MingCute) via [iconify](https://iconify.design/) & [unplugin icons](https://github.com/antfu/unplugin-icons)
 
 hosted on [vercel](https://vercel.com/)
 
