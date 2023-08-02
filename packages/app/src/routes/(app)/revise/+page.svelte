@@ -64,9 +64,10 @@
 />
 
 {#if !random_phrase}
+  <!-- transition error in when user navigated to page or last phrase was deleted -->
   <div
     role="presentation"
-    in:fly={{ y: 20, duration: 200, easing: cubicOut, delay: flip_duration }}
+    in:fly|global={{ y: 20, duration: 200, easing: cubicOut, delay: flip_duration }}
     class="empty_info"
   >
     <EmptyCollectionInfo />
