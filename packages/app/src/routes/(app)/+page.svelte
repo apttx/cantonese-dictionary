@@ -293,6 +293,7 @@
     grid-template-columns: 1fr;
     gap: 1rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
     margin-inline: var(--margin_content_layout);
   }
 
