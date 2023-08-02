@@ -27,7 +27,7 @@
           <a href="https://github.com/urql-graphql/urql">URQL</a>
         </li>
         <li>
-          <a href="https://fontsource.org/">Fontsource</a>
+          <a href="https://github.com/fontsource/fontsource">Fontsource</a>
         </li>
         <li>
           <a href="https://github.com/Richard9394/MingCute">MingCute</a>
