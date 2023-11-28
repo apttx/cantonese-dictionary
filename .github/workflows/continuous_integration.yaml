@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
-          node-version: "18.x"
+          node-version: '18.x'
           cache: pnpm
 
       - name: install dependencies
@@ -54,13 +54,16 @@ jobs:
         uses: actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
-          node-version: "18.x"
+          node-version: '18.x'
           cache: pnpm
 
       - name: install dependencies
         run: |
           pnpm install --dir packages/search --frozen-lockfile
           pnpm install --dir packages/api --frozen-lockfile
+
+      - name: get search data
+        run: pnpm run --dir packages/search get-data
 
       - name: build search
         run: pnpm run --dir packages/search build
@@ -96,7 +99,7 @@ jobs:
         uses: actions/setup-node@v3
         # https://github.com/actions/setup-node
         with:
-          node-version: "18.x"
+          node-version: '18.x'
           cache: pnpm
 
       - name: install dependencies
