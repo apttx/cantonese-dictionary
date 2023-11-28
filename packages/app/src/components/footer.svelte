@@ -1,6 +1,49 @@
 <script>
   import Github from '~icons/mingcute/github-line'
   import ThankYou from '~icons/mingcute/heart-fill'
+
+  const open_source_links = [
+    {
+      text: 'CC-CEDICT',
+      url: 'https://cc-cedict.org/wiki/',
+    },
+    {
+      text: 'CC-Canto',
+      url: 'https://cantonese.org/',
+    },
+    {
+      text: 'GraphQL Yoga',
+      url: 'https://github.com/dotansimha/graphql-yoga',
+    },
+    {
+      text: 'Lunr',
+      url: 'https://github.com/olivernn/lunr.js',
+    },
+    {
+      text: 'SvelteKit',
+      url: 'https://github.com/sveltejs/kit',
+    },
+    {
+      text: 'URQL',
+      url: 'https://github.com/urql-graphql/urql',
+    },
+    {
+      text: 'Fontsource',
+      url: 'https://github.com/fontsource/fontsource',
+    },
+    {
+      text: 'MingCute',
+      url: 'https://github.com/Richard9394/MingCute',
+    },
+    {
+      text: 'Iconify',
+      url: 'https://iconify.design/',
+    },
+    {
+      text: 'unplugin-icons',
+      url: 'https://github.com/antfu/unplugin-icons',
+    },
+  ]
 </script>
 
 <footer class="colored_brand-1">
@@ -14,30 +57,16 @@
       </h2>
 
       <ul class="open_source_links">
-        <li>
-          <a href="https://github.com/dotansimha/graphql-yoga">GraphQL Yoga</a>
-        </li>
-        <li>
-          <a href="https://github.com/olivernn/lunr.js">Lunr</a>
-        </li>
-        <li>
-          <a href="https://github.com/sveltejs/kit">SvelteKit</a>
-        </li>
-        <li>
-          <a href="https://github.com/urql-graphql/urql">URQL</a>
-        </li>
-        <li>
-          <a href="https://github.com/fontsource/fontsource">Fontsource</a>
-        </li>
-        <li>
-          <a href="https://github.com/Richard9394/MingCute">MingCute</a>
-        </li>
-        <li>
-          <a href="https://iconify.design/">Iconify</a>
-        </li>
-        <li>
-          <a href="https://github.com/antfu/unplugin-icons">unplugin-icons</a>
-        </li>
+        {#each open_source_links as link}
+          <li>
+            <a
+              href={link.url}
+              rel="noreferrer noopener"
+            >
+              {link.text}
+            </a>
+          </li>
+        {/each}
       </ul>
     </div>
 
@@ -48,6 +77,7 @@
         <li>
           <a
             href="https://github.com/apttx/cantonese-dictionary"
+            rel="noreferrer noopener"
             class="icon_link"
           >
             <Github aria-hidden="true" />
@@ -56,7 +86,12 @@
         </li>
       </ul>
 
-      <p class="hosted_on">Hosted on <a href="https://vercel.com/">Vercel</a>.</p>
+      <p class="hosted_on">
+        Hosted on <a
+          href="https://vercel.com/"
+          rel="noreferrer noopener">Vercel</a
+        >.
+      </p>
     </div>
   </nav>
 
