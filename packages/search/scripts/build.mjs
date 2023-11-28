@@ -254,6 +254,7 @@ const run = async () => {
     await writeFile(phrases_file_path, stringify(phrases))
   } catch (error) {
     console.error('build failed:', error)
+    throw error
   }
 }
 
