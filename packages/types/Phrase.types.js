@@ -6,5 +6,6 @@
  *  pinyin: string
  *  traditional: string
  *  simplified: string
+ *  senses: Phrase[]
  * }} Phrase
  */

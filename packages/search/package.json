@@ -7,9 +7,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node scripts/build.mjs",
+    "develop": "nodemon -e mjs scripts/build.mjs",
     "prettier": "prettier --ignore-path .gitignore --check .",
     "eslint": "eslint --config .eslintrc.cjs scripts/**/*.*",
-    "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint"
+    "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint",
+    "get-data:canto": "curl -so ./data_source_files/canto.txt https://raw.githubusercontent.com/amadeusine/cc-canto-data/master/cccanto-webdist.txt",
+    "get-data:cedict_canto_readings": "curl -so ./data_source_files/cedict_canto_readings.txt https://raw.githubusercontent.com/amadeusine/cc-canto-data/master/cccedict-canto-readings.txt",
+    "get-data:cedict": "curl -s ./data_source_files/cedict.txt.gz 'https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz' | gzip -cd > data_source_files/cedict.txt",
+    "get-data": "concurrently --group --prefix-colors green,magenta,cyan --names 'canto,cedict,canto readings' npm:get-data:canto npm:get-data:cedict npm:get-data:cedict_canto_readings"
   },
   "keywords": [
     "cantonese",
@@ -19,6 +24,7 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "concurrently": "^8.2.0",
+    "devalue": "^4.3.2",
     "eslint": "^8.46.0",
     "lunr": "^2.3.9",
     "nodemon": "^3.0.1",
