@@ -18,7 +18,7 @@ const configuration = {
     file: resolve(build_directory, './handler.js'),
     format: 'esm',
   },
-  external: ['node:fs', 'node:path', 'node:process', 'graphql-yoga', 'lunr'],
+  external: ['node:fs', 'node:path', 'node:process', 'graphql-yoga', 'lunr', 'devalue'],
   plugins: [
     copy({
       targets: [
