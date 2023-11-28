@@ -8,6 +8,9 @@ importers:
 
   packages/api:
     dependencies:
+      devalue:
+        specifier: ^4.3.2
+        version: 4.3.2
       graphql:
         specifier: ^16.7.1
         version: 16.7.1
@@ -129,6 +132,9 @@ importers:
       concurrently:
         specifier: ^8.2.0
         version: 8.2.0
+      devalue:
+        specifier: ^4.3.2
+        version: 4.3.2
       eslint:
         specifier: ^8.46.0
         version: 8.46.0
@@ -1684,7 +1690,6 @@ packages:
 
   /devalue@4.3.2:
     resolution: {integrity: sha512-KqFl6pOgOW+Y6wJgu80rHpo2/3H07vr8ntR9rkkFIRETewbf5GaYYcakYfiKz89K+sLsuPkQIZaXDMjUObZwWg==}
-    dev: true
 
   /diff-sequences@29.4.3:
     resolution: {integrity: sha512-ofrBgwpPhCD85kMKtE9RYFFq6OC1A89oW2vvgWZNCwxrUpRUILopY7lsYyMDSjc8g6U6aiO0Qubg6r4Wgt5ZnA==}

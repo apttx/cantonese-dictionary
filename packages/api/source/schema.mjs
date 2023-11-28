@@ -18,6 +18,7 @@ export const schema = createSchema({
       jyutping: String!
       pinyin: String!
       english: String!
+      senses: [Phrase!]!
     }
 
     type Search_Result {
