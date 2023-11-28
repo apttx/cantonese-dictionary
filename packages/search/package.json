@@ -14,7 +14,7 @@
     "get-data:canto": "curl -so ./data_source_files/canto.txt https://raw.githubusercontent.com/amadeusine/cc-canto-data/master/cccanto-webdist.txt",
     "get-data:cedict_canto_readings": "curl -so ./data_source_files/cedict_canto_readings.txt https://raw.githubusercontent.com/amadeusine/cc-canto-data/master/cccedict-canto-readings.txt",
     "get-data:cedict": "curl -s ./data_source_files/cedict.txt.gz 'https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz' | gzip -cd > data_source_files/cedict.txt",
-    "get-data": "concurrently --group --prefix-colors green,magenta,cyan --names 'canto,cedict,canto readings' npm:get-data:canto npm:get-data:cedict npm:get-data:cedict_canto_readings"
+    "get-data": "mkdir -p data_source_files && concurrently --group --prefix-colors green,magenta,cyan --names 'canto,cedict,canto readings' npm:get-data:canto npm:get-data:cedict npm:get-data:cedict_canto_readings"
   },
   "keywords": [
     "cantonese",
