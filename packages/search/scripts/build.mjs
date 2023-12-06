@@ -1,10 +1,8 @@
 import { createHash } from 'node:crypto'
 import { resolve } from 'node:path'
 import { cwd } from 'process'
-import { mkdir, writeFile, readFile } from 'node:fs/promises'
-import { stringify } from 'devalue'
-
-import lunr from 'lunr'
+import { readFile } from 'node:fs/promises'
+import sqlite3 from 'sqlite3'
 
 /** @typedef {`${string} ${string} [${string}] /${string}/`} Cedict_Line */
 /** @typedef {`${string} ${string} [${string}] {${string}} /${string}/`} Canto_Line */
@@ -202,29 +200,134 @@ const get_phrases = async (options) => {
   const canto_phrases = parsed_canto_phrases
     .map((parsed_phrase) => get_phrases_from_parsed(parsed_phrase))
     .flat()
-  const phrases = [...cedict_phrases, ...canto_phrases]
+
+  /** @type {Phrase[]} */
+  let phrases = []
+  /** @type {Set<string>} */
+  const id_set = new Set()
+  for (const phrase of canto_phrases) {
+    if (!id_set.has(phrase.id)) {
+      phrases.push(phrase)
+      id_set.add(phrase.id)
+    }
+  }
+  for (const phrase of cedict_phrases) {
+    if (!id_set.has(phrase.id)) {
+      phrases.push(phrase)
+      id_set.add(phrase.id)
+    }
+  }
 
   return phrases
 }
 
-/** @param {Phrase[]} phrases */
-const phrase_index = (phrases) => {
-  const index = lunr(function () {
-    this.field('english')
-    this.field('jyutping')
-    this.field('traditional')
-    this.field('simplified')
+/** @param {string} database_file_path */
+const get_promisified_database = async (database_file_path) => {
+  /** @type {import('sqlite3').Database} */
+  const database = await new Promise((resolve, reject) => {
+    const database = new sqlite3.Database(database_file_path, (error) => {
+      if (error) {
+        return reject(error)
+      }
 
-    for (const phrase of phrases) {
-      this.add(phrase)
-    }
+      resolve(database)
+    })
   })
 
-  return index
+  /** @type {(sql: string) => Promise<import('sqlite3').RunResult>} */
+  const run = (sql) => {
+    const promise = new Promise(
+      (/** @type {(value: import('sqlite3').RunResult) => void} */ resolve, reject) => {
+        const callback =
+          /** @type {(error: Error | null, result: import('sqlite3').RunResult) => void} */
+          (error, result) => {
+            if (error) {
+              return reject(error)
+            }
+
+            resolve(result)
+          }
+
+        database.run(sql, callback)
+      },
+    )
+
+    return promise
+  }
+
+  /** @type {(sql: string) => Promise<void>} */
+  const exec = (sql) => {
+    const promise = new Promise((/** @type {(value: void) => void} */ resolve, reject) => {
+      const callback =
+        /** @type {(error: Error | null) => void} */
+        (error) => {
+          if (error) {
+            return reject(error)
+          }
+
+          resolve()
+        }
+
+      database.exec(sql, callback)
+    })
+
+    return promise
+  }
+
+  /** @type {() => Promise<void>} */
+  const close = () => {
+    const promise = new Promise((/** @type {(value: void) => void} */ resolve, reject) => {
+      const callback =
+        /** @type {(error: Error | null) => void} */
+        (error) => {
+          if (error) {
+            return reject(error)
+          }
+
+          resolve()
+        }
+
+      database.close(callback)
+    })
+
+    return promise
+  }
+
+  return {
+    run,
+    exec,
+    close,
+  }
 }
 
 const run = async () => {
   try {
+    // set up database
+    const database_file_path = resolve(cwd(), './build/sqlite.db')
+    const database = await get_promisified_database(database_file_path)
+    await database.run('DROP TABLE IF EXISTS phrases;')
+    await database.run('DROP TABLE IF EXISTS senses_relation;')
+    await database.run(
+      `CREATE TABLE phrases (
+        'id' VARCHAR(32) PRIMARY KEY NOT NULL,
+        'traditional' VARCHAR(32),
+        'simplified' VARCHAR(32),
+        'english' VARCHAR(128),
+        'pinyin' VARCHAR(128),
+        'jyutping' VARCHAR(128)
+      );`,
+    )
+    await database.run(
+      `CREATE TABLE senses_relation (
+        'of_id' VARCHAR(32) NOT NULL,
+        'sense_id' VARCHAR(32) NOT NULL,
+        FOREIGN KEY(of_id) REFERENCES phrases(id),
+        FOREIGN KEY(sense_id) REFERENCES phrases(id)
+      );`,
+    )
+
+    // parse data
+    console.info('[info] parsing phrases [@run]')
     const data_source_files_directory = resolve(cwd(), './data_source_files')
     const cc_cedict_file_path = resolve(data_source_files_directory, './cedict.txt')
     const cc_canto_file_path = resolve(data_source_files_directory, './canto.txt')
@@ -242,16 +345,23 @@ const run = async () => {
       cc_canto_file,
       cc_cedict_canto_readings_file,
     })
-    const index = phrase_index(phrases)
 
-    const build_directory = resolve(cwd(), './build')
-    await mkdir(build_directory, { recursive: true })
+    // write data
+    console.info('[info] writing to database [@run]')
+    const inserts = phrases.map(
+      (phrase) =>
+        `INSERT INTO phrases VALUES ('${phrase.id}', '${phrase.traditional}', '${
+          phrase.simplified
+        }', '${phrase.english.replace(/'/gi, "''")}', '${phrase.pinyin}', '${phrase.jyutping}')`,
+    )
+    const sql = `
+          BEGIN TRANSACTION;
+          ${inserts.join(';\n')};
+          COMMIT;
+      `
+    await database.exec(sql)
 
-    const index_file_path = resolve(cwd(), './build/index.json')
-    await writeFile(index_file_path, JSON.stringify(index))
-
-    const phrases_file_path = resolve(cwd(), './build/phrases.json')
-    await writeFile(phrases_file_path, stringify(phrases))
+    await database.close()
   } catch (error) {
     console.error('build failed:', error)
     throw error
