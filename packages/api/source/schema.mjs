@@ -29,7 +29,6 @@ export const schema = createSchema({
 
     type Query {
       search(query: String!, limit: Int): [Phrase!]!
-      search_results(query: String!, limit: Int): [Search_Result!]!
       phrases(after: ID, limit: Int): [Phrase!]!
     }
   `,
@@ -56,29 +55,6 @@ export const schema = createSchema({
 
         return result
       },
-      search_results: (_, args, context) => {
-        const { id_phrase_map, index } = context.search
-        const search_results = index.search(args.query)
-
-        const result = search_results.map((search_result) => {
-          const { ref, score } = search_result
-          const phrase = id_phrase_map[ref]
-
-          return {
-            ref,
-            score,
-            phrase,
-          }
-        })
-
-        if (args.limit) {
-          const capped_limit = Math.min(args.limit, 200)
-          const limited = result.slice(0, capped_limit)
-
-          return limited
-        }
-
-        return result
       },
       phrases: (_, args, context) => {
         const { phrases } = context
