@@ -8,8 +8,7 @@ import copy from 'rollup-plugin-copy'
 const build_directory_name = 'api'
 const root_directory = resolve(cwd(), './vercel')
 const build_directory = resolve(root_directory, `./${build_directory_name}`)
-const index_file_name = '_index.json'
-const phrases_file_name = '_phrases.json'
+const sqlite_database_file_name = '_sqlite.db'
 
 /** @type {import('rollup').RollupOptions} */
 const configuration = {
@@ -18,12 +17,15 @@ const configuration = {
     file: resolve(build_directory, './handler.js'),
     format: 'esm',
   },
-  external: ['node:fs', 'node:path', 'node:process', 'graphql-yoga', 'lunr', 'devalue'],
+  external: ['node:fs', 'node:path', 'node:process', 'graphql-yoga', 'sqlite3'],
   plugins: [
     copy({
       targets: [
-        { src: '../search/build/index.json', dest: build_directory, rename: index_file_name },
-        { src: '../search/build/phrases.json', dest: build_directory, rename: phrases_file_name },
+        {
+          src: '../search/build/sqlite.db',
+          dest: build_directory,
+          rename: sqlite_database_file_name,
+        },
         { src: './package.json', dest: root_directory },
         { src: './pnpm-lock.yaml', dest: root_directory },
       ],
@@ -31,11 +33,8 @@ const configuration = {
     replace({
       preventAssignment: true,
       values: {
-        'process.env.INDEX_FILE_PATH': JSON.stringify(
-          `./${build_directory_name}/${index_file_name}`,
-        ),
-        'process.env.PHRASES_FILE_PATH': JSON.stringify(
-          `./${build_directory_name}/${phrases_file_name}`,
+        'process.env.SQLITE_DATABASE_FILE_PATH': JSON.stringify(
+          `./${build_directory_name}/${sqlite_database_file_name}`,
         ),
       },
     }),

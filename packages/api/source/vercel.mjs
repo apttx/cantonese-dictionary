@@ -1,17 +1,18 @@
-import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
-import { parse } from 'devalue'
 
 import { handler } from './handler.mjs'
+import { get_datasource, get_promisified_database } from './sqlite.mjs'
 
-const index_file_path = resolve(cwd(), process.env.INDEX_FILE_PATH || './_index.json')
-const index_file_string = readFileSync(index_file_path).toString()
-const index_definition = JSON.parse(index_file_string)
-const phrases_file_path = resolve(cwd(), process.env.PHRASES_FILE_PATH || './_phrases.json')
-const phrases_file_string = readFileSync(phrases_file_path).toString()
-const phrases = parse(phrases_file_string)
+const sqlite_database_file_path = resolve(
+  cwd(),
+  process.env.SQLITE_DATABASE_FILE_PATH || './_sqlite.db',
+)
+// @ts-expect-error vercel supports top-level await
+const promisified_database = await get_promisified_database(sqlite_database_file_path)
+// @ts-expect-error vercel supports top-level await
+const phrases_datasource = await get_datasource(promisified_database)
 
-const request_listener = handler({ index_definition, phrases })
+const request_listener = handler({ phrases: phrases_datasource })
 
 export default request_listener
