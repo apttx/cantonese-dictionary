@@ -306,7 +306,6 @@ const run = async () => {
     const database_file_path = resolve(cwd(), './build/sqlite.db')
     const database = await get_promisified_database(database_file_path)
     await database.run('DROP TABLE IF EXISTS phrases;')
-    await database.run('DROP TABLE IF EXISTS senses_relation;')
     await database.run(
       `CREATE TABLE phrases (
         'id' VARCHAR(32) PRIMARY KEY NOT NULL,
@@ -315,8 +314,9 @@ const run = async () => {
         'english' VARCHAR(128),
         'pinyin' VARCHAR(128),
         'jyutping' VARCHAR(128)
-      );`,
+        );`,
     )
+    await database.run('DROP TABLE IF EXISTS senses_relation;')
     await database.run(
       `CREATE TABLE senses_relation (
         'of_id' VARCHAR(32) NOT NULL,
@@ -325,6 +325,15 @@ const run = async () => {
         FOREIGN KEY(sense_id) REFERENCES phrases(id)
       );`,
     )
+    await database.run('DROP TABLE IF EXISTS search;')
+    await database.run(`CREATE VIRTUAL TABLE search USING fts5(
+      id,
+      traditional,
+      simplified,
+      english,
+      pinyin,
+      jyutping
+    );`)
 
     // parse data
     console.info('[info] parsing phrases [@run]')
@@ -350,13 +359,27 @@ const run = async () => {
     console.info('[info] writing to database [@run]')
     const inserts = phrases.map(
       (phrase) =>
-        `INSERT INTO phrases VALUES ('${phrase.id}', '${phrase.traditional}', '${
-          phrase.simplified
-        }', '${phrase.english.replace(/'/gi, "''")}', '${phrase.pinyin}', '${phrase.jyutping}')`,
+        `INSERT INTO phrases VALUES (
+          '${phrase.id}',
+          '${phrase.traditional}',
+          '${phrase.simplified}',
+          '${phrase.english.replace(/'/gi, "''")}',
+          '${phrase.pinyin}',
+          '${phrase.jyutping}'
+        );
+        INSERT INTO search VALUES (
+          '${phrase.id}',
+          '${phrase.traditional}',
+          '${phrase.simplified}',
+          '${phrase.english.replace(/'/gi, "''")}',
+          '${phrase.pinyin}',
+          '${phrase.jyutping}'
+        );
+        `,
     )
     const sql = `
           BEGIN TRANSACTION;
-          ${inserts.join(';\n')};
+          ${inserts.join('\n')};
           COMMIT;
       `
     await database.exec(sql)
