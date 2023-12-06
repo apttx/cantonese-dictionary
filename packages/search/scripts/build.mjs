@@ -157,7 +157,7 @@ const get_phrases = async (options) => {
   }
 
   const canto_file_string = options.cc_canto_file.toString()
-  const canto_lines = /** @type {Cedict_Line[]} */ (
+  const canto_lines = /** @type {Canto_Line[]} */ (
     canto_file_string.split(/[\n\r]+/).filter(is_data_line)
   )
   const parsed_canto_phrases = canto_lines.map((line) => get_phrase(line))
