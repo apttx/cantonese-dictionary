@@ -1,8 +1,10 @@
 import { createHash } from 'node:crypto'
 import { resolve } from 'node:path'
 import { cwd } from 'process'
-import { readFile } from 'node:fs/promises'
+import { mkdir, readFile } from 'node:fs/promises'
 import sqlite3 from 'sqlite3'
+
+const build_directory = 'build/'
 
 /** @typedef {`${string} ${string} [${string}] /${string}/`} Cedict_Line */
 /** @typedef {`${string} ${string} [${string}] {${string}} /${string}/`} Canto_Line */
@@ -301,9 +303,11 @@ const get_promisified_database = async (database_file_path) => {
 }
 
 const run = async () => {
+  const database_file_path = resolve(cwd(), build_directory, 'sqlite.db')
+
   try {
     // set up database
-    const database_file_path = resolve(cwd(), './build/sqlite.db')
+    await mkdir(build_directory, { recursive: true })
     const database = await get_promisified_database(database_file_path)
     await database.run('DROP TABLE IF EXISTS phrases;')
     await database.run(
@@ -385,8 +389,15 @@ const run = async () => {
     await database.exec(sql)
 
     await database.close()
-  } catch (error) {
+  } catch (caught) {
+    const error = /** @type {Error} */ (caught)
+
     console.error('build failed:', error)
+
+    if ('code' in error && error.code === 'SQLITE_CANTOPEN') {
+      console.error(`  database file path: ${database_file_path}`)
+    }
+
     throw error
   }
 }
