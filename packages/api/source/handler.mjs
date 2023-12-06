@@ -1,27 +1,26 @@
 import { createYoga } from 'graphql-yoga'
 
-import lunr from 'lunr'
-
 import { schema } from './schema.mjs'
 
 /**
  * @type {(options: {
- *   phrases: Phrase[]
- *   index_definition: import('lunr').Index
+ *   phrases: Phrases_Datasource
  *   graphiql?: boolean
  *   landingPage?: boolean
  * }) => import('node:http').RequestListener}
  */
 export const handler = (options) => {
   const { phrases } = options
-  const index = lunr.Index.load(options.index_definition)
-  const id_phrase_map = Object.fromEntries(phrases.map((phrase) => [phrase.id, phrase]))
+  const graphiql = options.graphiql ?? false
+  const landingPage = options.landingPage ?? false
+  /** @type {(initial_context: import('graphql-yoga').YogaInitialContext) => Resolver_Context} */
+  const context = () => ({ phrases })
 
   const yoga = createYoga({
     schema,
-    context: () => ({ phrases, search: { index, id_phrase_map } }),
-    graphiql: options.graphiql ?? false,
-    landingPage: options.landingPage ?? false,
+    context,
+    graphiql,
+    landingPage,
   })
 
   return yoga
