@@ -42,7 +42,7 @@ const get_phrase = (line) => {
       matches.groups
     )
   const english_senses = english
-    .split(/;/)
+    .split(/\//g)
     .map((sense) => sense.trim())
     .filter(Boolean)
 
