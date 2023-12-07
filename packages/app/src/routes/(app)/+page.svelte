@@ -197,15 +197,8 @@
   .search {
     display: grid;
     justify-items: stretch;
-    transition-duration: 300ms;
-    transition-property: transform;
-    transition-timing-function: ease-in-out;
-    margin-top: 2.5rem;
+    margin-top: 4rem;
     margin-inline: var(--margin_content_text);
-  }
-
-  .search.centered {
-    transform: translateY(calc(45vh - 100% - 5rem));
   }
 
   .search_form {
