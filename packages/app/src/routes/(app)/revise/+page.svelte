@@ -63,7 +63,7 @@
   const flip_duration = 150
 
   /** @type {(event: MouseEvent) => void} */
-  const on_window_click = (event) => {
+  const on_screen_click = (event) => {
     const composed_path = event.composedPath()
     // last element in path is always the window
     const window = /** @type {Window} */ (composed_path[composed_path.length - 1])
@@ -100,7 +100,7 @@
 {:else}
   <div
     role="presentation"
-    on:click={on_window_click}
+    on:click={on_screen_click}
     class="revise_container"
   >
     {#key random_phrase.id}
