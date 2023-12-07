@@ -1,17 +1,19 @@
 <script>
+  import { getContext } from 'svelte'
+  import { fly } from 'svelte/transition'
   import { cubicIn, cubicOut } from 'svelte/easing'
-
-  import { character_set } from '$stores/character_set.mjs'
-  import { phrases } from '$stores/collection.mjs'
-  import { show_jyutping } from '$stores/show_jyutping.mjs'
-  import { show_pinyin } from '$stores/show_pinyin.mjs'
-  import { revise_direction } from '$stores/revise_direction.mjs'
-
   import Flip from '~icons/mingcute/transfer-3-line'
   import Next from '~icons/mingcute/right-line'
-  import { fly } from 'svelte/transition'
+  import Cog from '~icons/mingcute/settings-5-line'
+
+  import { phrases } from '$stores/collection.mjs'
   import EmptyCollectionInfo from '$components/empty_collection_info.svelte'
   import Head from '$components/head.svelte'
+  import Dynamic_Flashcard_Face from '$components/dynamic_flashcard_face.svelte'
+  import {
+    flashcard_back_configuration,
+    flashcard_front_configuration,
+  } from '$stores/revise_settings.mjs'
 
   /** @type {<Type extends unknown = never>(items: Type[]) => Type} */
   const pick_random = (items) => {
@@ -22,13 +24,13 @@
     return random_item
   }
   let random_phrase = pick_random($phrases)
-  /** @type {'chinese' | 'native'} */
-  let card_side_visible = $revise_direction === 'chinese_to_native' ? 'chinese' : 'native'
+  /** @type {boolean} */
+  let is_flashcard_flipped = false
   const flip_card = () => {
-    card_side_visible = card_side_visible === 'chinese' ? 'native' : 'chinese'
+    is_flashcard_flipped = !is_flashcard_flipped
   }
   const next_phrase = () => {
-    card_side_visible = $revise_direction === 'chinese_to_native' ? 'chinese' : 'native'
+    is_flashcard_flipped = false
     random_phrase = pick_random($phrases)
   }
 
@@ -81,6 +83,9 @@
 
     flip_card()
   }
+
+  /** @type {() => void} */
+  const open_settings = getContext('open_revise_settings')
 </script>
 
 <Head
@@ -110,33 +115,25 @@
         out:fly={{ y: -20, duration: 200, easing: cubicIn }}
         class="phrase_container"
       >
-        {#if card_side_visible === 'native'}
+        {#if is_flashcard_flipped}
           <div
-            class="phrase"
             in:rotate={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
             out:rotate={{ duration: flip_duration, easing: cubicIn }}
           >
-            <ul class="english">
-              {#each random_phrase.english.split('/') as sense}
-                <li>
-                  {sense}
-                </li>
-              {/each}
-            </ul>
+            <Dynamic_Flashcard_Face
+              configuration={$flashcard_back_configuration}
+              phrase={random_phrase}
+            />
           </div>
         {:else}
           <div
-            class="phrase colored_base"
             in:rotate={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
             out:rotate={{ duration: flip_duration, easing: cubicIn }}
           >
-            <span class="characters cd_hanzi">{random_phrase[$character_set]}</span>
-            {#if $show_pinyin}
-              <div>{random_phrase.pinyin}</div>
-            {/if}
-            {#if $show_jyutping}
-              <span>{random_phrase.jyutping}</span>
-            {/if}
+            <Dynamic_Flashcard_Face
+              configuration={$flashcard_front_configuration}
+              phrase={random_phrase}
+            />
           </div>
         {/if}
       </div>
@@ -147,18 +144,25 @@
       class="buttons colored_brand-1"
     >
       <button
+        title="Settings"
+        class="settings_button"
+        on:click|stopPropagation={open_settings}
+      >
+        <Cog aria-label="Open settings" />
+      </button>
+      <button
         title="Flip"
         class="flip"
         on:click|stopPropagation={flip_card}
       >
-        <Flip aria-label="Flip" />
+        <Flip aria-label="Flip flashcard" />
       </button>
       <button
         title="Next"
         class="next"
         on:click|stopPropagation={next_phrase}
       >
-        <Next aria-label="Next" />
+        <Next aria-label="Next flashcard" />
       </button>
     </div>
   </div>
@@ -180,22 +184,6 @@
     justify-content: center;
   }
 
-  .phrase {
-    display: grid;
-    align-content: center;
-    margin: auto;
-    box-shadow: 0 0.2rem 0.5rem #00000022;
-    border-radius: 0.2rem;
-    padding: 2rem;
-    min-width: 16rem;
-    min-height: 8rem;
-    text-align: center;
-  }
-
-  .characters {
-    margin-bottom: 0.5rem;
-  }
-
   .buttons {
     --icon_size: 1.5rem;
     --button_inline_padding: 1.5rem;
@@ -206,7 +194,7 @@
       calc(var(--icon_size) + var(--button_inline_padding))
       1fr
       calc(var(--icon_size) + var(--button_inline_padding));
-    grid-template-areas: 'previous flip next';
+    grid-template-areas: 'settings flip next';
     justify-items: center;
     inset-inline: 0;
     top: calc(100vh - 2.5rem - 2rem);
@@ -224,6 +212,10 @@
   .buttons :global(svg) {
     width: var(--icon_size);
     height: var(--icon_size);
+  }
+
+  .settings_button {
+    grid-area: settings;
   }
 
   .next {
