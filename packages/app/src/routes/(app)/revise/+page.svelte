@@ -178,6 +178,7 @@
     justify-items: center;
     inset-inline: 0;
     top: calc(100vh - 2.5rem - 2rem);
+    top: calc(100dvh - 2.5rem - 2rem);
     margin-inline: auto;
     box-shadow: 0 0.2rem 0.5rem #00000022;
     border-radius: 100vw;
