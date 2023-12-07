@@ -12,12 +12,12 @@
       url: 'https://cantonese.org/',
     },
     {
-      text: 'GraphQL Yoga',
-      url: 'https://github.com/dotansimha/graphql-yoga',
+      text: 'SQLite',
+      url: 'https://www.sqlite.org/index.html',
     },
     {
-      text: 'Lunr',
-      url: 'https://github.com/olivernn/lunr.js',
+      text: 'GraphQL Yoga',
+      url: 'https://github.com/dotansimha/graphql-yoga',
     },
     {
       text: 'SvelteKit',
