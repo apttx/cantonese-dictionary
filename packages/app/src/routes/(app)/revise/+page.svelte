@@ -83,8 +83,6 @@
   }
 </script>
 
-<svelte:window on:click={on_window_click} />
-
 <Head
   title="Revise"
   description="Practice the phrases you saved."
@@ -102,6 +100,7 @@
 {:else}
   <div
     role="presentation"
+    on:click={on_window_click}
     class="revise_container"
   >
     {#key random_phrase.id}
@@ -166,6 +165,16 @@
 {/if}
 
 <style>
+  .revise_container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    gap: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    min-height: calc(100vh - var(--height_header));
+  }
+
   .phrase_container {
     display: grid;
     justify-content: center;
@@ -223,16 +232,6 @@
 
   .flip {
     grid-area: flip;
-  }
-
-  .revise_container {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    align-items: start;
-    gap: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-    min-height: calc(100vh - var(--height_header));
   }
 
   .empty_info {
