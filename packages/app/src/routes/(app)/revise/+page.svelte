@@ -64,7 +64,6 @@
 
   /** @type {(event: MouseEvent) => void} */
   const on_window_click = (event) => {
-    console.debug(event.eventPhase)
     const composed_path = event.composedPath()
     // last element in path is always the window
     const window = /** @type {Window} */ (composed_path[composed_path.length - 1])
