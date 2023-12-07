@@ -21,11 +21,16 @@
 
     return random_item
   }
-
   let random_phrase = pick_random($phrases)
-
   /** @type {'chinese' | 'native'} */
   let card_side_visible = $revise_direction === 'chinese_to_native' ? 'chinese' : 'native'
+  const flip_card = () => {
+    card_side_visible = card_side_visible === 'chinese' ? 'native' : 'chinese'
+  }
+  const next_phrase = () => {
+    card_side_visible = $revise_direction === 'chinese_to_native' ? 'chinese' : 'native'
+    random_phrase = pick_random($phrases)
+  }
 
   /**
    * @type {(
@@ -56,7 +61,30 @@
   }
 
   const flip_duration = 150
+
+  /** @type {(event: MouseEvent) => void} */
+  const on_window_click = (event) => {
+    console.debug(event.eventPhase)
+    const composed_path = event.composedPath()
+    // last element in path is always the window
+    const window = /** @type {Window} */ (composed_path[composed_path.length - 1])
+    const lower_third = window.screen.width / 3
+    const upper_third = (window.screen.width / 3) * 2
+
+    if (event.clientX < lower_third) {
+      return
+    }
+
+    if (event.clientX > upper_third) {
+      next_phrase()
+      return
+    }
+
+    flip_card()
+  }
 </script>
+
+<svelte:window on:click={on_window_click} />
 
 <Head
   title="Revise"
@@ -122,19 +150,14 @@
       <button
         title="Flip"
         class="flip"
-        on:click={() => {
-          card_side_visible = card_side_visible === 'chinese' ? 'native' : 'chinese'
-        }}
+        on:click|stopPropagation={flip_card}
       >
         <Flip aria-label="Flip" />
       </button>
       <button
         title="Next"
         class="next"
-        on:click={() => {
-          card_side_visible = $revise_direction === 'chinese_to_native' ? 'chinese' : 'native'
-          random_phrase = pick_random($phrases)
-        }}
+        on:click|stopPropagation={next_phrase}
       >
         <Next aria-label="Next" />
       </button>
