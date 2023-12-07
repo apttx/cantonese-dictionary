@@ -178,6 +178,13 @@
       </li>
     {/each}
   </ul>
+{:else}
+  <h2 class="about_heading">About</h2>
+  <p class="about_text">
+    This dictionary is a passion project to help with learning Cantonese. It's built for English
+    speakers and is best used to supplement other resources, such as subtitled videos or free video
+    lessons.
+  </p>
 {/if}
 
 <style>
@@ -295,5 +302,16 @@
       grid-template-columns: repeat(auto-fit, 20rem);
       justify-content: center;
     }
+  }
+
+  .about_heading {
+    margin-top: 4rem;
+    margin-inline: var(--margin_content_text);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  .about_text {
+    margin-top: 0.5rem;
+    margin-inline: var(--margin_content_text);
   }
 </style>
