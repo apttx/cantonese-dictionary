@@ -106,6 +106,7 @@
   >
     {#key random_phrase.id}
       <div
+        role="presentation"
         in:fly={{ y: 20, duration: 200, delay: 200, easing: cubicOut }}
         out:fly={{ y: -20, duration: 200, easing: cubicIn }}
         class="phrase_container"
