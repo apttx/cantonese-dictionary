@@ -16,6 +16,18 @@
   const out_transition_options = { easing: cubicIn, duration: 200 }
 
   $: $main_inert = visible
+
+  /** @param {Event} event */
+  const prevent_default_if_main_inert = (event) => {
+    if (event.eventPhase === Event.AT_TARGET && $main_inert) {
+      event.preventDefault()
+    }
+  }
+
+  /** @type {import('svelte/action').Action} */
+  const focus_on_mount = (node) => {
+    node.focus()
+  }
 </script>
 
 <svelte:window
@@ -34,14 +46,16 @@
     on:click|self={() => {
       visible = false
     }}
+    on:touchmove={prevent_default_if_main_inert}
+    on:wheel={prevent_default_if_main_inert}
     class="veil"
   >
     <div
-      class="container"
-      in:scale={in_transition_options}
-      out:scale={out_transition_options}
       role="dialog"
       aria-describedby={heading_id}
+      in:scale={in_transition_options}
+      out:scale={out_transition_options}
+      class="container"
     >
       <h2
         id={heading_id}
@@ -52,6 +66,7 @@
 
       <button
         title="Close"
+        use:focus_on_mount
         on:click={() => {
           visible = false
         }}
