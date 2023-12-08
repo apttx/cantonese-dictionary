@@ -25,96 +25,119 @@
   heading="Flashcard settings"
   bind:visible
 >
+  <p class="introduction">Change the appearance of the flashcards.</p>
+
   <div
     class="settings"
     role="presentation"
   >
-    <div
-      class="flashcard_front phrase_container"
-      role="presentation"
-    >
-      <Dynamic_Flashcard_Face
-        configuration={$flashcard_front_configuration}
-        phrase={demo_phrase}
-      />
-    </div>
-    <div class="front_settings">
-      <label>
+    <fieldset class="front_settings">
+      <legend class="settings_heading">Front</legend>
+
+      <figure class="flashcard_face">
+        <Dynamic_Flashcard_Face
+          configuration={$flashcard_front_configuration}
+          phrase={demo_phrase}
+        />
+        <figcaption class="flashcard_face_caption colored_base-neutral">
+          Example of the front of a flashcard
+        </figcaption>
+      </figure>
+
+      <label class="settings_label">
         <span>Show characters</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_front_configuration.characters}
         />
       </label>
-      <label>
+      <label class="settings_label">
         <span>Show romanization</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_front_configuration.romanization}
         />
       </label>
-      <label>
+      <label class="settings_label">
         <span>Show english</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_front_configuration.english}
         />
       </label>
-    </div>
+    </fieldset>
 
-    <div
-      class="flashcard_back phrase_container"
-      role="presentation"
-    >
-      <Dynamic_Flashcard_Face
-        configuration={$flashcard_back_configuration}
-        phrase={demo_phrase}
-      />
-    </div>
-    <div class="front_settings">
-      <label>
+    <fieldset class="front_settings">
+      <legend class="settings_heading">Back</legend>
+
+      <figure class="flashcard_face">
+        <Dynamic_Flashcard_Face
+          configuration={$flashcard_back_configuration}
+          phrase={demo_phrase}
+        />
+        <figcaption class="flashcard_face_caption colored_base-neutral">
+          Example of the back of a flashcard
+        </figcaption>
+      </figure>
+
+      <label class="settings_label">
         <span>Show characters</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_back_configuration.characters}
         />
       </label>
-      <label>
+      <label class="settings_label">
         <span>Show romanization</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_back_configuration.romanization}
         />
       </label>
-      <label>
+      <label class="settings_label">
         <span>Show english</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_back_configuration.english}
         />
       </label>
-    </div>
+    </fieldset>
   </div>
 </Modal>
 
 <style>
+  .introduction {
+    margin-top: 1.75rem;
+  }
+
   .settings {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      'flashcard_front flashcard_back'
-      'front_settings back_settings';
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 2rem;
   }
-  .flashcard_front {
-    grid-area: flashcard_front;
+
+  .flashcard_face {
+    grid-area: flashcard_face;
+    margin-block: 1rem;
   }
-  .flashcard_back {
-    grid-area: flashcard_back;
+  .flashcard_face_caption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
   }
-  .settings label {
+
+  .settings_heading {
+    font-weight: bold;
+  }
+
+  .settings_label {
     display: block;
     padding-block: 0.5rem;
+  }
+
+  @media (min-width: 50rem) {
+    .settings {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>

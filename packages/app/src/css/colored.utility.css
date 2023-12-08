@@ -5,6 +5,19 @@
   background-color: white;
   color: var(--color-neutral-5);
 }
+.colored_base-neutral {
+  --context_color_hint: var(--color-red-3);
+  --context_color_interact: var(--color-red-4);
+
+  background-color: white;
+  color: var(--color-neutral-3);
+  font-weight: 500;
+}
+@media (prefers-contrast: more) {
+  .colored_base-neutral {
+    color: var(--color-neutral-5);
+  }
+}
 
 .colored_brand-1 {
   --context_color_hint: var(--color-red-1);
