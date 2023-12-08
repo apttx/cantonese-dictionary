@@ -15,15 +15,12 @@
     flashcard_front_configuration,
   } from '$stores/revise_settings.mjs'
 
-  /** @type {<Type extends unknown = never>(items: Type[]) => Type} */
-  const pick_random = (items) => {
-    let random_index = Math.floor(Math.random() * items.length)
+  import { flip } from './transitions.mjs'
+  import { get_random } from './utilities.mjs'
 
-    const random_item = items[random_index]
+  const flip_duration = 150
 
-    return random_item
-  }
-  let random_phrase = pick_random($phrases)
+  let random_phrase = get_random($phrases)
   /** @type {boolean} */
   let is_flashcard_flipped = false
   const flip_card = () => {
@@ -31,38 +28,8 @@
   }
   const next_phrase = () => {
     is_flashcard_flipped = false
-    random_phrase = pick_random($phrases)
+    random_phrase = get_random($phrases)
   }
-
-  /**
-   * @type {(
-   *   element: Element,
-   *   config: {
-   *     delay?: number
-   *     duration?: number
-   *     easing?: import('svelte/transition').EasingFunction
-   *   },
-   * ) => {
-   *   delay?: number
-   *   duration?: number
-   *   easing?: import('svelte/transition').EasingFunction
-   *   css: (t: number, u: number) => string
-   * }}
-   */
-  const rotate = (_, config) => {
-    const { delay, duration, easing } = config
-    /** @type {(t: number, u: number) => string} */
-    const css = (_, u) => `transform: rotateY(${u * 90}deg)`
-
-    return {
-      delay,
-      duration,
-      easing,
-      css,
-    }
-  }
-
-  const flip_duration = 150
 
   /** @type {Record<number, VoidFunction | undefined>} */
   const screen_click_actions = { 1: flip_card, 2: next_phrase }
@@ -119,8 +86,8 @@
       >
         {#if is_flashcard_flipped}
           <div
-            in:rotate={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
-            out:rotate={{ duration: flip_duration, easing: cubicIn }}
+            in:flip={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
+            out:flip={{ duration: flip_duration, easing: cubicIn }}
           >
             <Dynamic_Flashcard_Face
               configuration={$flashcard_back_configuration}
@@ -129,8 +96,8 @@
           </div>
         {:else}
           <div
-            in:rotate={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
-            out:rotate={{ duration: flip_duration, easing: cubicIn }}
+            in:flip={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
+            out:flip={{ duration: flip_duration, easing: cubicIn }}
           >
             <Dynamic_Flashcard_Face
               configuration={$flashcard_front_configuration}
