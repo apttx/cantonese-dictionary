@@ -2,6 +2,7 @@
   import { character_set } from '$stores/character_set.mjs'
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { show_jyutping } from '$stores/show_jyutping.mjs'
+  import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
 
   import Modal from '../../components/modal.svelte'
 
@@ -58,6 +59,27 @@
           bind:checked={$show_jyutping}
         />
         <span>Show jyutping</span>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferred UI alignment (handedness)</legend>
+
+      <label>
+        <input
+          type="radio"
+          value="left"
+          bind:group={$preferred_ui_alignment}
+        />
+        <span>left</span>
+      </label>
+      <label>
+        <input
+          type="radio"
+          value="right"
+          bind:group={$preferred_ui_alignment}
+        />
+        <span>right</span>
       </label>
     </fieldset>
   </form>

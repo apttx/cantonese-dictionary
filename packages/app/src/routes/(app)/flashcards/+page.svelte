@@ -17,6 +17,7 @@
 
   import { flip } from './transitions.mjs'
   import { get_random } from './utilities.mjs'
+  import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
 
   const flip_duration = 150
 
@@ -110,28 +111,33 @@
 
     <div
       role="presentation"
-      class="buttons colored_brand-1"
+      class="buttons"
+      class:aligned_left={$preferred_ui_alignment === 'left'}
+      class:aligned_right={$preferred_ui_alignment === 'right'}
     >
       <button
-        title="Settings"
-        class="open_settings_button"
-        on:click|stopPropagation={open_settings}
-      >
-        <Cog aria-label="Open settings" />
-      </button>
-      <button
         title="Flip"
-        class="flip_flashcard_button"
+        class="action_button"
         on:click|stopPropagation={flip_card}
       >
         <Flip aria-label="Flip flashcard" />
+        <span class="action_label">Flip flashcard</span>
       </button>
       <button
         title="Next"
-        class="next_flashcard_button"
+        class="action_button"
         on:click|stopPropagation={next_phrase}
       >
         <Next aria-label="Next flashcard" />
+        <span class="action_label">Next flashcard</span>
+      </button>
+      <button
+        title="Settings"
+        class="action_button"
+        on:click|stopPropagation={open_settings}
+      >
+        <Cog aria-label="Open flashcard settings" />
+        <span class="action_label">Flashcard settings</span>
       </button>
     </div>
   </div>
@@ -144,7 +150,6 @@
     align-items: start;
     gap: 2rem;
     padding-top: 4rem;
-    padding-bottom: 4rem;
     min-height: calc(100vh - var(--height_header));
   }
 
@@ -159,40 +164,46 @@
 
     display: grid;
     position: absolute;
-    grid-template-columns:
-      calc(var(--icon_size) + var(--button_inline_padding))
-      1fr
-      calc(var(--icon_size) + var(--button_inline_padding));
-    grid-template-areas: 'settings flip next';
-    justify-items: center;
+    grid-template-columns: 1fr;
     inset-inline: 0;
-    top: calc(100vh - 2.5rem - 2rem);
-    top: calc(100dvh - 2.5rem - 2rem);
+    bottom: 2rem;
     margin-inline: auto;
-    box-shadow: 0 0.2rem 0.5rem #00000022;
-    border-radius: 100vw;
-    max-width: 12rem;
   }
-
-  button {
-    padding: 0.5rem var(--button_inline_padding);
+  .buttons.aligned_left {
+    justify-items: start;
+    margin-left: var(--margin_content_layout);
+  }
+  .buttons.aligned_right {
+    justify-items: end;
+    margin-right: var(--margin_content_layout);
+  }
+  .action_button {
+    display: grid;
+    gap: 1rem;
+    padding-inline: var(--button_inline_padding);
+    padding-block: 0.75rem;
+    width: max-content;
+  }
+  .buttons.aligned_left .action_button {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 'icon label';
+    margin-left: calc(-1 * var(--button_inline_padding));
+  }
+  .buttons.aligned_right .action_button {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'label icon';
+    margin-right: calc(-1 * var(--button_inline_padding));
+  }
+  .action_button :global(svg) {
+    grid-area: icon;
+  }
+  .action_label {
+    grid-area: label;
   }
 
   .buttons :global(svg) {
     width: var(--icon_size);
     height: var(--icon_size);
-  }
-
-  .open_settings_button {
-    grid-area: settings;
-  }
-
-  .flip_flashcard_button {
-    grid-area: flip;
-  }
-
-  .next_flashcard_button {
-    grid-area: next;
   }
 
   .empty_info {
