@@ -147,21 +147,21 @@
     >
       <button
         title="Settings"
-        class="settings_button"
+        class="open_settings_button"
         on:click|stopPropagation={open_settings}
       >
         <Cog aria-label="Open settings" />
       </button>
       <button
         title="Flip"
-        class="flip"
+        class="flip_flashcard_button"
         on:click|stopPropagation={flip_card}
       >
         <Flip aria-label="Flip flashcard" />
       </button>
       <button
         title="Next"
-        class="next"
+        class="next_flashcard_button"
         on:click|stopPropagation={next_phrase}
       >
         <Next aria-label="Next flashcard" />
@@ -216,16 +216,16 @@
     height: var(--icon_size);
   }
 
-  .settings_button {
+  .open_settings_button {
     grid-area: settings;
   }
 
-  .next {
-    grid-area: next;
+  .flip_flashcard_button {
+    grid-area: flip;
   }
 
-  .flip {
-    grid-area: flip;
+  .next_flashcard_button {
+    grid-area: next;
   }
 
   .empty_info {
