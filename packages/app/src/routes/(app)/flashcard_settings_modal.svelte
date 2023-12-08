@@ -118,7 +118,6 @@
   }
 
   .flashcard_face {
-    grid-area: flashcard_face;
     margin-block: 1rem;
   }
   .flashcard_face_caption {
