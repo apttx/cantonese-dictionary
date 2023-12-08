@@ -1,10 +1,10 @@
 <script>
+  import { setContext } from 'svelte'
+  import { main_inert } from '$stores/main_inert.mjs'
   import Footer from '$components/footer.svelte'
   import Header from '$components/header.svelte'
-  import SettingsModal from '$components/settings_modal.svelte'
 
-  import { main_inert } from '$stores/main_inert.mjs'
-  import { setContext } from 'svelte'
+  import Settings_Modal from './settings_modal.svelte'
   import Flashcard_Settings_Modal from './flashcard_settings_modal.svelte'
 
   /** @type {boolean} */
@@ -23,7 +23,7 @@
   }}
 />
 
-<SettingsModal bind:open={settings_open} />
+<Settings_Modal bind:open={settings_open} />
 <Flashcard_Settings_Modal bind:visible={flashcard_settings_open} />
 
 <main inert={$main_inert}>

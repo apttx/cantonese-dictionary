@@ -3,7 +3,7 @@
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { show_jyutping } from '$stores/show_jyutping.mjs'
 
-  import Modal from './modal.svelte'
+  import Modal from '../../components/modal.svelte'
 
   /** @type {boolean} */
   export let open
