@@ -65,22 +65,27 @@
     <fieldset>
       <legend>Preferred UI alignment (handedness)</legend>
 
-      <label>
-        <input
-          type="radio"
-          value="left"
-          bind:group={$preferred_ui_alignment}
-        />
-        <span>left</span>
-      </label>
-      <label>
-        <input
-          type="radio"
-          value="right"
-          bind:group={$preferred_ui_alignment}
-        />
-        <span>right</span>
-      </label>
+      <div
+        role="presentation"
+        class="input_group"
+      >
+        <label>
+          <input
+            type="radio"
+            value="left"
+            bind:group={$preferred_ui_alignment}
+          />
+          <span>Left</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="right"
+            bind:group={$preferred_ui_alignment}
+          />
+          <span>Right</span>
+        </label>
+      </div>
     </fieldset>
   </form>
 </Modal>
@@ -93,17 +98,18 @@
   }
 
   legend {
-    margin-bottom: 0.25rem;
-    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
   }
 
   label {
     display: block;
+    padding-block: 0.5rem;
   }
 
   .input_group {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(2, max-content);
+    gap: 1.5rem;
   }
 </style>
