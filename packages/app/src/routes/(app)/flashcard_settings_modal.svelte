@@ -34,7 +34,7 @@
     <fieldset class="front_settings">
       <legend class="settings_heading">Front</legend>
 
-      <figure class="flashcard_face">
+      <figure class="flashcard_figure">
         <Dynamic_Flashcard_Face
           configuration={$flashcard_front_configuration}
           phrase={demo_phrase}
@@ -45,32 +45,32 @@
       </figure>
 
       <label class="settings_label">
-        <span>Show characters</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_front_configuration.characters}
         />
+        <span>Show characters</span>
       </label>
       <label class="settings_label">
-        <span>Show romanization</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_front_configuration.romanization}
         />
+        <span>Show romanization</span>
       </label>
       <label class="settings_label">
-        <span>Show english</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_front_configuration.english}
         />
+        <span>Show english</span>
       </label>
     </fieldset>
 
     <fieldset class="front_settings">
       <legend class="settings_heading">Back</legend>
 
-      <figure class="flashcard_face">
+      <figure class="flashcard_figure">
         <Dynamic_Flashcard_Face
           configuration={$flashcard_back_configuration}
           phrase={demo_phrase}
@@ -81,25 +81,25 @@
       </figure>
 
       <label class="settings_label">
-        <span>Show characters</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_back_configuration.characters}
         />
+        <span>Show characters</span>
       </label>
       <label class="settings_label">
-        <span>Show romanization</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_back_configuration.romanization}
         />
+        <span>Show romanization</span>
       </label>
       <label class="settings_label">
-        <span>Show english</span>
         <input
           type="checkbox"
           bind:checked={$flashcard_back_configuration.english}
         />
+        <span>Show english</span>
       </label>
     </fieldset>
   </div>
@@ -117,11 +117,12 @@
     margin-top: 2rem;
   }
 
-  .flashcard_face {
-    margin-block: 1rem;
+  .flashcard_figure {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
   }
   .flashcard_face_caption {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     font-size: 0.875rem;
   }
 
