@@ -50,7 +50,7 @@
   <nav class="footer_content">
     <div role="presentation">
       <h2 class="open_source_heading">
-        Built with Open Source
+        Built with open source
         <span class="screen_reader_only">&lpar;</span>
         <ThankYou aria-label="Thank you!" />
         <span class="screen_reader_only">&rpar;</span>
