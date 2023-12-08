@@ -127,7 +127,7 @@
   }
 
   .settings_heading {
-    font-weight: bold;
+    font-weight: 700;
   }
 
   .settings_label {
