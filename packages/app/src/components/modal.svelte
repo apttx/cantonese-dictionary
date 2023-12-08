@@ -41,13 +41,13 @@
 {#if visible}
   <div
     role="presentation"
-    in:fade={in_transition_options}
-    out:fade={out_transition_options}
     on:click|self={() => {
       visible = false
     }}
-    on:touchmove={prevent_default_if_main_inert}
-    on:wheel={prevent_default_if_main_inert}
+    on:touchmove|nonpassive={prevent_default_if_main_inert}
+    on:wheel|nonpassive={prevent_default_if_main_inert}
+    in:fade={in_transition_options}
+    out:fade={out_transition_options}
     class="veil"
   >
     <div
