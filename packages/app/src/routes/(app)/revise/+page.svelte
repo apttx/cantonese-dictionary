@@ -64,24 +64,26 @@
 
   const flip_duration = 150
 
+  /** @type {Record<number, VoidFunction | undefined>} */
+  const screen_click_actions = { 1: flip_card, 2: next_phrase }
   /** @type {(event: MouseEvent) => void} */
   const on_screen_click = (event) => {
-    const composed_path = event.composedPath()
+    const event_path = event.composedPath()
     // last element in path is always the window
-    const window = /** @type {Window} */ (composed_path[composed_path.length - 1])
-    const lower_third = window.screen.width / 3
-    const upper_third = (window.screen.width / 3) * 2
+    const window = /** @type {Window} */ (
+      event_path.findLast((element) => element instanceof Window)
+    )
+    const screen_width = window.innerWidth
+    const event_position = event.clientX
+    // either 0, 1 or 2 depending on where the screen was clicked
+    const screen_fraction_index = Math.floor((event_position / screen_width) * 3)
+    const action = screen_click_actions[screen_fraction_index]
 
-    if (event.clientX < lower_third) {
+    if (!action) {
       return
     }
 
-    if (event.clientX > upper_third) {
-      next_phrase()
-      return
-    }
-
-    flip_card()
+    action()
   }
 
   /** @type {() => void} */
