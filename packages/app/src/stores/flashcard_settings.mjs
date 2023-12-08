@@ -9,7 +9,7 @@ const default_flashcard_front_configuration = {
   english: false,
 }
 export const flashcard_front_configuration = local_storage_store({
-  key: 'settings/revise/flashcard_front_configuration',
+  key: 'settings/flashcard_front_configuration',
   value: default_flashcard_front_configuration,
 })
 
@@ -20,6 +20,6 @@ const default_flashcard_back_configuration = {
   english: true,
 }
 export const flashcard_back_configuration = local_storage_store({
-  key: 'settings/revise/flashcard_back_configuration',
+  key: 'settings/flashcard_back_configuration',
   value: default_flashcard_back_configuration,
 })

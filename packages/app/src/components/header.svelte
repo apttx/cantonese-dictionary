@@ -6,7 +6,7 @@
   import Search from '~icons/mingcute/search-2-line'
   import Dictionary from '~icons/mingcute/book-2-line'
   import Collection from '~icons/mingcute/notebook-2-line'
-  import Revise from '~icons/mingcute/book-6-line'
+  import Flashcards from '~icons/mingcute/wallet-5-line'
 
   import { page } from '$app/stores'
 
@@ -72,13 +72,13 @@
         </li>
         <li>
           <a
-            href="/revise"
+            href="/flashcards"
             on:click={close_menu}
-            class:active={$page.url.pathname === '/revise'}
+            class:active={$page.url.pathname === '/flashcards'}
           >
-            <Revise aria-label="Revise" />
+            <Flashcards aria-label="Flashcards" />
 
-            <span class="link_text">Revise</span>
+            <span class="link_text">Flashcards</span>
           </a>
         </li>
       </ul>

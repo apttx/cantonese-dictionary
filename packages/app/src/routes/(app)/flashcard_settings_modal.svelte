@@ -4,7 +4,7 @@
   import {
     flashcard_front_configuration,
     flashcard_back_configuration,
-  } from '$stores/revise_settings.mjs'
+  } from '$stores/flashcard_settings.mjs'
 
   /** @type {Phrase} */
   const demo_phrase = {
@@ -22,7 +22,7 @@
 </script>
 
 <Modal
-  heading="Revise settings"
+  heading="Flashcard settings"
   bind:visible
 >
   <div

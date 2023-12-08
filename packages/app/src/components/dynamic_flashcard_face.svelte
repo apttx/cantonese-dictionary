@@ -3,7 +3,7 @@
   import { show_jyutping } from '$stores/show_jyutping.mjs'
   import { show_pinyin } from '$stores/show_pinyin.mjs'
 
-  /** @type {import('$stores/revise_settings.mjs').Flashcard_Configuration} */
+  /** @type {import('$stores/flashcard_settings.mjs').Flashcard_Configuration} */
   export let configuration
   /** @type {Phrase} */
   export let phrase

@@ -13,7 +13,7 @@
   import {
     flashcard_back_configuration,
     flashcard_front_configuration,
-  } from '$stores/revise_settings.mjs'
+  } from '$stores/flashcard_settings.mjs'
 
   import { flip } from './transitions.mjs'
   import { get_random } from './utilities.mjs'
@@ -54,11 +54,11 @@
   }
 
   /** @type {() => void} */
-  const open_settings = getContext('open_revise_settings')
+  const open_settings = getContext('open_flashcard_settings')
 </script>
 
 <Head
-  title="Revise"
+  title="Flashcards"
   description="Practice the phrases you saved."
 />
 
@@ -75,7 +75,7 @@
   <div
     role="presentation"
     on:click={on_screen_click}
-    class="revise_container"
+    class="flashcard_container"
   >
     {#key random_phrase.id}
       <div
@@ -138,7 +138,7 @@
 {/if}
 
 <style>
-  .revise_container {
+  .flashcard_container {
     display: grid;
     grid-template-rows: 1fr auto;
     align-items: start;
