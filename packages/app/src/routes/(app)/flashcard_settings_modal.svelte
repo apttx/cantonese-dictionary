@@ -27,9 +27,9 @@
 >
   <p class="introduction">Change the appearance of the flashcards.</p>
 
-  <div
+  <form
+    on:submit|preventDefault
     class="settings"
-    role="presentation"
   >
     <fieldset class="front_settings">
       <legend class="settings_heading">Front</legend>
@@ -102,7 +102,7 @@
         <span>Show english</span>
       </label>
     </fieldset>
-  </div>
+  </form>
 </Modal>
 
 <style>
