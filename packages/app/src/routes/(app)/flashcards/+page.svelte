@@ -116,7 +116,6 @@
       class:aligned_right={$preferred_ui_alignment === 'right'}
     >
       <button
-        title="Flip"
         class="action_button"
         on:click|stopPropagation={flip_card}
       >
@@ -124,7 +123,6 @@
         <span class="action_label">Flip flashcard</span>
       </button>
       <button
-        title="Next"
         class="action_button"
         on:click|stopPropagation={next_phrase}
       >
@@ -132,7 +130,6 @@
         <span class="action_label">Next flashcard</span>
       </button>
       <button
-        title="Settings"
         class="action_button"
         on:click|stopPropagation={open_settings}
       >
