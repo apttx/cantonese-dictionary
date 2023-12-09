@@ -53,6 +53,11 @@
     margin-bottom: 4rem;
   }
 
+  li {
+    display: grid;
+    align-items: stretch;
+  }
+
   @media (min-width: 30rem) {
     .phrases {
       grid-template-columns: repeat(auto-fit, 20rem);

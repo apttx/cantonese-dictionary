@@ -297,6 +297,11 @@
     margin-inline: var(--margin_content_layout);
   }
 
+  li {
+    display: grid;
+    align-items: stretch;
+  }
+
   @media (min-width: 30rem) {
     .search_results {
       grid-template-columns: repeat(auto-fit, 20rem);
