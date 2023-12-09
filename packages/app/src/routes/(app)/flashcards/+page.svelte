@@ -4,9 +4,10 @@
   import { cubicIn, cubicOut } from 'svelte/easing'
   import Flip from '~icons/mingcute/transfer-3-line'
   import Next from '~icons/mingcute/right-line'
+  import Remove from '~icons/mingcute/delete-2-line'
   import Cog from '~icons/mingcute/settings-5-line'
 
-  import { phrases } from '$stores/collection.mjs'
+  import { phrases, remove } from '$stores/collection.mjs'
   import EmptyCollectionInfo from '$components/empty_collection_info.svelte'
   import Head from '$components/head.svelte'
   import Dynamic_Flashcard_Face from '$components/dynamic_flashcard_face.svelte'
@@ -128,6 +129,13 @@
       >
         <Next aria-label="Next flashcard" />
         <span class="action_label">Next flashcard</span>
+      </button>
+      <button
+        class="action_button"
+        on:click|stopPropagation={() => remove(random_phrase)}
+      >
+        <Remove aria-label="Remove from collection" />
+        <span class="action_label">Remove from collection</span>
       </button>
       <button
         class="action_button"
