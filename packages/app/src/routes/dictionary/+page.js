@@ -1,5 +1,5 @@
 import { gql } from '@urql/core'
-import { client } from '../../graphql.mjs'
+import { client } from '$graphql'
 
 const query = gql`
   {

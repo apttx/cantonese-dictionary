@@ -5,7 +5,7 @@
   import Loading from '~icons/mingcute/loading-fill'
   import Search from '~icons/mingcute/search-2-line'
 
-  import { gql, client } from '../graphql.mjs'
+  import { gql, client } from '$graphql'
 
   import PhraseListItem from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'

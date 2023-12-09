@@ -11,6 +11,7 @@ const config = {
       $components: 'src/components/*',
       $stores: 'src/stores/*',
       $css: 'src/css/*',
+      $graphql: 'src/modules/graphql.mjs',
     },
   },
 }
