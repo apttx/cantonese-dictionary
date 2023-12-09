@@ -13,7 +13,7 @@
 
 <div
   role="presentation"
-  class="phrase"
+  class="phrase colored_base"
   class:saved={$has(phrase)}
 >
   <span class="characters cd_hanzi">
@@ -70,17 +70,17 @@
     transition-duration: 150ms;
     transition-property: border-color;
     transition-timing-function: ease-out;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0.1rem;
+    outline-offset: -0.1rem;
     box-shadow: 0 0.2rem 0.5rem #00000022;
-    border-bottom-width: 0.2rem;
-    border-color: transparent;
     border-radius: 0.2rem;
-    background-color: var(--bg_base);
     padding: 1rem;
-    color: var(--text_neutral_onbase);
   }
 
   .saved {
-    border-color: var(--color-red-3);
+    outline-color: var(--color-red-3);
   }
 
   .characters {
