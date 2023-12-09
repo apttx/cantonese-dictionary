@@ -5,72 +5,44 @@
   import Loading from '~icons/mingcute/loading-fill'
   import Search from '~icons/mingcute/search-2-line'
 
-  import { gql, client } from '$graphql'
-
   import PhraseListItem from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
+  import { goto } from '$app/navigation'
+
+  export let data
 
   /** @type {string} */
   let search_input_string
   /** @type {HTMLInputElement} */
   let search_input_element
-  /** @type {null | any[]} */
-  let results = null
-
-  const search_query = gql`
-    query search($query: String!) {
-      search(query: $query, limit: 50) {
-        id
-        english
-        traditional
-        simplified
-        jyutping
-        pinyin
-      }
-    }
-  `
 
   /** @type {import('./$types').Snapshot<{ search_input: string; results: null | any[] }>} */
   export const snapshot = {
     capture: () => {
-      const snapshot = { search_input: search_input_string, results }
+      const snapshot = { search_input: search_input_string, results: data.results }
 
       return snapshot
     },
     restore: (snapshot) => {
       if (snapshot) {
         search_input_string = snapshot.search_input
-        results = snapshot.results
+        data.results = snapshot.results
       }
     },
   }
 
   /** @type {'idle' | 'pending' | 'error'} */
   let loading_state = 'idle'
-
-  /** @type {(query: string) => Promise<any[]>} */
-  const search = async () => {
-    /** @type {import('@urql/core').OperationResult<{ search: any[] }>} */
-    const result = await client.query(search_query, { query: search_input_string })
-
-    const phrases = result.data?.search.map((phrase) => phrase) ?? []
-
-    return phrases
-  }
-
   const on_submit = async () => {
     // blur input while loading to hide mobile keyboards
     search_input_element?.blur()
 
     try {
       loading_state = 'pending'
-      const phrases = await search(search_input_string)
-
-      results = phrases
+      await goto(`/?query=${encodeURIComponent(search_input_string)}`)
 
       loading_state = 'idle'
     } catch (error) {
-      console.error('unable to load:', error)
       loading_state = 'error'
 
       // focus input on errors, user will most likely want to try typing something else
@@ -145,7 +117,7 @@
     >
       Something went wrong, please try again.
     </p>
-  {:else if results?.length === 0}
+  {:else if data.results?.length === 0}
     <p
       role="alert"
       aria-live="polite"
@@ -156,13 +128,13 @@
   {/if}
 </div>
 
-{#if results}
+{#if data.results}
   <ul
     class="search_results"
     aria-live="polite"
     aria-busy={loading_state === 'pending'}
   >
-    {#each results as phrase, index (phrase.id)}
+    {#each data.results as phrase, index (phrase.id)}
       <li
         in:fade|global={{
           delay: index * 20,
