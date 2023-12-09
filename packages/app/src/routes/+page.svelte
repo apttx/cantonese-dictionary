@@ -58,9 +58,6 @@
     return phrases
   }
 
-  // present emtpy search nicely
-  $: center_search_form = results === null
-
   const on_submit = async () => {
     // blur input while loading to hide mobile keyboards
     search_input_element?.blur()
@@ -90,7 +87,6 @@
 <div
   role="presentation"
   class="search"
-  class:centered={center_search_form}
 >
   <form
     inert={loading_state === 'pending'}
