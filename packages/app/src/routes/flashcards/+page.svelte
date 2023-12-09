@@ -32,6 +32,10 @@
     is_flashcard_flipped = false
     random_phrase = get_random($phrases)
   }
+  const remove_from_collection = () => {
+    remove(random_phrase)
+    next_phrase()
+  }
 
   /** @type {Record<number, VoidFunction | undefined>} */
   const screen_click_actions = { 1: flip_card, 2: next_phrase }
@@ -132,7 +136,7 @@
       </button>
       <button
         class="action_button"
-        on:click|stopPropagation={() => remove(random_phrase)}
+        on:click|stopPropagation={remove_from_collection}
       >
         <Remove aria-label="Remove from collection" />
         <span class="action_label">Remove from collection</span>
