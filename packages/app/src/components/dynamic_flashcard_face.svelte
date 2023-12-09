@@ -38,6 +38,7 @@
   .flashcard {
     display: grid;
     align-content: center;
+    gap: 0.5rem;
     margin: auto;
     box-shadow: 0 0.2rem 0.5rem #00000022;
     border-radius: 0.2rem;
