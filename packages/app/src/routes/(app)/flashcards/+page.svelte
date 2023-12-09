@@ -160,7 +160,6 @@
 
   .buttons {
     --icon_size: 1.5rem;
-    --button_inline_padding: 1.5rem;
 
     display: grid;
     position: absolute;
@@ -171,28 +170,26 @@
   }
   .buttons.aligned_left {
     justify-items: start;
-    margin-left: var(--margin_content_layout);
+    margin-left: calc(var(--margin_content_layout) - var(--margin_screen-borders));
   }
   .buttons.aligned_right {
     justify-items: end;
-    margin-right: var(--margin_content_layout);
+    margin-right: calc(var(--margin_content_layout) - var(--margin_screen-borders));
   }
   .action_button {
     display: grid;
     gap: 1rem;
-    padding-inline: var(--button_inline_padding);
+    padding-inline: var(--margin_screen-borders);
     padding-block: 0.75rem;
     width: max-content;
   }
   .buttons.aligned_left .action_button {
     grid-template-columns: auto 1fr;
     grid-template-areas: 'icon label';
-    margin-left: calc(-1 * var(--button_inline_padding));
   }
   .buttons.aligned_right .action_button {
     grid-template-columns: 1fr auto;
     grid-template-areas: 'label icon';
-    margin-right: calc(-1 * var(--button_inline_padding));
   }
   .action_button :global(svg) {
     grid-area: icon;
