@@ -1,23 +1,25 @@
 <script>
-  import '@fontsource/dm-sans/400.css'
-  import '@fontsource/dm-sans/500.css'
-  import '@fontsource/dm-sans/700.css'
+  import { setContext } from 'svelte'
 
-  import '@unocss/reset/tailwind.css'
-
-  import '$css/colors.variables.css'
-
-  import '$css/anchor.css'
-  import '$css/button.css'
-  import '$css/document.css'
-  import '$css/input.css'
-  import '$css/svg.css'
-
-  import '$css/hanzi.utility.css'
-  import '$css/colored.utility.css'
-  import '$css/screen_reader_only.utility.css'
+  import '../app.mjs'
 
   import { assets } from '$app/paths'
+
+  import { main_inert } from '$stores/main_inert.mjs'
+  import Footer from '$components/footer.svelte'
+  import Header from '$components/header.svelte'
+
+  import Settings_Modal from './settings_modal.svelte'
+  import Flashcard_Settings_Modal from './flashcard_settings_modal.svelte'
+
+  /** @type {boolean} */
+  let settings_open = false
+  /** @type {boolean} */
+  let flashcard_settings_open = false
+
+  setContext('open_flashcard_settings', () => {
+    flashcard_settings_open = true
+  })
 </script>
 
 <svelte:head>
@@ -41,9 +43,26 @@
   {/each}
 </svelte:head>
 
-<slot />
+<Header
+  on:toggle_settings={() => {
+    settings_open = !settings_open
+  }}
+/>
+
+<Settings_Modal bind:open={settings_open} />
+<Flashcard_Settings_Modal bind:visible={flashcard_settings_open} />
+
+<main inert={$main_inert}>
+  <slot />
+</main>
+
+<Footer />
 
 <style>
+  main {
+    min-height: 80vh;
+  }
+
   :global(:root) {
     /* base */
     --bg_base: #ffffff;

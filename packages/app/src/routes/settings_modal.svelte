@@ -4,7 +4,7 @@
   import { show_jyutping } from '$stores/show_jyutping.mjs'
   import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
 
-  import Modal from '../../components/modal.svelte'
+  import Modal from '$components/modal.svelte'
 
   /** @type {boolean} */
   export let open

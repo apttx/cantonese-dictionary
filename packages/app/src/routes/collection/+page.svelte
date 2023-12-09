@@ -1,6 +1,6 @@
 <script>
   import { fade, fly, scale } from 'svelte/transition'
-  import { phrases } from '../../../stores/collection.mjs'
+  import { phrases } from '../../stores/collection.mjs'
   import PhraseListItem from '$components/phrase_list_item.svelte'
   import { cubicIn, cubicOut } from 'svelte/easing'
   import EmptyCollectionInfo from '$components/empty_collection_info.svelte'
