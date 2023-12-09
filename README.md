@@ -1,6 +1,6 @@
 # cantonese dictionary
 
-> a modern web app to search cc-canto
+> a modern web app to search cc-cedict & cc-canto
 
 https://cantonese-dictionary-app.vercel.app/
 
