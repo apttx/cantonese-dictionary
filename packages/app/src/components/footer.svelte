@@ -43,6 +43,10 @@
       text: 'unplugin-icons',
       url: 'https://github.com/antfu/unplugin-icons',
     },
+    {
+      text: 'Vite PWA',
+      url: 'https://github.com/vite-pwa',
+    },
   ]
 </script>
 
@@ -68,6 +72,8 @@
           </li>
         {/each}
       </ul>
+
+      <p class="development_tools_attribution">and many great development tools.</p>
     </div>
 
     <div role="presentation">
@@ -159,6 +165,10 @@
 
   .open_source_heading :global(svg) {
     margin-left: 0.25rem;
+  }
+
+  .development_tools_attribution {
+    margin-top: 1rem;
   }
 
   @media (min-width: 40rem) {
