@@ -17,7 +17,7 @@ jobs:
           version: latest
 
       - name: set up node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         # https://github.com/actions/setup-node
         with:
           node-version: '18.x'
@@ -51,7 +51,7 @@ jobs:
           version: latest
 
       - name: set up node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         # https://github.com/actions/setup-node
         with:
           node-version: '18.x'
@@ -96,7 +96,7 @@ jobs:
           version: latest
 
       - name: set up node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         # https://github.com/actions/setup-node
         with:
           node-version: '18.x'
