@@ -20,9 +20,13 @@
   setContext('open_flashcard_settings', () => {
     flashcard_settings_open = true
   })
+
+  import { pwaInfo } from 'virtual:pwa-info'
 </script>
 
 <svelte:head>
+  {@html pwaInfo?.webManifest.linkTag}
+
   <link
     rel="icon"
     href="{assets}/favicon.png"
