@@ -41,7 +41,7 @@
     "vercel": "^32.6.1",
     "vite": "^4.5.1",
     "vite-plugin-pwa": "^0.17.4",
-    "vitest": "^0.34.0"
+    "vitest": "^1.0.0"
   },
   "type": "module"
 }
