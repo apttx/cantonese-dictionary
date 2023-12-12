@@ -20,47 +20,65 @@ const build_directory = 'build/'
  */
 /** @typedef {Omit<Parsed_Phrase, 'jyutping'>} Parsed_Cedict_Phrase */
 
-/** @type {(line: Cedict_Line | Canto_Line) => line is Cedict_Line} */
-const is_canto_line = (line) => {
-  return !/{[^}]+}/.test(line)
-}
-
-/**
- * @type {(
- *   line: Canto_Line | Cedict_Line,
- * ) => typeof line extends Canto_Line ? Parsed_Phrase : Parsed_Cedict_Phrase}
- */
+/** @type {(line: Canto_Line) => Parsed_Phrase} */
 const get_phrase = (line) => {
   const matches = line.match(
-    /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] (?:{(?<jyutping>[^}]*)} )?\/(?<english>.*)\/[^/]*$/i,
+    /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] {(?<jyutping>[^}]*)} \/(?<english>.*)\/[^/]*$/i,
   )
 
   if (!matches) {
     throw `unable to parse ${JSON.stringify(line)} [@get_phrase]`
   }
 
-  const { traditional, simplified, pinyin, english } =
-    /** @type {{ traditional: string; simplified: string; pinyin: string; english: string }} */ (
-      matches.groups
-    )
+  const { traditional, simplified, pinyin, jyutping, english } = /**
+   * @type {{
+   *   traditional: string
+   *   simplified: string
+   *   pinyin: string
+   *   jyutping: string
+   *   english: string
+   * }}
+   */ (matches.groups)
   const english_senses = english
     .split(/\//g)
     .map((sense) => sense.trim())
     .filter(Boolean)
 
-  if (is_canto_line(line)) {
-    /** @type {Parsed_Cedict_Phrase} */
-    const cedict_phrase = {
-      traditional,
-      simplified,
-      pinyin,
-      english_senses,
-    }
-
-    return cedict_phrase
+  /** @type {Parsed_Phrase} */
+  const canto_phrase = {
+    traditional,
+    simplified,
+    pinyin,
+    english_senses,
+    jyutping,
   }
 
-  const { jyutping } = /** @type {{ jyutping: string }} */ (matches.groups)
+  return canto_phrase
+}
+/** @type {(line: Cedict_Line) => Parsed_Cedict_Phrase} */
+const get_cedict_phrase = (line) => {
+  const matches = line.match(
+    /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] \/(?<english>.*)\/[^/]*$/i,
+  )
+
+  if (!matches) {
+    throw `unable to parse ${JSON.stringify(line)} [@get_phrase]`
+  }
+
+  const { traditional, simplified, pinyin, jyutping, english } = /**
+   * @type {{
+   *   traditional: string
+   *   simplified: string
+   *   pinyin: string
+   *   jyutping: string
+   *   english: string
+   * }}
+   */ (matches.groups)
+  const english_senses = english
+    .split(/\//g)
+    .map((sense) => sense.trim())
+    .filter(Boolean)
+
   /** @type {Parsed_Phrase} */
   const canto_phrase = {
     traditional,
@@ -166,7 +184,7 @@ const get_phrases = async (options) => {
   const cedict_lines = /** @type {Cedict_Line[]} */ (
     cedict_file_string.split(/[\n\r]+/).filter(is_data_line)
   )
-  const parsed_cedict_phrases = cedict_lines.map((line) => get_phrase(line))
+  const parsed_cedict_phrases = cedict_lines.map((line) => get_cedict_phrase(line))
 
   const no_canto_readings = []
 
