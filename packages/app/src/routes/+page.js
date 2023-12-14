@@ -14,7 +14,7 @@ const search_query = gql`
   }
 `
 
-export const load = async ({ url }) => {
+export const load = async ({ url, fetch }) => {
   const query = url.searchParams.get('query')
 
   if (!query) {
@@ -23,7 +23,7 @@ export const load = async ({ url }) => {
     }
   }
 
-  const result = await client.query(search_query, { query })
+  const result = await client.query(search_query, { query }, { fetch })
 
   if (!result.data?.search) {
     return {
