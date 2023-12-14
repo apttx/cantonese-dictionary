@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 import { resolve } from 'node:path'
 import { cwd } from 'process'
-import { mkdir, readFile } from 'node:fs/promises'
+import { mkdir, readFile, rm } from 'node:fs/promises'
 import sqlite3 from 'sqlite3'
 
 const build_directory = 'build/'
@@ -16,11 +16,23 @@ const build_directory = 'build/'
  *   pinyin: string
  *   jyutping: string
  *   english_senses: string[]
+ * }} Parsed_Canto_Phrase
+ */
+/** @typedef {Omit<Parsed_Canto_Phrase, 'jyutping'>} Parsed_Cedict_Phrase */
+/**
+ * @typedef {{
+ *   id: string
+ *   sense_group_id: string
+ *   traditional: string
+ *   simplified: string
+ *   pinyin: string
+ *   jyutping: string
+ *   english: string
+ *   senses: Parsed_Phrase[]
  * }} Parsed_Phrase
  */
-/** @typedef {Omit<Parsed_Phrase, 'jyutping'>} Parsed_Cedict_Phrase */
 
-/** @type {(line: Canto_Line) => Parsed_Phrase} */
+/** @type {(line: Canto_Line) => Parsed_Canto_Phrase} */
 const get_phrase = (line) => {
   const matches = line.match(
     /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] {(?<jyutping>[^}]*)} \/(?<english>.*)\/[^/]*$/i,
@@ -44,7 +56,7 @@ const get_phrase = (line) => {
     .map((sense) => sense.trim())
     .filter(Boolean)
 
-  /** @type {Parsed_Phrase} */
+  /** @type {Parsed_Canto_Phrase} */
   const canto_phrase = {
     traditional,
     simplified,
@@ -79,7 +91,7 @@ const get_cedict_phrase = (line) => {
     .map((sense) => sense.trim())
     .filter(Boolean)
 
-  /** @type {Parsed_Phrase} */
+  /** @type {Parsed_Canto_Phrase} */
   const canto_phrase = {
     traditional,
     simplified,
@@ -101,7 +113,7 @@ const is_data_line = (file_line) => !!file_line && !file_line.startsWith('#')
  *   simplified: string
  *   pinyin: string
  *   jyutping: string
- *   english: string
+ *   english?: string
  * }) => string}
  */
 const get_id = (options) => {
@@ -112,18 +124,20 @@ const get_id = (options) => {
   return id
 }
 
-/** @type {(parsed_phrase: Parsed_Phrase) => Phrase[]} */
+/** @type {(parsed_phrase: Parsed_Canto_Phrase) => Parsed_Phrase[]} */
 const get_phrases_from_parsed = (parsed_phrase) => {
   const { jyutping, pinyin, simplified, traditional } = parsed_phrase
+  const sense_group_id = get_id({ jyutping, pinyin, simplified, traditional })
 
   const phrases = parsed_phrase.english_senses.map((english) => {
     const id = get_id({ jyutping, pinyin, simplified, traditional, english })
-    /** @type {Phrase[]} */
+    /** @type {Parsed_Phrase[]} */
     const senses = []
 
-    /** @type {Phrase} */
+    /** @type {Parsed_Phrase} */
     const phrase = {
       id,
+      sense_group_id,
       traditional,
       simplified,
       pinyin,
@@ -148,7 +162,7 @@ const get_phrases_from_parsed = (parsed_phrase) => {
  *   cc_canto_file: Buffer
  *   cc_cedict_file: Buffer
  *   cc_cedict_canto_readings_file: Buffer
- * }) => Promise<Phrase[]>}
+ * }) => Promise<Parsed_Phrase[]>}
  */
 const get_phrases = async (options) => {
   /** @type {Map<string, string>} */
@@ -188,7 +202,7 @@ const get_phrases = async (options) => {
 
   const no_canto_readings = []
 
-  /** @type {Parsed_Phrase[]} */
+  /** @type {Parsed_Canto_Phrase[]} */
   const parsed_cedict_phrases_with_readings = []
   for (const parsed_cedict_phrase of parsed_cedict_phrases) {
     const reading_key = `${parsed_cedict_phrase.traditional} ${parsed_cedict_phrase.simplified} ${parsed_cedict_phrase.pinyin}`
@@ -221,7 +235,7 @@ const get_phrases = async (options) => {
     .map((parsed_phrase) => get_phrases_from_parsed(parsed_phrase))
     .flat()
 
-  /** @type {Phrase[]} */
+  /** @type {Parsed_Phrase[]} */
   let phrases = []
   /** @type {Set<string>} */
   const id_set = new Set()
@@ -326,30 +340,27 @@ const run = async () => {
   try {
     // set up database
     await mkdir(build_directory, { recursive: true })
+    await rm(database_file_path)
     const database = await get_promisified_database(database_file_path)
     await database.run('DROP TABLE IF EXISTS phrases;')
     await database.run(
       `CREATE TABLE phrases (
         'id' VARCHAR(32) PRIMARY KEY NOT NULL,
+        'sense_group_id' VARCHAR(32) NOT NULL,
         'traditional' VARCHAR(32),
         'simplified' VARCHAR(32),
         'english' VARCHAR(128),
         'pinyin' VARCHAR(128),
         'jyutping' VARCHAR(128)
-        );`,
-    )
-    await database.run('DROP TABLE IF EXISTS senses_relation;')
-    await database.run(
-      `CREATE TABLE senses_relation (
-        'of_id' VARCHAR(32) NOT NULL,
-        'sense_id' VARCHAR(32) NOT NULL,
-        FOREIGN KEY(of_id) REFERENCES phrases(id),
-        FOREIGN KEY(sense_id) REFERENCES phrases(id)
       );`,
+    )
+    await database.run(
+      `CREATE INDEX IF NOT EXISTS sense_group_id_index ON phrases(sense_group_id);`,
     )
     await database.run('DROP TABLE IF EXISTS search;')
     await database.run(`CREATE VIRTUAL TABLE search USING fts5(
       id,
+      sense_group_id,
       traditional,
       simplified,
       english,
@@ -383,6 +394,7 @@ const run = async () => {
       (phrase) =>
         `INSERT INTO phrases VALUES (
           '${phrase.id}',
+          '${phrase.sense_group_id}',
           '${phrase.traditional}',
           '${phrase.simplified}',
           '${phrase.english.replace(/'/gi, "''")}',
@@ -391,6 +403,7 @@ const run = async () => {
         );
         INSERT INTO search VALUES (
           '${phrase.id}',
+          '${phrase.sense_group_id}',
           '${phrase.traditional}',
           '${phrase.simplified}',
           '${phrase.english.replace(/'/gi, "''")}',
