@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "nodemon scripts/develop.mjs",
+    "develop": "nodemon -e js,mjs,gql scripts/develop.mjs",
     "build:vercel": "rollup --config rollup.config.mjs",
     "prettier": "prettier --ignore-path .gitignore --check .",
     "eslint": "eslint --config .eslintrc.cjs source/* scripts/*",
