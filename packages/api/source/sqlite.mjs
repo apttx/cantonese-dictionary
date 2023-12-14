@@ -61,6 +61,42 @@ export const get_promisified_database = async (database_file_path) => {
   }
 }
 
+/** @type {(phrases_join_phrases_rows: Phrases_Join_Phrases_Row[]) => Phrase} */
+const get_phrase_with_senses = (senses_rows) => {
+  // includes the phrase itself
+  const all_senses = senses_rows.map((senses_row) => {
+    const id = senses_row.sense_id
+    const traditional = senses_row.sense_traditional
+    const simplified = senses_row.sense_simplified
+    const pinyin = senses_row.sense_pinyin
+    const jyutping = senses_row.sense_jyutping
+    const english = senses_row.sense_english
+
+    /** @type {Phrase} */
+    const sense = {
+      id,
+      traditional,
+      simplified,
+      pinyin,
+      jyutping,
+      english,
+      senses: [],
+    }
+
+    return sense
+  })
+
+  for (const sense of all_senses) {
+    sense.senses = all_senses.filter((available_sense) => available_sense.id !== sense.id)
+  }
+
+  // get the primary phrase. it is guaranteed to exist due to the join with the same table.
+  const phrase_id = senses_rows[0].phrase_id
+  const phrase = /** @type {Phrase} */ (all_senses.find((sense) => sense.id === phrase_id))
+
+  return phrase
+}
+
 /** @type {(phrases_join_phrases_rows: Phrases_Join_Phrases_Row[]) => Phrase[]} */
 const get_phrases_with_senses = (phrases_join_phrases_rows) => {
   /** @type {Map<string, Phrases_Join_Phrases_Row[]>} */
@@ -73,40 +109,9 @@ const get_phrases_with_senses = (phrases_join_phrases_rows) => {
     phrase_senses_map.get(phrases_join_phrases_row.phrase_id)?.push(phrases_join_phrases_row)
   }
 
-  const phrases = Array.from(phrase_senses_map.values()).map((senses_rows) => {
-    // includes the phrase itself
-    const all_senses = senses_rows.map((senses_row) => {
-      const id = senses_row.sense_id
-      const traditional = senses_row.sense_traditional
-      const simplified = senses_row.sense_simplified
-      const pinyin = senses_row.sense_pinyin
-      const jyutping = senses_row.sense_jyutping
-      const english = senses_row.sense_english
-
-      /** @type {Phrase} */
-      const sense = {
-        id,
-        traditional,
-        simplified,
-        pinyin,
-        jyutping,
-        english,
-        senses: [],
-      }
-
-      return sense
-    })
-
-    for (const sense of all_senses) {
-      sense.senses = all_senses.filter((available_sense) => available_sense.id !== sense.id)
-    }
-
-    // get the primary phrase. it is guaranteed to exist due to the join with the same table.
-    const phrase_id = senses_rows[0].phrase_id
-    const phrase = /** @type {Phrase} */ (all_senses.find((sense) => sense.id === phrase_id))
-
-    return phrase
-  })
+  const phrases = Array.from(phrase_senses_map.values()).map((phrases_join_phrases_rows) =>
+    get_phrase_with_senses(phrases_join_phrases_rows),
+  )
 
   return phrases
 }
