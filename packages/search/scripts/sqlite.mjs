@@ -13,27 +13,6 @@ export const get_promisified_database = async (database_file_path) => {
     })
   })
 
-  /** @type {(sql: string) => Promise<import('sqlite3').RunResult>} */
-  const run = (sql) => {
-    const promise = new Promise(
-      (/** @type {(value: import('sqlite3').RunResult) => void} */ resolve, reject) => {
-        const callback =
-          /** @type {(error: Error | null, result: import('sqlite3').RunResult) => void} */
-          (error, result) => {
-            if (error) {
-              return reject(error)
-            }
-
-            resolve(result)
-          }
-
-        database.run(sql, callback)
-      },
-    )
-
-    return promise
-  }
-
   /** @type {(sql: string) => Promise<void>} */
   const exec = (sql) => {
     const promise = new Promise((/** @type {(value: void) => void} */ resolve, reject) => {
@@ -73,7 +52,6 @@ export const get_promisified_database = async (database_file_path) => {
   }
 
   return {
-    run,
     exec,
     close,
   }
