@@ -13,7 +13,7 @@ const run = async () => {
   try {
     // set up database
     await mkdir(build_directory, { recursive: true })
-    await rm(database_file_path)
+    await rm(database_file_path, { force: true })
     const database = await get_promisified_database(database_file_path)
     await database.run('DROP TABLE IF EXISTS phrases;')
     await database.run(
