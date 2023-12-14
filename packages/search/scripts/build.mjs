@@ -16,9 +16,9 @@ const run = async () => {
     await rm(database_file_path, { force: true })
     // set up database
     const database = await get_promisified_database(database_file_path)
-    await database.run('DROP TABLE IF EXISTS phrases;')
-    await database.run(
-      `CREATE TABLE phrases (
+    await database.exec(`
+      DROP TABLE IF EXISTS phrases;
+      CREATE TABLE phrases (
         'id' VARCHAR(32) PRIMARY KEY NOT NULL,
         'sense_group_id' VARCHAR(32) NOT NULL,
         'traditional' VARCHAR(32),
@@ -26,21 +26,21 @@ const run = async () => {
         'english' VARCHAR(128),
         'pinyin' VARCHAR(128),
         'jyutping' VARCHAR(128)
-      );`,
-    )
-    await database.run(
-      `CREATE INDEX IF NOT EXISTS sense_group_id_index ON phrases(sense_group_id);`,
-    )
-    await database.run('DROP TABLE IF EXISTS search;')
-    await database.run(`CREATE VIRTUAL TABLE search USING fts5(
-      id,
-      sense_group_id,
-      traditional,
-      simplified,
-      english,
-      pinyin,
-      jyutping
-    );`)
+      );
+      CREATE INDEX IF NOT EXISTS sense_group_id_index ON phrases(sense_group_id);
+    `)
+    await database.exec(`
+      DROP TABLE IF EXISTS search;
+      CREATE VIRTUAL TABLE search USING fts5(
+        id,
+        sense_group_id,
+        traditional,
+        simplified,
+        english,
+        pinyin,
+        jyutping
+      );
+    `)
 
     // parse data
     console.info('[info] parsing phrases [@run]')
@@ -84,7 +84,7 @@ const run = async () => {
           '${phrase.pinyin}',
           '${phrase.jyutping}'
         );
-        `,
+      `,
     )
     const sql = `
           BEGIN TRANSACTION;
