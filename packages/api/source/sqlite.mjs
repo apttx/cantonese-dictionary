@@ -74,7 +74,8 @@ const get_phrases_with_senses = (phrases_join_phrases_rows) => {
   }
 
   const phrases = Array.from(phrase_senses_map.values()).map((senses_rows) => {
-    const senses = senses_rows.map((senses_row) => {
+    // includes the phrase itself
+    const all_senses = senses_rows.map((senses_row) => {
       const id = senses_row.sense_id
       const traditional = senses_row.sense_traditional
       const simplified = senses_row.sense_simplified
@@ -82,6 +83,7 @@ const get_phrases_with_senses = (phrases_join_phrases_rows) => {
       const jyutping = senses_row.sense_jyutping
       const english = senses_row.sense_english
 
+      /** @type {Phrase} */
       const sense = {
         id,
         traditional,
@@ -89,32 +91,24 @@ const get_phrases_with_senses = (phrases_join_phrases_rows) => {
         pinyin,
         jyutping,
         english,
+        senses: [],
       }
 
       return sense
     })
 
-    const id = senses_rows[0].phrase_id
-    const traditional = senses_rows[0].phrase_traditional
-    const simplified = senses_rows[0].phrase_simplified
-    const pinyin = senses_rows[0].phrase_pinyin
-    const jyutping = senses_rows[0].phrase_jyutping
-    const english = senses_rows[0].phrase_english
-
-    const phrase = {
-      id,
-      traditional,
-      simplified,
-      pinyin,
-      jyutping,
-      english,
-      senses,
+    for (const sense of all_senses) {
+      sense.senses = all_senses.filter((available_sense) => available_sense.id !== sense.id)
     }
+
+    // get the primary phrase. it is guaranteed to exist due to the join with the same table.
+    const phrase_id = senses_rows[0].phrase_id
+    const phrase = /** @type {Phrase} */ (all_senses.find((sense) => sense.id === phrase_id))
 
     return phrase
   })
 
-  return /** @type {Phrase[]} */ (phrases)
+  return phrases
 }
 
 /** @param {Awaited<ReturnType<typeof get_promisified_database>>} promisified_database */
