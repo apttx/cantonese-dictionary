@@ -1,5 +1,6 @@
 import { client, gql } from '$graphql'
 
+/** @type {import('@urql/core').TypedDocumentNode<{ search: Phrase[] }, { query: string }>} */
 const search_query = gql`
   query search($query: String!) {
     search(query: $query, limit: 50) {
@@ -22,7 +23,6 @@ export const load = async ({ url }) => {
     }
   }
 
-  /** @type {import('@urql/core').OperationResult<{ search: Phrase[] }>} */
   const result = await client.query(search_query, { query })
 
   if (!result.data?.search) {
