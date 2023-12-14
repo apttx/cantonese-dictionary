@@ -11,9 +11,10 @@ const run = async () => {
   const database_file_path = resolve(cwd(), build_directory, 'sqlite.db')
 
   try {
-    // set up database
+    // set up build files
     await mkdir(build_directory, { recursive: true })
     await rm(database_file_path, { force: true })
+    // set up database
     const database = await get_promisified_database(database_file_path)
     await database.run('DROP TABLE IF EXISTS phrases;')
     await database.run(
