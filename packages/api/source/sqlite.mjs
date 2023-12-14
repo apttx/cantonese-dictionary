@@ -190,10 +190,46 @@ export const get_datasource = async (promisified_database) => {
     return phrases
   }
 
+  /** @type {Phrases_Datasource['one']} */
+  const one = async (options) => {
+    const phrases_join_phrases = /** @type {Phrases_Join_Phrases_Row[]} */ (
+      await promisified_database.all(
+        `SELECT
+          phrases.id AS phrase_id,
+          phrases.traditional AS phrase_traditional,
+          phrases.simplified AS phrase_simplified,
+          phrases.pinyin AS phrase_pinyin,
+          phrases.jyutping AS phrase_jyutping,
+          phrases.english AS phrase_english,
+
+          senses.id AS sense_id,
+          senses.traditional AS sense_traditional,
+          senses.simplified AS sense_simplified,
+          senses.pinyin AS sense_pinyin,
+          senses.jyutping AS sense_jyutping,
+          senses.english AS sense_english
+        FROM
+          (SELECT * FROM phrases WHERE id=$id LIMIT 1) AS phrases
+        LEFT JOIN
+          phrases AS senses
+            ON phrases.sense_group_id=senses.sense_group_id
+        ;`,
+        {
+          $id: options.id,
+        },
+      )
+    )
+
+    const phrase = get_phrase_with_senses(phrases_join_phrases)
+
+    return phrase
+  }
+
   /** @type {Phrases_Datasource} */
   const datasource = {
     search,
     many,
+    one,
   }
 
   return datasource
