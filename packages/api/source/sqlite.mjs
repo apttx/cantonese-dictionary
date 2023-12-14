@@ -188,8 +188,6 @@ export const get_datasource = async (promisified_database) => {
 
     const phrases = get_phrases_with_senses(phrases_join_phrases)
 
-    console.debug(phrases.length)
-
     return phrases
   }
 
