@@ -72,8 +72,8 @@
     transition-timing-function: ease-out;
     outline-color: transparent;
     outline-style: solid;
-    outline-width: 0.1rem;
-    outline-offset: -0.1rem;
+    outline-width: 0.15rem;
+    outline-offset: -0.15rem;
     box-shadow: 0 0.2rem 0.5rem #00000022;
     border-radius: 0.2rem;
     padding: 1rem;
