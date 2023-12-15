@@ -68,7 +68,7 @@
     position: relative;
     align-content: start;
     transition-duration: 150ms;
-    transition-property: border-color;
+    transition-property: outline-color;
     transition-timing-function: ease-out;
     outline-color: transparent;
     outline-style: solid;
