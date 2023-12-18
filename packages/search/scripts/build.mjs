@@ -68,28 +68,31 @@ const run = async () => {
     const sense_group_id_number_map = new Map(
       phrases.map((phrase) => [phrase.sense_group_id, ++sense_group_id_number]),
     )
-    const inserts = phrases.map(
-      (phrase) =>
-        `INSERT INTO phrases VALUES (
+    const inserts = phrases.map((phrase) => {
+      const escaped_english = phrase.english.replace(/'/gi, "''")
+      const sense_group_id_number = sense_group_id_number_map.get(phrase.sense_group_id)
+      const sql = `INSERT INTO phrases VALUES (
           '${phrase.id}',
-          '${sense_group_id_number_map.get(phrase.sense_group_id)}',
+          '${sense_group_id_number}',
           '${phrase.traditional}',
           '${phrase.simplified}',
-          '${phrase.english.replace(/'/gi, "''")}',
+          '${escaped_english}',
           '${phrase.pinyin}',
           '${phrase.jyutping}'
         );
         INSERT INTO search VALUES (
           '${phrase.id}',
-          '${sense_group_id_number_map.get(phrase.sense_group_id)}',
+          '${sense_group_id_number}',
           '${phrase.traditional}',
           '${phrase.simplified}',
-          '${phrase.english.replace(/'/gi, "''")}',
+          '${escaped_english}',
           '${phrase.pinyin}',
           '${phrase.jyutping}'
         );
-      `,
-    )
+      `
+
+      return sql
+    })
     const sql = `
           BEGIN TRANSACTION;
           ${inserts.join('\n')};
