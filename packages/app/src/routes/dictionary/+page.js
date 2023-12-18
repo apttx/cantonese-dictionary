@@ -22,7 +22,6 @@ export const load = async ({ fetch }) => {
 
   if (!query_result.data?.phrases) {
     error(500)
-    return
   }
 
   const phrases = query_result.data.phrases

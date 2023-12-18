@@ -31,7 +31,6 @@ export const load = async ({ params, fetch }) => {
 
   if (!result.data?.phrase) {
     error(404)
-    return
   }
 
   const phrase = result.data.phrase
