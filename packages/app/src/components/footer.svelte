@@ -108,7 +108,7 @@
 
 <style>
   footer {
-    padding-block: 4rem;
+    padding-block: 6rem;
   }
 
   .footer_content {

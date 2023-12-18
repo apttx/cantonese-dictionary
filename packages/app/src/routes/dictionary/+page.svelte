@@ -34,9 +34,9 @@
     grid-template-columns: 1fr;
     align-items: stretch;
     gap: 1rem;
-    margin-top: 2rem;
     margin-inline: var(--margin_content_layout);
-    margin-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
   }
 
   li {

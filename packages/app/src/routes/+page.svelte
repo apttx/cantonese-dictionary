@@ -172,8 +172,8 @@
   .search {
     display: grid;
     justify-items: stretch;
-    margin-top: 4rem;
     margin-inline: var(--margin_content_text);
+    padding-top: 6rem;
   }
 
   .search_form {
@@ -253,14 +253,14 @@
   }
 
   .no_results_text {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
   .search_results {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: 4rem;
     margin-inline: var(--margin_content_layout);
   }
@@ -278,7 +278,7 @@
   }
 
   .about_heading {
-    margin-top: 4rem;
+    margin-top: 6rem;
     margin-inline: var(--margin_content_text);
     font-weight: bold;
     font-size: 1.25rem;

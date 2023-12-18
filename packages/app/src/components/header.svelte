@@ -112,7 +112,7 @@
     position: sticky;
     top: 0rem;
     z-index: 100;
-    padding-block: 1rem;
+    padding-top: 1rem;
   }
 
   .header_bar {
