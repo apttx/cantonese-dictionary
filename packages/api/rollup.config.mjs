@@ -3,7 +3,10 @@ import { cwd } from 'node:process'
 
 import replace from '@rollup/plugin-replace'
 import terser from '@rollup/plugin-terser'
+import virtual from '@rollup/plugin-virtual'
 import copy from 'rollup-plugin-copy'
+
+import { type_definitions } from './source/type_definitions.mjs'
 
 const build_directory_name = 'api'
 const root_directory = resolve(cwd(), './vercel')
@@ -39,6 +42,11 @@ const configuration = {
       },
     }),
     terser({ ecma: 2020 }),
+    virtual({
+      'source/type_definitions.mjs': `export const type_definitions = ${JSON.stringify(
+        type_definitions,
+      )}`,
+    }),
   ],
 }
 
