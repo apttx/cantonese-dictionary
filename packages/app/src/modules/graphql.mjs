@@ -1,4 +1,4 @@
-import { Client, fetchExchange } from '@urql/core'
+import { fetchExchange, createClient } from '@urql/core'
 export { gql } from '@urql/core'
 
 // @ts-expect-error broken types?
@@ -13,7 +13,7 @@ if (dev) {
   )
 }
 
-export const client = new Client({
+export const client = createClient({
   url,
   exchanges: [fetchExchange],
 })
