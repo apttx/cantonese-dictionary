@@ -27,7 +27,7 @@ export const load = async ({ url, fetch }) => {
   const result = await client.query(search_query, { query }, { fetch }).toPromise()
 
   if (!result.data?.search) {
-    error(500, result.error)
+    error(500, result.error?.message)
   }
 
   const results = JSON.parse(JSON.stringify(result.data.search.map((phrase) => phrase)))
