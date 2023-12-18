@@ -21,7 +21,7 @@
     "@playwright/test": "^1.40.1",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/adapter-vercel": "^3.1.0",
-    "@sveltejs/kit": "^1.27.7",
+    "@sveltejs/kit": "^2.0.0",
     "@unocss/reset": "^0.58.0",
     "@urql/core": "^4.2.0",
     "@vite-pwa/sveltekit": "^0.3.0",
