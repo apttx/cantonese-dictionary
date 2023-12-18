@@ -1,4 +1,5 @@
 import { client, gql } from '$graphql'
+import { error } from '@sveltejs/kit'
 
 /** @type {import('@urql/core').TypedDocumentNode<{ search: Phrase[] }, { query: string }>} */
 const search_query = gql`
@@ -26,9 +27,7 @@ export const load = async ({ url, fetch }) => {
   const result = await client.query(search_query, { query }, { fetch })
 
   if (!result.data?.search) {
-    return {
-      results: null,
-    }
+    error(500, result.error)
   }
 
   const results = result.data.search.map((phrase) => phrase)
