@@ -2,7 +2,7 @@ import { createServer } from 'node:http'
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { handler } from '../source/handler.mjs'
-import { get_datasource, get_promisified_database } from '../source/sqlite.mjs'
+import { get_datasource, get_promisified_database } from '../source/data_sources/sqlite.mjs'
 
 const develop = async () => {
   console.info('reading files')
