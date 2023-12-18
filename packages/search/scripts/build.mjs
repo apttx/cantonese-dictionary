@@ -20,7 +20,7 @@ const run = async () => {
       DROP TABLE IF EXISTS phrases;
       CREATE TABLE phrases (
         'id' VARCHAR(32) PRIMARY KEY NOT NULL,
-        'sense_group_id' VARCHAR(32) NOT NULL,
+        'sense_group_id' INT NOT NULL,
         'traditional' VARCHAR(32),
         'simplified' VARCHAR(32),
         'english' VARCHAR(128),
@@ -64,11 +64,15 @@ const run = async () => {
 
     // write data
     console.info('[info] writing to database [@run]')
+    let sense_group_id_number = 0
+    const sense_group_id_number_map = new Map(
+      phrases.map((phrase) => [phrase.sense_group_id, ++sense_group_id_number]),
+    )
     const inserts = phrases.map(
       (phrase) =>
         `INSERT INTO phrases VALUES (
           '${phrase.id}',
-          '${phrase.sense_group_id}',
+          '${sense_group_id_number_map.get(phrase.sense_group_id)}',
           '${phrase.traditional}',
           '${phrase.simplified}',
           '${phrase.english.replace(/'/gi, "''")}',
@@ -77,7 +81,7 @@ const run = async () => {
         );
         INSERT INTO search VALUES (
           '${phrase.id}',
-          '${phrase.sense_group_id}',
+          '${sense_group_id_number_map.get(phrase.sense_group_id)}',
           '${phrase.traditional}',
           '${phrase.simplified}',
           '${phrase.english.replace(/'/gi, "''")}',
