@@ -124,8 +124,6 @@
 
 <style>
   .phrase_header {
-    --details_indent: clamp(0rem, 100%, 50% - var(--width_text) / 2);
-
     display: grid;
     position: relative;
     grid-template-columns: 1fr auto;
@@ -144,7 +142,6 @@
     grid-column: details;
     place-items: start;
     margin-top: 2rem;
-    margin-left: var(--details_indent);
   }
 
   .characters_title {
@@ -171,7 +168,6 @@
 
   .english {
     margin-top: 3rem;
-    margin-right: var(--details_indent);
     font-size: 1.25rem;
   }
 
@@ -181,7 +177,6 @@
     grid-area: in_collection_tag;
     align-items: center;
     gap: 0.5rem;
-    margin-left: var(--details_indent);
     border-radius: 0.2rem;
     padding-right: 0.75rem;
     padding-left: 0.25rem;
