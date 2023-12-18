@@ -19,6 +19,5 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
-  ignorePatterns: ['vercel/'],
+  ignorePatterns: ['vercel/', '*.gql'],
 }
