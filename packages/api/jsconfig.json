@@ -4,5 +4,5 @@
     "checkJs": true,
     "strict": true
   },
-  "include": ["../types/**/*", "./**/*", ".prettierrc.mjs"]
+  "include": ["../types/**/*", "./**/*"]
 }
