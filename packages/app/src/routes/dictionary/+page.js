@@ -21,7 +21,7 @@ export const load = async ({ fetch }) => {
   const query_result = await client.query(query, undefined, { fetch })
 
   if (!query_result.data?.phrases) {
-    error(500)
+    error(500, query_result.error)
   }
 
   const phrases = query_result.data.phrases
