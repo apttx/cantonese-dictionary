@@ -184,19 +184,10 @@
     line-height: 1;
   }
 
+  .save_button,
   .remove_button {
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-area: save_remove_button;
-    align-items: center;
-    justify-self: end;
-    gap: 0.5rem;
-    padding-block: 0.25rem;
-  }
-
-  .save_button {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto;
     grid-area: save_remove_button;
     align-items: center;
     justify-self: end;
@@ -205,7 +196,7 @@
   }
 
   .button_text {
-    position: absolute;
+    position: fixed;
     visibility: hidden;
     pointer-events: none;
   }
@@ -215,6 +206,11 @@
       position: initial;
       visibility: initial;
       pointer-events: initial;
+    }
+
+    .save_button,
+    .remove_button {
+      grid-template-columns: 1fr auto;
     }
   }
 
