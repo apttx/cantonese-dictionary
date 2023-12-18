@@ -158,7 +158,7 @@
     grid-template-rows: 1fr auto;
     align-items: start;
     gap: 2rem;
-    padding-top: 4rem;
+    padding-top: 6rem;
     min-height: calc(100vh - var(--height_header));
   }
 
@@ -213,7 +213,7 @@
   }
 
   .empty_info {
-    margin-top: 4rem;
+    margin-top: 6rem;
     margin-inline: var(--margin_content_text);
   }
 </style>
