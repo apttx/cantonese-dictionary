@@ -30,7 +30,7 @@ export const load = async ({ url, fetch }) => {
     error(500, result.error)
   }
 
-  const results = result.data.search.map((phrase) => phrase)
+  const results = JSON.parse(JSON.stringify(result.data.search.map((phrase) => phrase)))
 
   return {
     results,
