@@ -1,4 +1,6 @@
 import { gql } from '@urql/core'
+import { error } from '@sveltejs/kit'
+
 import { client } from '$graphql'
 
 /** @type {import('@urql/core').TypedDocumentNode<{ phrases: Phrase[] }, void>} */
@@ -18,7 +20,11 @@ const query = gql`
 export const load = async ({ fetch }) => {
   const query_result = await client.query(query, undefined, { fetch })
 
-  const phrases = query_result.data?.phrases ?? []
+  if (!query_result.data?.phrases) {
+    throw error(500)
+  }
+
+  const phrases = query_result.data.phrases
 
   return {
     phrases,
