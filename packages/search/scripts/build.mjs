@@ -12,8 +12,8 @@ const run = async () => {
 
   try {
     // set up build files
+    await rm(build_directory, { force: true, recursive: true })
     await mkdir(build_directory, { recursive: true })
-    await rm(database_file_path, { force: true })
     // set up database
     const database = await get_promisified_database(database_file_path)
     await database.exec(`
