@@ -129,7 +129,7 @@
     grid-template-columns: 1fr auto;
     grid-template-areas:
       'in_collection_tag save_remove_button'
-      'details           details';
+      'phrase_details    phrase_details';
     place-items: start;
     margin-inline: var(--margin_content_text);
     margin-top: 4rem;
@@ -138,8 +138,7 @@
   .phrase_details {
     grid-template-columns: 1fr;
     column-gap: 4rem;
-    grid-row: details;
-    grid-column: details;
+    grid-area: phrase_details;
     place-items: start;
     margin-top: 2rem;
   }
