@@ -10,3 +10,5 @@ export const config = {
     bypassToken: ISR_BYPASS_TOKEN,
   },
 }
+
+export const prerender = false
