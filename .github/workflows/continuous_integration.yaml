@@ -84,6 +84,7 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_APP_PROJECT_ID }}
       VERCEL_ACCESS_TOKEN: ${{ secrets.VERCEL_ACCESS_TOKEN }}
       PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
+      ISR_REVALIDATE_TOKEN: ${{ vars.ISR_REVALIDATE_TOKEN }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
