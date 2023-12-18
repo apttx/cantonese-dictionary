@@ -9,7 +9,7 @@
     "develop": "nodemon -e js,mjs,gql scripts/develop.mjs",
     "build:vercel": "rollup --config rollup.config.mjs",
     "prettier": "prettier --ignore-path .gitignore --check .",
-    "eslint": "eslint --config .eslintrc.cjs source/* scripts/*",
+    "eslint": "eslint --config .eslintrc.cjs 'source/**/*' 'scripts/**/*'",
     "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint",
     "deploy:vercel": "vercel deploy vercel/",
     "vercel": "pnpm build:vercel && pnpm vercel:deploy"
