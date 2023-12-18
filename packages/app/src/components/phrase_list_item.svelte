@@ -1,6 +1,7 @@
 <script>
   import Save from '~icons/mingcute/save-2-line'
   import Delete from '~icons/mingcute/delete-2-line'
+  import Details from '~icons/mingcute/arrow-right-line'
 
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { show_jyutping } from '$stores/show_jyutping.mjs'
@@ -39,23 +40,31 @@
     {/each}
   </ul>
 
+  <a
+    href="/dictionary/{phrase.id}"
+    title="More information"
+    class="detail_link cd_link"
+  >
+    <Details aria-label="More information" />
+  </a>
+
   {#if $has(phrase)}
     <button
-      class="delete_button"
       title="Remove from collection"
       on:click={() => {
         remove(phrase)
       }}
+      class="delete_button"
     >
       <Delete aria-label="Remove from collection" />
     </button>
   {:else}
     <button
-      class="save_button"
       title="Save to collection"
       on:click={() => {
         add(phrase)
       }}
+      class="save_button"
     >
       <Save aria-label="Save to collection" />
     </button>
@@ -94,6 +103,15 @@
 
   .english {
     margin-top: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .detail_link {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    padding: 1rem;
+    text-align: right;
   }
 
   .save_button,
