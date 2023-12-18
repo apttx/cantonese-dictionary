@@ -24,7 +24,7 @@ export const load = async ({ url, fetch }) => {
     }
   }
 
-  const result = await client.query(search_query, { query }, { fetch })
+  const result = await client.query(search_query, { query }, { fetch }).toPromise()
 
   if (!result.data?.search) {
     error(500, result.error)
