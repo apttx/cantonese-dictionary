@@ -30,7 +30,8 @@ export const load = async ({ params, fetch }) => {
   const result = await client.query(phrase_query, { id }, { fetch })
 
   if (!result.data?.phrase) {
-    throw error(404)
+    error(404)
+    return
   }
 
   const phrase = result.data.phrase
