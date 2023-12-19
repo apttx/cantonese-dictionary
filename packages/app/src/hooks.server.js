@@ -1,4 +1,2 @@
 export const handle = ({ event, resolve }) =>
-  resolve(event, {
-    filterSerializedResponseHeaders: () => true,
-  })
+  resolve(event, { filterSerializedResponseHeaders: (name) => name === 'content-type' })
