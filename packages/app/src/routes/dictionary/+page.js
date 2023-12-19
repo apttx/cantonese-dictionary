@@ -17,8 +17,8 @@ const phrases_query = gql`
   }
 `
 
-export const load = async ({ fetch }) => {
-  const query_result = await client.query(phrases_query, undefined, { fetch }).toPromise()
+export const load = async () => {
+  const query_result = await client.query(phrases_query, undefined).toPromise()
 
   if (!query_result.data?.phrases) {
     error(500, query_result.error)

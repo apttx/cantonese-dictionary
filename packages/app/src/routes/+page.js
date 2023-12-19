@@ -15,7 +15,7 @@ const search_query = gql`
   }
 `
 
-export const load = async ({ url, fetch }) => {
+export const load = async ({ url }) => {
   const query = url.searchParams.get('query')
 
   if (!query) {
@@ -24,7 +24,7 @@ export const load = async ({ url, fetch }) => {
     }
   }
 
-  const result = await client.query(search_query, { query }, { fetch }).toPromise()
+  const result = await client.query(search_query, { query }).toPromise()
 
   if (!result.data?.search) {
     error(500, result.error)
