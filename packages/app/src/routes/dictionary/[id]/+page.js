@@ -30,7 +30,7 @@ export const load = async ({ params, fetch }) => {
   const query_result = await client.query(phrase_query, { id }, { fetch }).toPromise()
 
   if (!query_result.data?.phrase) {
-    error(404, query_result.error?.message)
+    error(404, query_result.error)
   }
 
   const phrase = JSON.parse(JSON.stringify(query_result.data.phrase))
