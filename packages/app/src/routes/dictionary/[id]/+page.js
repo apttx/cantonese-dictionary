@@ -33,7 +33,7 @@ export const load = async ({ params, fetch }) => {
     error(404, query_result.error)
   }
 
-  const phrase = JSON.parse(JSON.stringify(query_result.data.phrase))
+  const phrase = query_result.data.phrase
 
   return {
     phrase,

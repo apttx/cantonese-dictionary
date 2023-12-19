@@ -24,7 +24,7 @@ export const load = async ({ fetch }) => {
     error(500, query_result.error)
   }
 
-  const phrases = JSON.parse(JSON.stringify(query_result.data.phrases))
+  const phrases = query_result.data.phrases
 
   return {
     phrases,
