@@ -13,32 +13,7 @@ if (dev) {
   )
 }
 
-/** @deprecated Use this package's `query` export: import { query } from '$graphql' */
 export const client = createClient({
   url,
   exchanges: [ssrExchange({ isClient: browser }), fetchExchange],
 })
-
-/**
- * @type {<
- *   Data = any,
- *   Variables extends import('@urql/core').AnyVariables = import('@urql/core').AnyVariables,
- * >(
- *   query: import('@urql/core').TypedDocumentNode<Data, Variables>,
- *   variables: Variables,
- *   context: { fetch: Required<import('@urql/core').OperationContext>['fetch'] },
- * ) => Promise<import('@urql/core').OperationResult<Data, Variables>>}
- */
-export const query = async (query, variables, options) => {
-  const body = { query: query.loc?.source.body, variables }
-  const response = await options.fetch(PUBLIC_API_URL, {
-    method: 'post',
-    mode: 'cors',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(body),
-  })
-
-  const response_json = await response.json()
-
-  return response_json
-}
