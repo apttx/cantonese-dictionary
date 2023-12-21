@@ -2,7 +2,12 @@ import { error } from '@sveltejs/kit'
 
 import { client, gql } from '$graphql'
 
-/** @type {import('@urql/core').TypedDocumentNode<{ phrase: Phrase }, { id: string }>} */
+/**
+ * @type {import('@urql/core').TypedDocumentNode<
+ *   { phrase: Phrase & { traditional_hanzi: Hanzi[]; simplified_hanzi: Hanzi[] } },
+ *   { id: string }
+ * >}
+ */
 const phrase_query = gql`
   query phrase($id: ID!) {
     phrase(where: { id: $id }) {
@@ -19,6 +24,18 @@ const phrase_query = gql`
         simplified
         jyutping
         pinyin
+      }
+      traditional_hanzi {
+        character
+        graphics {
+          animated_svg_string
+        }
+      }
+      simplified_hanzi {
+        character
+        graphics {
+          animated_svg_string
+        }
       }
     }
   }

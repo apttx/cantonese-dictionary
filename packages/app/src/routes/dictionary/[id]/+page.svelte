@@ -103,6 +103,23 @@
     {/if}
   </div>
 
+  <h2 class="stroke_order_heading">Stroke order</h2>
+
+  <ol class="stroke_order_list">
+    {#each data.phrase[`${$character_set}_hanzi`] as hanzi}
+      <li class="stroke_order_character">
+        {#if hanzi.graphics.animated_svg_string}
+          {@html hanzi.graphics.animated_svg_string}
+        {:else}
+          <span
+            title="No stroke order data for &quot;{hanzi.character}&quot;"
+            class="missing_stroke_order_character">{hanzi.character}</span
+          >
+        {/if}
+      </li>
+    {/each}
+  </ol>
+
   {#if data.phrase.senses.length}
     <h2 class="senses_heading">Other meanings</h2>
 
@@ -211,6 +228,37 @@
     .remove_button {
       grid-template-columns: 1fr auto;
     }
+  }
+
+  .stroke_order_heading {
+    margin-top: 6rem;
+    margin-inline: var(--margin_content_text);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .stroke_order_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 4rem);
+    row-gap: 2rem;
+    justify-content: start;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    margin-inline: var(--margin_content_text);
+  }
+
+  .stroke_order_character :global(svg) {
+    display: inine-block;
+    height: 4rem;
+  }
+
+  .stroke_order_character :global(path) {
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+  }
+
+  .missing_stroke_order_character {
+    font-size: 3rem;
   }
 
   .senses_heading {

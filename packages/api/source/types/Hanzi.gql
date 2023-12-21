@@ -1,0 +1,8 @@
+type Hanzi_Graphics {
+  animated_svg_string: String
+}
+
+type Hanzi {
+  character: String!
+  graphics: Hanzi_Graphics!
+}

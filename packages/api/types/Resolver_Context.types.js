@@ -8,6 +8,13 @@
 
 /**
  * @typedef {{
+ *   from_text: (text: string) => Promise<Hanzi[]>
+ * }} Hanzi_Datasource
+ */
+
+/**
+ * @typedef {{
  *   phrases: Phrases_Datasource
+ *   hanzi: Hanzi_Datasource
  * }} Resolver_Context
  */

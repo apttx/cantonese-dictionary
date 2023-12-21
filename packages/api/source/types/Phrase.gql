@@ -6,4 +6,6 @@ type Phrase {
   pinyin: String!
   english: String!
   senses: [Phrase!]!
+  traditional_hanzi: [Hanzi!]!
+  simplified_hanzi: [Hanzi!]!
 }
