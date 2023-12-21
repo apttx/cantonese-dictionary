@@ -8,32 +8,26 @@
   import PhraseListItem from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
   import { goto } from '$app/navigation'
+  import { page } from '$app/stores'
 
   export let data
 
-  /** @type {string} */
-  let search_input_string
+  /** @type {string | undefined} */
+  let search_input_string = $page.url.searchParams.get('query') ?? undefined
   /** @type {HTMLInputElement} */
   let search_input_element
 
-  /** @type {import('./$types').Snapshot<{ search_input: string; results: null | any[] }>} */
-  export const snapshot = {
-    capture: () => {
-      const snapshot = { search_input: search_input_string, results: data.results }
-
-      return snapshot
-    },
-    restore: (snapshot) => {
-      if (snapshot) {
-        search_input_string = snapshot.search_input
-        data.results = snapshot.results
-      }
-    },
+  $: {
+    search_input_string = $page.url.searchParams.get('query') ?? undefined
   }
 
   /** @type {'idle' | 'pending' | 'error'} */
   let loading_state = 'idle'
   const on_submit = async () => {
+    if (!search_input_string) {
+      return
+    }
+
     // blur input while loading to hide mobile keyboards
     search_input_element?.blur()
 
