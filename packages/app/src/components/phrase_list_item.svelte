@@ -5,7 +5,10 @@
 
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { show_jyutping } from '$stores/show_jyutping.mjs'
-  import { character_set } from '$stores/character_set.mjs'
+  import {
+    character_set,
+    show_secondary_character_set_if_different,
+  } from '$stores/character_set.mjs'
   import { add, has, remove } from '$stores/collection.mjs'
 
   /** @type {Phrase} */
@@ -18,7 +21,21 @@
   class:saved={$has(phrase)}
 >
   <span class="characters cd_hanzi">
-    {phrase[$character_set]}
+    <span title={$character_set === 'traditional' ? 'Traditional' : 'Simplified'}>
+      {phrase[$character_set]}
+    </span>
+
+    {#if $show_secondary_character_set_if_different && phrase.simplified !== phrase.traditional}
+      {@const secondary_character_set =
+        $character_set === 'simplified' ? 'traditional' : 'simplified'}
+      &nbsp;
+      <span
+        title={secondary_character_set === 'traditional' ? 'Traditional' : 'Simplified'}
+        class="secondary_character_set colored_base_neutral_weak"
+      >
+        {phrase[secondary_character_set]}
+      </span>
+    {/if}
   </span>
 
   {#if $show_pinyin}
@@ -93,6 +110,7 @@
   }
 
   .characters {
+    margin-right: 2.5rem;
     margin-bottom: 0.5rem;
   }
 
