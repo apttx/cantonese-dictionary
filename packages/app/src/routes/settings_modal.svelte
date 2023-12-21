@@ -1,5 +1,8 @@
 <script>
-  import { character_set } from '$stores/character_set.mjs'
+  import {
+    character_set,
+    show_secondary_character_set_if_different,
+  } from '$stores/character_set.mjs'
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { show_jyutping } from '$stores/show_jyutping.mjs'
   import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
@@ -42,6 +45,15 @@
         </label>
       </div>
     </fieldset>
+
+    <label>
+      <input
+        type="checkbox"
+        name="show_secondary_character_set_if_different"
+        bind:checked={$show_secondary_character_set_if_different}
+      />
+      <span>Show the characters from the other set if they are different</span>
+    </label>
 
     <fieldset>
       <legend>Romanization</legend>
@@ -93,8 +105,6 @@
 <style>
   form {
     display: grid;
-    gap: 2rem;
-    margin-top: 2rem;
   }
 
   legend {
@@ -105,6 +115,10 @@
   label {
     display: block;
     padding-block: 0.5rem;
+  }
+
+  fieldset {
+    margin-top: 2rem;
   }
 
   .input_group {
