@@ -10,7 +10,7 @@ this is mostly a leisure project to help me learn and satisfy my insatiable desi
 
 ### tech used
 
-- [sqlite](https://www.sqlite.org/index.html),
+- [sqlite](https://www.sqlite.org/index.html)
 - [graphql yoga](https://github.com/dotansimha/graphql-yoga)
 - [sveltekit](https://github.com/sveltejs/kit)
 - [urql](https://github.com/urql-graphql/urql)
