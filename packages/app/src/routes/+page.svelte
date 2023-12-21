@@ -7,7 +7,7 @@
 
   import PhraseListItem from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
-  import { goto } from '$app/navigation'
+  import { goto, afterNavigate } from '$app/navigation'
   import { page } from '$app/stores'
 
   export let data
@@ -17,9 +17,10 @@
   /** @type {HTMLInputElement} */
   let search_input_element
 
-  $: {
-    search_input_string = $page.url.searchParams.get('query') ?? undefined
-  }
+  afterNavigate(() => {
+    const querySearchParameter = $page.url.searchParams.get('query') ?? undefined
+    search_input_string = querySearchParameter
+  })
 
   /** @type {'idle' | 'pending' | 'error'} */
   let loading_state = 'idle'
