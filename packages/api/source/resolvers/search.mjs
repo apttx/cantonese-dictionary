@@ -2,7 +2,8 @@
  * @type {import('graphql').GraphQLFieldResolver<
  *   void,
  *   Resolver_Context,
- *   { query: string; limit?: number }
+ *   { query: string; limit?: number },
+ *   Phrase[]
  * >}
  */
 export const search = async (_, args, context) => {

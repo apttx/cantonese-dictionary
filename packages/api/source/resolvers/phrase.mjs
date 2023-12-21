@@ -2,7 +2,8 @@
  * @type {import('graphql').GraphQLFieldResolver<
  *   void,
  *   Resolver_Context,
- *   { where: { id: string } }
+ *   { where: { id: string } },
+ *   Phrase
  * >}
  */
 export const phrase = async (_, args, context) => {
