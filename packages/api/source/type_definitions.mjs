@@ -4,7 +4,7 @@ import { cwd } from 'node:process'
 
 const types_directory = resolve(cwd(), './source/types/')
 
-const file_names = ['Phrase.gql', 'Query.gql']
+const file_names = ['Phrase.gql', 'Query.gql', 'Dictionary.gql']
 const file_paths = file_names.map((file_name) => {
   const file_path = resolve(types_directory, file_name)
 

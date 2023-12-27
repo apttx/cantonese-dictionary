@@ -117,7 +117,7 @@ const get_phrases_with_senses = (phrases_join_phrases_rows) => {
 }
 
 /** @param {Awaited<ReturnType<typeof get_promisified_database>>} promisified_database */
-export const get_datasource = async (promisified_database) => {
+export const get_phrases_datasource = async (promisified_database) => {
   /** @type {Phrases_Datasource['search']} */
   const search = async (options) => {
     const phrases_join_phrases = /** @type {Phrases_Join_Phrases_Row[]} */ (
@@ -233,4 +233,54 @@ export const get_datasource = async (promisified_database) => {
   }
 
   return datasource
+}
+
+/** @param {Awaited<ReturnType<typeof get_promisified_database>>} promisified_database */
+export const get_dictionary_datasource = async (promisified_database) => {
+  const single_roman_letter_regexp = /^[a-z]$/i
+
+  const english_chapters = async () => {
+    /** @type {{ english_first_letter: string }[]} */
+    const english_distinct_first_letters_and_symbol_rows = await promisified_database.all(`
+      SELECT DISTINCT(
+        SUBSTR(
+          english COLLATE NOCASE,
+          1,
+          1
+        )
+      ) AS english_first_letter
+      FROM phrases
+    ;`)
+
+    const english_distinct_first_letter_rows =
+      english_distinct_first_letters_and_symbol_rows.filter((row) => {
+        const is_single_roman_letter = single_roman_letter_regexp.test(row.english_first_letter)
+
+        return is_single_roman_letter
+      })
+
+    /** @type {{ label: string }[]} */
+    const english_chapters = english_distinct_first_letter_rows.map((selected) => {
+      const label = selected.english_first_letter.toUpperCase()
+
+      const section = {
+        label,
+      }
+
+      return section
+    })
+
+    const sorted_english_chapters = english_chapters
+      // copy the arry, sort operates in-place
+      .slice(0)
+      .sort((sectionA, sectionB) => sectionA.label.localeCompare(sectionB.label))
+
+    return sorted_english_chapters
+  }
+
+  const dictionary_datasource = {
+    english_chapters,
+  }
+
+  return dictionary_datasource
 }

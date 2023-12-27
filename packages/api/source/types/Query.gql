@@ -6,4 +6,5 @@ type Query {
   search(query: String!, limit: Int): [Phrase!]!
   phrases(after: ID, limit: Int): [Phrase!]!
   phrase(where: Phrase_Where): Phrase!
+  dictionary: Dictionary!
 }

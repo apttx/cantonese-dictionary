@@ -1,0 +1,11 @@
+type Dictionary_Chapter {
+  label: String!
+}
+
+type Dictionary_Chapters {
+  english: [Dictionary_Chapter!]!
+}
+
+type Dictionary {
+  chapters: Dictionary_Chapters
+}

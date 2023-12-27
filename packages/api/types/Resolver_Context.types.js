@@ -8,6 +8,13 @@
 
 /**
  * @typedef {{
+ *   english_chapters: () => Promise<{ label: string }[]>
+ * }} Dictionary_Datasource
+ */
+
+/**
+ * @typedef {{
  *   phrases: Phrases_Datasource
+ *   dictionary: Dictionary_Datasource
  * }} Resolver_Context
  */

@@ -12,6 +12,19 @@
   description="Browse the CC-Canto dictionary & save phrases to practice your vocabulary."
 />
 
+<nav class="language_links">
+  <ul>
+    <li>
+      <a
+        href="/dictionary/english"
+        class="cd_link"
+      >
+        English
+      </a>
+    </li>
+  </ul>
+</nav>
+
 {#if data.phrases}
   <ul class="phrases">
     {#each data.phrases as phrase, index (phrase.id)}
@@ -29,6 +42,11 @@
 {/if}
 
 <style>
+  .language_links {
+    margin-inline: var(--margin_content_layout);
+    margin-top: 3rem;
+  }
+
   .phrases {
     display: grid;
     grid-template-columns: 1fr;
