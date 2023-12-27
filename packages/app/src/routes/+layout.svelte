@@ -119,7 +119,7 @@
     transition-duration: 150ms;
     transition-property: color;
     transition-timing-function: ease-in;
-    color: var(--text_primary_onbase);
+    color: var(--context_color_hint);
     font-weight: 500;
     text-decoration: underline;
     text-decoration: underline;
@@ -128,7 +128,7 @@
   }
   :global(.cd_link:hover) {
     transition-timing-function: ease-out;
-    color: var(--text_primary-strong_onbase);
+    color: var(--context_color_interact);
   }
 
   :global(.container_text) {
