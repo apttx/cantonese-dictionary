@@ -6,8 +6,15 @@
   import Next from '~icons/mingcute/right-line'
   import Remove from '~icons/mingcute/delete-2-line'
   import Cog from '~icons/mingcute/settings-5-line'
+  import Show_More_Often from '~icons/mingcute/large-arrow-up-line'
+  import Show_Less_Often from '~icons/mingcute/large-arrow-down-line'
+  import Showing_Never from '~icons/mingcute/eye-close-line'
+  import Showing_Less_Often from '~icons/mingcute/down-line'
+  import Showing_With_Normal_Frequency from '~icons/mingcute/eye-line'
+  import Showing_More_Often from '~icons/mingcute/up-line'
+  import Showing_Always from '~icons/mingcute/repeat-line'
 
-  import { phrases, remove } from '$stores/collection.mjs'
+  import { get_rating, phrases, rate_down, rate_up, remove } from '$stores/collection.mjs'
   import EmptyCollectionInfo from '$components/empty_collection_info.svelte'
   import Head from '$components/head.svelte'
   import Dynamic_Flashcard_Face from '$components/dynamic_flashcard_face.svelte'
@@ -61,6 +68,28 @@
 
   /** @type {() => void} */
   const open_settings = getContext('open_flashcard_settings')
+
+  /** @type {Record<import('$stores/collection.mjs').Rating, string>} */
+  const rating_labels = {
+    [-2]: 'never',
+    [-1]: 'less often',
+    0: 'with normal frequency',
+    1: 'more often',
+    2: 'always',
+  }
+
+  /** @type {Record<import('$stores/collection.mjs').Rating, import('svelte').ComponentType>} */
+  const rating_icons = {
+    [-2]: Showing_Never,
+    [-1]: Showing_Less_Often,
+    0: Showing_With_Normal_Frequency,
+    1: Showing_More_Often,
+    2: Showing_Always,
+  }
+
+  $: random_phrase_rating = random_phrase ? $get_rating(random_phrase) : 0
+  $: random_phrase_rating_label = rating_labels[random_phrase_rating]
+  $: Random_Phrase_Rating_Icon = rating_icons[random_phrase_rating]
 </script>
 
 <Head
@@ -114,12 +143,28 @@
       </div>
     {/key}
 
+    <span><Random_Phrase_Rating_Icon /> Showing this expression {random_phrase_rating_label}</span>
+
     <div
       role="presentation"
       class="buttons"
       class:aligned_left={$preferred_ui_alignment === 'left'}
       class:aligned_right={$preferred_ui_alignment === 'right'}
     >
+      <button
+        class="action_button"
+        on:click|stopPropagation={() => rate_up(random_phrase)}
+      >
+        <Show_More_Often aria-label="Show more often" />
+        <span class="action_label">Show more often</span>
+      </button>
+      <button
+        class="action_button"
+        on:click|stopPropagation={() => rate_down(random_phrase)}
+      >
+        <Show_Less_Often aria-label="Show less often" />
+        <span class="action_label">Show less often</span>
+      </button>
       <button
         class="action_button"
         on:click|stopPropagation={flip_card}
