@@ -137,7 +137,20 @@ export const get_datasource = async (promisified_database) => {
           senses.jyutping AS sense_jyutping,
           senses.english AS sense_english
         FROM
-          (SELECT * FROM search($term) ORDER BY rank LIMIT $limit) AS phrases
+          (
+            SELECT DISTINCT * FROM (
+              SELECT * FROM phrases
+                WHERE traditional=$term
+                  OR simplified=$term
+                  OR pinyin=$term
+                  OR jyutping=$term
+                  OR english=$term
+              UNION ALL
+              SELECT * FROM (
+                SELECT * FROM search($term) ORDER BY rank
+              )
+            ) LIMIT $limit
+          ) AS phrases
         LEFT JOIN
           phrases AS senses
             ON phrases.sense_group_id=senses.sense_group_id
