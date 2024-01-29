@@ -131,7 +131,6 @@
       'in_collection_tag save_remove_button'
       'phrase_details    phrase_details';
     place-items: start;
-    margin-inline: var(--margin_content_text);
     margin-top: 4rem;
   }
 
@@ -141,6 +140,7 @@
     grid-area: phrase_details;
     place-items: start;
     margin-top: 2rem;
+    margin-inline: clamp(3rem, 100%, 50% - var(--width_text) / 2);
   }
 
   .characters_title {
@@ -176,6 +176,8 @@
     grid-area: in_collection_tag;
     align-items: center;
     gap: 0.5rem;
+    margin-left: var(--margin_content_text);
+    margin-left: clamp(1rem, 100%, 50vw - var(--width_text) / 2);
     border-radius: 0.2rem;
     padding-right: 0.75rem;
     padding-left: 0.25rem;
@@ -191,7 +193,11 @@
     align-items: center;
     justify-self: end;
     gap: 0.5rem;
-    padding-block: 0.25rem;
+    margin-block: -0.75rem;
+    margin-right: clamp(0.25rem, 100%, 50vw - var(--width_text) / 2 - 1rem);
+    padding: 1rem;
+    width: max-content;
+    line-height: 1;
   }
 
   .button_text {
