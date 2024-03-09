@@ -11,10 +11,13 @@ const config = {
       scale: 1.25,
     }),
     SvelteKitPWA({
-      devOptions: {
-        enabled: true,
+      strategies: 'generateSW',
+      mode: 'production',
+      scope: '/',
+      base: '/',
+      pwaAssets: {
+        config: true,
       },
-      mode: 'development',
       manifest: {
         short_name: 'Cantonese Dictionary',
         name: 'Cantonese Dictionary',
@@ -28,6 +31,22 @@ const config = {
             purpose: 'any',
           },
         ],
+      },
+      injectManifest: {
+        globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,woff,woff2}'],
+      },
+      workbox: {
+        globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,woff,woff2}'],
+      },
+      devOptions: {
+        enabled: true,
+        suppressWarnings: process.env.SUPPRESS_WARNING === 'true',
+        type: 'module',
+        navigateFallback: '/',
+      },
+      // if you have shared info in svelte config file put in a separate module and use it also here
+      kit: {
+        includeVersionFile: true,
       },
     }),
   ],
