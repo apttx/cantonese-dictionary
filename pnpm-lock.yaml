@@ -83,7 +83,7 @@ importers:
         version: 0.58.0
       '@urql/core':
         specifier: ^4.2.2
-        version: 4.2.2(graphql@16.8.1)
+        version: 4.3.0(graphql@16.8.1)
       '@vite-pwa/sveltekit':
         specifier: ^0.3.0
         version: 0.3.0(@sveltejs/kit@2.0.2)(vite-plugin-pwa@0.17.4)
@@ -2649,8 +2649,8 @@ packages:
     resolution: {integrity: sha512-UVZ5kz37JGbwAA06k/gjKYcekcTwi6oIhev1EpTtCvHLL6XYcYqcwb/u4Wjzprd3L3lxDGYXvGdjREGm2u7vbQ==}
     dev: true
 
-  /@urql/core@4.2.2(graphql@16.8.1):
-    resolution: {integrity: sha512-TP1kheq9bnrEdnVbJqh0g0ZY/wfdpPeAzjiiDK+Tm+Pbi0O1Xdu6+fUJ/wJo5QpHZzkIyya4/AecG63e6scFqQ==}
+  /@urql/core@4.3.0(graphql@16.8.1):
+    resolution: {integrity: sha512-wT+FeL8DG4x5o6RfHEnONNFVDM3616ouzATMYUClB6CB+iIu2mwfBKd7xSUxYOZmwtxna5/hDRQdMl3nbQZlnw==}
     dependencies:
       '@0no-co/graphql.web': 1.0.4(graphql@16.8.1)
       wonka: 6.3.4
