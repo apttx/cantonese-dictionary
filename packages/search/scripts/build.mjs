@@ -29,6 +29,7 @@ const run = async () => {
       );
       CREATE INDEX IF NOT EXISTS sense_group_id_index ON phrases(sense_group_id);
     `)
+    // https://sqlite.org/fts5.html > 4.4.3
     await database.exec(`
       DROP TABLE IF EXISTS search;
       CREATE VIRTUAL TABLE search USING fts5(
@@ -38,8 +39,27 @@ const run = async () => {
         simplified,
         english,
         pinyin,
-        jyutping
+        jyutping,
+        content=phrases
       );
+      CREATE TRIGGER inser_search_after_insert_phrases AFTER INSERT ON phrases BEGIN
+        INSERT INTO search(
+          rowid,
+          traditional,
+          simplified,
+          english,
+          pinyin,
+          jyutping
+        )
+        VALUES (
+          new.rowid,
+          new.traditional,
+          new.simplified,
+          new.english,
+          new.pinyin,
+          new.jyutping
+        );
+      END;
     `)
 
     // parse data
@@ -72,15 +92,6 @@ const run = async () => {
       const escaped_english = phrase.english.replace(/'/gi, "''")
       const sense_group_id_number = sense_group_id_number_map.get(phrase.sense_group_id)
       const sql = `INSERT INTO phrases VALUES (
-          '${phrase.id}',
-          '${sense_group_id_number}',
-          '${phrase.traditional}',
-          '${phrase.simplified}',
-          '${escaped_english}',
-          '${phrase.pinyin}',
-          '${phrase.jyutping}'
-        );
-        INSERT INTO search VALUES (
           '${phrase.id}',
           '${sense_group_id_number}',
           '${phrase.traditional}',
