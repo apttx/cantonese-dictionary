@@ -11,6 +11,7 @@
 
   import Settings_Modal from './settings_modal.svelte'
   import Flashcard_Settings_Modal from './flashcard_settings_modal.svelte'
+  import Pwa from './pwa.svelte'
 
   /** @type {boolean} */
   let settings_open = false
@@ -20,19 +21,11 @@
   setContext('open_flashcard_settings', () => {
     flashcard_settings_open = true
   })
-
-  import { pwaInfo } from 'virtual:pwa-info'
 </script>
 
-<svelte:head>
-  {#if pwaInfo}
-    <link
-      rel="manifest"
-      href={pwaInfo.webManifest.href}
-      crossorigin={pwaInfo.webManifest.useCredentials ? 'use-credentials' : undefined}
-    />
-  {/if}
+<Pwa />
 
+<svelte:head>
   <link
     rel="icon"
     href="{assets}/favicon.png"
