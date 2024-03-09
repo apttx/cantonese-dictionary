@@ -59,7 +59,7 @@ importers:
         version: 5.0.19
       '@iconify-json/mingcute':
         specifier: ^1.1.14
-        version: 1.1.14
+        version: 1.1.16
       '@playwright/test':
         specifier: ^1.40.1
         version: 1.40.1
@@ -2023,8 +2023,8 @@ packages:
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
     dev: true
 
-  /@iconify-json/mingcute@1.1.14:
-    resolution: {integrity: sha512-oWeGJzNBHPLFLdjqYFg80GL12F7vp+qCpSqt34G9CzP/20eduYLZyB1gB8GW2beTl335lssJo28QT/ObyJ3YpQ==}
+  /@iconify-json/mingcute@1.1.16:
+    resolution: {integrity: sha512-iiVYjOPFyftzvBqN3cqYVfzuqSJL2n7vduX8UsmaaIB33EM6hKNJPntxVt700jHwyux/ibHsgUo8paeHBoxpWQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
