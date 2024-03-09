@@ -32,8 +32,8 @@ const run = async () => {
     await database.exec(`
       DROP TABLE IF EXISTS search;
       CREATE VIRTUAL TABLE search USING fts5(
-        id,
-        sense_group_id,
+        id UNINDEXED,
+        sense_group_id UNINDEXED,
         traditional,
         simplified,
         english,
