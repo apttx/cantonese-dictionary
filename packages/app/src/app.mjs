@@ -17,3 +17,4 @@ import '$css/colored.utility.css'
 import '$css/screen_reader_only.utility.css'
 
 import '$css/components/flashcard_grid.component.css'
+import '$css/components/heading.component.css'

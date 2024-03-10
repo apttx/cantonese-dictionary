@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   import { fade } from 'svelte/transition'
-  import { cubicOut } from 'svelte/easing'
+  import { cubicIn, cubicOut } from 'svelte/easing'
 
   import Loading from '~icons/mingcute/loading-fill'
   import Search from '~icons/mingcute/search-2-line'
@@ -9,21 +9,20 @@
   import Head from '$components/head.svelte'
   import { goto, afterNavigate } from '$app/navigation'
   import { page } from '$app/stores'
+  import { has } from '$stores/collection.mjs'
+  import Tabs from '$components/tabs.svelte'
 
   export let data
 
-  /** @type {string | undefined} */
-  let search_input_string = $page.url.searchParams.get('query') ?? undefined
-  /** @type {HTMLInputElement} */
-  let search_input_element
+  let search_input_string: string | undefined = $page.url.searchParams.get('query') ?? undefined
+  let search_input_element: HTMLInputElement
 
   afterNavigate(() => {
     const querySearchParameter = $page.url.searchParams.get('query') ?? undefined
     search_input_string = querySearchParameter
   })
 
-  /** @type {'idle' | 'pending' | 'error'} */
-  let loading_state = 'idle'
+  let loading_state: 'idle' | 'pending' | 'error' = 'idle'
   const on_submit = async () => {
     if (!search_input_string) {
       return
@@ -44,6 +43,27 @@
       search_input_element?.focus()
     }
   }
+
+  $: all_results_tab = {
+    title: 'All results',
+    count: data.results?.length ?? 0,
+  }
+  $: results_in_collection = data.results?.filter((phrase) => $has(phrase))
+  $: collection_results_tab = {
+    title: 'In your collection',
+    count: results_in_collection?.length ?? 0,
+    disabled: !results_in_collection?.length,
+  }
+  // TODO: add this as an api feature & use its data
+  $: exact_matches = data.results?.filter((phrase) =>
+    Object.values(phrase).some((value) => value === search_input_string),
+  )
+  $: exact_matches_tab = {
+    title: 'Exact matches',
+    count: exact_matches?.length ?? 0,
+    disabled: !exact_matches?.length,
+  }
+  $: tabs = [all_results_tab, collection_results_tab, exact_matches_tab]
 </script>
 
 <Head
@@ -123,25 +143,7 @@
   {/if}
 </div>
 
-{#if data.results}
-  <ul
-    class="search_results @flashcard_grid +content_margin"
-    aria-live="polite"
-    aria-busy={loading_state === 'pending'}
-  >
-    {#each data.results as phrase, index (phrase.id)}
-      <li
-        in:fade|global={{
-          delay: index * 20,
-          duration: 200,
-          easing: cubicOut,
-        }}
-      >
-        <PhraseListItem {phrase} />
-      </li>
-    {/each}
-  </ul>
-{:else}
+{#if !data.results}
   <h2 class="about_heading">About</h2>
   <p class="about_text">
     This dictionary is a passion project to help with learning Cantonese. It's built for English
@@ -149,6 +151,50 @@
     lessons.
   </p>
 {/if}
+
+<div
+  role="presentation"
+  class="search_results"
+>
+  {#if data.results && data.results.length > 0}
+    <Tabs
+      {tabs}
+      let:active
+    >
+      {@const phrases =
+        active === all_results_tab
+          ? data.results
+          : active === collection_results_tab
+            ? results_in_collection
+            : active === exact_matches_tab
+              ? exact_matches
+              : undefined}
+      {#if phrases}
+        {#key active}
+          <ul
+            class="@flashcard_grid"
+            aria-live="polite"
+            aria-busy={loading_state === 'pending'}
+            out:fade={{ duration: 200, easing: cubicOut }}
+            in:fade={{ duration: 200, delay: 200, easing: cubicIn }}
+          >
+            {#each phrases as phrase, index (phrase.id)}
+              <li
+                in:fade|global={{
+                  delay: index * 50,
+                  duration: 200,
+                  easing: cubicIn,
+                }}
+              >
+                <PhraseListItem {phrase} />
+              </li>
+            {/each}
+          </ul>
+        {/key}
+      {/if}
+    </Tabs>
+  {/if}
+</div>
 
 <style>
   @keyframes loading {
@@ -252,8 +298,21 @@
   }
 
   .search_results {
-    margin-top: 3rem;
+    margin-top: 4rem;
     margin-bottom: 4rem;
+    margin-inline: var(--margin_content_text);
+  }
+
+  @media (min-width: 50rem) {
+    .search_results {
+      margin-inline: var(--margin_content_page);
+    }
+  }
+
+  @media (min-width: 66rem) {
+    .search_results {
+      margin-inline: var(--margin_content_layout);
+    }
   }
 
   li {

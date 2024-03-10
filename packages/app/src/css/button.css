@@ -6,14 +6,14 @@
     transition-timing-function: ease-in;
   }
 
-  .cd_bordered_button:hover,
-  button:hover {
+  .cd_bordered_button:hover:not(:disabled),
+  button:hover:not(:disabled) {
     transition-timing-function: ease-out;
     color: var(--context_color_hint);
   }
 
-  .cd_bordered_button:active,
-  button:active {
+  .cd_bordered_button:active:not(:disabled),
+  button:active:not(:disabled) {
     transition-timing-function: ease-out;
     color: var(--context_color_interact);
   }
@@ -27,11 +27,11 @@
     border-radius: 0.2rem;
   }
 
-  .cd_bordered_button:hover {
+  .cd_bordered_button:hover:not(:disabled) {
     border-color: var(--text_primary-faint_onbase);
   }
 
-  .cd_bordered_button:active {
+  .cd_bordered_button:active:not(:disabled) {
     transition-timing-function: ease-out;
     outline-color: transparent;
     outline-style: solid;
@@ -49,8 +49,8 @@
     transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
   }
 
-  .cd_bordered_button:active,
-  button:active {
+  .cd_bordered_button:active:not(:disabled),
+  button:active:not(:disabled) {
     transition-duration: 0ms;
     color: var(--context_color_interact);
   }
@@ -64,7 +64,7 @@
     border-radius: 0.2rem;
   }
 
-  .cd_bordered_button:active {
+  .cd_bordered_button:active:not(:disabled) {
     transition-timing-function: ease-out;
     outline-color: transparent;
     outline-style: solid;

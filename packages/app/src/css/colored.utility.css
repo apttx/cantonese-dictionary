@@ -40,3 +40,12 @@
   color: white;
   font-weight: 500;
 }
+
+.colored_base_brand-1 {
+  --context_color_hint: var(--color-red-1);
+  --context_color_interact: var(--color-red-2);
+
+  background-color: white;
+  color: var(--color-red-3);
+  font-weight: 500;
+}
