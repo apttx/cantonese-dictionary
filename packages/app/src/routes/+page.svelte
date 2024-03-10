@@ -181,7 +181,7 @@
             {#each phrases as phrase, index (phrase.id)}
               <li
                 in:fade|global={{
-                  delay: index * 50,
+                  delay: index * 20,
                   duration: 200,
                   easing: cubicIn,
                 }}
