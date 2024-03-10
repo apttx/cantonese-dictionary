@@ -20,6 +20,7 @@ export const load = async ({ url }) => {
 
   if (!query) {
     return {
+      query,
       results: null,
     }
   }
@@ -33,6 +34,7 @@ export const load = async ({ url }) => {
   const results = result.data.search.map((phrase) => phrase)
 
   return {
+    query,
     results,
   }
 }

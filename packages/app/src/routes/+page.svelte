@@ -56,7 +56,7 @@
   }
   // TODO: add this as an api feature & use its data
   $: exact_matches = data.results?.filter((phrase) =>
-    Object.values(phrase).some((value) => value === search_input_string),
+    Object.values(phrase).some((value) => value === data.query),
   )
   $: exact_matches_tab = {
     title: 'Exact matches',
