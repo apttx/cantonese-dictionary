@@ -125,7 +125,7 @@
 
 {#if data.results}
   <ul
-    class="search_results"
+    class="search_results @flashcard_grid +content_margin"
     aria-live="polite"
     aria-busy={loading_state === 'pending'}
   >
@@ -252,24 +252,13 @@
   }
 
   .search_results {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
     margin-top: 3rem;
     margin-bottom: 4rem;
-    margin-inline: var(--margin_content_layout);
   }
 
   li {
     display: grid;
     align-items: stretch;
-  }
-
-  @media (min-width: 30rem) {
-    .search_results {
-      grid-template-columns: repeat(auto-fit, 20rem);
-      justify-content: center;
-    }
   }
 
   .about_heading {

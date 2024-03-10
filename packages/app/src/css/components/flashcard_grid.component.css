@@ -1,0 +1,32 @@
+.\@flashcard_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 1rem;
+
+  &.\+content_margin {
+    margin-inline: var(--margin_content_text);
+  }
+}
+
+@media (min-width: 50rem) {
+  .\@flashcard_grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: start;
+
+    &.\+content_margin {
+      margin-inline: var(--margin_content_page);
+    }
+  }
+}
+
+@media (min-width: 66rem) {
+  .\@flashcard_grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: start;
+
+    &.\+content_margin {
+      margin-inline: var(--margin_content_layout);
+    }
+  }
+}

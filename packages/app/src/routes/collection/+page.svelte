@@ -25,7 +25,7 @@
   <!-- transition list out when last phrase was deleted -->
   <ul
     out:fade={{ duration: 200 }}
-    class="phrases"
+    class="phrases @flashcard_grid +content_margin"
   >
     {#each $phrases as phrase, index (phrase.id)}
       <li
@@ -45,10 +45,6 @@
   }
 
   .phrases {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-inline: var(--margin_content_layout);
     padding-top: 3rem;
     padding-bottom: 6rem;
   }
@@ -56,12 +52,5 @@
   li {
     display: grid;
     align-items: stretch;
-  }
-
-  @media (min-width: 30rem) {
-    .phrases {
-      grid-template-columns: repeat(auto-fit, 20rem);
-      justify-content: center;
-    }
   }
 </style>
