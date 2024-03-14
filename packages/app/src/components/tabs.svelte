@@ -55,7 +55,7 @@
     display: grid;
     grid-auto-flow: column;
     place-content: start;
-    gap: 1.5rem;
+    overflow: auto clip;
   }
 
   .tab_count {
