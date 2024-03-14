@@ -85,8 +85,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0(eslint@8.57.0)(typescript@5.4.2)
       '@unocss/reset':
-        specifier: 0.58.5
-        version: 0.58.5
+        specifier: 0.58.6
+        version: 0.58.6
       '@urql/core':
         specifier: 4.3.0
         version: 4.3.0(graphql@16.8.1)
@@ -2545,8 +2545,8 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@unocss/reset@0.58.5:
-    resolution: {integrity: sha512-2wMrkCj3SSb5hrx9TKs5jZa34QIRkHv9FotbJutAPo7o8hx+XXn56ogzdoUrcFPJZJUx2R2nyOVbSlGMIjtFtw==}
+  /@unocss/reset@0.58.6:
+    resolution: {integrity: sha512-mYyOe5QDRHc1BBRff+G97j3SGGC8s3Vk7cCcXc/l48FvPHKtLCphMZaBS+KkGkzWqwAtxv0QRbGhTixJCVDRug==}
     dev: true
 
   /@urql/core@4.3.0(graphql@16.8.1):
