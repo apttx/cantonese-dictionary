@@ -45,8 +45,6 @@
   role="presentation"
   aria-live="assertive"
 >
-  <h2 class="active_heading @heading +2">{active.title}</h2>
-
   <slot {active} />
 </div>
 
@@ -63,9 +61,12 @@
     font-weight: bold;
   }
 
-  .active_heading {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .tab_button {
+    position: relative;
+    left: -0.75rem;
+    padding-inline: 0.75rem;
+    padding-block: 1rem;
+    width: max-content;
   }
 
   .tab_button.active {

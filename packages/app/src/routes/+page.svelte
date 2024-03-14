@@ -171,6 +171,8 @@
               : undefined}
       {#if phrases}
         {#key active}
+          <h2 class="active_tab_heading @heading +2">{active.title}</h2>
+
           <ul
             class="@flashcard_grid"
             aria-live="polite"
@@ -294,11 +296,11 @@
   }
 
   .no_results_text {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   .search_results {
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-bottom: 4rem;
     margin-inline: var(--margin_content_text);
   }
@@ -320,12 +322,18 @@
     align-items: stretch;
   }
 
+  .active_tab_heading {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
   .about_heading {
     margin-top: 6rem;
     margin-inline: var(--margin_content_text);
     font-weight: bold;
     font-size: 1.25rem;
   }
+
   .about_text {
     margin-top: 0.5rem;
     margin-inline: var(--margin_content_text);
