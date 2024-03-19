@@ -1,32 +1,40 @@
-import { gql } from '@urql/core'
+import { client, gql } from '$graphql'
 import { error } from '@sveltejs/kit'
 
-import { client } from '$graphql'
-
-/** @type {import('@urql/core').TypedDocumentNode<{ phrases: Phrase[] }, void>} */
-const phrases_query = gql`
-  {
-    phrases {
+/** @type {import('@urql/core').TypedDocumentNode<{ search: Phrase[] }, { query: string }>} */
+const search_query = gql`
+  query search($query: String!) {
+    search(query: $query, limit: 50) {
       id
+      english
       traditional
       simplified
-      pinyin
       jyutping
-      english
+      pinyin
     }
   }
 `
 
-export const load = async () => {
-  const query_result = await client.query(phrases_query, undefined).toPromise()
+export const load = async ({ url }) => {
+  const query = url.searchParams.get('query')
 
-  if (!query_result.data?.phrases) {
-    error(500, query_result.error)
+  if (!query) {
+    return {
+      query,
+      results: null,
+    }
   }
 
-  const phrases = query_result.data.phrases
+  const result = await client.query(search_query, { query }).toPromise()
+
+  if (!result.data?.search) {
+    error(500, result.error)
+  }
+
+  const results = result.data.search.map((phrase) => phrase)
 
   return {
-    phrases,
+    query,
+    results,
   }
 }

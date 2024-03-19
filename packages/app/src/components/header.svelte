@@ -3,7 +3,7 @@
 
   import Cog from '~icons/mingcute/settings-5-line'
   import Menu from '~icons/mingcute/menu-line'
-  import Search from '~icons/mingcute/search-2-line'
+  import Home from '~icons/mingcute/home-3-line'
   import Dictionary from '~icons/mingcute/book-2-line'
   import Collection from '~icons/mingcute/notebook-2-line'
   import Flashcards from '~icons/mingcute/wallet-5-line'
@@ -43,9 +43,9 @@
             on:click={close_menu}
             class:active={$page.url.pathname === '/'}
           >
-            <Search aria-label="Search" />
+            <Home aria-label="Home" />
 
-            <span class="link_text">Search</span>
+            <span class="link_text">Home</span>
           </a>
         </li>
         <li>
