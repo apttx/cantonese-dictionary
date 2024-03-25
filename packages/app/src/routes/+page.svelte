@@ -29,6 +29,7 @@
 </div>
 
 <h2 class="about_heading">About</h2>
+
 <p class="about_text">
   This dictionary is a passion project to help with learning Cantonese. It's built for English
   speakers and is best used to supplement other resources, such as subtitled videos or free video

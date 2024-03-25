@@ -101,6 +101,10 @@
   {/if}
 </div>
 
+{#if !data.results}
+  <p class="info_text">Search for words, expressions or sayings.</p>
+{/if}
+
 <div
   role="presentation"
   class="search_results"
@@ -194,5 +198,10 @@
   .active_tab_heading {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+  }
+
+  .info_text {
+    margin-top: 2rem;
+    margin-inline: var(--margin_content_text);
   }
 </style>
