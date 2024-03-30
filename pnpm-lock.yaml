@@ -112,8 +112,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5
       prettier-plugin-css-order:
-        specifier: 2.0.1
-        version: 2.0.1(postcss@8.4.35)(prettier@3.2.5)
+        specifier: 2.1.1
+        version: 2.1.1(postcss@8.4.35)(prettier@3.2.5)
       prettier-plugin-jsdoc:
         specifier: 1.3.0
         version: 1.3.0(prettier@3.2.5)
@@ -6259,8 +6259,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-css-order@2.0.1(postcss@8.4.35)(prettier@3.2.5):
-    resolution: {integrity: sha512-Y+wZ0wI7/qFUritirJksQn13KqbcNC3OZXSxGh1ui/X39hAeMW9md+Mp7fjk8H4ZQQ8c5CTYZxShoBfAal/79A==}
+  /prettier-plugin-css-order@2.1.1(postcss@8.4.35)(prettier@3.2.5):
+    resolution: {integrity: sha512-oAnL8g4T31Y8mhdJOn2UtoljFrzl595iogu2mt6T2vcKlDpgid5yCA/y+T8thcu8HWTM+NBmCt3MOBy/5t8Inw==}
     engines: {node: '>=16'}
     peerDependencies:
       prettier: 3.x
