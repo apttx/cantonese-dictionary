@@ -58,7 +58,7 @@
 </script>
 
 <Head
-  title="Search"
+  title="Dictionary"
   description="Search the CC-Canto dictionary & save phrases to practice your vocabulary."
 />
 

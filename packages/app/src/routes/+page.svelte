@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
+  import Head from '$components/head.svelte'
   import SearchForm, { type Submit_Event_Detail } from './search_form.svelte'
 
   let loading_state: 'idle' | 'pending' | 'error' = 'idle'
@@ -16,6 +17,11 @@
     await goto(`?query=${encodeURIComponent(term)}`)
   }
 </script>
+
+<Head
+  title="About"
+  description="Search the CC-Canto dictionary & save phrases to practice your vocabulary."
+/>
 
 <div
   role="presentation"
