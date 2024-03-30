@@ -37,7 +37,7 @@
     next_phrase()
   }
 
-  /** @type {Record<number, VoidFunction | undefined>} */
+  /** @type {Record<number, (() => void) | undefined>} */
   const screen_click_actions = { 1: flip_card, 2: next_phrase }
   /** @type {(event: MouseEvent) => void} */
   const on_screen_click = (event) => {

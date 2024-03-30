@@ -5,8 +5,8 @@
   export interface Submit_Event_Detail {
     term: string
     input_element: {
-      blur: VoidFunction
-      focus: VoidFunction
+      blur: () => void
+      focus: () => void
     }
   }
 </script>
