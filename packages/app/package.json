@@ -16,7 +16,7 @@
     "deploy:vercel": "vercel deploy"
   },
   "devDependencies": {
-    "@fontsource/dm-sans": "5.0.19",
+    "@fontsource/dm-sans": "5.0.20",
     "@iconify-json/mingcute": "1.1.17",
     "@playwright/test": "1.42.1",
     "@sveltejs/adapter-auto": "3.2.0",

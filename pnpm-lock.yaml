@@ -55,8 +55,8 @@ importers:
   packages/app:
     devDependencies:
       '@fontsource/dm-sans':
-        specifier: 5.0.19
-        version: 5.0.19
+        specifier: 5.0.20
+        version: 5.0.20
       '@iconify-json/mingcute':
         specifier: 1.1.17
         version: 1.1.17
@@ -1902,8 +1902,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@fontsource/dm-sans@5.0.19:
-    resolution: {integrity: sha512-gQC7cT/d169guzdmoRatxiqkARjrf4gszqzdTRlWdaBZhwxxMMaKgq3lzq6roYpGgcqp1urgAUsI1p6zeiNRMQ==}
+  /@fontsource/dm-sans@5.0.20:
+    resolution: {integrity: sha512-0dEHhu/rW9n5AIufDodNwBOrySzZVC+67l5TrYDgpeOmvhiZXvApBQHRC/pUSYLKpdg7rYy2G0q8GFQXO7Kpgg==}
     dev: true
 
   /@gar/promisify@1.1.3:
