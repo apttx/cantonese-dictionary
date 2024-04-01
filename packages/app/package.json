@@ -26,7 +26,7 @@
     "@types/node": "20.12.2",
     "@typescript-eslint/eslint-plugin": "7.4.0",
     "@typescript-eslint/parser": "7.4.0",
-    "@unocss/reset": "0.58.8",
+    "@unocss/reset": "0.58.9",
     "@urql/core": "4.3.0",
     "@vite-pwa/assets-generator": "0.2.4",
     "@vite-pwa/sveltekit": "0.4.0",
