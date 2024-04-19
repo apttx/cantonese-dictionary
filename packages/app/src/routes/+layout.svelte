@@ -63,6 +63,7 @@
 
 <style>
   main {
+    padding-bottom: 6rem;
     min-height: 80vh;
   }
 

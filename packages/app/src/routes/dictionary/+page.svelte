@@ -174,7 +174,6 @@
 
   .search_results {
     margin-top: 2rem;
-    margin-bottom: 4rem;
     margin-inline: var(--margin_content_text);
   }
 
