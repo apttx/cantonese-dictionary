@@ -105,11 +105,11 @@
   <p class="info_text">Search for words, expressions or sayings.</p>
 {/if}
 
-<div
-  role="presentation"
-  class="search_results"
->
-  {#if data.results && data.results.length > 0}
+{#if data.results && data.results.length > 0}
+  <div
+    role="presentation"
+    class="search_results"
+  >
     <Tabs
       {tabs}
       let:active
@@ -148,8 +148,8 @@
         {/key}
       {/if}
     </Tabs>
-  {/if}
-</div>
+  </div>
+{/if}
 
 <style>
   @keyframes loading {
