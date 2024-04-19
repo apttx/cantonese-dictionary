@@ -46,7 +46,6 @@
 
   .phrases {
     padding-top: 3rem;
-    padding-bottom: 6rem;
   }
 
   li {
