@@ -1,0 +1,42 @@
+type Transcript {
+  _: String
+}
+
+type Video_Thumbnail {
+  url: String!
+}
+
+interface Abstract_Video {
+  title: String!
+  transcript: Transcript!
+  thumbnail: Video_Thumbnail!
+}
+
+interface Routable_Abstract_Video implements Abstract_Video & Abstract_Routable {
+  title: String!
+  transcript: Transcript!
+  thumbnail: Video_Thumbnail!
+  slug: String!
+}
+
+interface Abstract_YouTube_Video implements Abstract_Video {
+  title: String!
+  transcript: Transcript!
+  thumbnail: Video_Thumbnail!
+  video_id: String!
+}
+
+type Routable_YouTube_Video implements Abstract_YouTube_Video & Routable_Abstract_Video & Abstract_Video & Abstract_Routable {
+  video_id: String!
+  title: String!
+  transcript: Transcript!
+  thumbnail: Video_Thumbnail!
+  slug: String!
+}
+
+union Routable_Video = Routable_YouTube_Video
+
+input Video_Where {
+  slug: String!
+  language: Language_Where!
+}

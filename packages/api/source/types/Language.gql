@@ -1,0 +1,42 @@
+interface Abstract_Language_Aspect {
+  color: String!
+  title: String!
+  description: String!
+  content: [Rich_Text_Element!]!
+}
+
+type Routable_Language_Aspect implements Abstract_Language_Aspect & Abstract_Routable {
+  slug: String!
+  color: String!
+  title: String!
+  description: String!
+  content: [Rich_Text_Element!]!
+}
+
+input Language_Aspect_Where {
+  slug: String!
+  language: Language_Where
+}
+
+interface Abstract_Language {
+  color: String!
+  name: String!
+  iso_639_code: String!
+  aspects: [Routable_Language_Aspect!]!
+  introduction: String!
+  videos: [Routable_Video!]!
+}
+
+type Routable_Language implements Abstract_Language & Abstract_Routable {
+  color: String!
+  name: String!
+  iso_639_code: String!
+  aspects: [Routable_Language_Aspect!]!
+  introduction: String!
+  videos: [Routable_Video!]!
+  slug: String!
+}
+
+input Language_Where {
+  slug: String!
+}

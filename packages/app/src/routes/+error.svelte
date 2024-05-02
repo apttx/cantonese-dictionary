@@ -11,9 +11,9 @@
 />
 
 <div>
-  <h1>{heading}</h1>
+  <h1 class="@heading +1 @content +text">{heading}</h1>
 
-  <p>
+  <p class="@content +text">
     Try visiting
     <a
       href="/"
@@ -33,11 +33,6 @@
 </div>
 
 <style>
-  h1 {
-    font-weight: 500;
-    font-size: 1.25rem;
-  }
-
   p {
     margin-top: 1rem;
   }
@@ -45,7 +40,7 @@
   div {
     display: grid;
     align-content: center;
-    margin-inline: var(--margin_content_text);
-    height: 100vh;
+    padding-block: 6rem;
+    min-height: calc(100svh - 14.25rem);
   }
 </style>

@@ -1,0 +1,3 @@
+interface Abstract_Routable {
+  slug: String!
+}

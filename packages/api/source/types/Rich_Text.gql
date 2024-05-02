@@ -1,0 +1,71 @@
+enum Format {
+  bold
+  italic
+  line_through
+  underline
+}
+
+interface Abstract_Rich_Text_Text_Element {
+  text: String!
+  formats: [Format!]!
+}
+
+type Rich_Text_Text implements Abstract_Rich_Text_Text_Element {
+  text: String!
+  formats: [Format!]!
+}
+
+type Rich_Text_Subscript_Text implements Abstract_Rich_Text_Text_Element {
+  text: String!
+  formats: [Format!]!
+}
+
+type Rich_Text_Superscript_Text implements Abstract_Rich_Text_Text_Element {
+  text: String!
+  formats: [Format!]!
+}
+
+type Rich_Text_Text_Link implements Abstract_Rich_Text_Text_Element {
+  text: String!
+  formats: [Format!]!
+  href: String!
+}
+
+union Rich_Text_Text_Element =
+  | Rich_Text_Text
+  | Rich_Text_Subscript_Text
+  | Rich_Text_Superscript_Text
+  | Rich_Text_Text_Link
+
+type Rich_Text_Paragraph {
+  content: [Rich_Text_Text_Element!]!
+}
+
+type Rich_Text_Heading {
+  level: Int
+  content: [Rich_Text_Text_Element!]!
+}
+
+type Rich_Text_Image {
+  url: String!
+  alt_text: String!
+  height: Int!
+  width: Int!
+  caption: String
+}
+
+type Rich_Text_List_Item {
+  content: [Rich_Text_Text_Element!]!
+}
+
+enum List_Type {
+  ordered
+  unordered
+}
+
+type Rich_Text_List {
+  list_type: List_Type!
+  items: [Rich_Text_List_Item!]!
+}
+
+union Rich_Text_Element = Rich_Text_Heading | Rich_Text_Paragraph | Rich_Text_Image | Rich_Text_List

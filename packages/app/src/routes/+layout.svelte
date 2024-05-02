@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { setContext } from 'svelte'
 
   import '../app.mjs'
@@ -12,6 +12,8 @@
   import Settings_Modal from './settings_modal.svelte'
   import Flashcard_Settings_Modal from './flashcard_settings_modal.svelte'
   import Pwa from './pwa.svelte'
+  import { page } from '$app/stores'
+  import Breadcrumbs from '$components/breadcrumbs.svelte'
 
   /** @type {boolean} */
   let settings_open = false
@@ -21,6 +23,15 @@
   setContext('open_flashcard_settings', () => {
     flashcard_settings_open = true
   })
+
+  $: breadcrumbs = $page.error
+    ? [
+        {
+          text: $page.status === 404 ? 'This page does not exist' : 'Something went wrong',
+          route: $page.url.pathname,
+        },
+      ]
+    : $page.data.breadcrumbs ?? []
 </script>
 
 <Pwa />
@@ -44,6 +55,10 @@
       type="image/png"
     />
   {/each}
+
+  {#if $page.data.title}
+    <title>{$page.data.title} | Cantonese Dictionary</title>
+  {/if}
 </svelte:head>
 
 <Header
@@ -54,6 +69,13 @@
 
 <Settings_Modal bind:open={settings_open} />
 <Flashcard_Settings_Modal bind:visible={flashcard_settings_open} />
+
+<div
+  role="presentation"
+  class="@content @spaced +sibling"
+>
+  <Breadcrumbs crumbs={breadcrumbs} />
+</div>
 
 <main inert={$main_inert}>
   <slot />

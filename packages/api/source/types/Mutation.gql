@@ -1,0 +1,3 @@
+type Mutation {
+  set_language_aspect_content(content: [Rich_Text_Element!]!): Routable_Language_Aspect
+}

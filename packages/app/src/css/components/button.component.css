@@ -1,0 +1,76 @@
+@media (hover: hover) {
+  .\@button {
+    transition-duration: 150ms;
+    transition-property: color;
+    transition-timing-function: ease-in;
+    padding: 0.6rem 0.8rem;
+    line-height: 1;
+
+    &.\+square {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .\@button:hover:not(:disabled) {
+    transition-timing-function: ease-out;
+    color: var(--context_color_hint);
+  }
+
+  .\@button:active:not(:disabled) {
+    transition-timing-function: ease-out;
+    color: var(--context_color_interact);
+  }
+
+  .\@button {
+    transition-property: color, border-color;
+    border-width: 0.1rem;
+    border-color: currentColor;
+    border-color: var(--text_neutral-faint_onbase);
+    border-radius: 0.2rem;
+  }
+
+  .\@button:hover:not(:disabled) {
+    border-color: var(--text_primary-faint_onbase);
+  }
+
+  .\@button:active:not(:disabled) {
+    transition-timing-function: ease-out;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0.1rem;
+    border-color: var(--text_primary_onbase);
+    color: var(--context_color_interact);
+  }
+}
+
+@media (hover: none) {
+  .\@button {
+    transition-duration: 500ms;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  }
+
+  .\@button:active:not(:disabled) {
+    transition-duration: 0ms;
+    color: var(--context_color_interact);
+  }
+
+  .\@button {
+    transition-property: color, border-color;
+    border-width: 0.1rem;
+    border-color: currentColor;
+    border-color: var(--text_neutral-faint_onbase);
+    border-radius: 0.2rem;
+  }
+
+  .\@button:active:not(:disabled) {
+    transition-timing-function: ease-out;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0.1rem;
+    border-color: var(--text_primary_onbase);
+    color: var(--context_color_interact);
+  }
+}

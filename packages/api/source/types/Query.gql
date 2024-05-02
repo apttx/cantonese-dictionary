@@ -1,9 +1,9 @@
-input Phrase_Where {
-  id: ID!
-}
-
 type Query {
   search(query: String!, limit: Int): [Phrase!]!
   phrases(after: ID, limit: Int): [Phrase!]!
-  phrase(where: Phrase_Where): Phrase!
+  phrase(where: Phrase_Where!): Phrase!
+  languages: [Routable_Language!]!
+  language(where: Language_Where!): Routable_Language!
+  language_aspect(where: Language_Aspect_Where!): Routable_Language_Aspect!
+  video(where: Video_Where!): Routable_Video!
 }

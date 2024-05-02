@@ -7,3 +7,7 @@ type Phrase {
   english: String!
   senses: [Phrase!]!
 }
+
+input Phrase_Where {
+  id: ID!
+}

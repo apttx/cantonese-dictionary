@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "nodemon -e js,mjs,gql scripts/develop.mjs",
+    "develop": "nodemon -e js,mjs,gql,ts -x 'tsx scripts/develop.ts'",
     "build:vercel": "rollup --config rollup.config.mjs",
     "prettier": "prettier --ignore-path .gitignore --check .",
     "eslint": "eslint --config .eslintrc.cjs 'source/**/*' 'scripts/**/*'",
@@ -21,6 +21,7 @@
   "author": "aptt",
   "license": "GPL-3.0",
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "graphql": "^16.8.1",
     "graphql-yoga": "^5.1.1",
     "sqlite3": "^5.1.7"
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@rollup/plugin-replace": "5.0.5",
     "@rollup/plugin-terser": "0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@rollup/plugin-virtual": "3.0.2",
     "concurrently": "8.2.2",
     "eslint": "8.57.0",
@@ -36,6 +38,7 @@
     "prettier-plugin-jsdoc": "1.3.0",
     "rollup": "4.13.2",
     "rollup-plugin-copy": "3.5.0",
+    "tsx": "^4.7.3",
     "vercel": "33.6.2"
   }
 }

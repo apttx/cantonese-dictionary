@@ -12,5 +12,3 @@
     content={description}
   />
 </svelte:head>
-
-<h1 class="screen_reader_only">Dictionary</h1>

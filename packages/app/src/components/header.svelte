@@ -3,10 +3,10 @@
 
   import Cog from '~icons/mingcute/settings-5-line'
   import Menu from '~icons/mingcute/menu-line'
-  import Home from '~icons/mingcute/home-3-line'
   import Dictionary from '~icons/mingcute/book-2-line'
   import Collection from '~icons/mingcute/notebook-2-line'
   import Flashcards from '~icons/mingcute/wallet-5-line'
+  import Learn from '~icons/mingcute/mortarboard-line'
 
   import { page } from '$app/stores'
 
@@ -39,46 +39,53 @@
       <ul class:open={menu_open}>
         <li>
           <a
-            href="/"
-            on:click={close_menu}
-            class:active={$page.url.pathname === '/'}
-          >
-            <Home aria-label="Home" />
-
-            <span class="link_text">Home</span>
-          </a>
-        </li>
-        <li>
-          <a
             href="/dictionary"
+            aria-current={$page.url.pathname === '/dictionary' ? 'page' : undefined}
             on:click={close_menu}
-            class:active={$page.url.pathname === '/dictionary'}
+            class:active={$page.url.pathname.startsWith('/dictionary')}
           >
             <Dictionary aria-label="Dictionary" />
 
             <span class="link_text">Dictionary</span>
           </a>
         </li>
+
         <li>
           <a
             href="/collection"
+            aria-current={$page.url.pathname === '/collection' ? 'page' : undefined}
             on:click={close_menu}
-            class:active={$page.url.pathname === '/collection'}
+            class:active={$page.url.pathname.startsWith('/collection')}
           >
             <Collection aria-label="Collection" />
 
             <span class="link_text">Collection</span>
           </a>
         </li>
+
         <li>
           <a
             href="/flashcards"
+            aria-current={$page.url.pathname === '/flashcards' ? 'page' : undefined}
             on:click={close_menu}
-            class:active={$page.url.pathname === '/flashcards'}
+            class:active={$page.url.pathname.startsWith('/flashcards')}
           >
             <Flashcards aria-label="Flashcards" />
 
             <span class="link_text">Flashcards</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/learn"
+            aria-current={$page.url.pathname === '/learn' ? 'page' : undefined}
+            on:click={close_menu}
+            class:active={$page.url.pathname.startsWith('/learn')}
+          >
+            <Learn aria-label="Learn" />
+
+            <span class="link_text">Learn</span>
           </a>
         </li>
       </ul>
