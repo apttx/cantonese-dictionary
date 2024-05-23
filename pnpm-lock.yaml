@@ -49,8 +49,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       vercel:
-        specifier: 34.2.0
-        version: 34.2.0(encoding@0.1.13)
+        specifier: 34.2.1
+        version: 34.2.1(encoding@0.1.13)
 
   packages/app:
     devDependencies:
@@ -133,8 +133,8 @@ importers:
         specifier: 0.19.0
         version: 0.19.0
       vercel:
-        specifier: 34.2.0
-        version: 34.2.0(encoding@0.1.13)
+        specifier: 34.2.1
+        version: 34.2.1(encoding@0.1.13)
       vite:
         specifier: 5.2.11
         version: 5.2.11(@types/node@20.12.12)(terser@5.31.0)
@@ -1465,8 +1465,8 @@ packages:
   '@vercel/hydrogen@1.0.2':
     resolution: {integrity: sha512-/Q2MKk1GfOuZAnkE9jQexjtUQqanbY65R+xtJWd9yKIgwcfRI1hxiNH3uXyVM5AvLoY+fxxULkSuxDtUKpkJpQ==}
 
-  '@vercel/next@4.2.11':
-    resolution: {integrity: sha512-jCMTa75CIkX8vfY4BiW6BajSLXXQRE1doNeX9nO+gzYtaKTfxB5FiVKNAocjDwP249WIR0o1vziHus5bX84jFg==}
+  '@vercel/next@4.2.12':
+    resolution: {integrity: sha512-GOznrnrft3xgbIVhIVgVaTvVVb2ELK4RDihIwUD9ZKlRfyZTuV1Iletn51p7cG9xana6tz1Ezek9J4VfeKKMhA==}
 
   '@vercel/nft@0.26.4':
     resolution: {integrity: sha512-j4jCOOXke2t8cHZCIxu1dzKLHLcFmYzC3yqAK6MfZznOL1QIJKd0xcFsXK3zcqzU7ScsE2zWkiMMNHGMHgp+FA==}
@@ -2688,6 +2688,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.1:
     resolution: {integrity: sha512-8nWq2nLTAwd02jTqJExUYFSD/fKq6VH9Y/oG2accc/kdI0V98Bag8d5a4gi3XHz73rDWa2PvTtvcWYquKqSENA==}
@@ -4256,8 +4257,8 @@ packages:
     resolution: {integrity: sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==}
     engines: {node: '>=12'}
 
-  vercel@34.2.0:
-    resolution: {integrity: sha512-OUMvETq+5Iq9L5m1v/E9SPUUfKnKnJjynv0ydeAqWnXoYAwgcaJCg+3HVOEk1VhjhgcGzSS1uGHvlcLmK6XRkA==}
+  vercel@34.2.1:
+    resolution: {integrity: sha512-ZSiBlaenQuYWiFPc+7V3ZSYYRvy++8TE/izbgfGfE/GZ3yQrpKCZH72rLMlJ304UJc+ia/cCPK0g6nFY74N2nQ==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -5920,7 +5921,7 @@ snapshots:
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
 
-  '@vercel/next@4.2.11(encoding@0.1.13)':
+  '@vercel/next@4.2.12(encoding@0.1.13)':
     dependencies:
       '@vercel/nft': 0.27.0(encoding@0.1.13)
     transitivePeerDependencies:
@@ -9093,13 +9094,13 @@ snapshots:
 
   value-or-promise@1.0.12: {}
 
-  vercel@34.2.0(encoding@0.1.13):
+  vercel@34.2.1(encoding@0.1.13):
     dependencies:
       '@vercel/build-utils': 8.2.0
       '@vercel/fun': 1.1.0(encoding@0.1.13)
       '@vercel/go': 3.1.1
       '@vercel/hydrogen': 1.0.2
-      '@vercel/next': 4.2.11(encoding@0.1.13)
+      '@vercel/next': 4.2.12(encoding@0.1.13)
       '@vercel/node': 3.1.5(encoding@0.1.13)
       '@vercel/python': 4.2.0
       '@vercel/redwood': 2.0.9(encoding@0.1.13)
