@@ -32,7 +32,7 @@
     "@vite-pwa/sveltekit": "0.6.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-svelte": "2.42.0",
+    "eslint-plugin-svelte": "2.43.0",
     "graphql": "16.9.0",
     "prettier": "3.3.3",
     "prettier-plugin-css-order": "2.1.2",
