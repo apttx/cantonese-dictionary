@@ -18,7 +18,7 @@
   "devDependencies": {
     "@fontsource/dm-sans": "5.0.21",
     "@iconify-json/mingcute": "1.1.18",
-    "@playwright/test": "1.45.2",
+    "@playwright/test": "1.45.3",
     "@sveltejs/adapter-auto": "3.2.2",
     "@sveltejs/adapter-vercel": "5.4.1",
     "@sveltejs/kit": "2.5.18",
