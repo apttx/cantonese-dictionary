@@ -120,6 +120,8 @@ const get_phrases_with_senses = (phrases_join_phrases_rows) => {
 export const get_datasource = async (promisified_database) => {
   /** @type {Phrases_Datasource['search']} */
   const search = async (options) => {
+    const escaped_term = `"${options.term.replace(/"/g, '""')}"`
+
     const phrases_join_phrases = /** @type {Phrases_Join_Phrases_Row[]} */ (
       await promisified_database.all(
         `SELECT
@@ -158,7 +160,7 @@ export const get_datasource = async (promisified_database) => {
 
         {
           $limit: options.limit,
-          $term: options.term,
+          $term: escaped_term,
         },
       )
     )
