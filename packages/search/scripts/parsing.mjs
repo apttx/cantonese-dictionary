@@ -30,26 +30,22 @@ import { get_english_senses } from './parsing/english'
 /** @type {(line: Canto_Line) => Parsed_Canto_Phrase} */
 const get_phrase = (line) => {
   const matches = line.match(
-    /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] {(?<jyutping>[^}]*)} \/(?<english>.*)\/[^/]*$/i,
+    /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] {(?<jyutping>[^}]*)}.*$/i,
   )
 
   if (!matches) {
     throw `unable to parse ${JSON.stringify(line)} [@get_phrase]`
   }
 
-  const { traditional, simplified, pinyin, jyutping, english } = /**
+  const { traditional, simplified, pinyin, jyutping } = /**
    * @type {{
    *   traditional: string
    *   simplified: string
    *   pinyin: string
    *   jyutping: string
-   *   english: string
    * }}
    */ (matches.groups)
-  const english_senses = english
-    .split(/\//g)
-    .map((sense) => sense.trim())
-    .filter(Boolean)
+  const english_senses = get_english_senses(line)
 
   /** @type {Parsed_Canto_Phrase} */
   const canto_phrase = {

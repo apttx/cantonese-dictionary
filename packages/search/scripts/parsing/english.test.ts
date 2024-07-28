@@ -55,4 +55,16 @@ describe('english', () => {
 
     t.expect(actual).toEqual(expected)
   })
+
+  test('parses gam2 joeng2 correctly', (t) => {
+    const fixture =
+      "噉樣 啖样 [dan4 yang4] {gam2 joeng2} /(phrase / pronoun) means 'like this'; that way; this way e.g. 佢噉樣唔得 He shouldn't do it like this; in that case; for that reason; since that is the case; then/"
+    const expected = [
+      "(phrase / pronoun) means 'like this'; that way; this way e.g. 佢噉樣唔得 He shouldn't do it like this; in that case; for that reason; since that is the case; then",
+    ]
+
+    const actual = get_english_senses(fixture)
+
+    t.expect(actual).toEqual(expected)
+  })
 })
