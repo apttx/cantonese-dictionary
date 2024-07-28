@@ -1,10 +1,7 @@
 import { describe, test } from 'vitest'
 import { get_english_senses } from './english'
 
-const fixture =
-  '一 一 [yi1] {jat1} /one/single/a (article)/as soon as/entire/whole/all/throughout/"one" radical in Chinese characters (Kangxi radical 1)/also pr. [yāo] for greater clarity when spelling out numbers digit by digit/first (positional)/one part of a fraction, such as \'a\' quarter, an eighth/a short duration (when used with a verb)/each/same/dedicated/from the start/ # adapted from cc-cedict'
-
-describe('english', (t) => {
+describe('english', () => {
   test('parses single sense', (t) => {
     const fixture = '一 一 [yi1] {jat1} /one/'
     const expected = ['one']
