@@ -26,7 +26,7 @@ export const get_english_senses = (line: string) => {
 
   let sense_buffer: string[] = []
   let is_english = false
-  let bracket_stack: Opening_Bracket[] = []
+  const bracket_stack: Opening_Bracket[] = []
   for (const current_character of line) {
     if (current_character === '#') {
       break
