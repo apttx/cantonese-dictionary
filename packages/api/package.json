@@ -5,7 +5,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "nodemon -e js,mjs,gql scripts/develop.mjs",
     "build:vercel": "rollup --config rollup.config.mjs",
     "prettier": "prettier --ignore-path .gitignore --check .",

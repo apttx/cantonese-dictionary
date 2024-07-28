@@ -3,7 +3,9 @@
     "allowJs": true,
     "checkJs": true,
     "strict": true,
-    "target": "ES2023"
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
+    "outDir": "dist"
   },
   "include": ["../types/**/*", "./**/*"]
 }
