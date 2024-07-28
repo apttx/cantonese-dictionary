@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto'
+import { get_english_senses } from './parsing/english'
 
 /** @typedef {`${string} ${string} [${string}] /${string}/`} Cedict_Line */
 /** @typedef {`${string} ${string} [${string}] {${string}} /${string}/`} Canto_Line */
@@ -64,26 +65,22 @@ const get_phrase = (line) => {
 /** @type {(line: Cedict_Line) => Parsed_Cedict_Phrase} */
 const get_cedict_phrase = (line) => {
   const matches = line.match(
-    /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] \/(?<english>.*)\/[^/]*$/i,
+    /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\].*$/i,
   )
 
   if (!matches) {
     throw `unable to parse ${JSON.stringify(line)} [@get_phrase]`
   }
 
-  const { traditional, simplified, pinyin, jyutping, english } = /**
+  const { traditional, simplified, pinyin, jyutping } = /**
    * @type {{
    *   traditional: string
    *   simplified: string
    *   pinyin: string
    *   jyutping: string
-   *   english: string
    * }}
    */ (matches.groups)
-  const english_senses = english
-    .split(/\//g)
-    .map((sense) => sense.trim())
-    .filter(Boolean)
+  const english_senses = get_english_senses(line)
 
   /** @type {Parsed_Canto_Phrase} */
   const canto_phrase = {

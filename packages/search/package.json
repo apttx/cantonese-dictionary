@@ -5,9 +5,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node scripts/build.mjs",
-    "develop": "nodemon -e mjs scripts/build.mjs",
+    "test": "vitest",
+    "build": "tsx scripts/build.mjs",
+    "develop": "nodemon -e mjs,ts -x 'pnpm build'",
     "prettier": "prettier --ignore-path .gitignore --check .",
     "eslint": "eslint --config .eslintrc.cjs scripts/**/*.*",
     "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint",
@@ -28,6 +28,8 @@
     "nodemon": "3.1.4",
     "prettier": "3.3.3",
     "prettier-plugin-jsdoc": "1.3.0",
-    "sqlite3": "5.1.7"
+    "sqlite3": "5.1.7",
+    "tsx": "^4.16.2",
+    "vitest": "2.0.4"
   }
 }
