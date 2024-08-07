@@ -40,7 +40,7 @@
     "svelte": "4.2.18",
     "svelte-check": "3.8.5",
     "typescript": "5.5.4",
-    "unplugin-icons": "0.19.1",
+    "unplugin-icons": "0.19.2",
     "vercel": "35.2.3",
     "vite": "5.3.5",
     "vite-plugin-pwa": "0.20.1",
