@@ -85,8 +85,8 @@ importers:
         specifier: 7.18.0
         version: 7.18.0(eslint@8.57.0)(typescript@5.5.4)
       '@unocss/reset':
-        specifier: 0.62.0
-        version: 0.62.0
+        specifier: 0.62.1
+        version: 0.62.1
       '@urql/core':
         specifier: 5.0.5
         version: 5.0.5(graphql@16.9.0)
@@ -1587,8 +1587,8 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@unocss/reset@0.62.0':
-    resolution: {integrity: sha512-IOl/gM5kAEno5vP1v1DwqPp8XL8aYyrvdrgU7d/x/Tkhxaohpd8jZc3FXRi1g2jpiTZRe5eLc+h8uf2QCgd9Sw==}
+  '@unocss/reset@0.62.1':
+    resolution: {integrity: sha512-v6YRcBDZx26RnuxG8/EhrmwG2ixyljcgdF/ZbSGzxktxbebGvxURH80TjKXNnfRX7nOMAJ2eyx15ZxpvCGx28Q==}
 
   '@urql/core@5.0.5':
     resolution: {integrity: sha512-KmWRlN8dJz+XU21wmhcHcTV11n1K7zxaMtVwOhkH7b8H5Z5nuFKY5EkUsWqPlZl53YPiKwTtOMpptz5hamVVNQ==}
@@ -6225,7 +6225,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@unocss/reset@0.62.0': {}
+  '@unocss/reset@0.62.1': {}
 
   '@urql/core@5.0.5(graphql@16.9.0)':
     dependencies:
