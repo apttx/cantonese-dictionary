@@ -88,8 +88,8 @@ importers:
         specifier: 0.62.1
         version: 0.62.1
       '@urql/core':
-        specifier: 5.0.5
-        version: 5.0.5(graphql@16.9.0)
+        specifier: 5.0.6
+        version: 5.0.6(graphql@16.9.0)
       '@vite-pwa/assets-generator':
         specifier: 0.2.4
         version: 0.2.4
@@ -1590,8 +1590,8 @@ packages:
   '@unocss/reset@0.62.1':
     resolution: {integrity: sha512-v6YRcBDZx26RnuxG8/EhrmwG2ixyljcgdF/ZbSGzxktxbebGvxURH80TjKXNnfRX7nOMAJ2eyx15ZxpvCGx28Q==}
 
-  '@urql/core@5.0.5':
-    resolution: {integrity: sha512-KmWRlN8dJz+XU21wmhcHcTV11n1K7zxaMtVwOhkH7b8H5Z5nuFKY5EkUsWqPlZl53YPiKwTtOMpptz5hamVVNQ==}
+  '@urql/core@5.0.6':
+    resolution: {integrity: sha512-38rgSDqVNihFDauw1Pm9V7XLWIKuK8V9CKgrUF7/xEKinze8ENKP1ZeBhkG+dxWzJan7CHK+SLl46kAdvZwIlA==}
 
   '@vercel/build-utils@8.3.6':
     resolution: {integrity: sha512-EPwr8tXu41aoXg9QBiF98clu5AHbKtwbp3SeX/W6c8L0fhLwiT+H/s3WDuOL/UMz0TT3B8JAdY4PZioWNEAf6g==}
@@ -6227,7 +6227,7 @@ snapshots:
 
   '@unocss/reset@0.62.1': {}
 
-  '@urql/core@5.0.5(graphql@16.9.0)':
+  '@urql/core@5.0.6(graphql@16.9.0)':
     dependencies:
       '@0no-co/graphql.web': 1.0.5(graphql@16.9.0)
       wonka: 6.3.4
