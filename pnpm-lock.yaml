@@ -58,8 +58,8 @@ importers:
         specifier: 5.0.22
         version: 5.0.22
       '@iconify-json/mingcute':
-        specifier: 1.1.19
-        version: 1.1.19
+        specifier: 1.1.20
+        version: 1.1.20
       '@playwright/test':
         specifier: 1.46.1
         version: 1.46.1
@@ -1189,8 +1189,8 @@ packages:
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
     deprecated: Use @eslint/object-schema instead
 
-  '@iconify-json/mingcute@1.1.19':
-    resolution: {integrity: sha512-O7h8mEQPUBfpsMagPI7ab/w5JzpijMMYmlabD43hyXyjh2LBfz+FlC+AcgSjQERx9+zb1dECb0FA34L5+VKs/Q==}
+  '@iconify-json/mingcute@1.1.20':
+    resolution: {integrity: sha512-cLrKrnb9gsi+G6bRtqoFB0KcZnuD/f+p1mwmCTOJdfT8XUFOeZ/ObyBDcAsD2alwL1JmwvqRF08RDW0pfWZAnA==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -5795,7 +5795,7 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.2': {}
 
-  '@iconify-json/mingcute@1.1.19':
+  '@iconify-json/mingcute@1.1.20':
     dependencies:
       '@iconify/types': 2.0.0
 
