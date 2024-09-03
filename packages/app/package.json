@@ -28,7 +28,7 @@
     "@unocss/reset": "0.62.3",
     "@urql/core": "5.0.6",
     "@vite-pwa/assets-generator": "0.2.5",
-    "@vite-pwa/sveltekit": "0.6.1",
+    "@vite-pwa/sveltekit": "0.6.2",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-svelte": "2.43.0",
