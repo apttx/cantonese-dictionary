@@ -91,11 +91,11 @@ importers:
         specifier: 5.0.6
         version: 5.0.6(graphql@16.9.0)
       '@vite-pwa/assets-generator':
-        specifier: 0.2.4
-        version: 0.2.4
+        specifier: 0.2.5
+        version: 0.2.5
       '@vite-pwa/sveltekit':
         specifier: 0.6.1
-        version: 0.6.1(@sveltejs/kit@2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(@vite-pwa/assets-generator@0.2.4)(vite-plugin-pwa@0.20.2(@vite-pwa/assets-generator@0.2.4)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0))
+        version: 0.6.1(@sveltejs/kit@2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(@vite-pwa/assets-generator@0.2.5)(vite-plugin-pwa@0.20.2(@vite-pwa/assets-generator@0.2.5)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0))
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -140,7 +140,7 @@ importers:
         version: 5.4.2(@types/node@20.16.3)(terser@5.31.6)
       vite-plugin-pwa:
         specifier: 0.20.2
-        version: 0.20.2(@vite-pwa/assets-generator@0.2.4)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0)
+        version: 0.20.2(@vite-pwa/assets-generator@0.2.5)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0)
       vitest:
         specifier: 2.0.5
         version: 2.0.5(@edge-runtime/vm@3.2.0)(@types/node@20.16.3)(terser@5.31.6)
@@ -204,9 +204,6 @@ packages:
 
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
-
-  '@antfu/utils@0.7.7':
-    resolution: {integrity: sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg==}
 
   '@apideck/better-ajv-errors@0.3.6':
     resolution: {integrity: sha512-P+ZygBLZtkp0qqOAJJVX4oX/sFo5JR3eBWwwuqHHhK0GIgQOKWrAfiAaWX0aArHkRWHMuggFEgAZNxVPwPZYaA==}
@@ -1644,8 +1641,8 @@ packages:
   '@vercel/static-config@3.0.0':
     resolution: {integrity: sha512-2qtvcBJ1bGY0dYGYh3iM7yGKkk971FujLEDXzuW5wcZsPr1GSEjO/w2iSr3qve6nDDtBImsGoDEnus5FI4+fIw==}
 
-  '@vite-pwa/assets-generator@0.2.4':
-    resolution: {integrity: sha512-DXyPLPR/IpbZPSpo1amZEPghY/ziIwpTUKNaz0v1xG+ELzCXmrVQhVzEMqr2JLSqRxjc+UzKfGJA/YdUuaao3w==}
+  '@vite-pwa/assets-generator@0.2.5':
+    resolution: {integrity: sha512-pVSILsW1sYrv77sRIPB+f6017H58ncoeChm72wsEd2QakQ0gXlUP5mZa99lXSkWTrkSQr1Q4XM64Eicp2T++gA==}
     engines: {node: '>=16.14.0'}
     hasBin: true
 
@@ -3058,9 +3055,6 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  jsonc-parser@3.2.1:
-    resolution: {integrity: sha512-AilxAyFOAcK5wA1+LeaySVBrHsGQvUFCDWXKpZjzaL0PqW+xfBOttn8GNtWKFWqneyMZj41MWF9Kl6iPWLwgOA==}
-
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
@@ -3313,9 +3307,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  mlly@1.6.1:
-    resolution: {integrity: sha512-vLgaHvaeunuOXHSmEbZ9izxPx3USsk8KCQ8iC+aTlp5sKRSoZvwhHh5L9VbKSaVC6sJDqbyohIS76E2VmHIPAA==}
-
   mlly@1.7.1:
     resolution: {integrity: sha512-rrVRZRELyQzrIUAVMHxP97kv+G786pHmOKzuFII8zDYahFBS7qnHh2AlYSl1GAHhaMPCz6/oHjVMcfFYgFYHgA==}
 
@@ -3562,9 +3553,6 @@ packages:
   picomatch@4.0.2:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
-
-  pkg-types@1.0.3:
-    resolution: {integrity: sha512-nN7pYi0AQqJnoLPC9eHFQ8AcyaixBUOwvqc5TDnIKCMEE6I0y8P7OKA7fPexsXGCGxQDl/cmrLAp26LhcwxZ4A==}
 
   pkg-types@1.1.3:
     resolution: {integrity: sha512-+JrgthZG6m3ckicaOB74TwQ+tBWsFl3qVQg7mN8ulwSOElJ7gBhKzj2VkCPnZ4NlF6kEquYU+RIYNVAvzd54UA==}
@@ -4285,9 +4273,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ufo@1.4.0:
-    resolution: {integrity: sha512-Hhy+BhRBleFjpJ2vchUNN40qgkh0366FWJGqVLYBHev0vpHTrXSA0ryT+74UiW6KWsldNurQMKGqCm1M2zBciQ==}
-
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
 
@@ -4694,8 +4679,6 @@ snapshots:
       '@jsdevtools/ez-spawn': 3.0.4
 
   '@antfu/utils@0.7.10': {}
-
-  '@antfu/utils@0.7.7': {}
 
   '@apideck/better-ajv-errors@0.3.6(ajv@8.17.1)':
     dependencies:
@@ -6314,7 +6297,7 @@ snapshots:
       json-schema-to-ts: 1.6.4
       ts-morph: 12.0.0
 
-  '@vite-pwa/assets-generator@0.2.4':
+  '@vite-pwa/assets-generator@0.2.5':
     dependencies:
       cac: 6.7.14
       colorette: 2.0.20
@@ -6323,13 +6306,13 @@ snapshots:
       sharp-ico: 0.1.5
       unconfig: 0.3.11
 
-  '@vite-pwa/sveltekit@0.6.1(@sveltejs/kit@2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(@vite-pwa/assets-generator@0.2.4)(vite-plugin-pwa@0.20.2(@vite-pwa/assets-generator@0.2.4)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0))':
+  '@vite-pwa/sveltekit@0.6.1(@sveltejs/kit@2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(@vite-pwa/assets-generator@0.2.5)(vite-plugin-pwa@0.20.2(@vite-pwa/assets-generator@0.2.5)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0))':
     dependencies:
       '@sveltejs/kit': 2.5.25(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6)))(svelte@4.2.19)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))
       kolorist: 1.8.0
-      vite-plugin-pwa: 0.20.2(@vite-pwa/assets-generator@0.2.4)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0)
+      vite-plugin-pwa: 0.20.2(@vite-pwa/assets-generator@0.2.5)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0)
     optionalDependencies:
-      '@vite-pwa/assets-generator': 0.2.4
+      '@vite-pwa/assets-generator': 0.2.5
 
   '@vitest/expect@2.0.5':
     dependencies:
@@ -7860,8 +7843,6 @@ snapshots:
 
   json5@2.2.3: {}
 
-  jsonc-parser@3.2.1: {}
-
   jsonfile@4.0.0:
     optionalDependencies:
       graceful-fs: 4.2.11
@@ -8211,13 +8192,6 @@ snapshots:
 
   mkdirp@1.0.4: {}
 
-  mlly@1.6.1:
-    dependencies:
-      acorn: 8.12.1
-      pathe: 1.1.2
-      pkg-types: 1.0.3
-      ufo: 1.4.0
-
   mlly@1.7.1:
     dependencies:
       acorn: 8.12.1
@@ -8444,12 +8418,6 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.2: {}
-
-  pkg-types@1.0.3:
-    dependencies:
-      jsonc-parser: 3.2.1
-      mlly: 1.7.1
-      pathe: 1.1.2
 
   pkg-types@1.1.3:
     dependencies:
@@ -9286,8 +9254,6 @@ snapshots:
 
   typescript@5.5.4: {}
 
-  ufo@1.4.0: {}
-
   ufo@1.5.4: {}
 
   uid-promise@1.0.0: {}
@@ -9301,10 +9267,10 @@ snapshots:
 
   unconfig@0.3.11:
     dependencies:
-      '@antfu/utils': 0.7.7
+      '@antfu/utils': 0.7.10
       defu: 6.1.4
       jiti: 1.21.0
-      mlly: 1.6.1
+      mlly: 1.7.1
 
   undefsafe@2.0.5: {}
 
@@ -9428,7 +9394,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-pwa@0.20.2(@vite-pwa/assets-generator@0.2.4)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0):
+  vite-plugin-pwa@0.20.2(@vite-pwa/assets-generator@0.2.5)(vite@5.4.2(@types/node@20.16.3)(terser@5.31.6))(workbox-build@7.0.0)(workbox-window@7.0.0):
     dependencies:
       debug: 4.3.6
       pretty-bytes: 6.1.1
@@ -9437,7 +9403,7 @@ snapshots:
       workbox-build: 7.0.0
       workbox-window: 7.0.0
     optionalDependencies:
-      '@vite-pwa/assets-generator': 0.2.4
+      '@vite-pwa/assets-generator': 0.2.5
     transitivePeerDependencies:
       - supports-color
 
