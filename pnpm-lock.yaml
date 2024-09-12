@@ -55,8 +55,8 @@ importers:
   packages/app:
     devDependencies:
       '@fontsource/dm-sans':
-        specifier: 5.0.23
-        version: 5.0.23
+        specifier: 5.1.0
+        version: 5.1.0
       '@iconify-json/mingcute':
         specifier: 1.2.0
         version: 1.2.0
@@ -1122,8 +1122,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fontsource/dm-sans@5.0.23':
-    resolution: {integrity: sha512-e0tf7L23m0qrjRHgDT+LPOp1EmF1urn4pJdPpl6e+aZ+2LW995f5eSpmzAEbr9C/XUSwDaCKXTUvi13bHx4+Uw==}
+  '@fontsource/dm-sans@5.1.0':
+    resolution: {integrity: sha512-YpGtZ8Rbh+/84rn7o/rzBBFnikoLjhjtzKYAMZhSRr7xWU0piZDBFhUdI14M4Ub8emh0TSG/gU2pJOMUe9TGYA==}
 
   '@gar/promisify@1.1.3':
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
@@ -5619,7 +5619,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fontsource/dm-sans@5.0.23': {}
+  '@fontsource/dm-sans@5.1.0': {}
 
   '@gar/promisify@1.1.3':
     optional: true
