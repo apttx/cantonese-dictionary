@@ -6,6 +6,7 @@
     disabled?: boolean
   }"
 >
+  interface Tab {}
   export let tabs: Tab[]
   export let active: Tab = tabs[0]
 
