@@ -49,13 +49,9 @@
     </span>
   {/if}
 
-  <ul class="english">
-    {#each phrase.english.split('/') as sense}
-      <li>
-        {sense}
-      </li>
-    {/each}
-  </ul>
+  <span class="english">
+    {phrase.english}
+  </span>
 
   <a
     href="/dictionary/{phrase.id}"
