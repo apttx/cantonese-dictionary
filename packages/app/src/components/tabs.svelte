@@ -1,10 +1,11 @@
-<script lang="ts">
-  interface Tab {
+<script
+  lang="ts"
+  generics="Tab extends {
     title: string
     count?: number
     disabled?: boolean
-  }
-
+  }"
+>
   export let tabs: Tab[]
   export let active: Tab = tabs[0]
 

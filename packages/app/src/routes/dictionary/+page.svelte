@@ -5,7 +5,7 @@
   import PhraseListItem from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
   import { goto } from '$app/navigation'
-  import { has } from '$stores/collection.mjs'
+  import { has, phrases } from '$stores/collection.mjs'
   import Tabs from '$components/tabs.svelte'
   import SearchForm, { type Submit_Event_Detail } from '../search_form.svelte'
 
@@ -38,12 +38,17 @@
   $: all_results_tab = {
     title: 'All results',
     count: data.results?.length ?? 0,
+    // show the phrases in collection first
+    phrases: data.results?.sort(
+      (phraseA, phraseB) => ($has(phraseB) ? 1 : 0) - ($has(phraseA) ? 1 : 0),
+    ),
   }
   $: results_in_collection = data.results?.filter((phrase) => $has(phrase))
   $: collection_results_tab = {
     title: 'In your collection',
     count: results_in_collection?.length ?? 0,
     disabled: !results_in_collection?.length,
+    phrases: results_in_collection,
   }
   // TODO: add this as an api feature & use its data
   $: exact_matches = data.results?.filter((phrase) =>
@@ -53,6 +58,7 @@
     title: 'Exact matches',
     count: exact_matches?.length ?? 0,
     disabled: !exact_matches?.length,
+    phrases: exact_matches,
   }
   $: tabs = [all_results_tab, collection_results_tab, exact_matches_tab]
 </script>
@@ -114,15 +120,7 @@
       {tabs}
       let:active
     >
-      {@const phrases =
-        active === all_results_tab
-          ? data.results
-          : active === collection_results_tab
-            ? results_in_collection
-            : active === exact_matches_tab
-              ? exact_matches
-              : undefined}
-      {#if phrases}
+      {#if active.phrases}
         {#key active}
           <h2 class="active_tab_heading @heading +2">{active.title}</h2>
 
@@ -133,7 +131,7 @@
             out:fade={{ duration: 200, easing: cubicOut }}
             in:fade={{ duration: 200, delay: 200, easing: cubicIn }}
           >
-            {#each phrases as phrase, index (phrase.id)}
+            {#each active.phrases as phrase, index (phrase.id)}
               <li
                 in:fade|global={{
                   delay: index * 20,
