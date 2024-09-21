@@ -39,9 +39,23 @@
     title: 'All results',
     count: data.results?.length ?? 0,
     // show the phrases in collection first
-    phrases: data.results?.sort(
-      (phraseA, phraseB) => ($has(phraseB) ? 1 : 0) - ($has(phraseA) ? 1 : 0),
-    ),
+    phrases: data.results?.sort((phraseA, phraseB) => {
+      let phraseAValue = 0
+      if ($has(phraseA)) {
+        phraseAValue = 1
+      } else if (Object.values(phraseA).some((value) => value === data.query)) {
+        phraseAValue = 0.5
+      }
+
+      let phraseBValue = 0
+      if ($has(phraseB)) {
+        phraseBValue = 1
+      } else if (Object.values(phraseB).some((value) => value === data.query)) {
+        phraseBValue = 0.5
+      }
+
+      return phraseBValue - phraseAValue
+    }),
   }
   $: results_in_collection = data.results?.filter((phrase) => $has(phrase))
   $: collection_results_tab = {
