@@ -168,8 +168,8 @@ jobs:
         run: pnpm install --dir app --frozen-lockfile
 
       - name: build app
-        run: pnpm run --dir app build
+        run: USE_VERCEL_ADAPTER=true pnpm run --dir app build
 
       - name: deploy app
-        run: pnpm --dir app deploy:vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
+        run: pnpm --dir app deploy:vercel --prod --prebuilt --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
         if: ${{ github.ref == 'refs/heads/default' }}
