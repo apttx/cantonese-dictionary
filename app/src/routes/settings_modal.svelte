@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {
     character_set,
     show_secondary_character_set_if_different,
@@ -6,12 +6,11 @@
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { show_jyutping } from '$stores/show_jyutping.mjs'
   import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
-
-  import Modal from '$components/modal.svelte'
   import { chinese_character_font } from '$stores/chinese_character_font'
 
-  /** @type {boolean} */
-  export let open
+  import Modal from '$components/modal.svelte'
+
+  let { open = $bindable() }: { open: boolean } = $props()
 </script>
 
 <Modal
