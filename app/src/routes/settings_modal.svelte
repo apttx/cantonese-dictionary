@@ -17,7 +17,11 @@
   heading="Site-wide settings"
   bind:visible={open}
 >
-  <form on:submit|preventDefault>
+  <form
+    onsubmit={(event) => {
+      event.preventDefault()
+    }}
+  >
     <fieldset>
       <legend>Chinese characters</legend>
 
