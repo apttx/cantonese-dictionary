@@ -1,7 +1,5 @@
 import { error } from '@sveltejs/kit'
 import { client, gql } from '$graphql'
-// @ts-expect-error broken env types
-import { ISR_BYPASS_TOKEN } from '$env/static/private'
 
 /** @type {import('@sveltejs/adapter-vercel').Config} */
 export const config = {
@@ -9,7 +7,6 @@ export const config = {
   isr: {
     // never expire
     expiration: false,
-    bypassToken: ISR_BYPASS_TOKEN,
   },
 }
 
