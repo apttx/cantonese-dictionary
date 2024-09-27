@@ -7,7 +7,10 @@
 
   import Phrase_List_Item from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
-  import { character_set } from '$stores/character_set.mjs'
+  import {
+    character_set,
+    show_secondary_character_set_if_different,
+  } from '$stores/character_set.mjs'
   import { show_jyutping } from '$stores/show_jyutping.mjs'
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { has, add, remove } from '$stores/collection.mjs'
@@ -36,12 +39,26 @@
     class="phrase_header"
   >
     <dl class="phrase_details">
-      <dt class="characters_title screen_reader_only">
-        {$character_set === 'simplified' ? 'Simplified' : 'Traditional'}
-      </dt>
-      <dd class="characters cd_hanzi">
-        {data.phrase[$character_set]}
-      </dd>
+      <div
+        role="presentation"
+        class="characters_container"
+      >
+        <dt class="characters_title screen_reader_only">
+          {$character_set === 'simplified' ? 'Simplified' : 'Traditional'}
+        </dt>
+        <dd class="characters cd_hanzi">
+          {data.phrase[$character_set]}
+        </dd>
+
+        {#if $show_secondary_character_set_if_different && data.phrase.simplified !== data.phrase.traditional}
+          <dt class="characters_title screen_reader_only">
+            {$character_set === 'simplified' ? 'Traditional' : 'Simplified'}
+          </dt>
+          <dd class="characters secondary_characters colored_base_neutral_weak cd_hanzi">
+            {data.phrase[$character_set === 'simplified' ? 'traditional' : 'simplified']}
+          </dd>
+        {/if}
+      </div>
 
       {#if $show_pinyin}
         <dt class="pinyin_title screen_reader_only">Pinyin</dt>
@@ -143,16 +160,25 @@
     margin-inline: clamp(3rem, 100%, 50% - var(--width_text) / 2);
   }
 
+  .characters_container {
+    margin-top: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
   .characters_title {
     font-weight: 500;
     font-size: 0.875rem;
   }
+
   .characters {
-    margin-top: 1rem;
-    margin-bottom: 2.75rem;
+    display: inline;
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1;
+  }
+
+  .secondary_characters {
+    margin-left: 1ch;
   }
 
   .pinyin {
