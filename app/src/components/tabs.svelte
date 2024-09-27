@@ -6,8 +6,9 @@
     disabled?: boolean
   }"
 >
-  interface Tab {}
+  // eslint-disable-next-line no-undef
   export let tabs: Tab[]
+  // eslint-disable-next-line no-undef
   export let active: Tab = tabs[0]
 
   $: {

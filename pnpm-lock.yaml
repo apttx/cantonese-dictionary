@@ -111,6 +111,9 @@ importers:
       '@vite-pwa/sveltekit':
         specifier: 0.6.5
         version: 0.6.5(@sveltejs/kit@2.6.0(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.259)(vite@5.4.8(@types/node@20.16.9)(terser@5.34.0)))(svelte@5.0.0-next.259)(vite@5.4.8(@types/node@20.16.9)(terser@5.34.0)))(@vite-pwa/assets-generator@0.2.6)(vite-plugin-pwa@0.20.5(@vite-pwa/assets-generator@0.2.6)(vite@5.4.8(@types/node@20.16.9)(terser@5.34.0))(workbox-build@7.0.0)(workbox-window@7.0.0))
+      concurrently:
+        specifier: 9.0.1
+        version: 9.0.1
       eslint:
         specifier: 8.57.1
         version: 8.57.1
