@@ -118,20 +118,20 @@ jobs:
 
       - name: install dependencies
         run: |
-          pnpm install --dir packages/search --frozen-lockfile
-          pnpm install --dir packages/api --frozen-lockfile
+          pnpm install --dir search --frozen-lockfile
+          pnpm install --dir api --frozen-lockfile
 
       - name: get search data
-        run: pnpm run --dir packages/search get-data
+        run: pnpm run --dir search get-data
 
       - name: build search
-        run: pnpm run --dir packages/search build
+        run: pnpm run --dir search build
 
       - name: build api
-        run: pnpm run --dir packages/api build:vercel
+        run: pnpm run --dir api build:vercel
 
       - name: deploy api
-        run: pnpm --dir packages/api deploy:vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
+        run: pnpm --dir api deploy:vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
         if: ${{ github.ref == 'refs/heads/default' }}
 
   app:
@@ -165,11 +165,11 @@ jobs:
           cache: pnpm
 
       - name: install dependencies
-        run: pnpm install --dir packages/app --frozen-lockfile
+        run: pnpm install --dir app --frozen-lockfile
 
       - name: build app
-        run: pnpm run --dir packages/app build
+        run: pnpm run --dir app build
 
       - name: deploy app
-        run: pnpm --dir packages/app deploy:vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
+        run: pnpm --dir app deploy:vercel --prod --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
         if: ${{ github.ref == 'refs/heads/default' }}
