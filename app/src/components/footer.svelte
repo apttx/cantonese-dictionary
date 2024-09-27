@@ -32,6 +32,22 @@
       url: 'https://github.com/fontsource/fontsource',
     },
     {
+      text: 'DM Sans',
+      url: 'https://fontsource.org/fonts/dm-sans',
+    },
+    {
+      text: 'Noto Sans SC',
+      url: 'https://fontsource.org/fonts/noto-sans-sc',
+    },
+    {
+      text: 'Noto Serif SC',
+      url: 'https://fontsource.org/fonts/noto-serif-sc',
+    },
+    {
+      text: 'Ma Shan Zheng',
+      url: 'https://fontsource.org/fonts/ma-shan-zheng',
+    },
+    {
       text: 'MingCute',
       url: 'https://github.com/Richard9394/MingCute',
     },

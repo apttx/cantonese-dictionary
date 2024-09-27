@@ -1,3 +1,16 @@
 .cd_hanzi {
+  font-weight: 500;
   font-size: 1.75em;
+}
+
+.cd_hanzi_font_sans .cd_hanzi {
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.cd_hanzi_font_serif .cd_hanzi {
+  font-family: 'Noto Serif SC', serif;
+}
+
+.cd_hanzi_font_handwritten .cd_hanzi {
+  font-family: 'Ma Shan Zheng', 'Noto Serif SC', serif;
 }

@@ -172,7 +172,6 @@
 
   .characters {
     display: inline;
-    font-weight: 700;
     font-size: 2.5rem;
     line-height: 1;
   }

@@ -2,6 +2,14 @@ import '@fontsource/dm-sans/400.css'
 import '@fontsource/dm-sans/500.css'
 import '@fontsource/dm-sans/700.css'
 
+import '@fontsource/noto-sans-sc/400.css'
+import '@fontsource/noto-sans-sc/500.css'
+
+import '@fontsource/noto-serif-sc/400.css'
+import '@fontsource/noto-serif-sc/500.css'
+
+import '@fontsource/ma-shan-zheng/400.css'
+
 import '@unocss/reset/tailwind.css'
 
 import '$css/colors.variables.css'

@@ -12,6 +12,7 @@
   import Settings_Modal from './settings_modal.svelte'
   import Flashcard_Settings_Modal from './flashcard_settings_modal.svelte'
   import Pwa from './pwa.svelte'
+  import { chinese_character_font } from '$stores/chinese_character_font'
 
   /** @type {boolean} */
   let settings_open = false
@@ -55,7 +56,12 @@
 <Settings_Modal bind:open={settings_open} />
 <Flashcard_Settings_Modal bind:visible={flashcard_settings_open} />
 
-<main inert={$main_inert}>
+<main
+  inert={$main_inert}
+  class:cd_hanzi_font_sans={$chinese_character_font === 'sans'}
+  class:cd_hanzi_font_serif={$chinese_character_font === 'serif'}
+  class:cd_hanzi_font_handwritten={$chinese_character_font === 'handwritten'}
+>
   <slot />
 </main>
 

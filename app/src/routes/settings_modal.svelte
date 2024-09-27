@@ -8,6 +8,7 @@
   import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
 
   import Modal from '$components/modal.svelte'
+  import { chinese_character_font } from '$stores/chinese_character_font'
 
   /** @type {boolean} */
   export let open
@@ -54,6 +55,43 @@
       />
       <span>Show the characters from the other set if they are different</span>
     </label>
+
+    <fieldset>
+      <legend>Chinese Character Font</legend>
+
+      <div
+        role="presentation"
+        class="input_group"
+      >
+        <label>
+          <input
+            type="radio"
+            name="character_set"
+            value="sans"
+            bind:group={$chinese_character_font}
+          />
+          <span>Sans-serif</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="character_set"
+            value="serif"
+            bind:group={$chinese_character_font}
+          />
+          <span>Serif</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="character_set"
+            value="handwritten"
+            bind:group={$chinese_character_font}
+          />
+          <span>Handwritten (simplified only)</span>
+        </label>
+      </div>
+    </fieldset>
 
     <fieldset>
       <legend>Romanization</legend>
@@ -123,7 +161,8 @@
 
   .input_group {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 1.5rem;
+    grid-auto-flow: column;
+    column-gap: 1.5rem;
+    justify-content: start;
   }
 </style>

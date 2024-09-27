@@ -63,6 +63,15 @@ importers:
       '@fontsource/dm-sans':
         specifier: 5.1.0
         version: 5.1.0
+      '@fontsource/ma-shan-zheng':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/noto-sans-sc':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/noto-serif-sc':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@iconify-json/mingcute':
         specifier: 1.2.0
         version: 1.2.0
@@ -1130,6 +1139,15 @@ packages:
 
   '@fontsource/dm-sans@5.1.0':
     resolution: {integrity: sha512-YpGtZ8Rbh+/84rn7o/rzBBFnikoLjhjtzKYAMZhSRr7xWU0piZDBFhUdI14M4Ub8emh0TSG/gU2pJOMUe9TGYA==}
+
+  '@fontsource/ma-shan-zheng@5.1.0':
+    resolution: {integrity: sha512-9VLLAFKRbbxR+R18gR0ZEJvkcAEwfgvrulbxeqFqiX2IDb0zESF/f1xa9oDV96KGvwQNcpgyIlYuSyum9nfzLw==}
+
+  '@fontsource/noto-sans-sc@5.1.0':
+    resolution: {integrity: sha512-6Za/beXpkP0nStbyPRJPGRGwvjHwrlP0gbR/73bJKXWyjzsRQA+LF9990R5oPmgm+NmBDb0grad6Q9E7OEzLtw==}
+
+  '@fontsource/noto-serif-sc@5.1.0':
+    resolution: {integrity: sha512-KUqvssRd5UGNk1tYykiKT+7cuXdCjQe865z0tv/oz6RQc4d48DjEvx4uBH6yO3WwN49SsgyV6Ajxd9iBIUnAQg==}
 
   '@gar/promisify@1.1.3':
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
@@ -5633,6 +5651,12 @@ snapshots:
   '@fastify/busboy@2.1.1': {}
 
   '@fontsource/dm-sans@5.1.0': {}
+
+  '@fontsource/ma-shan-zheng@5.1.0': {}
+
+  '@fontsource/noto-sans-sc@5.1.0': {}
+
+  '@fontsource/noto-serif-sc@5.1.0': {}
 
   '@gar/promisify@1.1.3':
     optional: true
