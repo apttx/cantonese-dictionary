@@ -1,4 +1,5 @@
 /**
+ * @deprecated use the export from ./Phrase.ts
  * @typedef {{
  *  id: string
  *  english: string

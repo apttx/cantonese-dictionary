@@ -1,24 +1,41 @@
 <script
   lang="ts"
-  generics="Tab extends {
+  module
+>
+  export interface Tab {
     title: string
     count?: number
     disabled?: boolean
-  }"
->
-  // eslint-disable-next-line no-undef
-  export let tabs: Tab[]
-  // eslint-disable-next-line no-undef
-  export let active: Tab = tabs[0]
-
-  $: {
-    if (!tabs.includes(active)) {
-      const similar_tab = tabs.find((existing_tab) => existing_tab.title === active.title)
-      const default_tab = tabs[0]
-
-      active = similar_tab ?? default_tab
-    }
   }
+</script>
+
+<script
+  lang="ts"
+  generics="Tab_Instance extends Tab"
+>
+  import { untrack, type Snippet } from 'svelte'
+
+  let {
+    tabs,
+    children,
+  }: {
+    // eslint-svelte doesn't understand generics
+    // eslint-disable-next-line no-undef
+    tabs: [Tab_Instance, ...Tab_Instance[]]
+    // eslint-disable-next-line no-undef
+    children?: Snippet<[{ active_tab: Tab_Instance }]>
+  } = $props()
+
+  let active_tab = $state.raw(tabs[0])
+
+  // update the active tab to the new tabs if the tabs prop changes
+  $effect(() => {
+    untrack(() => active_tab)
+
+    const similar_tab = tabs.find((existing_tab) => existing_tab.title === active_tab.title)
+
+    active_tab = similar_tab ?? tabs[0]
+  })
 </script>
 
 <div
@@ -28,11 +45,11 @@
   {#each tabs as tab}
     <button
       class="tab_button"
-      class:active={tab === active}
+      class:active={tab === active_tab}
       class:disabled={tab.disabled}
       disabled={tab.disabled}
-      on:click={() => {
-        active = tab
+      onclick={() => {
+        active_tab = tab
       }}
     >
       <span>{tab.title}</span>
@@ -47,16 +64,21 @@
 <div
   role="presentation"
   aria-live="assertive"
+  class="content_container"
 >
-  <slot {active} />
+  {#if children}
+    {@render children({ active_tab })}
+  {/if}
 </div>
 
 <style>
   .tab_navigation {
     display: grid;
+    position: relative;
+    top: -1rem;
     grid-auto-flow: column;
     place-content: start;
-    overflow: auto clip;
+    overflow: auto hidden;
   }
 
   .tab_count {
@@ -88,5 +110,9 @@
       opacity: 1;
       text-decoration: line-through;
     }
+  }
+
+  .content_container {
+    margin-top: -1rem;
   }
 </style>

@@ -14,6 +14,7 @@
   import { show_jyutping } from '$stores/show_jyutping.mjs'
   import { show_pinyin } from '$stores/show_pinyin.mjs'
   import { has, add, remove } from '$stores/collection.mjs'
+  import Stroke_Order_Tabs from './Stroke_Order_Tabs.svelte'
 
   export let data
 
@@ -120,8 +121,20 @@
     {/if}
   </div>
 
+  <h2 class="section_heading">Stroke Order</h2>
+
+  <div
+    role="presentation"
+    class="stroke_order"
+  >
+    <Stroke_Order_Tabs
+      simplified={data.phrase.simplified}
+      traditional={data.phrase.traditional}
+    />
+  </div>
+
   {#if data.phrase.senses.length}
-    <h2 class="senses_heading">Other meanings</h2>
+    <h2 class="section_heading">Other meanings</h2>
 
     <ul class="senses_list">
       {#each data.phrase.senses as sense, index (sense.id)}
@@ -244,11 +257,16 @@
     }
   }
 
-  .senses_heading {
+  .section_heading {
     margin-top: 8.75rem;
     margin-inline: var(--margin_content_text);
     font-weight: 700;
     font-size: 1.25rem;
+  }
+
+  .stroke_order {
+    margin-top: 3rem;
+    margin-inline: var(--margin_content_text);
   }
 
   .senses_list {

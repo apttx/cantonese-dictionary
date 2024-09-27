@@ -14,6 +14,7 @@ const config = {
       $stores: 'src/stores/*',
       $css: 'src/css/*',
       $graphql: 'src/modules/graphql.mjs',
+      $types: '../types/*',
     },
   },
 }

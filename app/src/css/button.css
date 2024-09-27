@@ -4,6 +4,7 @@
     transition-duration: 150ms;
     transition-property: color;
     transition-timing-function: ease-in;
+    padding: 1rem;
   }
 
   .cd_bordered_button:hover:not(:disabled),
@@ -47,6 +48,7 @@
     transition-duration: 500ms;
     transition-property: color;
     transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    padding: 1rem;
   }
 
   .cd_bordered_button:active:not(:disabled),

@@ -2,12 +2,13 @@
   import { fade } from 'svelte/transition'
   import { cubicIn, cubicOut } from 'svelte/easing'
 
-  import PhraseListItem from '$components/phrase_list_item.svelte'
+  import Phrase_List_Item from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
   import { goto } from '$app/navigation'
   import { has } from '$stores/collection.mjs'
-  import Tabs from '$components/tabs.svelte'
-  import SearchForm, { type Submit_Event_Detail } from '../search_form.svelte'
+  import Tabs, { type Tab } from '$components/tabs.svelte'
+  import Search_Form, { type Submit_Event_Detail } from '../search_form.svelte'
+  import { type Phrase } from '$types/Phrase'
 
   export let data
 
@@ -74,7 +75,7 @@
     disabled: !exact_matches?.length,
     phrases: exact_matches,
   }
-  $: tabs = [all_results_tab, collection_results_tab, exact_matches_tab]
+  $: tabs = [all_results_tab, collection_results_tab, exact_matches_tab] satisfies [Tab, ...Tab[]]
 </script>
 
 <Head
@@ -86,7 +87,7 @@
   role="presentation"
   class="search"
 >
-  <SearchForm
+  <Search_Form
     term={data.query}
     loading={loading_state === 'pending'}
     on:submit={on_submit}
@@ -130,13 +131,14 @@
     role="presentation"
     class="search_results"
   >
-    <Tabs
-      {tabs}
-      let:active
-    >
-      {#if active.phrases}
-        {#key active}
-          <h2 class="active_tab_heading @heading +2">{active.title}</h2>
+    <Tabs {tabs}>
+      {#snippet children(snippet_props)}
+        {@const active_tab = snippet_props.active_tab as unknown as {
+          title: string
+          phrases: Phrase[]
+        }}
+        {#if active_tab.phrases}
+          <h2 class="active_tab_heading @heading +2">{active_tab.title}</h2>
 
           <ul
             class="@flashcard_grid"
@@ -145,7 +147,7 @@
             out:fade={{ duration: 200, easing: cubicOut }}
             in:fade={{ duration: 200, delay: 200, easing: cubicIn }}
           >
-            {#each active.phrases as phrase, index (phrase.id)}
+            {#each active_tab.phrases as phrase, index (phrase.id)}
               <li
                 in:fade|global={{
                   delay: index * 20,
@@ -153,12 +155,12 @@
                   easing: cubicIn,
                 }}
               >
-                <PhraseListItem {phrase} />
+                <Phrase_List_Item {phrase} />
               </li>
             {/each}
           </ul>
-        {/key}
-      {/if}
+        {/if}
+      {/snippet}
     </Tabs>
   </div>
 {/if}
