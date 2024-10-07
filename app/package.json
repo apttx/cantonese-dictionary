@@ -23,7 +23,7 @@
     "@iconify-json/mingcute": "1.2.0",
     "@playwright/test": "1.47.2",
     "@sveltejs/adapter-auto": "3.2.5",
-    "@sveltejs/adapter-vercel": "5.4.4",
+    "@sveltejs/adapter-vercel": "5.4.5",
     "@sveltejs/kit": "2.6.2",
     "@sveltejs/vite-plugin-svelte": "4.0.0-next.7",
     "@types/node": "20.16.10",
