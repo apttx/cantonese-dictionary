@@ -82,8 +82,8 @@ importers:
         specifier: 3.2.5
         version: 3.2.5(@sveltejs/kit@2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))
       '@sveltejs/adapter-vercel':
-        specifier: 5.4.4
-        version: 5.4.4(@sveltejs/kit@2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(encoding@0.1.13)
+        specifier: 5.4.5
+        version: 5.4.5(@sveltejs/kit@2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(encoding@0.1.13)
       '@sveltejs/kit':
         specifier: 2.6.2
         version: 2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0))
@@ -1451,8 +1451,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/adapter-vercel@5.4.4':
-    resolution: {integrity: sha512-KORoxxqB2H5DrxpCHc9Yfijcgvmoaaz6G6eKHEg9fRlTsujJkxN26C0x4YlcgxqDU4dLIi1wfSLHpuZD0E4Irg==}
+  '@sveltejs/adapter-vercel@5.4.5':
+    resolution: {integrity: sha512-SROpUbjSZ1Xni4xuS22dunXFLjYzvTZwppqixIQFzTrf9oWcZEm2OfO+VgnrOT67LOcWQefJp7VSrpmjV691yQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
 
@@ -5929,7 +5929,7 @@ snapshots:
       '@sveltejs/kit': 2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0))
       import-meta-resolve: 4.1.0
 
-  '@sveltejs/adapter-vercel@5.4.4(@sveltejs/kit@2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(encoding@0.1.13)':
+  '@sveltejs/adapter-vercel@5.4.5(@sveltejs/kit@2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(encoding@0.1.13)':
     dependencies:
       '@sveltejs/kit': 2.6.2(@sveltejs/vite-plugin-svelte@4.0.0-next.7(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0)))(svelte@5.0.0-next.262)(vite@5.4.8(@types/node@20.16.10)(terser@5.34.0))
       '@vercel/nft': 0.27.3(encoding@0.1.13)
