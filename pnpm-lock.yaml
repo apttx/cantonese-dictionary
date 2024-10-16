@@ -55,8 +55,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       vercel:
-        specifier: 37.8.0
-        version: 37.8.0(encoding@0.1.13)
+        specifier: 37.9.0
+        version: 37.9.0(encoding@0.1.13)
 
   app:
     devDependencies:
@@ -151,8 +151,8 @@ importers:
         specifier: 0.19.3
         version: 0.19.3
       vercel:
-        specifier: 37.8.0
-        version: 37.8.0(encoding@0.1.13)
+        specifier: 37.9.0
+        version: 37.9.0(encoding@0.1.13)
       vite:
         specifier: 5.4.9
         version: 5.4.9(@types/node@20.16.11)(terser@5.34.0)
@@ -1637,8 +1637,8 @@ packages:
   '@vercel/hydrogen@1.0.9':
     resolution: {integrity: sha512-IPAVaALuGAzt2apvTtBs5tB+8zZRzn/yG3AGp8dFyCsw/v5YOuk0Q5s8Z3fayLvJbFpjrKtqRNDZzVJBBU3MrQ==}
 
-  '@vercel/next@4.3.15':
-    resolution: {integrity: sha512-mg9iBmZm39CCMUfSLs4biP0NOOvUAFUqRORypMIOAe1AVhGg5aX1czTFMy9IOGAfwKlwTFTKeHDNDBi4YEWw1g==}
+  '@vercel/next@4.3.16':
+    resolution: {integrity: sha512-kSi4jYYW+szLaoNwsb3dzBOujuUSE1v8vvZ3gEjVXZLWWchEYzZHKGRmecBQjGe/7mqoMNJIrrDLVYS8oTMTQA==}
 
   '@vercel/nft@0.27.3':
     resolution: {integrity: sha512-oySTdDSzUAFDXpsSLk9Q943o+/Yu/+TCFxnehpFQEf/3khi2stMpTHPVNwFdvZq/Z4Ky93lE+MGHpXCRpMkSCA==}
@@ -4385,8 +4385,8 @@ packages:
     resolution: {integrity: sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==}
     engines: {node: '>=12'}
 
-  vercel@37.8.0:
-    resolution: {integrity: sha512-cnk+3Q7W+H2EDgCL43x4dcISTyNwnhg9/ERqgh3fH5Ye7iOSsaGgL028XKXMEX63MihneDSf5CYiwSeXbOt8ZA==}
+  vercel@37.9.0:
+    resolution: {integrity: sha512-uAayU4fnLqBdxyKay4xhcQVPspUYJeAGRGwTTtKgjjIbe474gONmaEFx644XfnpPQSSqHsIcu4iKnNnRI3NXgQ==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -6214,7 +6214,7 @@ snapshots:
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
 
-  '@vercel/next@4.3.15(encoding@0.1.13)':
+  '@vercel/next@4.3.16(encoding@0.1.13)':
     dependencies:
       '@vercel/nft': 0.27.3(encoding@0.1.13)
     transitivePeerDependencies:
@@ -9333,13 +9333,13 @@ snapshots:
 
   value-or-promise@1.0.12: {}
 
-  vercel@37.8.0(encoding@0.1.13):
+  vercel@37.9.0(encoding@0.1.13):
     dependencies:
       '@vercel/build-utils': 8.4.11
       '@vercel/fun': 1.1.0(encoding@0.1.13)
       '@vercel/go': 3.2.0
       '@vercel/hydrogen': 1.0.9
-      '@vercel/next': 4.3.15(encoding@0.1.13)
+      '@vercel/next': 4.3.16(encoding@0.1.13)
       '@vercel/node': 3.2.23(encoding@0.1.13)
       '@vercel/python': 4.3.1
       '@vercel/redwood': 2.1.8(encoding@0.1.13)
