@@ -24,7 +24,7 @@
     "@playwright/test": "1.48.1",
     "@sveltejs/adapter-auto": "3.2.5",
     "@sveltejs/adapter-vercel": "5.4.5",
-    "@sveltejs/kit": "2.7.1",
+    "@sveltejs/kit": "2.7.2",
     "@sveltejs/vite-plugin-svelte": "4.0.0",
     "@types/node": "20.16.13",
     "@typescript-eslint/eslint-plugin": "7.18.0",
