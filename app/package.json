@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@unocss/reset": "0.63.4",
-    "@urql/core": "5.0.7",
+    "@urql/core": "5.0.8",
     "@vite-pwa/assets-generator": "0.2.6",
     "@vite-pwa/sveltekit": "0.6.6",
     "concurrently": "9.0.1",
