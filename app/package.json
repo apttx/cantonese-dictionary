@@ -34,7 +34,7 @@
     "@vite-pwa/assets-generator": "0.2.6",
     "@vite-pwa/sveltekit": "0.6.6",
     "concurrently": "9.0.1",
-    "eslint": "8.57.1",
+    "eslint": "9.13.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-svelte": "2.46.0",
     "graphql": "16.9.0",
