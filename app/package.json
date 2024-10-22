@@ -22,7 +22,7 @@
     "@fontsource/noto-serif-sc": "^5.1.0",
     "@iconify-json/mingcute": "1.2.1",
     "@playwright/test": "1.48.1",
-    "@sveltejs/adapter-auto": "3.2.5",
+    "@sveltejs/adapter-auto": "3.3.0",
     "@sveltejs/adapter-vercel": "5.4.5",
     "@sveltejs/kit": "2.7.2",
     "@sveltejs/vite-plugin-svelte": "4.0.0",
