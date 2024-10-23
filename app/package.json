@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "@fontsource/dm-sans": "5.1.0",
-    "@fontsource/ma-shan-zheng": "^5.1.0",
-    "@fontsource/noto-sans-sc": "^5.1.0",
-    "@fontsource/noto-serif-sc": "^5.1.0",
+    "@fontsource/ma-shan-zheng": "5.1.0",
+    "@fontsource/noto-sans-sc": "5.1.0",
+    "@fontsource/noto-serif-sc": "5.1.0",
     "@iconify-json/mingcute": "1.2.1",
     "@playwright/test": "1.48.1",
     "@sveltejs/adapter-auto": "3.3.0",
