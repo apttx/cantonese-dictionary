@@ -28,7 +28,7 @@
       await goto(`?query=${encodeURIComponent(term)}`)
 
       loading_state = 'idle'
-    } catch (error) {
+    } catch {
       loading_state = 'error'
 
       // focus input on errors, user will most likely want to try typing something else
