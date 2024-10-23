@@ -9,7 +9,7 @@
     "build": "tsx scripts/build.mjs",
     "develop": "nodemon -e mjs,ts -x 'pnpm build'",
     "prettier": "prettier --ignore-path .gitignore --check .",
-    "eslint": "eslint --config .eslintrc.cjs scripts/**/*.*",
+    "eslint": "eslint .",
     "lint": "concurrently --group --prefix-colors green,magenta npm:prettier npm:eslint",
     "get-data:canto": "curl -so ./data_source_files/canto.txt https://raw.githubusercontent.com/amadeusine/cc-canto-data/master/cccanto-webdist.txt",
     "get-data:cedict_canto_readings": "curl -so ./data_source_files/cedict_canto_readings.txt https://raw.githubusercontent.com/amadeusine/cc-canto-data/master/cccedict-canto-readings.txt",
@@ -23,15 +23,17 @@
   "author": "aptt",
   "license": "GPL-3.0",
   "devDependencies": {
+    "@eslint/js": "^9.13.0",
     "concurrently": "9.0.1",
-    "eslint": "8.57.1",
+    "eslint": "9.13.0",
+    "globals": "^15.11.0",
     "nodemon": "3.1.7",
     "prettier": "3.3.3",
     "prettier-plugin-jsdoc": "1.3.0",
     "sqlite3": "5.1.7",
     "tsx": "4.19.1",
     "typescript": "5.6.3",
-    "typescript-eslint": "7.18.0",
+    "typescript-eslint": "8.11.0",
     "vitest": "2.1.3"
   }
 }
