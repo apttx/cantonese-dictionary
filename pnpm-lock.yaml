@@ -24,6 +24,9 @@ importers:
         specifier: ^5.1.7
         version: 5.1.7
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.13.0
+        version: 9.13.0
       '@rollup/plugin-replace':
         specifier: 6.0.1
         version: 6.0.1(rollup@4.24.0)
@@ -37,8 +40,11 @@ importers:
         specifier: 9.0.1
         version: 9.0.1
       eslint:
-        specifier: 8.57.1
+        specifier: 9.13.0
         version: 9.13.0(jiti@1.21.0)
+      globals:
+        specifier: ^15.11.0
+        version: 15.11.0
       nodemon:
         specifier: 3.1.7
         version: 3.1.7
