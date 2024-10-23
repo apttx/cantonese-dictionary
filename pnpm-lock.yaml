@@ -64,13 +64,13 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       '@fontsource/ma-shan-zheng':
-        specifier: ^5.1.0
+        specifier: 5.1.0
         version: 5.1.0
       '@fontsource/noto-sans-sc':
-        specifier: ^5.1.0
+        specifier: 5.1.0
         version: 5.1.0
       '@fontsource/noto-serif-sc':
-        specifier: ^5.1.0
+        specifier: 5.1.0
         version: 5.1.0
       '@iconify-json/mingcute':
         specifier: 1.2.1
