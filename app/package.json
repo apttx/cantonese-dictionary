@@ -16,7 +16,7 @@
     "deploy:vercel": "vercel deploy"
   },
   "devDependencies": {
-    "@eslint/js": "^9.13.0",
+    "@eslint/js": "9.13.0",
     "@fontsource/dm-sans": "5.1.0",
     "@fontsource/ma-shan-zheng": "5.1.0",
     "@fontsource/noto-sans-sc": "5.1.0",
@@ -27,8 +27,8 @@
     "@sveltejs/adapter-vercel": "5.4.5",
     "@sveltejs/kit": "2.7.2",
     "@sveltejs/vite-plugin-svelte": "4.0.0",
-    "@types/eslint__eslintrc": "^2.1.2",
-    "@types/eslint__js": "^8.42.3",
+    "@types/eslint__eslintrc": "2.1.2",
+    "@types/eslint__js": "8.42.3",
     "@types/node": "22.7.9",
     "@typescript-eslint/parser": "8.11.0",
     "@unocss/reset": "0.63.6",
@@ -39,7 +39,7 @@
     "eslint": "9.13.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-svelte": "2.46.0",
-    "globals": "^15.11.0",
+    "globals": "15.11.0",
     "graphql": "16.9.0",
     "prettier": "3.3.3",
     "prettier-plugin-css-order": "2.1.2",
