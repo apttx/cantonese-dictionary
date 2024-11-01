@@ -16,7 +16,7 @@
     "deploy:vercel": "vercel deploy"
   },
   "devDependencies": {
-    "@eslint/js": "9.13.0",
+    "@eslint/js": "9.14.0",
     "@fontsource/dm-sans": "5.1.0",
     "@fontsource/ma-shan-zheng": "5.1.0",
     "@fontsource/noto-sans-sc": "5.1.0",
