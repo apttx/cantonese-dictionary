@@ -19,7 +19,7 @@ importers:
         version: 16.9.0
       graphql-yoga:
         specifier: ^5.1.1
-        version: 5.9.0(graphql@16.9.0)
+        version: 5.10.0(graphql@16.9.0)
       sqlite3:
         specifier: ^5.1.7
         version: 5.1.7
@@ -1694,6 +1694,10 @@ packages:
     resolution: {integrity: sha512-ApcWxkrs1WmEMS2CaLLFUEem/49erT3sxIVjpzU5f6zmVcnijtDSrhoK2zVobOIikZJdH63jdAXOrvjf6eOUNQ==}
     engines: {node: '>=18.0.0'}
 
+  '@whatwg-node/fetch@0.10.1':
+    resolution: {integrity: sha512-gmPOLrsjSZWEZlr9Oe5+wWFBq3CG6fN13rGlM91Jsj/vZ95G9CCvrORGBAxMXy0AJGiC83aYiHXn3JzTzXQmbA==}
+    engines: {node: '>=18.0.0'}
+
   '@whatwg-node/fetch@0.9.23':
     resolution: {integrity: sha512-7xlqWel9JsmxahJnYVUj/LLxWcnA93DR4c9xlw3U814jWTiYalryiH1qToik1hOxweKKRLi4haXHM5ycRksPBA==}
     engines: {node: '>=18.0.0'}
@@ -1702,8 +1706,12 @@ packages:
     resolution: {integrity: sha512-tcZAhrpx6oVlkEsRngeTEEE7I5/QdLjeEz4IlekabGaESP7+Dkm/6a9KcF1KdCBB7mO9PXtBkwCuTCt8+UPg8Q==}
     engines: {node: '>=18.0.0'}
 
-  '@whatwg-node/server@0.9.52':
-    resolution: {integrity: sha512-RSX9FcoXrjmMu7dkBWbd5bNE7qsVSHCupk5A5iuZkoF+XWDvnp1TDbSGLARnsKKwln1Sem4koLkz/tj5b8Q7bg==}
+  '@whatwg-node/node-fetch@0.7.1':
+    resolution: {integrity: sha512-+IVKtQhHnaOS39ErbdeQUh+pVKqCJxO0OokBxCo7SNtTHOZB2Tb+YN+YWwp4WizXwTWy85tsEv1AAprugpxNmg==}
+    engines: {node: '>=18.0.0'}
+
+  '@whatwg-node/server@0.9.53':
+    resolution: {integrity: sha512-r7d+i1BcCISshJ5fRnc/9JQj7bVfJmBMnKfHd8LQRkRt7Z56fFfsgwuzJ+uzJRSstMC7e7JRRlSP9TOuf1D2zQ==}
     engines: {node: '>=18.0.0'}
 
   abbrev@1.1.1:
@@ -1954,8 +1962,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  caniuse-lite@1.0.30001679:
-    resolution: {integrity: sha512-j2YqID/YwpLnKzCmBOS4tlZdWprXm3ZmQLBH9ZBXFOhoxLA46fwyBvx6toCBWBmnuwUY/qB3kEU6gFx8qgCroA==}
+  caniuse-lite@1.0.30001680:
+    resolution: {integrity: sha512-rPQy70G6AGUMnbwS1z6Xg+RkHYPAi18ihs47GH0jcxIG7wArmPgY3XbS2sRdBbxJljp3thdT8BIqv9ccCypiPA==}
 
   chai@5.1.2:
     resolution: {integrity: sha512-aGtmf24DW6MLHHG5gCx4zaI3uBq3KRtxeVs0DjFH6Z0rDNbsvTxFASFvdj79pxjxZ8/5u3PIiN3IwEIQkiiuPw==}
@@ -2747,8 +2755,8 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  graphql-yoga@5.9.0:
-    resolution: {integrity: sha512-zeSu77bnl+id+MaKpS8dQPA9Dix0DgdibWM5GFrQxKBwrdpW9XOH33ofrZvs+BXVici+pJvuxo+LeUpHopiBrg==}
+  graphql-yoga@5.10.0:
+    resolution: {integrity: sha512-OIVwZQQCKg2SeX9lWWycUdCeQOSxPp+1xii2bI4LeLvEsAod2DxZZdWYdigcG/zYJdSFZlYoRhKahdbEEbjoAA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
@@ -3419,8 +3427,8 @@ packages:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
 
-  object-inspect@1.13.2:
-    resolution: {integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==}
+  object-inspect@1.13.3:
+    resolution: {integrity: sha512-kDCGIbxkDSXE3euJZZXzc6to7fCrKHNI/hSRQnRuQ+BWjFNzZwiFF8fj/6o2t2G9/jTj8PSIYTfCLelLZEeRpA==}
     engines: {node: '>= 0.4'}
 
   object-keys@1.1.1:
@@ -6293,6 +6301,11 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@whatwg-node/fetch@0.10.1':
+    dependencies:
+      '@whatwg-node/node-fetch': 0.7.1
+      urlpattern-polyfill: 10.0.0
+
   '@whatwg-node/fetch@0.9.23':
     dependencies:
       '@whatwg-node/node-fetch': 0.6.0
@@ -6305,9 +6318,16 @@ snapshots:
       fast-querystring: 1.1.2
       tslib: 2.8.1
 
-  '@whatwg-node/server@0.9.52':
+  '@whatwg-node/node-fetch@0.7.1':
     dependencies:
-      '@whatwg-node/fetch': 0.9.23
+      '@kamilkisiela/fast-url-parser': 1.1.4
+      busboy: 1.6.0
+      fast-querystring: 1.1.2
+      tslib: 2.8.1
+
+  '@whatwg-node/server@0.9.53':
+    dependencies:
+      '@whatwg-node/fetch': 0.10.1
       tslib: 2.8.1
 
   abbrev@1.1.1: {}
@@ -6522,7 +6542,7 @@ snapshots:
 
   browserslist@4.24.2:
     dependencies:
-      caniuse-lite: 1.0.30001679
+      caniuse-lite: 1.0.30001680
       electron-to-chromium: 1.5.55
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
@@ -6580,7 +6600,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  caniuse-lite@1.0.30001679: {}
+  caniuse-lite@1.0.30001680: {}
 
   chai@5.1.2:
     dependencies:
@@ -6892,7 +6912,7 @@ snapshots:
       is-string: 1.0.7
       is-typed-array: 1.1.13
       is-weakref: 1.0.2
-      object-inspect: 1.13.2
+      object-inspect: 1.13.3
       object-keys: 1.1.1
       object.assign: 4.1.5
       regexp.prototype.flags: 1.5.3
@@ -7467,7 +7487,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql-yoga@5.9.0(graphql@16.9.0):
+  graphql-yoga@5.10.0(graphql@16.9.0):
     dependencies:
       '@envelop/core': 5.0.2
       '@graphql-tools/executor': 1.3.2(graphql@16.9.0)
@@ -7476,7 +7496,7 @@ snapshots:
       '@graphql-yoga/logger': 2.0.0
       '@graphql-yoga/subscription': 5.0.1
       '@whatwg-node/fetch': 0.9.23
-      '@whatwg-node/server': 0.9.52
+      '@whatwg-node/server': 0.9.53
       dset: 3.1.4
       graphql: 16.9.0
       lru-cache: 10.4.3
@@ -8215,7 +8235,7 @@ snapshots:
 
   object-assign@4.1.1: {}
 
-  object-inspect@1.13.2: {}
+  object-inspect@1.13.3: {}
 
   object-keys@1.1.1: {}
 
@@ -8681,7 +8701,7 @@ snapshots:
       call-bind: 1.0.7
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
-      object-inspect: 1.13.2
+      object-inspect: 1.13.3
 
   siginfo@2.0.0: {}
 
