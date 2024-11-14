@@ -61,8 +61,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       vercel:
-        specifier: 39.0.1
-        version: 39.0.1(encoding@0.1.13)
+        specifier: 39.0.2
+        version: 39.0.2(encoding@0.1.13)
 
   app:
     devDependencies:
@@ -166,8 +166,8 @@ importers:
         specifier: 0.20.1
         version: 0.20.1(svelte@5.1.16)
       vercel:
-        specifier: 39.0.1
-        version: 39.0.1(encoding@0.1.13)
+        specifier: 39.0.2
+        version: 39.0.2(encoding@0.1.13)
       vite:
         specifier: 5.4.11
         version: 5.4.11(@types/node@22.9.0)(terser@5.36.0)
@@ -4370,8 +4370,8 @@ packages:
     resolution: {integrity: sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==}
     engines: {node: '>=12'}
 
-  vercel@39.0.1:
-    resolution: {integrity: sha512-SBNiyl/ngaEOlKEkaNFTHSGRYFWYqCavK6TQx+XdbMfLDXG6U7GJodxFBa+j15senEzhGN27NPdKqRYpDFzqyQ==}
+  vercel@39.0.2:
+    resolution: {integrity: sha512-nXDg7sZtP9rYhCNnoOoD7QtX7Cvt5Ez67z4G2ThF82QZFzBdJgJiDKDjH3Nj6jyOOi0Ek0TF5AA7XsmirOIXLQ==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -9215,7 +9215,7 @@ snapshots:
 
   value-or-promise@1.0.12: {}
 
-  vercel@39.0.1(encoding@0.1.13):
+  vercel@39.0.2(encoding@0.1.13):
     dependencies:
       '@vercel/build-utils': 8.4.12
       '@vercel/fun': 1.1.0(encoding@0.1.13)
