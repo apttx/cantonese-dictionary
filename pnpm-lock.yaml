@@ -61,8 +61,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       vercel:
-        specifier: 39.0.0
-        version: 39.0.0(encoding@0.1.13)
+        specifier: 39.0.1
+        version: 39.0.1(encoding@0.1.13)
 
   app:
     devDependencies:
@@ -166,8 +166,8 @@ importers:
         specifier: 0.20.1
         version: 0.20.1(svelte@5.1.16)
       vercel:
-        specifier: 39.0.0
-        version: 39.0.0(encoding@0.1.13)
+        specifier: 39.0.1
+        version: 39.0.1(encoding@0.1.13)
       vite:
         specifier: 5.4.11
         version: 5.4.11(@types/node@22.9.0)(terser@5.36.0)
@@ -1624,8 +1624,8 @@ packages:
   '@vercel/node@3.2.24':
     resolution: {integrity: sha512-KEm50YBmcfRNOw5NfdcqMI4BkP4+5TD9kRwAByHHlIZXLj1NTTknvMF+69sHBYzwpK/SUZIkeo7jTrtcl4g+RQ==}
 
-  '@vercel/python@4.4.0':
-    resolution: {integrity: sha512-wL6OCDk0NIgSLsoTTqbzmRXGtdu3Ilyc5WxMTt24cAK5IhLMebdZ9BgP5eD45YDIkAv79SaENcqnC9gORtlk/g==}
+  '@vercel/python@4.4.1':
+    resolution: {integrity: sha512-q319z8xUoEujGGFSCpmXPBOQqgWTNy0Wlk6sa2NPtuwiWM1CO5uW8EXtNMLVfMEKsvzQCRhKTix5Hvtx1JJ4pw==}
 
   '@vercel/redwood@2.1.8':
     resolution: {integrity: sha512-qBUBqIDxPEYnxRh3tsvTaPMtBkyK/D2tt9tBugNPe0OeYnMCMXVj9SJYbxiDI2GzAEFUZn4Poh63CZtXMDb9Tg==}
@@ -4370,8 +4370,8 @@ packages:
     resolution: {integrity: sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==}
     engines: {node: '>=12'}
 
-  vercel@39.0.0:
-    resolution: {integrity: sha512-V1TB0mk8eA+cVneTJYaV5KJobzuQFlet923ixgrT660NReWaxc0pk2RVwmoLfGqv2JXDJBSpZhLq0YeYt4VPmA==}
+  vercel@39.0.1:
+    resolution: {integrity: sha512-SBNiyl/ngaEOlKEkaNFTHSGRYFWYqCavK6TQx+XdbMfLDXG6U7GJodxFBa+j15senEzhGN27NPdKqRYpDFzqyQ==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -6153,7 +6153,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/python@4.4.0': {}
+  '@vercel/python@4.4.1': {}
 
   '@vercel/redwood@2.1.8(encoding@0.1.13)':
     dependencies:
@@ -9215,7 +9215,7 @@ snapshots:
 
   value-or-promise@1.0.12: {}
 
-  vercel@39.0.0(encoding@0.1.13):
+  vercel@39.0.1(encoding@0.1.13):
     dependencies:
       '@vercel/build-utils': 8.4.12
       '@vercel/fun': 1.1.0(encoding@0.1.13)
@@ -9223,7 +9223,7 @@ snapshots:
       '@vercel/hydrogen': 1.0.9
       '@vercel/next': 4.3.19(encoding@0.1.13)
       '@vercel/node': 3.2.24(encoding@0.1.13)
-      '@vercel/python': 4.4.0
+      '@vercel/python': 4.4.1
       '@vercel/redwood': 2.1.8(encoding@0.1.13)
       '@vercel/remix-builder': 2.2.13(encoding@0.1.13)
       '@vercel/ruby': 2.1.0
