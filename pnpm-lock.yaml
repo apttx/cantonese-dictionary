@@ -61,8 +61,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       vercel:
-        specifier: 39.0.2
-        version: 39.0.2(encoding@0.1.13)
+        specifier: 39.0.3
+        version: 39.0.3(encoding@0.1.13)
 
   app:
     devDependencies:
@@ -166,8 +166,8 @@ importers:
         specifier: 0.20.1
         version: 0.20.1(svelte@5.2.3)
       vercel:
-        specifier: 39.0.2
-        version: 39.0.2(encoding@0.1.13)
+        specifier: 39.0.3
+        version: 39.0.3(encoding@0.1.13)
       vite:
         specifier: 5.4.11
         version: 5.4.11(@types/node@22.9.0)(terser@5.36.0)
@@ -1613,8 +1613,8 @@ packages:
   '@vercel/hydrogen@1.0.9':
     resolution: {integrity: sha512-IPAVaALuGAzt2apvTtBs5tB+8zZRzn/yG3AGp8dFyCsw/v5YOuk0Q5s8Z3fayLvJbFpjrKtqRNDZzVJBBU3MrQ==}
 
-  '@vercel/next@4.3.19':
-    resolution: {integrity: sha512-3Pz8zaLD/9QKE5HrXoZ6B8O1jBvIzm6HqFQseQ3biWCijf0s/rHi8MVdzLBaNR8R7j76B08ItEsXEtil2Apvdw==}
+  '@vercel/next@4.3.20':
+    resolution: {integrity: sha512-EOKwb6YLr5o75NwuB02mep2aZgQSOLZqdm03dRXGDPW70du4a3IMRk2+6WObPy5y773DMUIoywq36K7DdBWFTQ==}
 
   '@vercel/nft@0.27.3':
     resolution: {integrity: sha512-oySTdDSzUAFDXpsSLk9Q943o+/Yu/+TCFxnehpFQEf/3khi2stMpTHPVNwFdvZq/Z4Ky93lE+MGHpXCRpMkSCA==}
@@ -1624,8 +1624,8 @@ packages:
   '@vercel/node@3.2.24':
     resolution: {integrity: sha512-KEm50YBmcfRNOw5NfdcqMI4BkP4+5TD9kRwAByHHlIZXLj1NTTknvMF+69sHBYzwpK/SUZIkeo7jTrtcl4g+RQ==}
 
-  '@vercel/python@4.4.1':
-    resolution: {integrity: sha512-q319z8xUoEujGGFSCpmXPBOQqgWTNy0Wlk6sa2NPtuwiWM1CO5uW8EXtNMLVfMEKsvzQCRhKTix5Hvtx1JJ4pw==}
+  '@vercel/python@4.5.0':
+    resolution: {integrity: sha512-+NWvba/7KvtC3kpXVK0O286ASLwJjtW1imdBb3aUiMe/f48QfwhhbbSaUFi1+ovXAxaspt8sW8B/iRHAaxccxA==}
 
   '@vercel/redwood@2.1.8':
     resolution: {integrity: sha512-qBUBqIDxPEYnxRh3tsvTaPMtBkyK/D2tt9tBugNPe0OeYnMCMXVj9SJYbxiDI2GzAEFUZn4Poh63CZtXMDb9Tg==}
@@ -4370,8 +4370,8 @@ packages:
     resolution: {integrity: sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==}
     engines: {node: '>=12'}
 
-  vercel@39.0.2:
-    resolution: {integrity: sha512-nXDg7sZtP9rYhCNnoOoD7QtX7Cvt5Ez67z4G2ThF82QZFzBdJgJiDKDjH3Nj6jyOOi0Ek0TF5AA7XsmirOIXLQ==}
+  vercel@39.0.3:
+    resolution: {integrity: sha512-7ggKGZdkkno8duJSy1Hzh31jNIzx1VgVIccpXSlwzAN4WKqjDnuKPp84O9xH2Ch4K7LbGBSHWwtTgTzREW+o/A==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -6100,7 +6100,7 @@ snapshots:
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
 
-  '@vercel/next@4.3.19(encoding@0.1.13)':
+  '@vercel/next@4.3.20(encoding@0.1.13)':
     dependencies:
       '@vercel/nft': 0.27.3(encoding@0.1.13)
     transitivePeerDependencies:
@@ -6153,7 +6153,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/python@4.4.1': {}
+  '@vercel/python@4.5.0': {}
 
   '@vercel/redwood@2.1.8(encoding@0.1.13)':
     dependencies:
@@ -9215,15 +9215,15 @@ snapshots:
 
   value-or-promise@1.0.12: {}
 
-  vercel@39.0.2(encoding@0.1.13):
+  vercel@39.0.3(encoding@0.1.13):
     dependencies:
       '@vercel/build-utils': 8.4.12
       '@vercel/fun': 1.1.0(encoding@0.1.13)
       '@vercel/go': 3.2.0
       '@vercel/hydrogen': 1.0.9
-      '@vercel/next': 4.3.19(encoding@0.1.13)
+      '@vercel/next': 4.3.20(encoding@0.1.13)
       '@vercel/node': 3.2.24(encoding@0.1.13)
-      '@vercel/python': 4.4.1
+      '@vercel/python': 4.5.0
       '@vercel/redwood': 2.1.8(encoding@0.1.13)
       '@vercel/remix-builder': 2.2.13(encoding@0.1.13)
       '@vercel/ruby': 2.1.0
