@@ -16,7 +16,7 @@
     "deploy:vercel": "vercel deploy"
   },
   "devDependencies": {
-    "@eslint/js": "9.14.0",
+    "@eslint/js": "9.15.0",
     "@fontsource/dm-sans": "5.1.0",
     "@fontsource/ma-shan-zheng": "5.1.0",
     "@fontsource/noto-sans-sc": "5.1.0",
@@ -36,7 +36,7 @@
     "@vite-pwa/assets-generator": "0.2.6",
     "@vite-pwa/sveltekit": "0.6.6",
     "concurrently": "9.1.0",
-    "eslint": "9.14.0",
+    "eslint": "9.15.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-svelte": "2.46.0",
     "globals": "15.12.0",
