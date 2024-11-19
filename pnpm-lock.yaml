@@ -61,8 +61,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       vercel:
-        specifier: 39.0.4
-        version: 39.0.4(encoding@0.1.13)
+        specifier: 39.0.5
+        version: 39.0.5(encoding@0.1.13)
 
   app:
     devDependencies:
@@ -166,8 +166,8 @@ importers:
         specifier: 0.20.1
         version: 0.20.1(svelte@5.2.3)
       vercel:
-        specifier: 39.0.4
-        version: 39.0.4(encoding@0.1.13)
+        specifier: 39.0.5
+        version: 39.0.5(encoding@0.1.13)
       vite:
         specifier: 5.4.11
         version: 5.4.11(@types/node@22.9.0)(terser@5.36.0)
@@ -1629,8 +1629,8 @@ packages:
   '@vercel/node@3.2.25':
     resolution: {integrity: sha512-Htc7I/nHpxfMtmzoii8Fnm01iFiFeTW99OYw67S8UAJuY+Fc18RnZVPjtw1fTgf4EcRxsFGP6+nG1IkSqty6uA==}
 
-  '@vercel/python@4.5.0':
-    resolution: {integrity: sha512-+NWvba/7KvtC3kpXVK0O286ASLwJjtW1imdBb3aUiMe/f48QfwhhbbSaUFi1+ovXAxaspt8sW8B/iRHAaxccxA==}
+  '@vercel/python@4.5.1':
+    resolution: {integrity: sha512-nZX1oezs5E+Un5Pw21P7cEXV9WBohRSq8gDAqipu7KHFfdAQ7ubfBclRmDTGaHOiYvdLsJPiE599vsUfKKob/w==}
 
   '@vercel/redwood@2.1.8':
     resolution: {integrity: sha512-qBUBqIDxPEYnxRh3tsvTaPMtBkyK/D2tt9tBugNPe0OeYnMCMXVj9SJYbxiDI2GzAEFUZn4Poh63CZtXMDb9Tg==}
@@ -2091,10 +2091,6 @@ packages:
   cross-inspect@1.0.1:
     resolution: {integrity: sha512-Pcw1JTvZLSJH83iiGWt6fRcT+BjZlCDRVwYLbUcHzv/CRpB7r0MlSrGbIyQvVSNyGnbt7G4AXuyCiDR3POvZ1A==}
     engines: {node: '>=16.0.0'}
-
-  cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
-    engines: {node: '>= 8'}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -4377,8 +4373,8 @@ packages:
     resolution: {integrity: sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==}
     engines: {node: '>=12'}
 
-  vercel@39.0.4:
-    resolution: {integrity: sha512-BDvK8IB0Wf2AMxARlJNnFFP6O7Cj5S7+GNY8JMLn8UVVEDHCLR8iwcJ3EjIzA+3GsBEle7oxiyylVVWQ+rTvNw==}
+  vercel@39.0.5:
+    resolution: {integrity: sha512-cPoUljZ6G1HY9HVNIjF6RE1+uM4kPOLoo9QwR737e2RpMId9Fv4E0nE4QKQmBstFLZM8P1+Y7/907OQJ9m4wIg==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -6161,7 +6157,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/python@4.5.0': {}
+  '@vercel/python@4.5.1': {}
 
   '@vercel/redwood@2.1.8(encoding@0.1.13)':
     dependencies:
@@ -6685,12 +6681,6 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  cross-spawn@7.0.3:
-    dependencies:
-      path-key: 3.1.1
-      shebang-command: 2.0.0
-      which: 2.0.2
-
   cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
@@ -7182,7 +7172,7 @@ snapshots:
 
   execa@3.2.0:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 5.2.0
       human-signals: 1.1.1
       is-stream: 2.0.1
@@ -7195,7 +7185,7 @@ snapshots:
 
   execa@5.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 6.0.1
       human-signals: 2.1.0
       is-stream: 2.0.1
@@ -7277,7 +7267,7 @@ snapshots:
 
   foreground-child@3.3.0:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       signal-exit: 4.0.2
 
   fs-constants@1.0.0: {}
@@ -9226,7 +9216,7 @@ snapshots:
 
   value-or-promise@1.0.12: {}
 
-  vercel@39.0.4(encoding@0.1.13):
+  vercel@39.0.5(encoding@0.1.13):
     dependencies:
       '@vercel/build-utils': 8.4.12
       '@vercel/fun': 1.1.0(encoding@0.1.13)
@@ -9234,7 +9224,7 @@ snapshots:
       '@vercel/hydrogen': 1.0.9
       '@vercel/next': 4.3.20(encoding@0.1.13)
       '@vercel/node': 3.2.25(encoding@0.1.13)
-      '@vercel/python': 4.5.0
+      '@vercel/python': 4.5.1
       '@vercel/redwood': 2.1.8(encoding@0.1.13)
       '@vercel/remix-builder': 2.2.14(encoding@0.1.13)
       '@vercel/ruby': 2.1.0
