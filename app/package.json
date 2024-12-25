@@ -31,7 +31,7 @@
     "@types/eslint__js": "8.42.3",
     "@types/node": "22.10.2",
     "@typescript-eslint/parser": "8.18.2",
-    "@unocss/reset": "0.65.2",
+    "@unocss/reset": "0.65.3",
     "@urql/core": "5.1.0",
     "@vite-pwa/assets-generator": "0.2.6",
     "@vite-pwa/sveltekit": "0.6.6",
