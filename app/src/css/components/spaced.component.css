@@ -1,0 +1,17 @@
+.\@spaced {
+  --spaced: 4rem;
+
+  margin-top: var(--spaced);
+
+  &.\+sibling {
+    --spaced: 1rem;
+  }
+
+  &.\+close {
+    --spaced: 2rem;
+  }
+
+  &.\+far {
+    --spaced: 6rem;
+  }
+}

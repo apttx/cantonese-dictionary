@@ -1,0 +1,36 @@
+.\@grid {
+  --gap: 1.4rem;
+  --columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--gap);
+
+  &.\+loose {
+    --gap: 2.8rem;
+  }
+
+  &.\+2 {
+    --columns: 2;
+  }
+
+  &.\+3 {
+    --columns: 2;
+  }
+
+  @media (min-width: 34rem) {
+    &.\#text\+2 {
+      --columns: 2;
+    }
+  }
+
+  @media (min-width: 50rem) {
+    &.\#page\+2 {
+      --columns: 2;
+    }
+
+    &.\#page\+3 {
+      --columns: 3;
+    }
+  }
+}

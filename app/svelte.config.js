@@ -17,6 +17,8 @@ const config = {
       $stores: 'src/stores/*',
       $css: 'src/css/*',
       $graphql: 'src/modules/graphql.mjs',
+      $youtube: 'src/modules/youtube.d.ts',
+      $modules: 'src/modules/*',
       $types: '../types/*',
     },
   },

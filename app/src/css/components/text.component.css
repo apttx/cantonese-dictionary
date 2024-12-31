@@ -1,0 +1,21 @@
+.\@text {
+  max-width: 32rem;
+}
+
+.\@formatted {
+  &.\+bold {
+    font-weight: bold;
+  }
+
+  &.\+italic {
+    font-style: italic;
+  }
+
+  &.\+strikethrough {
+    text-decoration-line: line-through;
+  }
+
+  &.\+underline {
+    text-decoration-line: underline;
+  }
+}

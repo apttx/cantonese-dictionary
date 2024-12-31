@@ -1,0 +1,18 @@
+.\@link {
+  transition-duration: 150ms;
+  transition-property: color;
+  transition-timing-function: ease-in;
+  color: var(--text_primary_onbase);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.25em;
+}
+
+@media (hover: hover) {
+  .\@link:hover {
+    transition-timing-function: ease-out;
+    color: var(--text_primary-strong_onbase);
+  }
+}
