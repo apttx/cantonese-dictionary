@@ -11,7 +11,6 @@
 
   import Settings_Modal from './settings_modal.svelte'
   import Flashcard_Settings_Modal from './flashcard_settings_modal.svelte'
-  import Pwa from './pwa.svelte'
   import { chinese_character_font } from '$stores/chinese_character_font'
 
   let settings_open = false
@@ -21,8 +20,6 @@
     flashcard_settings_open = true
   })
 </script>
-
-<Pwa />
 
 <svelte:head>
   <link

@@ -59,10 +59,6 @@
       text: 'unplugin-icons',
       url: 'https://github.com/antfu/unplugin-icons',
     },
-    {
-      text: 'Vite PWA',
-      url: 'https://github.com/vite-pwa',
-    },
   ]
 </script>
 
