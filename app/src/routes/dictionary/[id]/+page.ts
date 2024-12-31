@@ -1,9 +1,8 @@
 import { error } from '@sveltejs/kit'
 import { client, gql } from '$graphql'
-import { type Config } from '@sveltejs/adapter-vercel'
 import type { Phrase } from '$types/Phrase'
 
-export const config: Config = {
+export const config = {
   // incremental static regeneration
   isr: {
     // never expire
