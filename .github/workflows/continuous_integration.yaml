@@ -168,7 +168,7 @@ jobs:
         run: pnpm install --dir app --frozen-lockfile
 
       - name: build app
-        run: USE_VERCEL_ADAPTER=true pnpm run --dir app build
+        run: pnpm run --dir app build
 
       - name: deploy app
         run: pnpm --dir app deploy:vercel --prod --prebuilt --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
