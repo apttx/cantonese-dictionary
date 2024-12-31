@@ -9,10 +9,10 @@ importers:
   api:
     dependencies:
       graphql:
-        specifier: ^16.8.1
+        specifier: ^16.10.0
         version: 16.10.0
       graphql-yoga:
-        specifier: ^5.1.1
+        specifier: ^5.10.8
         version: 5.10.8(graphql@16.10.0)
       sqlite3:
         specifier: ^5.1.7
