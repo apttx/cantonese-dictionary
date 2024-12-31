@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "test:integration": "playwright test",
     "test:unit": "vitest",
-    "deploy:vercel": "vercel deploy"
+    "deploy:vercel": "pnpx vercel deploy"
   },
   "devDependencies": {
     "@eslint/js": "9.17.0",
@@ -46,7 +46,6 @@
     "svelte-check": "4.1.1",
     "typescript": "5.7.2",
     "unplugin-icons": "0.22.0",
-    "vercel": "39.2.2",
     "vite": "6.0.6",
     "vitest": "2.1.8"
   },
