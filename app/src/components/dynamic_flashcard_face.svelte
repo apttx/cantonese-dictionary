@@ -1,12 +1,12 @@
-<script>
-  import { character_set } from '$stores/character_set.mjs'
-  import { show_jyutping } from '$stores/show_jyutping.mjs'
-  import { show_pinyin } from '$stores/show_pinyin.mjs'
+<script lang="ts">
+  import { character_set } from '$stores/character_set.ts'
+  import type { Flashcard_Configuration } from '$stores/flashcard_settings'
+  import { show_jyutping } from '$stores/show_jyutping.ts'
+  import { show_pinyin } from '$stores/show_pinyin.ts'
+  import { type Phrase } from '$types/Phrase.ts'
 
-  /** @type {import('$stores/flashcard_settings.mjs').Flashcard_Configuration} */
-  export let configuration
-  /** @type {Phrase} */
-  export let phrase
+  export let configuration: Flashcard_Configuration
+  export let phrase: Phrase
 </script>
 
 <div class="flashcard">

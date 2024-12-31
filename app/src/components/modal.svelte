@@ -1,14 +1,13 @@
-<script>
-  import { main_inert } from '$stores/main_inert.mjs'
+<script lang="ts">
+  import { main_inert } from '$stores/main_inert.ts'
+  import type { Action } from 'svelte/action'
   import { cubicIn, cubicOut } from 'svelte/easing'
   import { fade, scale } from 'svelte/transition'
 
   import Close from '~icons/mingcute/close-fill'
 
-  /** @type {boolean} */
   export let visible = false
-  /** @type {string} */
-  export let heading
+  export let heading: string
 
   $: heading_id = heading.toLocaleLowerCase().replace(/[^a-z]+/gi, '_')
 
@@ -17,15 +16,13 @@
 
   $: $main_inert = visible
 
-  /** @param {Event} event */
-  const prevent_default_if_main_inert = (event) => {
+  const prevent_default_if_main_inert = (event: Event) => {
     if (event.eventPhase === Event.AT_TARGET && $main_inert) {
       event.preventDefault()
     }
   }
 
-  /** @type {import('svelte/action').Action} */
-  const focus_on_mount = (node) => {
+  const focus_on_mount: Action = (node) => {
     node.focus()
   }
 </script>

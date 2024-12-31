@@ -1,18 +1,18 @@
-<script>
+<script lang="ts">
   import Save from '~icons/mingcute/save-2-line'
   import Delete from '~icons/mingcute/delete-2-line'
   import Details from '~icons/mingcute/arrow-right-line'
 
-  import { show_pinyin } from '$stores/show_pinyin.mjs'
-  import { show_jyutping } from '$stores/show_jyutping.mjs'
+  import { show_pinyin } from '$stores/show_pinyin.ts'
+  import { show_jyutping } from '$stores/show_jyutping.ts'
   import {
     character_set,
     show_secondary_character_set_if_different,
-  } from '$stores/character_set.mjs'
-  import { add, has, remove } from '$stores/collection.mjs'
+  } from '$stores/character_set.ts'
+  import { add, has, remove } from '$stores/collection.ts'
+  import type { Phrase } from '$types/Phrase'
 
-  /** @type {Phrase} */
-  export let phrase
+  export let phrase: Phrase
 </script>
 
 <div

@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import { setContext } from 'svelte'
 
-  import '../app.mjs'
+  import '../app.ts'
 
   import { assets } from '$app/paths'
 
-  import { main_inert } from '$stores/main_inert.mjs'
+  import { main_inert } from '$stores/main_inert.ts'
   import Footer from '$components/footer.svelte'
   import Header from '$components/header.svelte'
 
@@ -14,9 +14,7 @@
   import Pwa from './pwa.svelte'
   import { chinese_character_font } from '$stores/chinese_character_font'
 
-  /** @type {boolean} */
   let settings_open = false
-  /** @type {boolean} */
   let flashcard_settings_open = false
 
   setContext('open_flashcard_settings', () => {

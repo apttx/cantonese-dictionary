@@ -1,8 +1,9 @@
 import { error } from '@sveltejs/kit'
 import { client, gql } from '$graphql'
+import { type Config } from '@sveltejs/adapter-vercel'
+import type { Phrase } from '$types/Phrase'
 
-/** @type {import('@sveltejs/adapter-vercel').Config} */
-export const config = {
+export const config: Config = {
   // incremental static regeneration
   isr: {
     // never expire
@@ -10,8 +11,7 @@ export const config = {
   },
 }
 
-/** @type {import('@urql/core').TypedDocumentNode<{ phrase: Phrase }, { id: string }>} */
-const phrase_query = gql`
+const phrase_query = gql<{ phrase: Phrase }, { id: string }>`
   query phrase($id: ID!) {
     phrase(where: { id: $id }) {
       id

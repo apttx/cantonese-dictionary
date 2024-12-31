@@ -1,21 +1,17 @@
 import { browser } from '$app/environment'
-import { get, writable } from 'svelte/store'
+import { get, writable, type Writable } from 'svelte/store'
 
-/**
- * @type {<Type extends any = never>(options: {
- *   key: string
- *   value?: Type
- *   serialize?: (value: Type) => string
- *   deserialize?: (local_storage_item: string) => Type
- * }) => import('svelte/store').Writable<Type>}
- */
-export const local_storage_store = (options) => {
+export const local_storage_store = <Type = never>(options: {
+  key: string
+  value?: Type
+  serialize?: (value: Type) => string
+  deserialize?: (local_storage_item: string) => Type
+}) => {
   const { key, value } = options
 
   const serialize = options.serialize ?? JSON.stringify
   const deserialize = options.deserialize ?? JSON.parse
 
-  /** @type {import('svelte/store').Writable<Required<typeof options>['value']>} */
   const {
     subscribe,
     set: set_store,
@@ -31,8 +27,7 @@ export const local_storage_store = (options) => {
     }
   })
 
-  /** @type {import('svelte/store').Writable<Required<typeof options>['value']>['set']} */
-  const set = (new_value) => {
+  const set: Writable<Type>['set'] = (new_value) => {
     set_store(new_value)
 
     if (browser) {
@@ -42,8 +37,7 @@ export const local_storage_store = (options) => {
     }
   }
 
-  /** @type {import('svelte/store').Writable<Required<typeof options>['value']>['update']} */
-  const update = (updater) => {
+  const update: Writable<Type>['update'] = (updater) => {
     update_store(updater)
 
     const new_value = get({ subscribe })
@@ -55,8 +49,7 @@ export const local_storage_store = (options) => {
     }
   }
 
-  /** @type {import('svelte/store').Writable<Required<typeof options>['value']>} */
-  const store = {
+  const store: Writable<Type> = {
     subscribe,
     set,
     update,

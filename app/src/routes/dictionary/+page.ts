@@ -1,8 +1,8 @@
 import { client, gql } from '$graphql'
+import type { Phrase } from '$types/Phrase'
 import { error } from '@sveltejs/kit'
 
-/** @type {import('@urql/core').TypedDocumentNode<{ search: Phrase[] }, { query: string }>} */
-const search_query = gql`
+const search_query = gql<{ search: Phrase[] }, { query: string }>`
   query search($query: String!) {
     search(query: $query, limit: 50) {
       id

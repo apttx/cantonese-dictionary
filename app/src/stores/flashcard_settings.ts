@@ -1,9 +1,12 @@
-import { local_storage_store } from './local_storage_store.mjs'
+import { local_storage_store } from './local_storage_store.js'
 
-/** @typedef {{ characters: boolean; romanization: boolean; english: boolean }} Flashcard_Configuration */
+export interface Flashcard_Configuration {
+  characters: boolean
+  romanization: boolean
+  english: boolean
+}
 
-/** @type {Flashcard_Configuration} */
-const default_flashcard_front_configuration = {
+const default_flashcard_front_configuration: Flashcard_Configuration = {
   characters: true,
   romanization: true,
   english: false,
@@ -13,8 +16,7 @@ export const flashcard_front_configuration = local_storage_store({
   value: default_flashcard_front_configuration,
 })
 
-/** @type {Flashcard_Configuration} */
-const default_flashcard_back_configuration = {
+const default_flashcard_back_configuration: Flashcard_Configuration = {
   characters: false,
   romanization: false,
   english: true,

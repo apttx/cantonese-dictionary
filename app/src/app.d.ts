@@ -10,8 +10,3 @@ declare global {
 }
 
 export {}
-
-import 'unplugin-icons/types/svelte'
-import '../../jsconfig.json'
-import 'vite-plugin-pwa/info'
-import 'vite-plugin-pwa/pwa-assets'

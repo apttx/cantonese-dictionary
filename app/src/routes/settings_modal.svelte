@@ -2,10 +2,10 @@
   import {
     character_set,
     show_secondary_character_set_if_different,
-  } from '$stores/character_set.mjs'
-  import { show_pinyin } from '$stores/show_pinyin.mjs'
-  import { show_jyutping } from '$stores/show_jyutping.mjs'
-  import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
+  } from '$stores/character_set.ts'
+  import { show_pinyin } from '$stores/show_pinyin.ts'
+  import { show_jyutping } from '$stores/show_jyutping.ts'
+  import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.ts'
   import { chinese_character_font } from '$stores/chinese_character_font'
 
   import Modal from '$components/modal.svelte'

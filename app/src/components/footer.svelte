@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Github from '~icons/mingcute/github-line'
   import ThankYou from '~icons/mingcute/heart-fill'
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Tabs, { type Tab } from '$components/tabs.svelte'
   import Stroke_Order from './Stroke_Order.svelte'
-  import { character_set } from '$stores/character_set.mjs'
+  import { character_set } from '$stores/character_set.ts'
   import type { Phrase } from '$types/Phrase'
 
   let { simplified, traditional }: Pick<Phrase, 'simplified' | 'traditional'> = $props()

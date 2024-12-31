@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { cubicOut } from 'svelte/easing'
   import { fade, fly } from 'svelte/transition'
   import Save from '~icons/mingcute/save-2-line'
@@ -10,10 +10,10 @@
   import {
     character_set,
     show_secondary_character_set_if_different,
-  } from '$stores/character_set.mjs'
-  import { show_jyutping } from '$stores/show_jyutping.mjs'
-  import { show_pinyin } from '$stores/show_pinyin.mjs'
-  import { has, add, remove } from '$stores/collection.mjs'
+  } from '$stores/character_set.ts'
+  import { show_jyutping } from '$stores/show_jyutping.ts'
+  import { show_pinyin } from '$stores/show_pinyin.ts'
+  import { has, add, remove } from '$stores/collection.ts'
   import Stroke_Order_Tabs from './Stroke_Order_Tabs.svelte'
 
   export let data

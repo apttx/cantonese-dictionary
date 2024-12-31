@@ -5,7 +5,7 @@
   import Phrase_List_Item from '$components/phrase_list_item.svelte'
   import Head from '$components/head.svelte'
   import { goto } from '$app/navigation'
-  import { has } from '$stores/collection.mjs'
+  import { has } from '$stores/collection.ts'
   import Tabs, { type Tab } from '$components/tabs.svelte'
   import Search_Form, { type Submit_Event_Detail } from '../search_form.svelte'
   import { type Phrase } from '$types/Phrase'

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
   import Cog from '~icons/mingcute/settings-5-line'
@@ -10,10 +10,8 @@
 
   import { page } from '$app/stores'
 
-  /** @type {import('svelte').EventDispatcher<{ toggle_settings: void }>} */
   const dispatch = createEventDispatcher()
 
-  /** @type {boolean} */
   let menu_open = false
 
   const close_menu = () => {

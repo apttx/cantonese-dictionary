@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte'
   import { fly } from 'svelte/transition'
   import { cubicIn, cubicOut } from 'svelte/easing'
@@ -7,23 +7,22 @@
   import Remove from '~icons/mingcute/delete-2-line'
   import Cog from '~icons/mingcute/settings-5-line'
 
-  import { phrases, remove } from '$stores/collection.mjs'
+  import { phrases, remove } from '$stores/collection.ts'
   import EmptyCollectionInfo from '$components/empty_collection_info.svelte'
   import Head from '$components/head.svelte'
   import Dynamic_Flashcard_Face from '$components/dynamic_flashcard_face.svelte'
   import {
     flashcard_back_configuration,
     flashcard_front_configuration,
-  } from '$stores/flashcard_settings.mjs'
+  } from '$stores/flashcard_settings.ts'
 
-  import { flip } from './transitions.mjs'
-  import { get_random } from './utilities.mjs'
-  import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.mjs'
+  import { flip } from './transitions.ts'
+  import { get_random } from './utilities.ts'
+  import { preferred_ui_alignment } from '$stores/preferred_ui_alignment.ts'
 
   const flip_duration = 150
 
   let random_phrase = get_random($phrases)
-  /** @type {boolean} */
   let is_flashcard_flipped = false
   const flip_card = () => {
     is_flashcard_flipped = !is_flashcard_flipped
@@ -37,15 +36,17 @@
     next_phrase()
   }
 
-  /** @type {Record<number, (() => void) | undefined>} */
-  const screen_click_actions = { 1: flip_card, 2: next_phrase }
-  /** @type {(event: MouseEvent) => void} */
-  const on_screen_click = (event) => {
+  const screen_click_actions: Record<number, (() => void) | undefined> = {
+    1: flip_card,
+    2: next_phrase,
+  }
+  const on_screen_click = (event: MouseEvent) => {
     const event_path = event.composedPath()
     // last element in path is always the window
-    const window = /** @type {Window} */ (
-      event_path.findLast((element) => element instanceof Window)
-    )
+    const window = event_path.findLast((element): element is Window => element instanceof Window)
+    if (!window) {
+      return
+    }
     const screen_width = window.innerWidth
     const event_position = event.clientX
     // either 0, 1 or 2 depending on where the screen was clicked
@@ -59,8 +60,7 @@
     action()
   }
 
-  /** @type {() => void} */
-  const open_settings = getContext('open_flashcard_settings')
+  const open_settings: () => void = getContext('open_flashcard_settings')
 </script>
 
 <Head

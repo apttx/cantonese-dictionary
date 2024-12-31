@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
   import Modal from '$components/modal.svelte'
   import Dynamic_Flashcard_Face from '$components/dynamic_flashcard_face.svelte'
   import {
     flashcard_front_configuration,
     flashcard_back_configuration,
-  } from '$stores/flashcard_settings.mjs'
+  } from '$stores/flashcard_settings.ts'
+  import type { Phrase } from '$types/Phrase.ts'
 
-  /** @type {Phrase} */
-  const demo_phrase = {
+  const demo_phrase: Phrase = {
     id: '9e7b2baf38600d606d33363f5142b228',
     english: 'dictionary',
     traditional: '辭書',
@@ -17,8 +17,7 @@
     senses: [],
   }
 
-  /** @type {boolean} */
-  export let visible
+  export let visible: boolean
 </script>
 
 <Modal

@@ -1,9 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite'
 import unplugin_icons from 'unplugin-icons/vite'
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
+import { type UserConfig } from 'vite'
 
-/** @type {import('vite').UserConfig} */
-const config = {
+const config: UserConfig = {
   plugins: [
     sveltekit(),
     unplugin_icons({

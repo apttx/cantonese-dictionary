@@ -1,8 +1,6 @@
-<script>
-  /** @type {string} */
-  export let title
-  /** @type {string} */
-  export let description
+<script lang="ts">
+  export let title: string
+  export let description: string
 </script>
 
 <svelte:head>
