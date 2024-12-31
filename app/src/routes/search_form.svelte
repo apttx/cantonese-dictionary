@@ -38,7 +38,7 @@
 </script>
 
 <form
-  inert={loading}
+  inert={loading || undefined}
   class="search_form"
   on:submit|preventDefault={on_submit}
 >

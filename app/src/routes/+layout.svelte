@@ -52,7 +52,7 @@
 <Flashcard_Settings_Modal bind:visible={flashcard_settings_open} />
 
 <main
-  inert={$main_inert}
+  inert={$main_inert || undefined}
   class:cd_hanzi_font_sans={$chinese_character_font === 'sans'}
   class:cd_hanzi_font_serif={$chinese_character_font === 'serif'}
   class:cd_hanzi_font_handwritten={$chinese_character_font === 'handwritten'}
