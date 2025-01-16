@@ -28,7 +28,7 @@
     "@sveltejs/vite-plugin-svelte": "5.0.3",
     "@types/eslint__eslintrc": "2.1.2",
     "@types/eslint__js": "8.42.3",
-    "@types/node": "22.10.6",
+    "@types/node": "22.10.7",
     "@typescript-eslint/parser": "8.20.0",
     "@unocss/reset": "65.4.2",
     "@urql/core": "5.1.0",
