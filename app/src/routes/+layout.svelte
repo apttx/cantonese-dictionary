@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from 'svelte'
 
-  import '../app.ts'
+  import '../global.ts'
 
   import { assets } from '$app/paths'
 
