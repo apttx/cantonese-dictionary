@@ -30,6 +30,9 @@ importers:
       '@rollup/plugin-virtual':
         specifier: 3.0.2
         version: 3.0.2(rollup@4.40.0)
+      '@typescript-eslint/parser':
+        specifier: 8.30.1
+        version: 8.30.1(eslint@9.25.0(jiti@1.21.0))(typescript@5.8.3)
       concurrently:
         specifier: 9.1.2
         version: 9.1.2
@@ -141,6 +144,9 @@ importers:
       svelte-check:
         specifier: 4.1.6
         version: 4.1.6(picomatch@4.0.2)(svelte@5.28.1)(typescript@5.8.3)
+      svelte-eslint-parser:
+        specifier: ^1.1.3
+        version: 1.1.3(svelte@5.28.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -159,6 +165,9 @@ importers:
       '@eslint/js':
         specifier: 9.25.0
         version: 9.25.0
+      '@typescript-eslint/parser':
+        specifier: 8.30.1
+        version: 8.30.1(eslint@9.25.0(jiti@1.21.0))(typescript@5.8.3)
       concurrently:
         specifier: 9.1.2
         version: 9.1.2
@@ -2199,6 +2208,10 @@ packages:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
     engines: {node: '>=4'}
 
+  postcss-selector-parser@7.1.0:
+    resolution: {integrity: sha512-8sLjZwK0R+JlxlYcTuVnyT2v+htpdrjDOKuMcOVdYjt52Lh8hWRYpxBPoKx/Zg+bcjc3wx6fmQevMmUztS/ccA==}
+    engines: {node: '>=4'}
+
   postcss@8.5.3:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
@@ -2481,6 +2494,15 @@ packages:
   svelte-eslint-parser@0.43.0:
     resolution: {integrity: sha512-GpU52uPKKcVnh8tKN5P4UZpJ/fUDndmq7wfsvoVXsyP+aY0anol7Yqo01fyrlaWGMFfm4av5DyrjlaXdLRJvGA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
+
+  svelte-eslint-parser@1.1.3:
+    resolution: {integrity: sha512-DUc/z/vk+AFVoxGv54+BOBFqUrmUgNg2gSO2YqrE3OL6ro19/0azPmQj/4wN3s9RxuF5l7G0162q/Ddk4LJhZA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
@@ -4906,6 +4928,11 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
+  postcss-selector-parser@7.1.0:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
+
   postcss@8.5.3:
     dependencies:
       nanoid: 3.3.11
@@ -5226,6 +5253,17 @@ snapshots:
       espree: 9.6.1
       postcss: 8.5.3
       postcss-scss: 4.0.9(postcss@8.5.3)
+    optionalDependencies:
+      svelte: 5.28.1
+
+  svelte-eslint-parser@1.1.3(svelte@5.28.1):
+    dependencies:
+      eslint-scope: 8.3.0
+      eslint-visitor-keys: 4.2.0
+      espree: 10.3.0
+      postcss: 8.5.3
+      postcss-scss: 4.0.9(postcss@8.5.3)
+      postcss-selector-parser: 7.1.0
     optionalDependencies:
       svelte: 5.28.1
 
