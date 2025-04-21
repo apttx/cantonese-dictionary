@@ -3,7 +3,7 @@
   import Head from '$components/head.svelte'
   import SearchForm, { type Submit_Event_Detail } from './search_form.svelte'
 
-  let loading_state: 'idle' | 'pending' | 'error' = 'idle'
+  let loading_state = $state<'idle' | 'pending' | 'error'>('idle')
   const on_submit = async (event: CustomEvent<Submit_Event_Detail>) => {
     const { term, input_element } = event.detail
 
