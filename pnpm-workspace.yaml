@@ -2,3 +2,9 @@ packages:
   - app/
   - api/
   - search/
+
+ignoredBuiltDependencies:
+  - esbuild
+
+onlyBuiltDependencies:
+  - sqlite3
