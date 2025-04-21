@@ -19,10 +19,7 @@
     tabs,
     children,
   }: {
-    // eslint-svelte doesn't understand generics
-    // eslint-disable-next-line no-undef
     tabs: [Tab_Instance, ...Tab_Instance[]]
-    // eslint-disable-next-line no-undef
     children?: Snippet<[{ active_tab: Tab_Instance }]>
   } = $props()
 
