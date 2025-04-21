@@ -19,6 +19,7 @@ export default [
       '**/pnpm-lock.yaml',
       '**/package-lock.json',
       '**/yarn.lock',
+      '.vercel',
     ],
   },
   js.configs.recommended,
