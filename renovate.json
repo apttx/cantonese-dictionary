@@ -3,5 +3,6 @@
   "extends": ["config:best-practices"],
   "dependencyDashboard": false,
   "dependencyDashboardApproval": false,
-  "automerge": true
+  "automerge": true,
+  "automergeType": "branch"
 }
