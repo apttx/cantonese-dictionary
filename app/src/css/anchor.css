@@ -3,6 +3,9 @@
     transition-duration: 150ms;
     transition-property: color;
     transition-timing-function: ease-in;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.3rem;
   }
   a:hover {
     transition-timing-function: ease-out;

@@ -169,6 +169,7 @@
     padding-inline: 1em;
     padding-block: 1em;
     font-weight: 700;
+    text-decoration: none;
   }
 
   @media not (min-width: 40rem) {
