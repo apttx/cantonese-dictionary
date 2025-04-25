@@ -87,7 +87,7 @@ importers:
         specifier: 1.52.0
         version: 1.52.0
       '@storyblok/js':
-        specifier: ^3.4.0
+        specifier: 3.4.0
         version: 3.4.0
       '@sveltejs/adapter-vercel':
         specifier: 5.7.0
