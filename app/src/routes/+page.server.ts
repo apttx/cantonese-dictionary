@@ -1,6 +1,13 @@
 import { dev } from '$app/environment'
 import type { Page } from '$storyblok/stories/Page'
+import type { Config } from '@sveltejs/adapter-vercel'
 import { redirect } from '@sveltejs/kit'
+
+export const config: Config = {
+  isr: {
+    expiration: false,
+  },
+}
 
 export const load = async (event) => {
   if (event.url.searchParams.has('query')) {
