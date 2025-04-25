@@ -27,7 +27,7 @@
           <Home aria-label="Home" />
         </a>
       </li>
-      {#each data.breadcrumbs as breadcrumb, index}
+      {#each data.breadcrumbs as breadcrumb, index (breadcrumb)}
         <li class="breadcrumbItem">
           <Chevron
             aria-hidden="true"
