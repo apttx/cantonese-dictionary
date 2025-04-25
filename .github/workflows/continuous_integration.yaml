@@ -36,6 +36,7 @@ jobs:
     needs: []
     env:
       PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
+      STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
     steps:
       - name: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -66,6 +67,7 @@ jobs:
     needs: []
     env:
       PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
+      STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
     steps:
       - name: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -150,6 +152,7 @@ jobs:
       VERCEL_ACCESS_TOKEN: ${{ secrets.VERCEL_ACCESS_TOKEN }}
       PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
       ISR_BYPASS_TOKEN: ${{ vars.ISR_BYPASS_TOKEN }}
+      STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
     steps:
       - name: checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
