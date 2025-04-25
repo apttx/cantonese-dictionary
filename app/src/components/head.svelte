@@ -11,11 +11,7 @@
   } = $props()
 
   const canonicalUrl = $derived.by(() => {
-    const canonicalUrl = new URL(PUBLIC_CANONICAL_BASE_URL)
-
-    canonicalUrl.pathname = page.url.pathname
-    canonicalUrl.search = page.url.search
-    canonicalUrl.hash = page.url.hash
+    const canonicalUrl = new URL(page.url.pathname, PUBLIC_CANONICAL_BASE_URL)
 
     return canonicalUrl
   })
