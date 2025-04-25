@@ -19,10 +19,14 @@
 
     return canonicalUrl
   })
+
+  const titleWithSuffix = $derived(
+    title === 'Cantonese Dictionary' ? title : `${title} | Cantonese Dictionary`,
+  )
 </script>
 
 <svelte:head>
-  <title>{title} | Cantonese Dictionary</title>
+  <title>{titleWithSuffix}</title>
   <meta
     name="description"
     content={description}
