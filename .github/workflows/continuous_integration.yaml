@@ -154,7 +154,7 @@ jobs:
       VERCEL_ACCESS_TOKEN: ${{ secrets.VERCEL_ACCESS_TOKEN }}
       PUBLIC_API_URL: ${{ vars.PUBLIC_API_URL }}
       PUBLIC_CANONICAL_BASE_URL: ${{ vars.PUBLIC_CANONICAL_BASE_URL }}
-      ISR_BYPASS_TOKEN: ${{ vars.ISR_BYPASS_TOKEN }}
+      ISR_BYPASS_TOKEN: ${{ secrets.ISR_BYPASS_TOKEN }}
       STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
     steps:
       - name: checkout
