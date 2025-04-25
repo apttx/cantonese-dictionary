@@ -69,7 +69,7 @@
         <label>
           <input
             type="radio"
-            name="character_set"
+            name="character_font"
             value="sans"
             bind:group={$chinese_character_font}
           />
@@ -78,7 +78,7 @@
         <label>
           <input
             type="radio"
-            name="character_set"
+            name="character_font"
             value="serif"
             bind:group={$chinese_character_font}
           />
@@ -87,7 +87,7 @@
         <label>
           <input
             type="radio"
-            name="character_set"
+            name="character_font"
             value="handwritten"
             bind:group={$chinese_character_font}
           />
