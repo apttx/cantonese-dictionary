@@ -180,3 +180,7 @@ jobs:
       - name: deploy app
         run: pnpm --dir app deploy:vercel --prod --prebuilt --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
         if: ${{ github.ref == 'refs/heads/default' }}
+
+      - name: deploy app preview
+        run: pnpm --dir app deploy:vercel --prebuilt --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
+        if: ${{ github.ref != 'refs/heads/default' }}
