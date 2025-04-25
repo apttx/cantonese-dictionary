@@ -39,7 +39,7 @@
   role="presentation"
   class="tab_navigation"
 >
-  {#each tabs as tab}
+  {#each tabs as tab (tab)}
     <button
       class="tab_button"
       class:active={tab === active_tab}

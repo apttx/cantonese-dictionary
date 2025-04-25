@@ -32,7 +32,7 @@
     type="image/svg+xml"
   />
 
-  {#each [16, 32, 64, 128, 256, 512] as size}
+  {#each [16, 32, 64, 128, 256, 512] as size (size)}
     <link
       rel="icon"
       href="{assets}/favicon_{size}.png"

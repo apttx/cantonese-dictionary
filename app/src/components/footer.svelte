@@ -73,7 +73,7 @@
       </h2>
 
       <ul class="open_source_links">
-        {#each open_source_links as link}
+        {#each open_source_links as link (link)}
           <li>
             <a
               href={link.url}

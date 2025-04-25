@@ -13,7 +13,7 @@
   role="presentation"
   class="container"
 >
-  {#each characters as character, index}
+  {#each characters as character, index (character)}
     {@const animation_replay_key = animation_replay_keys[index]}
     {@const code_point = character.codePointAt(0)}
     {@const image_url = `https://raw.githubusercontent.com/skishore/makemeahanzi/refs/heads/master/svgs/${code_point}.svg#${animation_replay_key}`}
