@@ -116,7 +116,7 @@
     margin-inline: var(--margin_content_text);
 
     @media (min-width: 40rem) {
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
   }
 
