@@ -34,125 +34,140 @@
     .phrase.jyutping} in Jyutping."
 />
 
-{#key data.phrase.id}
-  <div
-    role="presentation"
-    class="phrase_header"
-  >
-    <dl class="phrase_details">
+<main>
+  <article>
+    <h1 class="mainHeading @heading +1">{data.phrase.simplified} &ndash; {data.phrase.english}</h1>
+
+    {#key data.phrase.id}
       <div
         role="presentation"
-        class="characters_container"
+        class="phrase_header"
       >
-        <dt class="characters_title screen_reader_only">
-          {$character_set === 'simplified' ? 'Simplified' : 'Traditional'}
-        </dt>
-        <dd class="characters cd_hanzi">
-          {data.phrase[$character_set]}
-        </dd>
+        <dl class="phrase_details">
+          <div
+            role="presentation"
+            class="characters_container"
+          >
+            <dt class="characters_title screen_reader_only">
+              {$character_set === 'simplified' ? 'Simplified' : 'Traditional'}
+            </dt>
+            <dd class="characters cd_hanzi">
+              {data.phrase[$character_set]}
+            </dd>
 
-        {#if $show_secondary_character_set_if_different && data.phrase.simplified !== data.phrase.traditional}
-          <dt class="characters_title screen_reader_only">
-            {$character_set === 'simplified' ? 'Traditional' : 'Simplified'}
-          </dt>
-          <dd class="characters secondary_characters colored_base_neutral_weak cd_hanzi">
-            {data.phrase[$character_set === 'simplified' ? 'traditional' : 'simplified']}
+            {#if $show_secondary_character_set_if_different && data.phrase.simplified !== data.phrase.traditional}
+              <dt class="characters_title screen_reader_only">
+                {$character_set === 'simplified' ? 'Traditional' : 'Simplified'}
+              </dt>
+              <dd class="characters secondary_characters colored_base_neutral_weak cd_hanzi">
+                {data.phrase[$character_set === 'simplified' ? 'traditional' : 'simplified']}
+              </dd>
+            {/if}
+          </div>
+
+          {#if $show_pinyin}
+            <dt class="pinyin_title screen_reader_only">Pinyin</dt>
+            <dd class="pinyin romanization">
+              {data.phrase.pinyin}
+            </dd>
+          {/if}
+
+          {#if $show_jyutping}
+            <dt class="jyutping_title screen_reader_only">Jyutping</dt>
+            <dd class="jyutping romanization">
+              {data.phrase.jyutping}
+            </dd>
+          {/if}
+
+          <dt class="english_title screen_reader_only">English</dt>
+          <dd class="english">
+            {data.phrase.english}
           </dd>
+        </dl>
+
+        {#if $has(data.phrase)}
+          <span
+            in:fly|global={{
+              y: 16,
+              opacity: 0,
+              duration: 300,
+              easing: cubicOut,
+            }}
+            out:fly={{
+              y: 16,
+              opacity: 0,
+              duration: 200,
+              easing: cubicOut,
+            }}
+            class="in_collection_tag colored_brand-1"
+          >
+            <Collection aria-label="Notebook" />
+            <span>In your collection</span>
+          </span>
+        {/if}
+
+        {#if $has(data.phrase)}
+          <button
+            on:click={remove_phrase_from_collection}
+            class="remove_button cd_button"
+          >
+            <span class="button_text">Remove from collection</span>
+            <Remove aria-label="Trash can" />
+          </button>
+        {:else}
+          <button
+            on:click={add_phrase_to_collection}
+            class="save_button cd_button"
+          >
+            <span class="button_text">Save to collection</span>
+            <Save aria-label="Floppy disk" />
+          </button>
         {/if}
       </div>
 
-      {#if $show_pinyin}
-        <dt class="pinyin_title screen_reader_only">Pinyin</dt>
-        <dd class="pinyin romanization">
-          {data.phrase.pinyin}
-        </dd>
+      <h2 class="section_heading">Stroke Order</h2>
+
+      <div
+        role="presentation"
+        class="stroke_order"
+      >
+        <Stroke_Order_Tabs
+          simplified={data.phrase.simplified}
+          traditional={data.phrase.traditional}
+        />
+      </div>
+
+      {#if data.phrase.senses.length}
+        <h2 class="section_heading">Other meanings</h2>
+
+        <ul class="senses_list">
+          {#each data.phrase.senses as sense, index (sense.id)}
+            <li
+              in:fade|global={{
+                delay: index * 30,
+                duration: 300,
+                easing: cubicOut,
+              }}
+            >
+              <Phrase_List_Item phrase={sense} />
+            </li>
+          {/each}
+        </ul>
       {/if}
-
-      {#if $show_jyutping}
-        <dt class="jyutping_title screen_reader_only">Jyutping</dt>
-        <dd class="jyutping romanization">
-          {data.phrase.jyutping}
-        </dd>
-      {/if}
-
-      <dt class="english_title screen_reader_only">English</dt>
-      <dd class="english">
-        {data.phrase.english}
-      </dd>
-    </dl>
-
-    {#if $has(data.phrase)}
-      <span
-        in:fly|global={{
-          y: 16,
-          opacity: 0,
-          duration: 300,
-          easing: cubicOut,
-        }}
-        out:fly={{
-          y: 16,
-          opacity: 0,
-          duration: 200,
-          easing: cubicOut,
-        }}
-        class="in_collection_tag colored_brand-1"
-      >
-        <Collection aria-label="Notebook" />
-        <span>In your collection</span>
-      </span>
-    {/if}
-
-    {#if $has(data.phrase)}
-      <button
-        on:click={remove_phrase_from_collection}
-        class="remove_button cd_button"
-      >
-        <span class="button_text">Remove from collection</span>
-        <Remove aria-label="Trash can" />
-      </button>
-    {:else}
-      <button
-        on:click={add_phrase_to_collection}
-        class="save_button cd_button"
-      >
-        <span class="button_text">Save to collection</span>
-        <Save aria-label="Floppy disk" />
-      </button>
-    {/if}
-  </div>
-
-  <h2 class="section_heading">Stroke Order</h2>
-
-  <div
-    role="presentation"
-    class="stroke_order"
-  >
-    <Stroke_Order_Tabs
-      simplified={data.phrase.simplified}
-      traditional={data.phrase.traditional}
-    />
-  </div>
-
-  {#if data.phrase.senses.length}
-    <h2 class="section_heading">Other meanings</h2>
-
-    <ul class="senses_list">
-      {#each data.phrase.senses as sense, index (sense.id)}
-        <li
-          in:fade|global={{
-            delay: index * 30,
-            duration: 300,
-            easing: cubicOut,
-          }}
-        >
-          <Phrase_List_Item phrase={sense} />
-        </li>
-      {/each}
-    </ul>
-  {/if}
-{/key}
+    {/key}
+  </article>
+</main>
 
 <style>
+  .mainHeading {
+    margin-top: 3rem;
+    margin-inline: var(--margin_content_text);
+
+    @media (min-width: 40rem) {
+      margin-top: 6rem;
+    }
+  }
+
   .phrase_header {
     display: grid;
     position: relative;
@@ -161,7 +176,7 @@
       'in_collection_tag save_remove_button'
       'phrase_details    phrase_details';
     place-items: start;
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 
   .phrase_details {

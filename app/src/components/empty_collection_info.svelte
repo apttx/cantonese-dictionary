@@ -8,13 +8,6 @@
   >
     the dictionary
   </a>
-  or
-  <a
-    href="/"
-    class="cd_link"
-  >
-    the search page
-  </a>
   and use the save icon on a phrase.
 </p>
 

@@ -51,19 +51,21 @@
 <Settings_Modal bind:open={settings_open} />
 <Flashcard_Settings_Modal bind:visible={flashcard_settings_open} />
 
-<main
+<div
+  role="presentation"
   inert={$main_inert || undefined}
+  class="layoutContainer"
   class:cd_hanzi_font_sans={$chinese_character_font === 'sans'}
   class:cd_hanzi_font_serif={$chinese_character_font === 'serif'}
   class:cd_hanzi_font_handwritten={$chinese_character_font === 'handwritten'}
 >
   <slot />
-</main>
+</div>
 
 <Footer />
 
 <style>
-  main {
+  .layoutContainer {
     padding-bottom: 6rem;
     min-height: 80vh;
   }

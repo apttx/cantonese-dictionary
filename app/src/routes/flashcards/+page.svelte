@@ -68,97 +68,110 @@
   description="Practice the phrases you saved."
 />
 
-{#if !random_phrase}
-  <!-- transition error in when user navigated to page or last phrase was deleted -->
-  <div
-    role="presentation"
-    in:fly|global={{ y: 20, duration: 200, easing: cubicOut, delay: flip_duration }}
-    class="empty_info"
-  >
-    <EmptyCollectionInfo />
-  </div>
-{:else}
-  <div
-    role="presentation"
-    on:click={on_screen_click}
-    class="flashcard_container"
-  >
-    {#key random_phrase.id}
-      <div
-        role="presentation"
-        in:fly={{ y: 20, duration: 200, delay: 200, easing: cubicOut }}
-        out:fly={{ y: -20, duration: 200, easing: cubicIn }}
-        class="phrase_container"
-      >
-        {#if is_flashcard_flipped}
-          <div
-            in:flip={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
-            out:flip={{ duration: flip_duration, easing: cubicIn }}
-          >
-            <Dynamic_Flashcard_Face
-              configuration={$flashcard_back_configuration}
-              phrase={random_phrase}
-            />
-          </div>
-        {:else}
-          <div
-            in:flip={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
-            out:flip={{ duration: flip_duration, easing: cubicIn }}
-          >
-            <Dynamic_Flashcard_Face
-              configuration={$flashcard_front_configuration}
-              phrase={random_phrase}
-            />
-          </div>
-        {/if}
-      </div>
-    {/key}
+<main>
+  <h1 class="mainHeading @heading +1">Flashcards</h1>
 
+  {#if !random_phrase}
+    <!-- transition error in when user navigated to page or last phrase was deleted -->
     <div
       role="presentation"
-      class="buttons"
-      class:aligned_left={$preferred_ui_alignment === 'left'}
-      class:aligned_right={$preferred_ui_alignment === 'right'}
+      in:fly|global={{ y: 20, duration: 200, easing: cubicOut, delay: flip_duration }}
+      class="empty_info"
     >
-      <button
-        class="action_button"
-        on:click|stopPropagation={flip_card}
-      >
-        <Flip aria-label="Flip flashcard" />
-        <span class="action_label">Flip flashcard</span>
-      </button>
-      <button
-        class="action_button"
-        on:click|stopPropagation={next_phrase}
-      >
-        <Next aria-label="Next flashcard" />
-        <span class="action_label">Next flashcard</span>
-      </button>
-      <button
-        class="action_button"
-        on:click|stopPropagation={remove_from_collection}
-      >
-        <Remove aria-label="Remove from collection" />
-        <span class="action_label">Remove from collection</span>
-      </button>
-      <button
-        class="action_button"
-        on:click|stopPropagation={open_settings}
-      >
-        <Cog aria-label="Open flashcard settings" />
-        <span class="action_label">Flashcard settings</span>
-      </button>
+      <EmptyCollectionInfo />
     </div>
-  </div>
-{/if}
+  {:else}
+    <div
+      role="presentation"
+      on:click={on_screen_click}
+      class="flashcard_container"
+    >
+      {#key random_phrase.id}
+        <div
+          role="presentation"
+          in:fly={{ y: 20, duration: 200, delay: 200, easing: cubicOut }}
+          out:fly={{ y: -20, duration: 200, easing: cubicIn }}
+          class="phrase_container"
+        >
+          {#if is_flashcard_flipped}
+            <div
+              in:flip={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
+              out:flip={{ duration: flip_duration, easing: cubicIn }}
+            >
+              <Dynamic_Flashcard_Face
+                configuration={$flashcard_back_configuration}
+                phrase={random_phrase}
+              />
+            </div>
+          {:else}
+            <div
+              in:flip={{ duration: flip_duration, delay: flip_duration, easing: cubicOut }}
+              out:flip={{ duration: flip_duration, easing: cubicIn }}
+            >
+              <Dynamic_Flashcard_Face
+                configuration={$flashcard_front_configuration}
+                phrase={random_phrase}
+              />
+            </div>
+          {/if}
+        </div>
+      {/key}
+
+      <div
+        role="presentation"
+        class="buttons"
+        class:aligned_left={$preferred_ui_alignment === 'left'}
+        class:aligned_right={$preferred_ui_alignment === 'right'}
+      >
+        <button
+          class="action_button"
+          on:click|stopPropagation={flip_card}
+        >
+          <Flip aria-label="Flip flashcard" />
+          <span class="action_label">Flip flashcard</span>
+        </button>
+        <button
+          class="action_button"
+          on:click|stopPropagation={next_phrase}
+        >
+          <Next aria-label="Next flashcard" />
+          <span class="action_label">Next flashcard</span>
+        </button>
+        <button
+          class="action_button"
+          on:click|stopPropagation={remove_from_collection}
+        >
+          <Remove aria-label="Remove from collection" />
+          <span class="action_label">Remove from collection</span>
+        </button>
+        <button
+          class="action_button"
+          on:click|stopPropagation={open_settings}
+        >
+          <Cog aria-label="Open flashcard settings" />
+          <span class="action_label">Flashcard settings</span>
+        </button>
+      </div>
+    </div>
+  {/if}
+</main>
 
 <style>
+  .mainHeading {
+    margin-top: 3rem;
+    margin-inline: var(--margin_content_text);
+
+    @media (min-width: 40rem) {
+      margin-top: 6rem;
+    }
+  }
+
   .flashcard_container {
     display: grid;
     grid-template-rows: 1fr auto;
     align-items: start;
     gap: 2rem;
-    padding-top: 6rem;
+    padding-top: 3rem;
     min-height: calc(100vh - var(--height_header));
   }
 
@@ -213,7 +226,7 @@
   }
 
   .empty_info {
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-inline: var(--margin_content_text);
   }
 </style>

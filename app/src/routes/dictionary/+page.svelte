@@ -83,87 +83,91 @@
   description="Search the CC-Canto dictionary & save phrases to practice your vocabulary."
 />
 
-<div
-  role="presentation"
-  class="search"
->
-  <Search_Form
-    term={data.query}
-    loading={loading_state === 'pending'}
-    on:submit={on_submit}
-  />
+<main>
+  <h1 class="mainHeading @heading +1">Dictionary</h1>
 
-  {#if loading_state === 'pending'}
-    <p
-      role="status"
-      aria-live="polite"
-      class="screen_reader_only"
-    >
-      Loading search results...
-    </p>
-  {/if}
-
-  {#if loading_state === 'error'}
-    <p
-      role="alert"
-      aria-live="polite"
-      class="no_results_text"
-    >
-      Something went wrong, please try again.
-    </p>
-  {:else if data.results?.length === 0}
-    <p
-      role="alert"
-      aria-live="polite"
-      class="no_results_text"
-    >
-      Your search didn't yield any results
-    </p>
-  {/if}
-</div>
-
-{#if !data.results}
-  <p class="info_text">Search for words, expressions or sayings.</p>
-{/if}
-
-{#if data.results && data.results.length > 0}
   <div
     role="presentation"
-    class="search_results"
+    class="search"
   >
-    <Tabs {tabs}>
-      {#snippet children(snippet_props)}
-        {@const active_tab = snippet_props.active_tab as unknown as {
-          title: string
-          phrases: Phrase[]
-        }}
-        {#if active_tab.phrases}
-          <h2 class="active_tab_heading @heading +2">{active_tab.title}</h2>
+    <Search_Form
+      term={data.query}
+      loading={loading_state === 'pending'}
+      on:submit={on_submit}
+    />
 
-          <ul
-            class="@flashcard_grid"
-            aria-live="polite"
-            aria-busy={loading_state === 'pending'}
-            out:fade={{ duration: 200, easing: cubicOut }}
-            in:fade={{ duration: 200, delay: 200, easing: cubicIn }}
-          >
-            {#each active_tab.phrases as phrase, index (phrase.id)}
-              <li
-                in:fade|global={{
-                  delay: index * 20,
-                  duration: 200,
-                  easing: cubicIn,
-                }}
-              >
-                <Phrase_List_Item {phrase} />
-              </li>
-            {/each}
-          </ul>
-        {/if}
-      {/snippet}
-    </Tabs>
+    {#if loading_state === 'pending'}
+      <p
+        role="status"
+        aria-live="polite"
+        class="screen_reader_only"
+      >
+        Loading search results...
+      </p>
+    {/if}
+
+    {#if loading_state === 'error'}
+      <p
+        role="alert"
+        aria-live="polite"
+        class="no_results_text"
+      >
+        Something went wrong, please try again.
+      </p>
+    {:else if data.results?.length === 0}
+      <p
+        role="alert"
+        aria-live="polite"
+        class="no_results_text"
+      >
+        Your search didn't yield any results
+      </p>
+    {/if}
   </div>
-{/if}
+
+  {#if !data.results}
+    <p class="info_text">Search for words, expressions or sayings.</p>
+  {/if}
+
+  {#if data.results && data.results.length > 0}
+    <div
+      role="presentation"
+      class="search_results"
+    >
+      <Tabs {tabs}>
+        {#snippet children(snippet_props)}
+          {@const active_tab = snippet_props.active_tab as unknown as {
+            title: string
+            phrases: Phrase[]
+          }}
+          {#if active_tab.phrases}
+            <h2 class="active_tab_heading @heading +2">{active_tab.title}</h2>
+
+            <ul
+              class="@flashcard_grid"
+              aria-live="polite"
+              aria-busy={loading_state === 'pending'}
+              out:fade={{ duration: 200, easing: cubicOut }}
+              in:fade={{ duration: 200, delay: 200, easing: cubicIn }}
+            >
+              {#each active_tab.phrases as phrase, index (phrase.id)}
+                <li
+                  in:fade|global={{
+                    delay: index * 20,
+                    duration: 200,
+                    easing: cubicIn,
+                  }}
+                >
+                  <Phrase_List_Item {phrase} />
+                </li>
+              {/each}
+            </ul>
+          {/if}
+        {/snippet}
+      </Tabs>
+    </div>
+  {/if}
+</main>
 
 <style>
   @keyframes loading {
@@ -175,11 +179,20 @@
     }
   }
 
+  .mainHeading {
+    margin-top: 3rem;
+    margin-inline: var(--margin_content_text);
+
+    @media (min-width: 40rem) {
+      margin-top: 6rem;
+    }
+  }
+
   .search {
     display: grid;
     justify-items: stretch;
     margin-inline: var(--margin_content_text);
-    padding-top: 6rem;
+    margin-top: 3rem;
   }
 
   .no_results_text {
