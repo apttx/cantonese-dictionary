@@ -24,7 +24,7 @@
       <li class="breadcrumbItem">
         <a
           href="/"
-          class="breadcrumbLink"
+          class="homeLink breadcrumbLink"
         >
           <Home aria-label="Home" />
         </a>
@@ -87,12 +87,16 @@
 
   .breadcrumbLink {
     display: inline-block;
-
     padding-inline: 0.5rem;
     padding-block: 1rem;
     font-weight: 500;
     font-size: 0.875rem;
     line-height: 1rem;
+  }
+
+  .homeLink {
+    padding-block: 0.875rem;
+    font-size: 1rem;
   }
 
   .breadcrumbItem:first-child .breadcrumbLink {
