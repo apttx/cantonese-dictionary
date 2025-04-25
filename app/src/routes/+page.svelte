@@ -1,7 +1,10 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
   import Head from '$components/head.svelte'
+  import StoryblokRichTextDocumentNode from '$storyblok/StoryblokRichTextDocumentNode.svelte'
   import SearchForm, { type Submit_Event_Detail } from './search_form.svelte'
+
+  let { data } = $props()
 
   let loading_state = $state<'idle' | 'pending' | 'error'>('idle')
   const on_submit = async (event: CustomEvent<Submit_Event_Detail>) => {
@@ -34,13 +37,12 @@
   />
 </div>
 
-<h2 class="about_heading">About</h2>
-
-<p class="about_text">
-  This dictionary is a passion project to help with learning Cantonese. It's built for English
-  speakers and is best used to supplement other resources, such as subtitled videos or free video
-  lessons.
-</p>
+<div
+  role="presentation"
+  class="content"
+>
+  <StoryblokRichTextDocumentNode {...data.content} />
+</div>
 
 <style>
   .search {
@@ -50,15 +52,8 @@
     padding-top: 6rem;
   }
 
-  .about_heading {
+  .content {
     margin-top: 6rem;
-    margin-inline: var(--margin_content_text);
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-
-  .about_text {
-    margin-top: 0.5rem;
     margin-inline: var(--margin_content_text);
   }
 </style>

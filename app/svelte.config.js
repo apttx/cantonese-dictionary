@@ -15,6 +15,7 @@ const config = {
       $css: 'src/css/*',
       $graphql: 'src/modules/graphql.ts',
       $types: '../types/*',
+      $storyblok: 'src/modules/storyblok/',
     },
   },
 }
