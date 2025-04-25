@@ -22,38 +22,51 @@
 </script>
 
 <Head
-  title="About"
-  description="Search the CC-Canto dictionary & save phrases to practice your vocabulary."
+  title={data.title}
+  description={data.metaDescription}
 />
 
-<div
-  role="presentation"
-  class="search"
->
-  <SearchForm
-    term={undefined}
-    loading={loading_state === 'pending'}
-    on:submit={on_submit}
-  />
-</div>
+<main>
+  <h1 class="mainHeading @heading +1">{data.title}</h1>
 
-<div
-  role="presentation"
-  class="content"
->
-  <StoryblokRichTextDocumentNode {...data.content} />
-</div>
+  <div
+    role="presentation"
+    class="search"
+  >
+    <SearchForm
+      term={undefined}
+      loading={loading_state === 'pending'}
+      on:submit={on_submit}
+    />
+  </div>
+
+  <div
+    role="presentation"
+    class="content"
+  >
+    <StoryblokRichTextDocumentNode {...data.content} />
+  </div>
+</main>
 
 <style>
+  .mainHeading {
+    margin-top: 3rem;
+    margin-inline: var(--margin_content_text);
+
+    @media (min-width: 40rem) {
+      margin-top: 6rem;
+    }
+  }
+
   .search {
     display: grid;
     justify-items: stretch;
     margin-inline: var(--margin_content_text);
-    padding-top: 6rem;
+    padding-top: 3rem;
   }
 
   .content {
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-inline: var(--margin_content_text);
   }
 </style>

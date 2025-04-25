@@ -10,42 +10,34 @@
   description="An error occurred."
 />
 
-<div>
-  <h1>{heading}</h1>
+<main class="contentContainer">
+  <h1 class="mainHeading @heading +1">{heading}</h1>
 
   <p>
     Try visiting
-    <a
-      href="/"
-      class="cd_link"
-    >
-      the search page
-    </a>
-    or
     <a
       href="/dictionary"
       class="cd_link"
     >
       the dictionary
-    </a>
-    .
+    </a>.
   </p>
-</div>
+</main>
 
 <style>
-  h1 {
-    font-weight: 500;
-    font-size: 1.25rem;
+  .contentContainer {
+    margin-inline: var(--margin_content_text);
+  }
+
+  .mainHeading {
+    margin-top: 3rem;
+
+    @media (min-width: 40rem) {
+      margin-top: 6rem;
+    }
   }
 
   p {
     margin-top: 1rem;
-  }
-
-  div {
-    display: grid;
-    align-content: center;
-    margin-inline: var(--margin_content_text);
-    height: 100vh;
   }
 </style>

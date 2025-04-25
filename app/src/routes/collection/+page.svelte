@@ -12,35 +12,48 @@
   description="Browse your collection of chinese phrases."
 />
 
-{#if !$phrases?.length}
-  <!-- transition error in when user navigated to page or last phrase was deleted -->
-  <div
-    role="presentation"
-    in:fly|global={{ y: 20, duration: 200, easing: cubicOut, delay: 200 }}
-    class="empty_info"
-  >
-    <EmptyCollectionInfo />
-  </div>
-{:else}
-  <!-- transition list out when last phrase was deleted -->
-  <ul
-    out:fade={{ duration: 200 }}
-    class="phrases @flashcard_grid +content_margin"
-  >
-    {#each $phrases as phrase, index (phrase.id)}
-      <li
-        in:fade|global={{ delay: index * 20, duration: 200, easing: cubicOut }}
-        out:scale={{ duration: 300, easing: cubicIn }}
-      >
-        <PhraseListItem {phrase} />
-      </li>
-    {/each}
-  </ul>
-{/if}
+<main>
+  <h1 class="mainHeading @heading +1">Collection</h1>
+
+  {#if !$phrases?.length}
+    <!-- transition error in when user navigated to page or last phrase was deleted -->
+    <div
+      role="presentation"
+      in:fly|global={{ y: 20, duration: 200, easing: cubicOut, delay: 200 }}
+      class="empty_info"
+    >
+      <EmptyCollectionInfo />
+    </div>
+  {:else}
+    <!-- transition list out when last phrase was deleted -->
+    <ul
+      out:fade={{ duration: 200 }}
+      class="phrases @flashcard_grid +content_margin"
+    >
+      {#each $phrases as phrase, index (phrase.id)}
+        <li
+          in:fade|global={{ delay: index * 20, duration: 200, easing: cubicOut }}
+          out:scale={{ duration: 300, easing: cubicIn }}
+        >
+          <PhraseListItem {phrase} />
+        </li>
+      {/each}
+    </ul>
+  {/if}
+</main>
 
 <style>
+  .mainHeading {
+    margin-top: 3rem;
+    margin-inline: var(--margin_content_text);
+
+    @media (min-width: 40rem) {
+      margin-top: 6rem;
+    }
+  }
+
   .empty_info {
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-inline: var(--margin_content_text);
   }
 

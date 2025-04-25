@@ -2,17 +2,15 @@
   import StoryblokRichTextDocumentNode from '$storyblok/StoryblokRichTextDocumentNode.svelte'
   import Chevron from '~icons/mingcute/right-line'
   import Home from '~icons/mingcute/home-3-line'
+  import Head from '$components/head.svelte'
 
   let { data } = $props()
 </script>
 
-<svelte:head>
-  <title>{data.title} | Cantonese Dictionary</title>
-  <meta
-    name="description"
-    content={data.metaDescription}
-  />
-</svelte:head>
+<Head
+  title={data.title}
+  description={data.metaDescription}
+/>
 
 {#if data.breadcrumbs.length}
   {@const lastIndex = data.breadcrumbs.length - 1}
@@ -64,8 +62,12 @@
 
 <style>
   .breadcrumbs {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-inline: var(--margin_content_layout);
+
+    @media (min-width: 40rem) {
+      margin-top: 2rem;
+    }
   }
 
   .breadcrumbList {
@@ -110,8 +112,12 @@
   }
 
   .page {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-inline: var(--margin_content_text);
+
+    @media (min-width: 40rem) {
+      margin-top: 3rem;
+    }
   }
 
   .content {
