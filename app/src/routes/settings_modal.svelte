@@ -103,16 +103,17 @@
       <label>
         <input
           type="checkbox"
-          bind:checked={$show_pinyin}
-        />
-        <span>Show pinyin</span>
-      </label>
-      <label>
-        <input
-          type="checkbox"
           bind:checked={$show_jyutping}
         />
         <span>Show jyutping</span>
+      </label>
+
+      <label>
+        <input
+          type="checkbox"
+          bind:checked={$show_pinyin}
+        />
+        <span>Show pinyin</span>
       </label>
     </fieldset>
 
