@@ -79,8 +79,12 @@
 </script>
 
 <Head
-  title="Dictionary"
-  description="Search the CC-Canto dictionary & save phrases to practice your vocabulary."
+  title={data.query && data.results
+    ? `"${data.query}": ${data.results.length} Results | Dictionary`
+    : 'Dictionary'}
+  description={data.query && data.results
+    ? `There are ${data.results.length} results matching the term "${data.query}" in CC-Canto and CC-CEDICT.`
+    : 'Search the CC-Canto and CC-CEDICT dictionaries, and save phrases to practice your vocabulary.'}
 />
 
 <main>
