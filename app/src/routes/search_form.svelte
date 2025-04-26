@@ -48,7 +48,7 @@
     <input
       bind:this={search_input_element}
       type="search"
-      placeholder="中國, 中国, English, jyut6 ping3, pin1 yin1"
+      placeholder="中文, English, jyut6 ping3, pin1 yin1"
       bind:value={term}
       class="search_input cd_input"
     />
