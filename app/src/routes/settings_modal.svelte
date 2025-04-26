@@ -33,19 +33,20 @@
           <input
             type="radio"
             name="character_set"
-            value="traditional"
-            bind:group={$character_set}
-          />
-          <span>Show traditional</span>
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="character_set"
             value="simplified"
             bind:group={$character_set}
           />
           <span>Show simplified</span>
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="character_set"
+            value="traditional"
+            bind:group={$character_set}
+          />
+          <span>Show traditional</span>
         </label>
       </div>
     </fieldset>
