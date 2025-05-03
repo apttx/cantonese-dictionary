@@ -29,9 +29,8 @@
 
 <Head
   title="{data.phrase.simplified} &ndash; {data.phrase.english}"
-  description="&quot;{data.phrase.simplified}&quot; (or {data.phrase.traditional}) means &quot;{data
-    .phrase.english}&quot; and is pronounced &quot;{data.phrase.pinyin}&quot; in Pinyin or {data
-    .phrase.jyutping} in Jyutping."
+  description="&quot;{data.phrase.simplified}&quot; means &quot;{data.phrase
+    .english}&quot; and is romanized as &quot;{data.phrase.jyutping}&quot; in Jyutping."
 />
 
 <main>
