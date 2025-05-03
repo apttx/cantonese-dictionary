@@ -1,19 +1,20 @@
 import type { ISbStoryData, StoryblokRichTextDocumentNode } from '@storyblok/js'
 
-export interface Page {
+export interface PageStory {
   title: string
   content: StoryblokRichTextDocumentNode
   metaDescription: string
-  // tagline?: StoryblokRichTextDocumentNode
-  // heroContent?: StoryblokRichTextDocumentNode
-  // metaTitle?: string
-  // metaKeywords: string
 }
 
-export interface PageStory extends Omit<Page, 'series'> {
-  series?: ISbStoryData<SeriesStory>[]
+export interface Page extends PageStory {
+  route: string
 }
 
 export const getPage = (story: ISbStoryData<PageStory>): Page => {
-  return story.content
+  const route = story.full_slug.replace(/^pages\/|\/$/, '')
+
+  return {
+    ...story.content,
+    route,
+  }
 }
