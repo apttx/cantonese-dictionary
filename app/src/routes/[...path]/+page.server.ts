@@ -1,5 +1,5 @@
 import { dev } from '$app/environment'
-import type { Page } from '$storyblok/stories/Page'
+import { getPage, type PageStory } from '$storyblok/stories/Page'
 import { error } from '@sveltejs/kit'
 import { type Config } from '@sveltejs/adapter-vercel'
 
@@ -29,12 +29,12 @@ export const load = async (event) => {
     const [breadcrumbsResult, pageResult] = await Promise.all([
       // no need to run a query that will return an empty array
       breadcrumbSlugsString.length
-        ? event.locals.storyblok.getStories<Page>({
+        ? event.locals.storyblok.getStories<PageStory>({
             version,
             by_slugs: breadcrumbSlugsString,
           })
         : { data: { stories: [] } },
-      event.locals.storyblok.getStory<Page>(slug, {
+      event.locals.storyblok.getStory<PageStory>(slug, {
         version,
       }),
     ])
@@ -56,8 +56,10 @@ export const load = async (event) => {
       pathname,
     })
 
+    const page = getPage(pageResult.data.story)
+
     return {
-      ...pageResult.data.story.content,
+      ...page,
       breadcrumbs,
     }
   } catch (throwable) {
