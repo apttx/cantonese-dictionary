@@ -33,7 +33,6 @@ export const load = async (event) => {
           })
         : { data: { stories: [] } },
       event.locals.storyblok.getStory<Page>(slug, {
-        resolve_relations: 'pages',
         version: dev ? 'draft' : undefined,
       }),
     ])
