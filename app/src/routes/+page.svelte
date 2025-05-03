@@ -17,7 +17,7 @@
     input_element.blur()
 
     loading_state = 'pending'
-    await goto(`?query=${encodeURIComponent(term)}`)
+    await goto(`/dictionary?query=${encodeURIComponent(term)}`)
   }
 </script>
 
