@@ -9,6 +9,8 @@ export const config: Config = {
   },
 }
 
+const version = dev ? 'draft' : undefined
+
 export const load = async (event) => {
   try {
     const breadcrumbSlugsString = event.params.path
@@ -28,12 +30,12 @@ export const load = async (event) => {
       // no need to run a query that will return an empty array
       breadcrumbSlugsString.length
         ? event.locals.storyblok.getStories<Page>({
-            version: dev ? 'draft' : undefined,
+            version,
             by_slugs: breadcrumbSlugsString,
           })
         : { data: { stories: [] } },
       event.locals.storyblok.getStory<Page>(slug, {
-        version: dev ? 'draft' : undefined,
+        version,
       }),
     ])
 
