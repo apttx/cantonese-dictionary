@@ -7,14 +7,17 @@ export interface PageStory {
 }
 
 export interface Page extends PageStory {
+  id: number
   route: string
 }
 
 export const getPage = (story: ISbStoryData<PageStory>): Page => {
   const route = story.full_slug.replace(/^pages\/|\/$/, '')
+  const id = story.id
 
   return {
     ...story.content,
+    id,
     route,
   }
 }
