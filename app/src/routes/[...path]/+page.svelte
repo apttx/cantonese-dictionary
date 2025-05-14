@@ -3,9 +3,14 @@
   import Chevron from '~icons/mingcute/right-line'
   import Home from '~icons/mingcute/home-3-line'
   import Head from '$components/head.svelte'
+  import InterSeriesNavigation, {
+    getInterSeriesNavigationPages,
+  } from './InterSeriesNavigation.svelte'
   import SeriesTeaser from '$storyblok/blocks/SeriesTeaser.svelte'
 
   let { data } = $props()
+
+  const interSeriesNavigationPages = $derived(getInterSeriesNavigationPages(data))
 </script>
 
 <Head
@@ -58,6 +63,13 @@
     >
       <StoryblokRichTextDocumentNode {...data.content} />
     </div>
+
+    {#if interSeriesNavigationPages}
+      <InterSeriesNavigation
+        {...interSeriesNavigationPages}
+        class="interSeriesNavigation"
+      />
+    {/if}
   </article>
 </main>
 
@@ -128,6 +140,11 @@
     @media (min-width: 40rem) {
       margin-top: 2rem;
     }
+  }
+
+  .page :global(.interSeriesNavigation) {
+    margin-top: 4rem;
+    margin-inline: var(--margin_content_text);
   }
 
   .content {
