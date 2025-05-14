@@ -9,14 +9,8 @@
   import { dev } from '$app/environment'
   import { getMarksMap } from './getMarksMap'
   import StoryblokRichTextBlocks from './StoryblokRichTextBlocks.svelte'
-  import type { ClassValue } from 'svelte/elements'
 
-  let {
-    content,
-    class: class_,
-  }: Pick<StoryblokRichTextDocumentNode, 'content'> & {
-    class?: ClassValue
-  } = $props()
+  let { content }: Pick<StoryblokRichTextDocumentNode, 'content'> = $props()
 </script>
 
 {#if !content}
