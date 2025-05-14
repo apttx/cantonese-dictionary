@@ -14,7 +14,7 @@
   let {
     content,
     class: class_,
-  }: StoryblokRichTextDocumentNode & {
+  }: Pick<StoryblokRichTextDocumentNode, 'content'> & {
     class?: ClassValue
   } = $props()
 </script>
@@ -22,13 +22,13 @@
 {#if !content}
   <!-- don't render anything if there is no content -->
 {:else}
-  {#each content as node, index (node)}
+  {#each content as node (node)}
     <!-- blocks (heading, paragraph, image, etc.) -->
     {#if node.type === BlockTypes.HEADING}
       {@const tag = `h${node.attrs?.level}`}
       <svelte:element
         this={tag}
-        class={['@heading', index === 0 ? class_ : '@withSpacing +betweenGroups']}
+        class="richText @heading"
         class:+2={node.attrs?.level === 2}
         class:+3={node.attrs?.level === 3}
         class:+4={node.attrs?.level === 4}
@@ -38,28 +38,75 @@
         <Self {...node} />
       </svelte:element>
     {:else if node.type === BlockTypes.PARAGRAPH}
-      <p class={['@text', index === 0 && class_]}>
+      <p class="richText">
         <Self {...node} />
       </p>
     {:else if node.type === BlockTypes.QUOTE}
-      <blockquote class={['@text', index === 0 && class_]}>
+      <blockquote class="richText">
         <Self {...node} />
       </blockquote>
     {:else if node.type === BlockTypes.UL_LIST}
-      <ul class={index === 0 ? class_ : undefined}>
+      <ul class="richText">
         <Self {...node} />
       </ul>
     {:else if node.type === BlockTypes.OL_LIST}
-      <ol class={index === 0 ? class_ : undefined}>
+      <ol class="richText">
         <Self {...node} />
       </ol>
     {:else if node.type === BlockTypes.LIST_ITEM}
-      <li class={['@text', index === 0 && class_]}>
+      <li class="richText">
         <Self {...node} />
       </li>
     {:else if node.type === BlockTypes.BR}
-      <br class={index === 0 ? class_ : undefined} />
-      <!-- block content -->
+      <br class="richText" />
+    {:else if node.type === BlockTypes.TABLE}
+      {#if node.content?.length}
+        {@const headerRows = node.content.filter((row) => {
+          if (!row.content) {
+            return false
+          }
+
+          return row.content[0].type === BlockTypes.TABLE_HEADER
+        })}
+        {@const bodyRows = node.content.filter((row) => {
+          if (!row.content) {
+            return false
+          }
+
+          return row.content[0].type === BlockTypes.TABLE_CELL
+        })}
+
+        {#if headerRows.length && bodyRows.length}
+          <table class="richText">
+            <thead>
+              {#each headerRows as headerRow}
+                {#if headerRow.content?.length}
+                  <tr>
+                    {#each headerRow.content as tableHeader}
+                      <th>
+                        <Self {...tableHeader} />
+                      </th>
+                    {/each}
+                  </tr>
+                {/if}
+              {/each}
+            </thead>
+            <tbody>
+              {#each bodyRows as bodyRow}
+                {#if bodyRow.content?.length}
+                  <tr>
+                    {#each bodyRow.content as tableCell}
+                      <td>
+                        <Self {...tableCell} />
+                      </td>
+                    {/each}
+                  </tr>
+                {/if}
+              {/each}
+            </tbody>
+          </table>
+        {/if}
+      {/if}
     {:else if node.type === TextTypes.TEXT}
       {@const marksMap = getMarksMap(node.marks)}
       {#if marksMap.isEmpty}
@@ -67,7 +114,6 @@
       {:else if marksMap.href}
         <a
           href={marksMap.href.replace(/\/$/, '')}
-          class={[index === 0 && class_]}
           class:bold={marksMap[MarkTypes.BOLD]}
           class:line-through={marksMap[MarkTypes.STRIKE]}
           class:underline={marksMap[MarkTypes.UNDERLINE]}
@@ -76,7 +122,6 @@
         </a>
       {:else}
         <span
-          class={index === 0 ? class_ : undefined}
           class:bold={marksMap[MarkTypes.BOLD]}
           class:line-through={marksMap[MarkTypes.STRIKE]}
           class:underline={marksMap[MarkTypes.UNDERLINE]}
@@ -88,7 +133,7 @@
       {#if Array.isArray(node.attrs?.body)}
         <StoryblokRichTextBlocks
           blocks={node.attrs.body}
-          class={index === 0 ? class_ : '@withSpacing +betweenItems'}
+          class="richText"
         />
       {/if}
     {:else if dev}
@@ -107,6 +152,10 @@
 {/if}
 
 <style>
+  .richText:not(.richText .richText) {
+    margin-inline: var(--margin_content_text);
+  }
+
   .bold {
     font-weight: bold;
   }
@@ -127,6 +176,18 @@
     }
   }
 
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 4rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   ul,
   ol {
     margin-block: 2rem;
@@ -136,9 +197,48 @@
     &:first-child {
       margin-top: 0;
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   li > :global(:first-child) {
     margin-top: 0;
+  }
+
+  table {
+    margin-block: 1rem;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+
+  tr {
+    border-bottom-width: 0.15rem;
+    border-bottom-color: var(--color-red-1);
+
+    @media (prefers-contrast: more) {
+      & {
+        border-bottom-color: var(--color-red-3);
+      }
+    }
+  }
+
+  th,
+  td {
+    padding-inline: 0.5rem;
+    padding-block: 0.25rem;
+  }
+
+  th {
+    text-align: start;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 </style>
