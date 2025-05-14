@@ -12,7 +12,7 @@ export interface Page extends PageStory {
 }
 
 export const getPage = (story: ISbStoryData<PageStory>): Page => {
-  const route = story.full_slug.replace(/^pages\/|\/$/, '')
+  const route = `/${story.full_slug.replace(/^pages\/|\/$/, '')}`
   const id = story.id
 
   return {
