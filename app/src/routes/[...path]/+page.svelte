@@ -3,6 +3,7 @@
   import Chevron from '~icons/mingcute/right-line'
   import Home from '~icons/mingcute/home-3-line'
   import Head from '$components/head.svelte'
+  import SeriesTeaser from '$storyblok/blocks/SeriesTeaser.svelte'
 
   let { data } = $props()
 </script>
@@ -59,6 +60,15 @@
     </div>
   </article>
 </main>
+
+{#if data.series.length}
+  <aside class="series">
+    <SeriesTeaser
+      series={data.series}
+      headingTemplate={'More from the {title} series'}
+    />
+  </aside>
+{/if}
 
 <style>
   .breadcrumbs {
@@ -122,5 +132,12 @@
 
   .content {
     margin-top: 2rem;
+  }
+
+  .series {
+    position: sticky;
+    top: 0;
+    margin-top: 4rem;
+    margin-inline: var(--margin_content_text);
   }
 </style>
