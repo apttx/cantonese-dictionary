@@ -2,6 +2,8 @@
   import { dev } from '$app/environment'
   import type { ClassValue } from 'svelte/elements'
   import type { StoryblokRichTextBlock } from './blocks'
+  import { getSeriesTeaser } from './blocks/SeriesTeaser'
+  import SeriesTeaser from './blocks/SeriesTeaser.svelte'
 
   let {
     blocks,
@@ -12,7 +14,13 @@
 </script>
 
 {#each blocks as block (block)}
-  {#if block.component === '_'}{:else if dev}
+  {#if block.component === 'seriesTeaser'}
+    {@const seriesTeaser = getSeriesTeaser(block)}
+    <SeriesTeaser
+      {...seriesTeaser}
+      class={'seriesTeaser'}
+    />
+  {:else if dev}
     <details style="margin-block: 3rem;">
       <summary
         class="@button +danger"
@@ -25,3 +33,10 @@
     </details>
   {/if}
 {/each}
+
+<style>
+  :global(.seriesTeaser) {
+    margin-top: 4rem;
+    margin-inline: var(--margin_content_text);
+  }
+</style>

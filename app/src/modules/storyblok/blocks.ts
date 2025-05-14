@@ -1,3 +1,3 @@
-import type { StoryblokComponentType } from '@storyblok/js'
+import type { SeriesTeaserBlock } from './blocks/SeriesTeaser'
 
-export type StoryblokRichTextBlock = StoryblokComponentType<'_'>
+export type StoryblokRichTextBlock = SeriesTeaserBlock
