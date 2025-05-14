@@ -4,6 +4,7 @@
   import type { StoryblokRichTextBlock } from './blocks'
   import { getSeriesTeaser } from './blocks/SeriesTeaser'
   import SeriesTeaser from './blocks/SeriesTeaser.svelte'
+  import Container from './blocks/Container.svelte'
 
   let {
     blocks,
@@ -20,6 +21,8 @@
       {...seriesTeaser}
       class={'seriesTeaser'}
     />
+  {:else if block.component === 'container'}
+    <Container {...block} />
   {:else if dev}
     <details style="margin-block: 3rem;">
       <summary
