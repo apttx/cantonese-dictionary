@@ -230,6 +230,10 @@
     padding-block: 0.25rem;
   }
 
+  thead tr:first-child th {
+    padding-top: 0;
+  }
+
   th {
     text-align: start;
 
