@@ -55,7 +55,7 @@
 
 <main class="page">
   <article>
-    <h1 class="@heading +1">{data.title}</h1>
+    <h1 class="mainHeading @heading +1">{data.title}</h1>
 
     <div
       role="presentation"
@@ -86,10 +86,6 @@
   .breadcrumbs {
     margin-top: 1.5rem;
     margin-inline: var(--margin_content_layout);
-
-    @media (min-width: 40rem) {
-      margin-top: 2rem;
-    }
   }
 
   .breadcrumbList {
@@ -135,11 +131,10 @@
 
   .page {
     margin-top: 1.5rem;
-    margin-inline: var(--margin_content_text);
+  }
 
-    @media (min-width: 40rem) {
-      margin-top: 2rem;
-    }
+  .mainHeading {
+    margin-inline: var(--margin_content_text);
   }
 
   .page :global(.interSeriesNavigation) {
