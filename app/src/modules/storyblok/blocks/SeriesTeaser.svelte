@@ -40,7 +40,7 @@
         {/if}
 
         <ol class="seriesPageList">
-          {#each seriesItem.pages as pageInSeries}
+          {#each seriesItem.pages as pageInSeries (pageInSeries)}
             {@const isCurrentPage = pageInSeries.route === page.url.pathname}
             <li class="seriesPageItem">
               <a
