@@ -73,10 +73,10 @@
         {#if headerRows.length && bodyRows.length}
           <table class="richText">
             <thead>
-              {#each headerRows as headerRow}
+              {#each headerRows as headerRow (headerRow)}
                 {#if headerRow.content?.length}
                   <tr>
-                    {#each headerRow.content as tableHeader}
+                    {#each headerRow.content as tableHeader (tableHeader)}
                       <th>
                         <Self {...tableHeader} />
                       </th>
@@ -86,10 +86,10 @@
               {/each}
             </thead>
             <tbody>
-              {#each bodyRows as bodyRow}
+              {#each bodyRows as bodyRow (bodyRow)}
                 {#if bodyRow.content?.length}
                   <tr>
-                    {#each bodyRow.content as tableCell}
+                    {#each bodyRow.content as tableCell (tableCell)}
                       <td>
                         <Self {...tableCell} />
                       </td>
