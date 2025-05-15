@@ -19,7 +19,7 @@
     {@const seriesTeaser = getSeriesTeaser(block)}
     <SeriesTeaser
       {...seriesTeaser}
-      class={'seriesTeaser'}
+      class="seriesTeaser"
     />
   {:else if block.component === 'container'}
     <Container {...block} />
