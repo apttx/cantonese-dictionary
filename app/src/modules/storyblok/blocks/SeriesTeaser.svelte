@@ -20,7 +20,7 @@
   role="presentation"
   class={['container', class_]}
 >
-  {#each series as seriesItem}
+  {#each series as seriesItem (seriesItem)}
     {#if seriesItem.pages?.length}
       <nav
         aria-labelledby={showHeadings ? headerId : undefined}
