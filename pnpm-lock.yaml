@@ -126,8 +126,8 @@ importers:
         specifier: 10.1.5
         version: 10.1.5(eslint@9.29.0(jiti@1.21.0))
       eslint-plugin-svelte:
-        specifier: 3.9.3
-        version: 3.9.3(eslint@9.29.0(jiti@1.21.0))(svelte@5.34.8)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3))
+        specifier: 3.10.0
+        version: 3.10.0(eslint@9.29.0(jiti@1.21.0))(svelte@5.34.8)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3))
       globals:
         specifier: 16.2.0
         version: 16.2.0
@@ -1502,8 +1502,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@3.9.3:
-    resolution: {integrity: sha512-PlcyK80sqAZ43IITeZkgl3zPFWJytx/Joup9iKGqIOsXM2m3pWfPbWuXPr5PN3loXFEypqTY/JyZwNqlSpSvRw==}
+  eslint-plugin-svelte@3.10.0:
+    resolution: {integrity: sha512-Jj7WAY0PmAvom61t2+SzT9PXnpcAaLMnDn9ejzhKVnMxVWyGhSQ6ileMT/o9IHq9opw0iDDpVUfZwGoWquZpQg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0
@@ -4179,7 +4179,7 @@ snapshots:
     dependencies:
       eslint: 9.29.0(jiti@1.21.0)
 
-  eslint-plugin-svelte@3.9.3(eslint@9.29.0(jiti@1.21.0))(svelte@5.34.8)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3)):
+  eslint-plugin-svelte@3.10.0(eslint@9.29.0(jiti@1.21.0))(svelte@5.34.8)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3)):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.29.0(jiti@1.21.0))
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -4187,9 +4187,9 @@ snapshots:
       esutils: 2.0.3
       globals: 16.2.0
       known-css-properties: 0.37.0
-      postcss: 8.5.3
-      postcss-load-config: 3.1.4(postcss@8.5.3)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3))
-      postcss-safe-parser: 7.0.1(postcss@8.5.3)
+      postcss: 8.5.6
+      postcss-load-config: 3.1.4(postcss@8.5.6)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3))
+      postcss-safe-parser: 7.0.1(postcss@8.5.6)
       semver: 7.7.1
       svelte-eslint-parser: 1.2.0(svelte@5.34.8)
     optionalDependencies:
@@ -5056,17 +5056,17 @@ snapshots:
     dependencies:
       postcss: 8.5.3
 
-  postcss-load-config@3.1.4(postcss@8.5.3)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3)):
+  postcss-load-config@3.1.4(postcss@8.5.6)(ts-node@10.9.1(@types/node@22.15.33)(typescript@5.8.3)):
     dependencies:
       lilconfig: 2.1.0
       yaml: 1.10.2
     optionalDependencies:
-      postcss: 8.5.3
+      postcss: 8.5.6
       ts-node: 10.9.1(@types/node@22.15.33)(typescript@5.8.3)
 
-  postcss-safe-parser@7.0.1(postcss@8.5.3):
+  postcss-safe-parser@7.0.1(postcss@8.5.6):
     dependencies:
-      postcss: 8.5.3
+      postcss: 8.5.6
 
   postcss-scss@4.0.9(postcss@8.5.3):
     dependencies:
