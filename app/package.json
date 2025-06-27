@@ -16,7 +16,7 @@
     "deploy:vercel": "pnpx vercel deploy"
   },
   "devDependencies": {
-    "@eslint/js": "9.29.0",
+    "@eslint/js": "9.30.0",
     "@fontsource/dm-sans": "5.2.6",
     "@fontsource/ma-shan-zheng": "5.2.6",
     "@fontsource/noto-sans-sc": "5.2.6",
@@ -34,7 +34,7 @@
     "@unocss/reset": "66.3.2",
     "@urql/core": "5.1.1",
     "concurrently": "9.2.0",
-    "eslint": "9.29.0",
+    "eslint": "9.30.0",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-svelte": "3.10.1",
     "globals": "16.2.0",
