@@ -32,7 +32,7 @@
     "@types/node": "22.15.33",
     "@typescript-eslint/parser": "8.35.0",
     "@unocss/reset": "66.3.2",
-    "@urql/core": "5.1.1",
+    "@urql/core": "5.1.2",
     "concurrently": "9.2.0",
     "eslint": "9.29.0",
     "eslint-config-prettier": "10.1.5",
