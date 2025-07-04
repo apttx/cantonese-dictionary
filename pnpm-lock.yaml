@@ -87,8 +87,8 @@ importers:
         specifier: 1.53.2
         version: 1.53.2
       '@storyblok/js':
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 4.1.2
+        version: 4.1.2
       '@sveltejs/adapter-vercel':
         specifier: 5.7.2
         version: 5.7.2(@sveltejs/kit@2.21.2(@sveltejs/vite-plugin-svelte@5.1.0(svelte@5.35.2)(vite@7.0.2(@types/node@22.16.0)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.3)))(svelte@5.35.2)(vite@7.0.2(@types/node@22.16.0)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.3)))(encoding@0.1.13)(rollup@4.44.1)
@@ -894,8 +894,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@storyblok/js@4.1.1':
-    resolution: {integrity: sha512-bDwyaPRiPiUVpYjk91OVH7GYQ4zdxHTcdf9ah8AtstkKIOokLq1lZKb2CMqcOpOfBM8U4NiT5kKZEBnJtAJ3EA==}
+  '@storyblok/js@4.1.2':
+    resolution: {integrity: sha512-WaEoY/yVYe9eHL76M99eiZuyMw6RZHc+IVAw9Dp9g5ttSo4qypxkzD2Zv4s8WoFnShK80XZ2Yfh3Q2CQcTmWUA==}
 
   '@storyblok/richtext@3.4.0':
     resolution: {integrity: sha512-C1XoQjIL9vv1p2MeKVsIMlowpaQbNlBrPys6A/f6RnWqcjs3Nlk1J1FCq8W6rForFpcYS88/tN6vPSnhDuC6BQ==}
@@ -3462,7 +3462,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.44.1':
     optional: true
 
-  '@storyblok/js@4.1.1':
+  '@storyblok/js@4.1.2':
     dependencies:
       '@storyblok/richtext': 3.4.0
       storyblok-js-client: 7.0.2
