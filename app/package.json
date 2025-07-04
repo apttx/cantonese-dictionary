@@ -23,7 +23,7 @@
     "@fontsource/noto-serif-sc": "5.2.6",
     "@iconify-json/mingcute": "1.2.3",
     "@playwright/test": "1.53.2",
-    "@storyblok/js": "4.1.1",
+    "@storyblok/js": "4.1.2",
     "@sveltejs/adapter-vercel": "5.7.2",
     "@sveltejs/kit": "2.21.2",
     "@sveltejs/vite-plugin-svelte": "5.1.0",
