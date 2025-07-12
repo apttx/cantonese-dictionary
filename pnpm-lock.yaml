@@ -87,8 +87,8 @@ importers:
         specifier: 1.54.1
         version: 1.54.1
       '@storyblok/js':
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
       '@sveltejs/adapter-vercel':
         specifier: 5.7.2
         version: 5.7.2(@sveltejs/kit@2.22.5(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.35.6)(vite@7.0.4(@types/node@22.16.3)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.3)))(svelte@5.35.6)(vite@7.0.4(@types/node@22.16.3)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.3)))(encoding@0.1.13)(rollup@4.44.2)
@@ -894,11 +894,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@storyblok/js@4.1.2':
-    resolution: {integrity: sha512-WaEoY/yVYe9eHL76M99eiZuyMw6RZHc+IVAw9Dp9g5ttSo4qypxkzD2Zv4s8WoFnShK80XZ2Yfh3Q2CQcTmWUA==}
+  '@storyblok/js@4.2.0':
+    resolution: {integrity: sha512-mZcnpwn36ZWf60Jrn1ArLYvDNfPa2EeKsmrF59za8rk1/CDnzBusvnGB+blPIe1xPBjVd8np3MxkY/KKP++QJQ==}
 
-  '@storyblok/richtext@3.4.0':
-    resolution: {integrity: sha512-C1XoQjIL9vv1p2MeKVsIMlowpaQbNlBrPys6A/f6RnWqcjs3Nlk1J1FCq8W6rForFpcYS88/tN6vPSnhDuC6BQ==}
+  '@storyblok/richtext@3.5.0':
+    resolution: {integrity: sha512-uHYmoC0ytQHDPs02JYHE98Lt3cwokPkCtOvE68ArJNtDvh9O+3UlSyytKZy+uhnrhajvF4BJzkbHwo6wOuunog==}
 
   '@sveltejs/acorn-typescript@1.0.5':
     resolution: {integrity: sha512-IwQk4yfwLdibDlrXVE04jTZYlLnwsTT2PIOQQGNLWfjavGifnk1JD1LcZjZaBTRcxZu2FfPfNLOE04DSu9lqtQ==}
@@ -2511,8 +2511,8 @@ packages:
   std-env@3.9.0:
     resolution: {integrity: sha512-UGvjygr6F6tpH7o2qyqR6QYpwraIjKSdtzyBdyytFOHmPZY917kwdwLG0RbOjWOnKmnm3PeHjaoLLMie7kPLQw==}
 
-  storyblok-js-client@7.0.2:
-    resolution: {integrity: sha512-ye1PBoIjoBJJEtAgwP+9exMuGutknY46Ez/JZHrbIkJp+9j3sdyCXIMepjeK/uJBuqUQpmTocxifCdVOJBsnLw==}
+  storyblok-js-client@7.1.0:
+    resolution: {integrity: sha512-nOCzlVbAsfUDJJBNWiiqDo1q+tUldHoMh6Lqgger/KLaq2m+2haw9S/ad+Ru8/UU5izxzSLwc083cycdNk9Gdg==}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -3462,12 +3462,12 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.44.2':
     optional: true
 
-  '@storyblok/js@4.1.2':
+  '@storyblok/js@4.2.0':
     dependencies:
-      '@storyblok/richtext': 3.4.0
-      storyblok-js-client: 7.0.2
+      '@storyblok/richtext': 3.5.0
+      storyblok-js-client: 7.1.0
 
-  '@storyblok/richtext@3.4.0': {}
+  '@storyblok/richtext@3.5.0': {}
 
   '@sveltejs/acorn-typescript@1.0.5(acorn@8.15.0)':
     dependencies:
@@ -5345,7 +5345,7 @@ snapshots:
 
   std-env@3.9.0: {}
 
-  storyblok-js-client@7.0.2: {}
+  storyblok-js-client@7.1.0: {}
 
   string-width@4.2.3:
     dependencies:
