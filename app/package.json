@@ -25,7 +25,7 @@
     "@playwright/test": "1.54.2",
     "@storyblok/js": "4.2.3",
     "@sveltejs/adapter-vercel": "5.8.2",
-    "@sveltejs/kit": "2.26.1",
+    "@sveltejs/kit": "2.27.3",
     "@sveltejs/vite-plugin-svelte": "6.1.1",
     "@types/eslint__eslintrc": "3.3.0",
     "@types/eslint__js": "9.14.0",
