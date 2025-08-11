@@ -114,8 +114,8 @@ importers:
         specifier: 66.4.2
         version: 66.4.2
       '@urql/core':
-        specifier: 5.2.0
-        version: 5.2.0(graphql@16.11.0)
+        specifier: 6.0.1
+        version: 6.0.1(graphql@16.11.0)
       concurrently:
         specifier: 9.2.0
         version: 9.2.0
@@ -1065,8 +1065,8 @@ packages:
   '@unocss/reset@66.4.2':
     resolution: {integrity: sha512-s3Kq4Q6a/d3/jYe6HTCfXUx7zYAYufetId5n66DZHzQxpeu6CoBS83+b37STTKsw27SOgV28cPJlJtZ6/D6Bhw==}
 
-  '@urql/core@5.2.0':
-    resolution: {integrity: sha512-/n0ieD0mvvDnVAXEQgX/7qJiVcvYvNkOHeBvkwtylfjydar123caCXcl58PXFY11oU1oquJocVXHxLAbtv4x1A==}
+  '@urql/core@6.0.1':
+    resolution: {integrity: sha512-FZDiQk6jxbj5hixf2rEPv0jI+IZz0EqqGW8mJBEug68/zHTtT+f34guZDmyjJZyiWbj0vL165LoMr/TkeDHaug==}
 
   '@vercel/nft@0.30.0':
     resolution: {integrity: sha512-xVye7Z0riD9czsMuEJYpFqm2FR33r3euYaFzuEPCoUtYuDwmus3rJfKtcFU7Df+pgj8p4zs78x5lOWYoLNr+7Q==}
@@ -3718,7 +3718,7 @@ snapshots:
 
   '@unocss/reset@66.4.2': {}
 
-  '@urql/core@5.2.0(graphql@16.11.0)':
+  '@urql/core@6.0.1(graphql@16.11.0)':
     dependencies:
       '@0no-co/graphql.web': 1.1.2(graphql@16.11.0)
       wonka: 6.3.5
