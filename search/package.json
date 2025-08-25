@@ -25,7 +25,7 @@
   "devDependencies": {
     "@eslint/js": "9.34.0",
     "@typescript-eslint/parser": "8.40.0",
-    "concurrently": "9.2.0",
+    "concurrently": "9.2.1",
     "eslint": "9.34.0",
     "globals": "16.3.0",
     "nodemon": "3.1.10",
