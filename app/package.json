@@ -20,7 +20,7 @@
     "@fontsource/dm-sans": "5.2.6",
     "@fontsource/ma-shan-zheng": "5.2.6",
     "@fontsource/noto-sans-sc": "5.2.6",
-    "@fontsource/noto-serif-sc": "5.2.6",
+    "@fontsource/noto-serif-sc": "5.2.7",
     "@iconify-json/mingcute": "1.2.5",
     "@playwright/test": "1.55.0",
     "@storyblok/js": "4.2.7",
