@@ -69,14 +69,14 @@ importers:
         specifier: 9.35.0
         version: 9.35.0
       '@fontsource/dm-sans':
-        specifier: 5.2.6
-        version: 5.2.6
+        specifier: 5.2.7
+        version: 5.2.7
       '@fontsource/ma-shan-zheng':
-        specifier: 5.2.6
-        version: 5.2.6
+        specifier: 5.2.7
+        version: 5.2.7
       '@fontsource/noto-sans-sc':
-        specifier: 5.2.6
-        version: 5.2.6
+        specifier: 5.2.7
+        version: 5.2.7
       '@fontsource/noto-serif-sc':
         specifier: 5.2.7
         version: 5.2.7
@@ -450,14 +450,14 @@ packages:
   '@fastify/busboy@3.2.0':
     resolution: {integrity: sha512-m9FVDXU3GT2ITSe0UaMA5rU3QkfC/UXtCU8y0gSN/GugTqtVldOBWIB5V6V3sbmenVZUIpU6f+mPEO2+m5iTaA==}
 
-  '@fontsource/dm-sans@5.2.6':
-    resolution: {integrity: sha512-3AmJcX93hqmevsC2ixNwHj3iO3sNY/YHBqGhg0MjIyfhk6aZLNv1s2HqJ6xf8yf1rXXK3yR56rzyA3O21htKkg==}
+  '@fontsource/dm-sans@5.2.7':
+    resolution: {integrity: sha512-Sqkl2t9Z99NivygpGUO9i5bcAQ0WMUcO2c8yq19Q4Dxsz9xfHH36Hk4Rohx3VViaEHqFHZTp0KdmtwBVFz/Pig==}
 
-  '@fontsource/ma-shan-zheng@5.2.6':
-    resolution: {integrity: sha512-ageBkqG6vJZtWEfMr0TP5gUfXSpj5VnS2ZoCxWzIbDOHaaGuDpTmtHN5tA5eJpOBElvS58+sOOHIu2CNB9w+Sg==}
+  '@fontsource/ma-shan-zheng@5.2.7':
+    resolution: {integrity: sha512-2JOZQ3TWrlzZBgpZPTMkkANStwE/g/A23+Dpk24AkezzDFV49G0GVmrIIXvSBsWJNgk7vSC1sjAXp3Mfp66Rew==}
 
-  '@fontsource/noto-sans-sc@5.2.6':
-    resolution: {integrity: sha512-hk0xVQ+mL/W0rXDhBhud2U5te/slsQKcaU+3Ni6ZxeFP1jJmcNmxHEZOG5DjLBOi0L//0R5Nwvn6ebTiZrwVZw==}
+  '@fontsource/noto-sans-sc@5.2.7':
+    resolution: {integrity: sha512-woVR2wa1UsXLxjEIl5OdaucQSRYwfouOiJAMayh9FUxvqaRRgOXrX3L8tCHvL99zg4DGsZjmgKe9usCnMRX7qQ==}
 
   '@fontsource/noto-serif-sc@5.2.7':
     resolution: {integrity: sha512-gG0JQ++TkLZCkFxwAnemfvNcoTb769+2zKFB2RFMi/KvnJ6pLE1sMDvo+MKhoLTBKlko8HVVQXCa3JZTZjC8Qg==}
@@ -3047,11 +3047,11 @@ snapshots:
 
   '@fastify/busboy@3.2.0': {}
 
-  '@fontsource/dm-sans@5.2.6': {}
+  '@fontsource/dm-sans@5.2.7': {}
 
-  '@fontsource/ma-shan-zheng@5.2.6': {}
+  '@fontsource/ma-shan-zheng@5.2.7': {}
 
-  '@fontsource/noto-sans-sc@5.2.6': {}
+  '@fontsource/noto-sans-sc@5.2.7': {}
 
   '@fontsource/noto-serif-sc@5.2.7': {}
 

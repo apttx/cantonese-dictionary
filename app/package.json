@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "@eslint/js": "9.35.0",
-    "@fontsource/dm-sans": "5.2.6",
-    "@fontsource/ma-shan-zheng": "5.2.6",
-    "@fontsource/noto-sans-sc": "5.2.6",
+    "@fontsource/dm-sans": "5.2.7",
+    "@fontsource/ma-shan-zheng": "5.2.7",
+    "@fontsource/noto-sans-sc": "5.2.7",
     "@fontsource/noto-serif-sc": "5.2.7",
     "@iconify-json/mingcute": "1.2.5",
     "@playwright/test": "1.55.0",
