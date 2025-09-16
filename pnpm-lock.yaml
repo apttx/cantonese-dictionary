@@ -87,8 +87,8 @@ importers:
         specifier: 1.55.0
         version: 1.55.0
       '@storyblok/js':
-        specifier: 4.2.8
-        version: 4.2.8
+        specifier: 4.3.0
+        version: 4.3.0
       '@sveltejs/adapter-vercel':
         specifier: 5.10.2
         version: 5.10.2(@sveltejs/kit@2.39.1(@sveltejs/vite-plugin-svelte@6.2.0(svelte@5.38.10)(vite@7.1.5(@types/node@22.18.4)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.5)))(svelte@5.38.10)(vite@7.1.5(@types/node@22.18.4)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.5)))(encoding@0.1.13)(rollup@4.50.2)
@@ -763,8 +763,8 @@ packages:
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
-  '@storyblok/js@4.2.8':
-    resolution: {integrity: sha512-CnZQDza5X+Bb5o2j9GOc2bEjishQd8ZSQG9tQUrYdSG05aqY9SlRBAcno+gPKSJFxs3H6pPAQ+B3cfIieLgJXA==}
+  '@storyblok/js@4.3.0':
+    resolution: {integrity: sha512-oNnx3AdQ4Lw0ucr4vIH0We2B2lXeWhKNJmmNw3jnj4L5ZZuXoBqZfGAm9r/qVzaHb6IKwb0VWmzXLOScxdwVFA==}
 
   '@storyblok/richtext@3.8.0':
     resolution: {integrity: sha512-GL3pLlrj+WdDZMjc4uQlSVbtlOMUtZgYHbLsOo0iEWRacj6Dro4e5BrryLZQ1189cUCQqGdR1s8+qvVbxfJhCw==}
@@ -3340,7 +3340,7 @@ snapshots:
 
   '@standard-schema/spec@1.0.0': {}
 
-  '@storyblok/js@4.2.8':
+  '@storyblok/js@4.3.0':
     dependencies:
       '@storyblok/richtext': 3.8.0
       storyblok-js-client: 7.1.4
