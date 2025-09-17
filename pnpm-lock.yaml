@@ -69,17 +69,17 @@ importers:
         specifier: 9.35.0
         version: 9.35.0
       '@fontsource/dm-sans':
-        specifier: 5.2.7
-        version: 5.2.7
+        specifier: 5.2.8
+        version: 5.2.8
       '@fontsource/ma-shan-zheng':
-        specifier: 5.2.7
-        version: 5.2.7
+        specifier: 5.2.8
+        version: 5.2.8
       '@fontsource/noto-sans-sc':
-        specifier: 5.2.7
-        version: 5.2.7
+        specifier: 5.2.8
+        version: 5.2.8
       '@fontsource/noto-serif-sc':
-        specifier: 5.2.7
-        version: 5.2.7
+        specifier: 5.2.8
+        version: 5.2.8
       '@iconify-json/mingcute':
         specifier: 1.2.5
         version: 1.2.5
@@ -450,17 +450,17 @@ packages:
   '@fastify/busboy@3.2.0':
     resolution: {integrity: sha512-m9FVDXU3GT2ITSe0UaMA5rU3QkfC/UXtCU8y0gSN/GugTqtVldOBWIB5V6V3sbmenVZUIpU6f+mPEO2+m5iTaA==}
 
-  '@fontsource/dm-sans@5.2.7':
-    resolution: {integrity: sha512-Sqkl2t9Z99NivygpGUO9i5bcAQ0WMUcO2c8yq19Q4Dxsz9xfHH36Hk4Rohx3VViaEHqFHZTp0KdmtwBVFz/Pig==}
+  '@fontsource/dm-sans@5.2.8':
+    resolution: {integrity: sha512-tlovG42m9ESG28WiHpLq3F5umAlm64rv0RkqTbYowRn70e9OlRr5a3yTJhrhrY+k5lftR/OFJjPzOLQzk8EfCA==}
 
-  '@fontsource/ma-shan-zheng@5.2.7':
-    resolution: {integrity: sha512-2JOZQ3TWrlzZBgpZPTMkkANStwE/g/A23+Dpk24AkezzDFV49G0GVmrIIXvSBsWJNgk7vSC1sjAXp3Mfp66Rew==}
+  '@fontsource/ma-shan-zheng@5.2.8':
+    resolution: {integrity: sha512-/2sTIqp6RAwzx8kXP5uJo8f6Efmt4F4Cydzoqhoj+5HqglNhSiy0vkkjLzovUA3m8i0dbuWe7ZXY564d24+Lhw==}
 
-  '@fontsource/noto-sans-sc@5.2.7':
-    resolution: {integrity: sha512-woVR2wa1UsXLxjEIl5OdaucQSRYwfouOiJAMayh9FUxvqaRRgOXrX3L8tCHvL99zg4DGsZjmgKe9usCnMRX7qQ==}
+  '@fontsource/noto-sans-sc@5.2.8':
+    resolution: {integrity: sha512-8T8HxIS3uAMCfaQawKRH/6yYZ1oRnJZB/CrGwfxGgJa+zAOBgx2lqZMiTY/WbQpLGlPRqX4zHXJYI09CI2q6tA==}
 
-  '@fontsource/noto-serif-sc@5.2.7':
-    resolution: {integrity: sha512-gG0JQ++TkLZCkFxwAnemfvNcoTb769+2zKFB2RFMi/KvnJ6pLE1sMDvo+MKhoLTBKlko8HVVQXCa3JZTZjC8Qg==}
+  '@fontsource/noto-serif-sc@5.2.8':
+    resolution: {integrity: sha512-C7fAr+d1GjOAw1qIbntsnqbA3l5dkdzcmNNgeCXLC8QZ7VNubL7MTrX8UcYKHceX4mI//z8gGtXbOeeQrB6P7g==}
 
   '@gar/promisify@1.1.3':
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
@@ -3050,13 +3050,13 @@ snapshots:
 
   '@fastify/busboy@3.2.0': {}
 
-  '@fontsource/dm-sans@5.2.7': {}
+  '@fontsource/dm-sans@5.2.8': {}
 
-  '@fontsource/ma-shan-zheng@5.2.7': {}
+  '@fontsource/ma-shan-zheng@5.2.8': {}
 
-  '@fontsource/noto-sans-sc@5.2.7': {}
+  '@fontsource/noto-sans-sc@5.2.8': {}
 
-  '@fontsource/noto-serif-sc@5.2.7': {}
+  '@fontsource/noto-serif-sc@5.2.8': {}
 
   '@gar/promisify@1.1.3':
     optional: true
