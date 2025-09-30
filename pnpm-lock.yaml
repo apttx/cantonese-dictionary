@@ -87,8 +87,8 @@ importers:
         specifier: 1.55.1
         version: 1.55.1
       '@storyblok/js':
-        specifier: 4.3.0
-        version: 4.3.0
+        specifier: 4.3.1
+        version: 4.3.1
       '@sveltejs/adapter-vercel':
         specifier: 5.10.2
         version: 5.10.2(@sveltejs/kit@2.43.5(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.6)(vite@7.1.7(@types/node@22.18.7)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.6)))(svelte@5.39.6)(vite@7.1.7(@types/node@22.18.7)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.6)))(encoding@0.1.13)(rollup@4.52.3)
@@ -765,11 +765,11 @@ packages:
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
-  '@storyblok/js@4.3.0':
-    resolution: {integrity: sha512-oNnx3AdQ4Lw0ucr4vIH0We2B2lXeWhKNJmmNw3jnj4L5ZZuXoBqZfGAm9r/qVzaHb6IKwb0VWmzXLOScxdwVFA==}
+  '@storyblok/js@4.3.1':
+    resolution: {integrity: sha512-6aPhjGuHWrObLfhW4/RPl9X/T/CdahDiEzbV6TKcYm0lseDq1XvMb8S3c5HmwVJNL3vsk4AiYuc51Ko4fAhOmg==}
 
-  '@storyblok/richtext@3.8.0':
-    resolution: {integrity: sha512-GL3pLlrj+WdDZMjc4uQlSVbtlOMUtZgYHbLsOo0iEWRacj6Dro4e5BrryLZQ1189cUCQqGdR1s8+qvVbxfJhCw==}
+  '@storyblok/richtext@3.8.1':
+    resolution: {integrity: sha512-G4TJjjill8F2SICXOkGyhSv4fecwqRX16gReh7PHIQm8+WX7Sw0l5MDHyP08TZU5ukVjgMR7KZL3l3EjvGaqUA==}
 
   '@sveltejs/acorn-typescript@1.0.5':
     resolution: {integrity: sha512-IwQk4yfwLdibDlrXVE04jTZYlLnwsTT2PIOQQGNLWfjavGifnk1JD1LcZjZaBTRcxZu2FfPfNLOE04DSu9lqtQ==}
@@ -2431,8 +2431,8 @@ packages:
   std-env@3.9.0:
     resolution: {integrity: sha512-UGvjygr6F6tpH7o2qyqR6QYpwraIjKSdtzyBdyytFOHmPZY917kwdwLG0RbOjWOnKmnm3PeHjaoLLMie7kPLQw==}
 
-  storyblok-js-client@7.1.4:
-    resolution: {integrity: sha512-8U/l4HcWBhyurjOYh9xlhQ+TLN48DxBovzIXwXArbH0muJx/kqYlU/XHnwpmGZJuxTRgRdhWGjpZkthpXpYeaw==}
+  storyblok-js-client@7.1.5:
+    resolution: {integrity: sha512-N+DWilPdbXfnb54O3jbJ7IfPyQMs+Jn7KrTCO3lpS8JAEfb+BXQH3sLPri3qzy+tyk0IhXj+8ao4wOX1z89FNg==}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -3332,12 +3332,12 @@ snapshots:
 
   '@standard-schema/spec@1.0.0': {}
 
-  '@storyblok/js@4.3.0':
+  '@storyblok/js@4.3.1':
     dependencies:
-      '@storyblok/richtext': 3.8.0
-      storyblok-js-client: 7.1.4
+      '@storyblok/richtext': 3.8.1
+      storyblok-js-client: 7.1.5
 
-  '@storyblok/richtext@3.8.0':
+  '@storyblok/richtext@3.8.1':
     dependencies:
       markdown-it: 14.1.0
       markdown-it-github: 0.5.0
@@ -5247,7 +5247,7 @@ snapshots:
 
   std-env@3.9.0: {}
 
-  storyblok-js-client@7.1.4: {}
+  storyblok-js-client@7.1.5: {}
 
   string-width@4.2.3:
     dependencies:
