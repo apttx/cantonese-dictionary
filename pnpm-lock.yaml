@@ -162,8 +162,8 @@ importers:
         specifier: 8.46.1
         version: 8.46.1(eslint@9.38.0(jiti@1.21.0))(typescript@5.9.3)
       unplugin-icons:
-        specifier: 22.4.2
-        version: 22.4.2(svelte@5.41.0)
+        specifier: 22.5.0
+        version: 22.5.0(svelte@5.41.0)
       vite:
         specifier: 7.1.10
         version: 7.1.10(@types/node@22.18.11)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.6)
@@ -2651,8 +2651,8 @@ packages:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
 
-  unplugin-icons@22.4.2:
-    resolution: {integrity: sha512-Yv15405unO67Chme0Slk0JRA/H2AiAZLK5t7ebt8/ZpTDlBfM4d4En2qD3MX2rzOSkIteQ0syIm3q8MSofeoBA==}
+  unplugin-icons@22.5.0:
+    resolution: {integrity: sha512-MBlMtT5RuMYZy4TZgqUL2OTtOdTUVsS1Mhj6G1pEzMlFJlEnq6mhUfoIt45gBWxHcsOdXJDWLg3pRZ+YmvAVWQ==}
     peerDependencies:
       '@svgr/core': '>=7.0.0'
       '@svgx/core': ^1.0.1
@@ -5504,7 +5504,7 @@ snapshots:
 
   universalify@0.1.2: {}
 
-  unplugin-icons@22.4.2(svelte@5.41.0):
+  unplugin-icons@22.5.0(svelte@5.41.0):
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@iconify/utils': 3.0.2
