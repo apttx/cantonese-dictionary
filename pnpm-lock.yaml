@@ -87,8 +87,8 @@ importers:
         specifier: 1.56.1
         version: 1.56.1
       '@storyblok/js':
-        specifier: 4.4.0
-        version: 4.4.0
+        specifier: 4.4.1
+        version: 4.4.1
       '@sveltejs/adapter-vercel':
         specifier: 6.1.1
         version: 6.1.1(@sveltejs/kit@2.48.3(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.43.0)(vite@7.1.12(@types/node@22.18.13)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.6)))(svelte@5.43.0)(vite@7.1.12(@types/node@22.18.13)(jiti@1.21.0)(terser@5.39.0)(tsx@4.20.6)))(encoding@0.1.13)(rollup@4.52.5)
@@ -765,8 +765,8 @@ packages:
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
-  '@storyblok/js@4.4.0':
-    resolution: {integrity: sha512-1McshBjWUBq5aJ32ulWfUnOh2Pyk2YgBUxGTOYJgSN86vYfDrHe1831IqeKNtv6X4Xapsi20vievPO/AQeXHsw==}
+  '@storyblok/js@4.4.1':
+    resolution: {integrity: sha512-GAMDHiEkNSMd3lQgoHa9GEM5/Vgc/AWXKZVAMIxXX8Hf8f1FFratswpXgL2JIfjKz+Vj0UwYBGbWpjx+6svJHQ==}
 
   '@storyblok/richtext@3.8.2':
     resolution: {integrity: sha512-zI86BOE5hE8eqIwnOBi20Hl3/C9CpMha88Ni9gs2qf3ECTqYP40p0ZQ2oeYQOCsVCoxEOZcTDaeKg5+LSF6gxA==}
@@ -2396,8 +2396,8 @@ packages:
   std-env@3.9.0:
     resolution: {integrity: sha512-UGvjygr6F6tpH7o2qyqR6QYpwraIjKSdtzyBdyytFOHmPZY917kwdwLG0RbOjWOnKmnm3PeHjaoLLMie7kPLQw==}
 
-  storyblok-js-client@7.1.5:
-    resolution: {integrity: sha512-N+DWilPdbXfnb54O3jbJ7IfPyQMs+Jn7KrTCO3lpS8JAEfb+BXQH3sLPri3qzy+tyk0IhXj+8ao4wOX1z89FNg==}
+  storyblok-js-client@7.1.6:
+    resolution: {integrity: sha512-LWXL4rUT8vM9it6Kodjh1pMicLokgLXAGswpdYi5lEgMsgn+yGjt8Hs1Yg5z3gOtW0m0O6aQ3dTZuc7r+Q+/8w==}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -3241,10 +3241,10 @@ snapshots:
 
   '@standard-schema/spec@1.0.0': {}
 
-  '@storyblok/js@4.4.0':
+  '@storyblok/js@4.4.1':
     dependencies:
       '@storyblok/richtext': 3.8.2
-      storyblok-js-client: 7.1.5
+      storyblok-js-client: 7.1.6
 
   '@storyblok/richtext@3.8.2':
     dependencies:
@@ -5124,7 +5124,7 @@ snapshots:
 
   std-env@3.9.0: {}
 
-  storyblok-js-client@7.1.5: {}
+  storyblok-js-client@7.1.6: {}
 
   string-width@4.2.3:
     dependencies:
