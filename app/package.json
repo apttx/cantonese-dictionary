@@ -29,7 +29,7 @@
     "@sveltejs/vite-plugin-svelte": "6.2.1",
     "@types/eslint__eslintrc": "3.3.0",
     "@types/eslint__js": "9.14.0",
-    "@types/node": "22.19.0",
+    "@types/node": "22.19.1",
     "@typescript-eslint/parser": "8.46.4",
     "@unocss/reset": "66.5.6",
     "@urql/core": "6.0.1",
