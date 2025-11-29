@@ -24,7 +24,7 @@
     "@iconify-json/mingcute": "1.2.5",
     "@playwright/test": "1.56.1",
     "@storyblok/js": "4.4.1",
-    "@sveltejs/adapter-vercel": "6.1.1",
+    "@sveltejs/adapter-vercel": "6.2.0",
     "@sveltejs/kit": "2.48.5",
     "@sveltejs/vite-plugin-svelte": "6.2.1",
     "@types/eslint__eslintrc": "3.3.0",
