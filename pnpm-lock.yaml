@@ -48,11 +48,11 @@ importers:
         specifier: 3.1.11
         version: 3.1.11
       prettier:
-        specifier: 3.6.2
-        version: 3.6.2
+        specifier: 3.7.2
+        version: 3.7.2
       prettier-plugin-jsdoc:
         specifier: 1.5.0
-        version: 1.5.0(prettier@3.6.2)
+        version: 1.5.0(prettier@3.7.2)
       rollup:
         specifier: 4.53.3
         version: 4.53.3
@@ -135,17 +135,17 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       prettier:
-        specifier: 3.6.2
-        version: 3.6.2
+        specifier: 3.7.2
+        version: 3.7.2
       prettier-plugin-css-order:
         specifier: 2.1.2
-        version: 2.1.2(postcss@8.5.6)(prettier@3.6.2)
+        version: 2.1.2(postcss@8.5.6)(prettier@3.7.2)
       prettier-plugin-jsdoc:
         specifier: 1.5.0
-        version: 1.5.0(prettier@3.6.2)
+        version: 1.5.0(prettier@3.7.2)
       prettier-plugin-svelte:
         specifier: 3.4.0
-        version: 3.4.0(prettier@3.6.2)(svelte@5.43.14)
+        version: 3.4.0(prettier@3.7.2)(svelte@5.43.14)
       svelte:
         specifier: 5.43.14
         version: 5.43.14
@@ -192,11 +192,11 @@ importers:
         specifier: 3.1.11
         version: 3.1.11
       prettier:
-        specifier: 3.6.2
-        version: 3.6.2
+        specifier: 3.7.2
+        version: 3.7.2
       prettier-plugin-jsdoc:
         specifier: 1.5.0
-        version: 1.5.0(prettier@3.6.2)
+        version: 1.5.0(prettier@3.7.2)
       sqlite3:
         specifier: 5.1.7
         version: 5.1.7
@@ -2168,8 +2168,8 @@ packages:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
 
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.7.2:
+    resolution: {integrity: sha512-n3HV2J6QhItCXndGa3oMWvWFAgN1ibnS7R9mt6iokScBOC0Ul9/iZORmU2IWUMcyAQaMPjTlY3uT34TqocUxMA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -4816,30 +4816,30 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-css-order@2.1.2(postcss@8.5.6)(prettier@3.6.2):
+  prettier-plugin-css-order@2.1.2(postcss@8.5.6)(prettier@3.7.2):
     dependencies:
       css-declaration-sorter: 7.2.0(postcss@8.5.6)
       postcss-less: 6.0.0(postcss@8.5.6)
       postcss-scss: 4.0.9(postcss@8.5.6)
-      prettier: 3.6.2
+      prettier: 3.7.2
     transitivePeerDependencies:
       - postcss
 
-  prettier-plugin-jsdoc@1.5.0(prettier@3.6.2):
+  prettier-plugin-jsdoc@1.5.0(prettier@3.7.2):
     dependencies:
       binary-searching: 2.0.5
       comment-parser: 1.4.1
       mdast-util-from-markdown: 2.0.2
-      prettier: 3.6.2
+      prettier: 3.7.2
     transitivePeerDependencies:
       - supports-color
 
-  prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.43.14):
+  prettier-plugin-svelte@3.4.0(prettier@3.7.2)(svelte@5.43.14):
     dependencies:
-      prettier: 3.6.2
+      prettier: 3.7.2
       svelte: 5.43.14
 
-  prettier@3.6.2: {}
+  prettier@3.7.2: {}
 
   promise-inflight@1.0.1:
     optional: true
