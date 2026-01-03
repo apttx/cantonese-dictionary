@@ -31,7 +31,7 @@
     "@types/eslint__js": "9.14.0",
     "@types/node": "24.10.4",
     "@typescript-eslint/parser": "8.50.1",
-    "@unocss/reset": "66.5.10",
+    "@unocss/reset": "66.5.12",
     "@urql/core": "6.0.1",
     "concurrently": "9.2.1",
     "eslint": "9.39.2",
