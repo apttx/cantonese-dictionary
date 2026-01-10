@@ -29,7 +29,7 @@
     "@rollup/plugin-replace": "6.0.3",
     "@rollup/plugin-terser": "0.4.4",
     "@rollup/plugin-virtual": "3.0.2",
-    "@typescript-eslint/parser": "8.51.0",
+    "@typescript-eslint/parser": "8.52.0",
     "concurrently": "9.2.1",
     "eslint": "9.39.2",
     "globals": "16.5.0",
@@ -38,6 +38,6 @@
     "prettier-plugin-jsdoc": "1.8.0",
     "rollup": "4.54.0",
     "rollup-plugin-copy": "3.5.0",
-    "typescript-eslint": "8.51.0"
+    "typescript-eslint": "8.52.0"
   }
 }
