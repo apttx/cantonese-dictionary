@@ -7,6 +7,7 @@
   "scripts": {
     "test": "vitest",
     "build:local": "tsx scripts/build_local.mjs",
+    "build:remote": "tsx -r dotenv/config scripts/build_remote.ts",
     "build": "pnpm build:local",
     "develop": "nodemon -e mjs,ts -x 'pnpm build'",
     "prettier": "prettier --ignore-path .gitignore --check .",
@@ -25,8 +26,10 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "@eslint/js": "9.39.2",
+    "@libsql/client": "^0.17.0",
     "@typescript-eslint/parser": "8.53.1",
     "concurrently": "9.2.1",
+    "dotenv": "^17.2.3",
     "eslint": "9.39.2",
     "globals": "17.1.0",
     "nodemon": "3.1.11",
