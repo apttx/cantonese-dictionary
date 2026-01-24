@@ -27,7 +27,7 @@ jobs:
       - name: install dependencies
         run: pnpm install --frozen-lockfile --recursive
 
-      - name: lint
+      - name: audit
         run: pnpm audit --prod
 
   lint:
