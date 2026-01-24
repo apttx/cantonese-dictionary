@@ -42,7 +42,7 @@ const run = async () => {
         jyutping,
         content=phrases
       );
-      CREATE TRIGGER inser_search_after_insert_phrases AFTER INSERT ON phrases BEGIN
+      CREATE TRIGGER insert_search_after_insert_phrases AFTER INSERT ON phrases BEGIN
         INSERT INTO search(
           rowid,
           traditional,
