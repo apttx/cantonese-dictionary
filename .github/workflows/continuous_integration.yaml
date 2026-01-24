@@ -29,6 +29,10 @@ jobs:
 
       - name: audit
         run: pnpm audit --prod
+    on:
+      push:
+        branches:
+          - main
 
   lint:
     name: lint
