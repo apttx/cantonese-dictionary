@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "test": "vitest",
-    "build": "tsx scripts/build.mjs",
+    "build:local": "tsx scripts/build_local.mjs",
+    "build": "pnpm build:local",
     "develop": "nodemon -e mjs,ts -x 'pnpm build'",
     "prettier": "prettier --ignore-path .gitignore --check .",
     "eslint": "eslint .",
