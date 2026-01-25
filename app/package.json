@@ -21,7 +21,7 @@
     "@fontsource/ma-shan-zheng": "5.2.8",
     "@fontsource/noto-sans-sc": "5.2.9",
     "@fontsource/noto-serif-sc": "5.2.9",
-    "@iconify-json/mingcute": "1.2.6",
+    "@iconify-json/mingcute": "1.2.7",
     "@playwright/test": "1.57.0",
     "@storyblok/js": "4.4.4",
     "@sveltejs/adapter-vercel": "6.3.0",
