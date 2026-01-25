@@ -81,8 +81,8 @@ importers:
         specifier: 5.2.9
         version: 5.2.9
       '@iconify-json/mingcute':
-        specifier: 1.2.6
-        version: 1.2.6
+        specifier: 1.2.7
+        version: 1.2.7
       '@playwright/test':
         specifier: 1.57.0
         version: 1.57.0
@@ -689,8 +689,8 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/mingcute@1.2.6':
-    resolution: {integrity: sha512-mXvLsBgsZz9jiAUKtU+EHsD5/tLzWAHQ0z0Qk255NjUnZqtbmIhSNoUHq59tO776K2Q48A4D+Y3LYce2niY3CQ==}
+  '@iconify-json/mingcute@1.2.7':
+    resolution: {integrity: sha512-bp4z6F53KAQp99aSL7qPCHL7HWUNGMNKIhfo/dx9pwVHiad/WusUbTOFXEZfpA44syJPzSOxa3O6Pwiq7qZz1g==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3234,7 +3234,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@iconify-json/mingcute@1.2.6':
+  '@iconify-json/mingcute@1.2.7':
     dependencies:
       '@iconify/types': 2.0.0
 
