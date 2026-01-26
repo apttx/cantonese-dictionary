@@ -16,6 +16,7 @@ const config = {
       $graphql: 'src/modules/graphql.ts',
       $types: '../types/*',
       $storyblok: 'src/modules/storyblok/',
+      $api: '../api/*',
     },
   },
 }

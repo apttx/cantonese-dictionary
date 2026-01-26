@@ -10,6 +10,11 @@ const config: UserConfig = {
       scale: 1.25,
     }),
   ],
+  server: {
+    fs: {
+      allow: ['../api/'],
+    },
+  },
 }
 
 export default config
