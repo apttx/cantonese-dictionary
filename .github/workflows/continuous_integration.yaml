@@ -32,7 +32,7 @@ jobs:
     on:
       push:
         branches:
-          - main
+          - default
 
   lint:
     name: lint
