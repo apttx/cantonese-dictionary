@@ -3,11 +3,11 @@ import { createYoga } from 'graphql-yoga'
 import { schema } from './schema.mjs'
 
 /**
- * @type {(options: {
+ * @param {{
  *   phrases: Phrases_Datasource
  *   graphiql?: boolean
  *   landingPage?: boolean
- * }) => import('node:http').RequestListener}
+ * }} options
  */
 export const handler = (options) => {
   const { phrases } = options
