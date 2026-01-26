@@ -36,6 +36,7 @@ export default [
       sourceType: 'module',
       parserOptions: {
         extraFileExtensions: ['.svelte'],
+        tsconfigRootDir: import.meta.dirname,
       },
     },
   },
