@@ -1,9 +1,0 @@
-input Phrase_Where {
-  id: ID!
-}
-
-type Query {
-  search(query: String!, limit: Int): [Phrase!]!
-  phrases(after: ID, limit: Int): [Phrase!]!
-  phrase(where: Phrase_Where): Phrase!
-}

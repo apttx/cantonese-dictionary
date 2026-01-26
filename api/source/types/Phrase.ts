@@ -1,0 +1,11 @@
+export const Phrase = /* GraphQL */ `
+  type Phrase {
+    id: String!
+    traditional: String!
+    simplified: String!
+    jyutping: String!
+    pinyin: String!
+    english: String!
+    senses: [Phrase!]!
+  }
+`
