@@ -77,7 +77,7 @@
           <li>
             <a
               href={link.url}
-              rel="noreferrer noopener"
+              rel="external noreferrer noopener"
             >
               {link.text}
             </a>

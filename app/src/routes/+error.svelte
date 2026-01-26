@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths'
   import { page } from '$app/stores'
   import Head from '$components/head.svelte'
 
@@ -16,7 +17,7 @@
   <p>
     Try visiting
     <a
-      href="/dictionary"
+      href={resolve('/dictionary')}
       class="cd_link"
     >
       the dictionary

@@ -9,6 +9,7 @@
   import Flashcards from '~icons/mingcute/wallet-5-line'
 
   import { page } from '$app/stores'
+  import { resolve } from '$app/paths'
 
   const dispatch = createEventDispatcher()
 
@@ -37,7 +38,7 @@
       <ul class:open={menu_open}>
         <li>
           <a
-            href="/"
+            href={resolve('/')}
             on:click={close_menu}
             class:active={$page.url.pathname === '/'}
           >
@@ -48,7 +49,7 @@
         </li>
         <li>
           <a
-            href="/dictionary"
+            href={resolve('/dictionary')}
             on:click={close_menu}
             class:active={$page.url.pathname === '/dictionary'}
           >
@@ -59,7 +60,7 @@
         </li>
         <li>
           <a
-            href="/collection"
+            href={resolve('/collection')}
             on:click={close_menu}
             class:active={$page.url.pathname === '/collection'}
           >
@@ -70,7 +71,7 @@
         </li>
         <li>
           <a
-            href="/flashcards"
+            href={resolve('/flashcards')}
             on:click={close_menu}
             class:active={$page.url.pathname === '/flashcards'}
           >

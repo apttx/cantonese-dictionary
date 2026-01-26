@@ -35,6 +35,8 @@
 </script>
 
 <script lang="ts">
+  import { resolve } from '$app/paths'
+
   import type { Page } from '$storyblok/stories/Page'
   import type { Series } from '$storyblok/stories/Series'
   import type { ClassValue } from 'svelte/elements'
@@ -57,7 +59,9 @@
 <nav class={['navigation', class_]}>
   {#if previousPage}
     <a
-      href={previousPage.route}
+      href={resolve('/[...path]', {
+        path: previousPage.route,
+      })}
       class="previousLink link"
     >
       <span class="prefix">
@@ -73,7 +77,9 @@
 
   {#if nextPage}
     <a
-      href={nextPage.route}
+      href={resolve('/[...path]', {
+        path: nextPage.route,
+      })}
       class="nextLink link"
     >
       <span class="prefix">

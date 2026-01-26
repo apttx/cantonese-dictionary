@@ -2,6 +2,7 @@
   import { page } from '$app/state'
   import type { ClassValue } from 'svelte/elements'
   import type { SeriesTeaser } from './SeriesTeaser'
+  import { resolve } from '$app/paths'
 
   let {
     series,
@@ -44,7 +45,9 @@
             {@const isCurrentPage = pageInSeries.route === page.url.pathname}
             <li class="seriesPageItem">
               <a
-                href={pageInSeries.route}
+                href={resolve('/[...path]', {
+                  path: pageInSeries.route,
+                })}
                 aria-current={isCurrentPage ? 'page' : undefined}
                 class="seriesPageLink cd_bordered_button"
                 class:isCurrentPage
