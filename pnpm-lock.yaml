@@ -70,6 +70,10 @@ importers:
         version: 8.53.1(eslint@9.39.2(jiti@1.21.0))(typescript@5.9.3)
 
   app:
+    dependencies:
+      '@libsql/client':
+        specifier: ^0.17.0
+        version: 0.17.0(encoding@0.1.13)
     devDependencies:
       '@eslint/js':
         specifier: 9.39.2
