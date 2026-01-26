@@ -24,7 +24,7 @@ importers:
         specifier: 9.39.2
         version: 9.39.2
       '@libsql/client':
-        specifier: ^0.17.0
+        specifier: 0.17.0
         version: 0.17.0(encoding@0.1.13)
       '@rollup/plugin-replace':
         specifier: 6.0.3
@@ -33,7 +33,7 @@ importers:
         specifier: 0.4.4
         version: 0.4.4(rollup@4.56.0)
       '@rollup/plugin-typescript':
-        specifier: ^12.3.0
+        specifier: 12.3.0
         version: 12.3.0(rollup@4.56.0)(tslib@2.8.1)(typescript@5.9.3)
       '@rollup/plugin-virtual':
         specifier: 3.0.2
@@ -187,7 +187,7 @@ importers:
         specifier: 9.39.2
         version: 9.39.2
       '@libsql/client':
-        specifier: ^0.17.0
+        specifier: 0.17.0
         version: 0.17.0(encoding@0.1.13)
       '@typescript-eslint/parser':
         specifier: 8.53.1
@@ -196,7 +196,7 @@ importers:
         specifier: 9.2.1
         version: 9.2.1
       dotenv:
-        specifier: ^17.2.3
+        specifier: 17.2.3
         version: 17.2.3
       eslint:
         specifier: 9.39.2
