@@ -1,11 +1,11 @@
 import { handler as getHandler } from '$api/source/handler.ts'
 import { get_datasource } from '$api/source/data_sources/sqlite_remote.ts'
-import { TURSO_AUTH_TOKEN, TURSO_DATABASE_URL } from '$env/static/private'
+import { REMOTE_DATABASE_AUTH_TOKEN, REMOTE_DATABASE_URL } from '$env/static/private'
 import type { RequestHandler } from '@sveltejs/kit'
 
 const phrases = get_datasource({
-  authToken: TURSO_AUTH_TOKEN,
-  url: TURSO_DATABASE_URL,
+  authToken: REMOTE_DATABASE_AUTH_TOKEN,
+  url: REMOTE_DATABASE_URL,
 })
 
 const handler = getHandler({

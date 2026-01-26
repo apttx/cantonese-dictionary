@@ -6,17 +6,17 @@ import { createClient } from '@libsql/client'
 import { get_phrases } from './parsing.mjs'
 
 const run = async () => {
-  if (!process.env.TURSO_DATABASE_URL) {
-    throw new Error('the `TURSO_DATABASE_URL` environment variable is not set!')
+  if (!process.env.REMOTE_DATABASE_URL) {
+    throw new Error('the `REMOTE_DATABASE_URL` environment variable is not set!')
   }
 
-  if (!process.env.TURSO_AUTH_TOKEN) {
-    throw new Error('the `TURSO_AUTH_TOKEN` environment variable is not set!')
+  if (!process.env.REMOTE_DATABASE_AUTH_TOKEN) {
+    throw new Error('the `REMOTE_DATABASE_AUTH_TOKEN` environment variable is not set!')
   }
 
   const client = createClient({
-    url: process.env.TURSO_DATABASE_URL,
-    authToken: process.env.TURSO_AUTH_TOKEN,
+    url: process.env.REMOTE_DATABASE_URL,
+    authToken: process.env.REMOTE_DATABASE_AUTH_TOKEN,
   })
 
   try {
