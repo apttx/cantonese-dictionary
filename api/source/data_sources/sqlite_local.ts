@@ -48,11 +48,10 @@ export const get_datasource = async (
   promisified_database: Awaited<ReturnType<typeof get_promisified_database>>,
 ) => {
   const search: Phrases_Datasource['search'] = async (options) => {
-    const escaped_term = `"${options.term.replace(/"/g, '""')}"`
+    const search_query_sql = get_search_query_sql(options.query)
 
-    const phrases_join_phrases =
-      /** @type {Phrases_Join_Phrases_Row[]} */ await promisified_database.all(
-        `SELECT
+    const phrases_join_phrases = await promisified_database.all(
+      `SELECT
           phrases.id AS phrase_id,
           phrases.traditional AS phrase_traditional,
           phrases.simplified AS phrase_simplified,
@@ -70,14 +69,10 @@ export const get_datasource = async (
           (
             SELECT DISTINCT * FROM (
               SELECT * FROM phrases
-                WHERE traditional=$term
-                  OR simplified=$term
-                  OR pinyin=$term
-                  OR jyutping=$term
-                  OR english=$term
+                WHERE ${search_query_sql.where_string}
               UNION ALL
               SELECT * FROM (
-                SELECT * FROM search($term) ORDER BY rank
+                SELECT * FROM search($match) ORDER BY rank
               )
             ) LIMIT $limit
           ) AS phrases
@@ -86,11 +81,12 @@ export const get_datasource = async (
             ON phrases.sense_group_id=senses.sense_group_id
         ;`,
 
-        {
-          $limit: options.limit,
-          $term: escaped_term,
-        },
-      )
+      {
+        $limit: options.limit,
+        $match: search_query_sql.match,
+        ...search_query_sql.where_variables,
+      },
+    )
 
     const phrases = get_phrases_with_senses(phrases_join_phrases as Phrases_Join_Phrases_Row[])
 
@@ -161,8 +157,7 @@ export const get_datasource = async (
     return phrase
   }
 
-  /** @type {Phrases_Datasource} */
-  const datasource = {
+  const datasource: Phrases_Datasource = {
     search,
     many,
     one,
