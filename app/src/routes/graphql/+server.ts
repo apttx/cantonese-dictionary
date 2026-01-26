@@ -1,4 +1,4 @@
-import { handler as getHandler } from '$api/source/handler.mjs'
+import { handler as getHandler } from '$api/source/handler.ts'
 import { get_datasource } from '$api/source/data_sources/sqlite_remote.ts'
 import { TURSO_AUTH_TOKEN, TURSO_DATABASE_URL } from '$env/static/private'
 import type { RequestHandler } from '@sveltejs/kit'

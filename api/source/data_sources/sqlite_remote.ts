@@ -1,4 +1,6 @@
 import { createClient, type Row } from '@libsql/client'
+import { type Phrase } from '../../../types/Phrase'
+import { type Phrases_Datasource } from '../../types/Resolver_Context'
 
 interface Phrases_Row {
   id: string
