@@ -13,7 +13,7 @@ jobs:
         # https://github.com/actions/checkout
 
       - name: set up pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
         # https://github.com/pnpm/action-setup
         with:
           version: 10.28.1
@@ -47,7 +47,7 @@ jobs:
         # https://github.com/actions/checkout
 
       - name: set up pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
         # https://github.com/pnpm/action-setup
         with:
           version: 10.28.1
@@ -81,7 +81,7 @@ jobs:
         # https://github.com/actions/checkout
 
       - name: set up pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
         # https://github.com/pnpm/action-setup
         with:
           version: 10.28.1
@@ -121,7 +121,7 @@ jobs:
         # https://github.com/actions/checkout
 
       - name: set up pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
         # https://github.com/pnpm/action-setup
         with:
           version: 10.28.1
