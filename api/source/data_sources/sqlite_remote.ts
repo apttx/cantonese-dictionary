@@ -28,7 +28,7 @@ export const get_datasource = (options: { url: string; authToken: string }) => {
   const client = createClient(options)
 
   const search: Phrases_Datasource['search'] = async (options) => {
-    const escaped_term = `"${options.term.replace(/"/g, '""')}"`
+    const search_query_sql = get_search_query_sql(options.query)
 
     const result_set = await client.execute(
       `SELECT
@@ -49,14 +49,10 @@ export const get_datasource = (options: { url: string; authToken: string }) => {
           (
             SELECT DISTINCT * FROM (
               SELECT * FROM phrases
-                WHERE traditional=$term
-                  OR simplified=$term
-                  OR pinyin=$term
-                  OR jyutping=$term
-                  OR english=$term
+                WHERE ${search_query_sql.where_string}
               UNION ALL
               SELECT * FROM (
-                SELECT * FROM search($term) ORDER BY rank
+                SELECT * FROM search($match) ORDER BY rank
               )
             ) LIMIT $limit
           ) AS phrases
@@ -67,7 +63,8 @@ export const get_datasource = (options: { url: string; authToken: string }) => {
 
       {
         $limit: options.limit,
-        $term: escaped_term,
+        $match: search_query_sql.match,
+        ...search_query_sql.where_variables,
       },
     )
     const phrases_join_phrases = result_set.rows.filter((row) => isPhrasesJoinPhrasesRow(row))

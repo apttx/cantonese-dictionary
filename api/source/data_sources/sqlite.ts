@@ -68,3 +68,43 @@ export const get_phrases_with_senses = (
 
   return phrases
 }
+
+const escape = (string: string) => `"${string.replace(/"/g, '""')}"`
+
+const set_of_available_search_keys = new Set<string>([
+  'english',
+  'jyutping',
+  'pinyin',
+  'simplified',
+  'traditional',
+] satisfies (keyof Phrase)[])
+export const get_search_query_sql = (search_query: Search_Query) => {
+  const search_query_entries = Object.entries(search_query).filter(([key, value]) => {
+    return set_of_available_search_keys.has(key) && !!value.trim
+  })
+
+  const match = search_query_entries
+    .map(([field, term]) => {
+      return `${field}:${term}`
+    })
+    .join(' OR ')
+
+  const variable_entries = search_query_entries.map(([field, term]) => {
+    const variable_name = `$${field}`
+    const variable_value = escape(term)
+
+    return [variable_name, variable_value] as const
+  })
+  const where_string = search_query_entries
+    .map(([field]) => {
+      return `${field}=$${field}`
+    })
+    .join(' OR ')
+  const where_variables = Object.fromEntries(variable_entries)
+
+  return {
+    match,
+    where_string,
+    where_variables,
+  }
+}
