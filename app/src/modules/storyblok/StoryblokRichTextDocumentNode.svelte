@@ -108,6 +108,7 @@
       {:else if marksMap.href}
         <a
           href={marksMap.href.replace(/\/$/, '')}
+          rel="external"
           class:bold={marksMap[MarkTypes.BOLD]}
           class:line-through={marksMap[MarkTypes.STRIKE]}
           class:underline={marksMap[MarkTypes.UNDERLINE]}

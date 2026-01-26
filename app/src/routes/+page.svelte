@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
+  import { resolve } from '$app/paths'
   import Head from '$components/head.svelte'
   import StoryblokRichTextDocumentNode from '$storyblok/StoryblokRichTextDocumentNode.svelte'
   import SearchForm, { type Submit_Event_Detail } from './search_form.svelte'
@@ -17,7 +18,7 @@
     input_element.blur()
 
     loading_state = 'pending'
-    await goto(`/dictionary?query=${encodeURIComponent(term)}`)
+    await goto(resolve(`/dictionary?query=${encodeURIComponent(term)}`))
   }
 </script>
 

@@ -11,6 +11,7 @@
   } from '$stores/character_set.ts'
   import { add, has, remove } from '$stores/collection.ts'
   import type { Phrase } from '$types/Phrase'
+  import { resolve } from '$app/paths'
 
   export let phrase: Phrase
 </script>
@@ -54,7 +55,9 @@
   </span>
 
   <a
-    href="/dictionary/{phrase.id}"
+    href={resolve('/dictionary/[id]', {
+      id: phrase.id,
+    })}
     title="More information"
     class="detail_link cd_link"
   >

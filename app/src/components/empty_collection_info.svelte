@@ -1,9 +1,13 @@
+<script>
+  import { resolve } from '$app/paths'
+</script>
+
 <h2>Your collection is empty.</h2>
 
 <p>
   Head over to
   <a
-    href="/dictionary"
+    href={resolve('/dictionary')}
     class="cd_link"
   >
     the dictionary

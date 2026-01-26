@@ -9,6 +9,7 @@
   import Tabs, { type Tab } from '$components/tabs.svelte'
   import Search_Form, { type Submit_Event_Detail } from '../search_form.svelte'
   import { type Phrase } from '$types/Phrase'
+  import { resolve } from '$app/paths'
 
   export let data
 
@@ -25,7 +26,7 @@
 
     loading_state = 'pending'
     try {
-      await goto(`?query=${encodeURIComponent(term)}`)
+      await goto(resolve(`/dictionary?query=${encodeURIComponent(term)}`))
 
       loading_state = 'idle'
     } catch {

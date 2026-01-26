@@ -7,6 +7,7 @@
     getInterSeriesNavigationPages,
   } from './InterSeriesNavigation.svelte'
   import SeriesTeaser from '$storyblok/blocks/SeriesTeaser.svelte'
+  import { resolve } from '$app/paths'
 
   let { data } = $props()
 
@@ -27,7 +28,7 @@
     <ol class="breadcrumbList">
       <li class="breadcrumbItem">
         <a
-          href="/"
+          href={resolve('/')}
           class="homeLink breadcrumbLink"
         >
           <Home aria-label="Home" />
@@ -41,7 +42,9 @@
           />
 
           <a
-            href={breadcrumb.pathname}
+            href={resolve('/[...path]', {
+              path: breadcrumb.pathname,
+            })}
             aria-current={index === lastIndex ? 'page' : undefined}
             class="breadcrumbLink"
           >
