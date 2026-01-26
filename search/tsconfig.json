@@ -4,6 +4,7 @@
     "checkJs": true,
     "strict": true,
     "target": "ESNext",
+    "module": "esnext",
     "moduleResolution": "Bundler",
     "outDir": "dist"
   },
