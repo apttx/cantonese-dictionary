@@ -1,8 +1,8 @@
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 
-import { handler } from './handler.mjs'
-import { get_datasource, get_promisified_database } from './data_sources/sqlite_local.mjs'
+import { handler } from './handler.js'
+import { get_datasource, get_promisified_database } from './data_sources/sqlite_local.js'
 
 const sqlite_database_file_path = resolve(
   cwd(),

@@ -4,9 +4,10 @@ import { cwd } from 'node:process'
 import replace from '@rollup/plugin-replace'
 import terser from '@rollup/plugin-terser'
 import virtual from '@rollup/plugin-virtual'
+import typescript from '@rollup/plugin-typescript'
 import copy from 'rollup-plugin-copy'
 
-import { type_definitions } from './source/type_definitions.mjs'
+import { type_definitions } from './source/type_definitions.ts'
 
 const build_directory_name = 'api'
 const root_directory = resolve(cwd(), './vercel')
@@ -17,11 +18,12 @@ const sqlite_database_file_name = '_sqlite.db'
 const configuration = {
   input: 'source/vercel.mjs',
   output: {
-    file: resolve(build_directory, './handler.js'),
+    file: resolve(build_directory, './handler.ts'),
     format: 'esm',
   },
   external: ['node:fs', 'node:path', 'node:process', 'graphql-yoga', 'sqlite3'],
   plugins: [
+    typescript(),
     copy({
       targets: [
         {

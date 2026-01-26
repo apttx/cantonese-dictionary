@@ -1,8 +1,8 @@
 import { createServer } from 'node:http'
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
-import { handler } from '../source/handler.mjs'
-import { get_datasource, get_promisified_database } from '../source/data_sources/sqlite_local.mjs'
+import { handler } from '../source/handler.ts'
+import { get_datasource, get_promisified_database } from '../source/data_sources/sqlite_local.ts'
 
 const develop = async () => {
   console.info('reading files')

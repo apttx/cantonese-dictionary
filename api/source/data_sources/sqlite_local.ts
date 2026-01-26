@@ -1,28 +1,24 @@
-import sqlite3 from 'sqlite3'
+import sqlite3, { type Database } from 'sqlite3'
+import type { Phrase } from '../../../types/Phrase'
+import type { Phrases_Datasource } from '../../types/Resolver_Context'
 
-/**
- * @typedef {{
- *   id: string
- *   traditional: string
- *   simplified: string
- *   pinyin: string
- *   jyutping: string
- *   english: string
- * }} Phrases_Row
- */
+interface Phrases_Row {
+  id: string
+  traditional: string
+  simplified: string
+  pinyin: string
+  jyutping: string
+  english: string
+}
 
-/**
- * @typedef {{
- *   [key in keyof Phrases_Row as `phrase_${key}`]: Phrases_Row[key]
- * } & {
- *   [key in keyof Phrases_Row as `sense_${key}`]: Phrases_Row[key]
- * }} Phrases_Join_Phrases_Row
- */
+type Phrases_Join_Phrases_Row = {
+  [key in keyof Phrases_Row as `phrase_${key}`]: Phrases_Row[key]
+} & {
+  [key in keyof Phrases_Row as `sense_${key}`]: Phrases_Row[key]
+}
 
-/** @param {string} database_file_path */
-export const get_promisified_database = async (database_file_path) => {
-  /** @type {import('sqlite3').Database} */
-  const database = await new Promise((resolve, reject) => {
+export const get_promisified_database = async (database_file_path: string) => {
+  const database = await new Promise<Database>((resolve, reject) => {
     const database = new sqlite3.Database(database_file_path, (error) => {
       if (error) {
         return reject(error)
@@ -32,18 +28,15 @@ export const get_promisified_database = async (database_file_path) => {
     })
   })
 
-  /** @type {(sql: string, params?: any) => Promise<any[]>} */
-  const all = (sql, params) => {
-    const promise = new Promise((/** @type {(value: any[]) => void} */ resolve, reject) => {
-      const callback =
-        /** @type {(error: Error | null, result: any[]) => void} */
-        (error, result) => {
-          if (error) {
-            return reject(error)
-          }
-
-          resolve(result)
+  const all = (sql: string, params?: unknown): Promise<unknown[]> => {
+    const promise = new Promise<unknown[]>((resolve, reject) => {
+      const callback = (error: Error | null, result: unknown[]) => {
+        if (error) {
+          return reject(error)
         }
+
+        resolve(result)
+      }
 
       if (params) {
         database.all(sql, params, callback)
@@ -61,8 +54,7 @@ export const get_promisified_database = async (database_file_path) => {
   }
 }
 
-/** @type {(phrases_join_phrases_rows: Phrases_Join_Phrases_Row[]) => Phrase} */
-const get_phrase_with_senses = (senses_rows) => {
+const get_phrase_with_senses = (senses_rows: Phrases_Join_Phrases_Row[]): Phrase => {
   // includes the phrase itself
   const all_senses = senses_rows.map((senses_row) => {
     const id = senses_row.sense_id
@@ -72,8 +64,7 @@ const get_phrase_with_senses = (senses_rows) => {
     const jyutping = senses_row.sense_jyutping
     const english = senses_row.sense_english
 
-    /** @type {Phrase} */
-    const sense = {
+    const sense: Phrase = {
       id,
       traditional,
       simplified,
@@ -92,15 +83,15 @@ const get_phrase_with_senses = (senses_rows) => {
 
   // get the primary phrase. it is guaranteed to exist due to the join with the same table.
   const phrase_id = senses_rows[0].phrase_id
-  const phrase = /** @type {Phrase} */ (all_senses.find((sense) => sense.id === phrase_id))
+  const phrase = all_senses.find((sense) => sense.id === phrase_id) ?? all_senses[0]
 
   return phrase
 }
 
-/** @type {(phrases_join_phrases_rows: Phrases_Join_Phrases_Row[]) => Phrase[]} */
-const get_phrases_with_senses = (phrases_join_phrases_rows) => {
-  /** @type {Map<string, Phrases_Join_Phrases_Row[]>} */
-  const phrase_senses_map = new Map()
+const get_phrases_with_senses = (
+  phrases_join_phrases_rows: Phrases_Join_Phrases_Row[],
+): Phrase[] => {
+  const phrase_senses_map = new Map<string, Phrases_Join_Phrases_Row[]>()
   for (const phrases_join_phrases_row of phrases_join_phrases_rows) {
     if (!phrase_senses_map.has(phrases_join_phrases_row.phrase_id)) {
       phrase_senses_map.set(phrases_join_phrases_row.phrase_id, [])
@@ -116,14 +107,14 @@ const get_phrases_with_senses = (phrases_join_phrases_rows) => {
   return phrases
 }
 
-/** @param {Awaited<ReturnType<typeof get_promisified_database>>} promisified_database */
-export const get_datasource = async (promisified_database) => {
-  /** @type {Phrases_Datasource['search']} */
-  const search = async (options) => {
+export const get_datasource = async (
+  promisified_database: Awaited<ReturnType<typeof get_promisified_database>>,
+) => {
+  const search: Phrases_Datasource['search'] = async (options) => {
     const escaped_term = `"${options.term.replace(/"/g, '""')}"`
 
-    const phrases_join_phrases = /** @type {Phrases_Join_Phrases_Row[]} */ (
-      await promisified_database.all(
+    const phrases_join_phrases =
+      /** @type {Phrases_Join_Phrases_Row[]} */ await promisified_database.all(
         `SELECT
           phrases.id AS phrase_id,
           phrases.traditional AS phrase_traditional,
@@ -163,18 +154,15 @@ export const get_datasource = async (promisified_database) => {
           $term: escaped_term,
         },
       )
-    )
 
-    const phrases = get_phrases_with_senses(phrases_join_phrases)
+    const phrases = get_phrases_with_senses(phrases_join_phrases as Phrases_Join_Phrases_Row[])
 
     return phrases
   }
 
-  /** @type {Phrases_Datasource['many']} */
-  const many = async (options) => {
-    const phrases_join_phrases = /** @type {Phrases_Join_Phrases_Row[]} */ (
-      await promisified_database.all(
-        `SELECT
+  const many: Phrases_Datasource['many'] = async (options) => {
+    const phrases_join_phrases = await promisified_database.all(
+      `SELECT
           phrases.id AS phrase_id,
           phrases.traditional AS phrase_traditional,
           phrases.simplified AS phrase_simplified,
@@ -194,22 +182,19 @@ export const get_datasource = async (promisified_database) => {
           phrases AS senses
             ON phrases.sense_group_id=senses.sense_group_id
         ;`,
-        {
-          $limit: options.limit,
-        },
-      )
+      {
+        $limit: options.limit,
+      },
     )
 
-    const phrases = get_phrases_with_senses(phrases_join_phrases)
+    const phrases = get_phrases_with_senses(phrases_join_phrases as Phrases_Join_Phrases_Row[])
 
     return phrases
   }
 
-  /** @type {Phrases_Datasource['one']} */
-  const one = async (options) => {
-    const phrases_join_phrases = /** @type {Phrases_Join_Phrases_Row[]} */ (
-      await promisified_database.all(
-        `SELECT
+  const one: Phrases_Datasource['one'] = async (options) => {
+    const phrases_join_phrases = await promisified_database.all(
+      `SELECT
           phrases.id AS phrase_id,
           phrases.traditional AS phrase_traditional,
           phrases.simplified AS phrase_simplified,
@@ -229,13 +214,12 @@ export const get_datasource = async (promisified_database) => {
           phrases AS senses
             ON phrases.sense_group_id=senses.sense_group_id
         ;`,
-        {
-          $id: options.id,
-        },
-      )
+      {
+        $id: options.id,
+      },
     )
 
-    const phrase = get_phrase_with_senses(phrases_join_phrases)
+    const phrase = get_phrase_with_senses(phrases_join_phrases as Phrases_Join_Phrases_Row[])
 
     return phrase
   }
