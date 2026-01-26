@@ -1,8 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { cwd } from 'node:process'
 
-const types_directory = resolve(cwd(), './source/types/')
+const types_directory = resolve(import.meta.dirname, './types/')
 
 const file_names = ['Phrase.gql', 'Query.gql']
 const file_paths = file_names.map((file_name) => {
