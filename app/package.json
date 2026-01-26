@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "develop": "vite dev",
+    "prebuild": "svelte-kit sync",
     "build": "vite build",
     "preview": "vite preview",
-    "lint:svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "prelint:svelte": "svelte-kit sync",
+    "lint:svelte": "svelte-check --tsconfig ./tsconfig.json",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "lint": "concurrently --prefix-colors cyan,magenta,red npm:lint:prettier npm:lint:eslint npm:lint:svelte",
