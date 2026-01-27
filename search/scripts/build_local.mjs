@@ -2,7 +2,7 @@ import { resolve } from 'node:path'
 import { cwd } from 'process'
 import { mkdir, readFile, rm } from 'node:fs/promises'
 
-import { get_phrases } from './parsing.mjs'
+import { get_phrases } from './parsing.js'
 import { get_promisified_database } from './sqlite.mjs'
 
 const build_directory = 'build/'
@@ -25,7 +25,8 @@ const run = async () => {
         'simplified' VARCHAR(32),
         'english' VARCHAR(128),
         'pinyin' VARCHAR(128),
-        'jyutping' VARCHAR(128)
+        'jyutping' VARCHAR(128),
+        'ranking' INT
       );
       CREATE INDEX IF NOT EXISTS sense_group_id_index ON phrases(sense_group_id);
     `)
@@ -40,6 +41,7 @@ const run = async () => {
         english,
         pinyin,
         jyutping,
+        ranking UNINDEXED,
         content=phrases
       );
       CREATE TRIGGER insert_search_after_insert_phrases AFTER INSERT ON phrases BEGIN
@@ -71,15 +73,40 @@ const run = async () => {
       data_source_files_directory,
       './cedict_canto_readings.txt',
     )
-    const [cc_cedict_file, cc_canto_file, cc_cedict_canto_readings_file] = await Promise.all([
+    const phrases_simplified_file_path = resolve(
+      data_source_files_directory,
+      './phrases-simplified.txt',
+    )
+    const ranking_simplified_file_path = resolve(
+      data_source_files_directory,
+      './ranking-simplified.txt',
+    )
+    const ranking_traditional_file_path = resolve(
+      data_source_files_directory,
+      './ranking-traditional.txt',
+    )
+    const [
+      cc_cedict_file,
+      cc_canto_file,
+      cc_cedict_canto_readings_file,
+      phrases_simplified_file,
+      ranking_simplified_file,
+      ranking_traditional_file,
+    ] = await Promise.all([
       readFile(cc_cedict_file_path),
       readFile(cc_canto_file_path),
       readFile(cc_cedict_canto_readings_file_path),
+      readFile(phrases_simplified_file_path),
+      readFile(ranking_simplified_file_path),
+      readFile(ranking_traditional_file_path),
     ])
     const phrases = await get_phrases({
       cc_cedict_file,
       cc_canto_file,
       cc_cedict_canto_readings_file,
+      phrases_simplified_file,
+      ranking_simplified_file,
+      ranking_traditional_file,
     })
 
     // write data
@@ -98,7 +125,8 @@ const run = async () => {
           '${phrase.simplified}',
           '${escaped_english}',
           '${phrase.pinyin}',
-          '${phrase.jyutping}'
+          '${phrase.jyutping}',
+          '${phrase.ranking}'
         );
       `
 

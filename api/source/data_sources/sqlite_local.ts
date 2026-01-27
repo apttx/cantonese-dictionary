@@ -74,7 +74,7 @@ export const get_datasource = async (
               SELECT * FROM (
                 SELECT * FROM search($match) ORDER BY rank
               )
-            ) LIMIT $limit
+            ) ORDER BY ranking LIMIT $limit
           ) AS phrases
         LEFT JOIN
           phrases AS senses
@@ -110,7 +110,7 @@ export const get_datasource = async (
           senses.jyutping AS sense_jyutping,
           senses.english AS sense_english
         FROM
-          (SELECT * FROM phrases LIMIT $limit) AS phrases
+          (SELECT * FROM phrases ORDER BY ranking LIMIT $limit) AS phrases
         LEFT JOIN
           phrases AS senses
             ON phrases.sense_group_id=senses.sense_group_id
