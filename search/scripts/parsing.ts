@@ -22,6 +22,10 @@ interface Parsed_Phrase {
   senses: Parsed_Phrase[]
 }
 
+interface Ranked_Parsed_Phrase extends Parsed_Phrase {
+  ranking: number
+}
+
 const get_phrase = (line: string): Parsed_Canto_Phrase => {
   const matches = line.match(
     /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] {(?<jyutping>[^}]*)}.*$/i,
@@ -124,13 +128,93 @@ const get_phrases_from_parsed = (parsed_phrase: Parsed_Canto_Phrase): Parsed_Phr
   return phrases
 }
 
+const get_ranking_map = (content: Buffer) => {
+  const characters = content
+    .toString()
+    .split('\n')
+    .filter(is_data_line)
+    .flatMap((line) => {
+      return Array.from(line)
+    })
+  const length = characters.length
+  const ranking_map = new Map(
+    characters.map((character, index) => {
+      return [character, index / length] as const
+    }),
+  )
+
+  return ranking_map
+}
+
+const get_known_phrases = (content: Buffer) => {
+  const lines = content
+    .toString()
+    .split('\n')
+    .filter(is_data_line)
+    .map((line) => line.trim())
+
+  return new Set(lines)
+}
+
+const get_ranking_factor = (text: string) => {
+  switch (text.length) {
+    case 0:
+    case 1:
+      return 1
+    case 2:
+      return 1.5
+  }
+
+  return 1 / text.length + 0.5
+}
+
+const get_text_ranking = (options: {
+  text: string
+  ranking_map: Map<string, number>
+  known_phrases: Set<string>
+}) => {
+  const ranking_sum = Array.from(options.text).reduce((sum, character) => {
+    const character_ranking = options.ranking_map.get(character) ?? 0.5
+
+    return sum + character_ranking
+  }, 0)
+  const average_ranking = ranking_sum / options.text.length
+  const ranking_factor = get_ranking_factor(options.text)
+  const ranking = average_ranking * ranking_factor
+
+  const is_known_phrase = options.known_phrases.has(options.text)
+  if (is_known_phrase) {
+    return ranking * 2
+  }
+
+  return ranking
+}
+
+const get_phrase_ranking = (options: {
+  phrase: Parsed_Phrase
+  ranking_map: Map<string, number>
+  known_phrases: Set<string>
+}) => {
+  const simplified_ranking = get_text_ranking({
+    ...options,
+    text: options.phrase.simplified,
+  })
+  const traditional_ranking = get_text_ranking({
+    ...options,
+    text: options.phrase.traditional,
+  })
+
+  return (simplified_ranking + traditional_ranking) / 2
+}
+
 export const get_phrases = async (options: {
   cc_canto_file: Buffer
   cc_cedict_file: Buffer
   cc_cedict_canto_readings_file: Buffer
-  ranking_simplified: Buffer
-  ranking_traditional: Buffer
-}): Promise<Parsed_Phrase[]> => {
+  phrases_simplified_file: Buffer
+  ranking_simplified_file: Buffer
+  ranking_traditional_file: Buffer
+}): Promise<Ranked_Parsed_Phrase[]> => {
   const cedict_canto_readings_map = new Map<string, string>()
   for (const line of options.cc_cedict_canto_readings_file
     .toString()
@@ -190,6 +274,12 @@ export const get_phrases = async (options: {
     )
   }
 
+  const known_phrases = get_known_phrases(options.phrases_simplified_file)
+  const ranking_map = new Map([
+    ...get_ranking_map(options.ranking_simplified_file).entries(),
+    ...get_ranking_map(options.ranking_traditional_file),
+  ])
+
   const cedict_phrases = parsed_cedict_phrases_with_readings
     .map((parsed_phrase) => get_phrases_from_parsed(parsed_phrase))
     .flat()
@@ -197,17 +287,31 @@ export const get_phrases = async (options: {
     .map((parsed_phrase) => get_phrases_from_parsed(parsed_phrase))
     .flat()
 
-  const phrases: Parsed_Phrase[] = []
+  const phrases: Ranked_Parsed_Phrase[] = []
   const id_set = new Set<string>()
   for (const phrase of canto_phrases) {
     if (!id_set.has(phrase.id)) {
-      phrases.push(phrase)
+      phrases.push({
+        ...phrase,
+        ranking: get_phrase_ranking({
+          phrase,
+          known_phrases,
+          ranking_map,
+        }),
+      })
       id_set.add(phrase.id)
     }
   }
   for (const phrase of cedict_phrases) {
     if (!id_set.has(phrase.id)) {
-      phrases.push(phrase)
+      phrases.push({
+        ...phrase,
+        ranking: get_phrase_ranking({
+          phrase,
+          known_phrases,
+          ranking_map,
+        }),
+      })
       id_set.add(phrase.id)
     }
   }
