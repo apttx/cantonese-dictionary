@@ -44,10 +44,10 @@ export const load = async ({ url, fetch }) => {
   const result = await client.query(search_query, { query }, { fetch })
 
   if (!result.data?.search) {
-    error(500, result.error)
+    error(500, result.error?.message)
   }
 
-  const results = result.data.search.map((phrase) => phrase)
+  const results = result.data.search
 
   return {
     query: query_string,
