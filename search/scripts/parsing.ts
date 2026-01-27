@@ -1,34 +1,28 @@
 import { createHash } from 'node:crypto'
 import { get_english_senses } from './parsing/english'
 
-/** @typedef {`${string} ${string} [${string}] /${string}/`} Cedict_Line */
-/** @typedef {`${string} ${string} [${string}] {${string}} /${string}/`} Canto_Line */
+interface Parsed_Canto_Phrase {
+  traditional: string
+  simplified: string
+  pinyin: string
+  jyutping: string
+  english_senses: string[]
+}
 
-/**
- * @typedef {{
- *   traditional: string
- *   simplified: string
- *   pinyin: string
- *   jyutping: string
- *   english_senses: string[]
- * }} Parsed_Canto_Phrase
- */
-/** @typedef {Omit<Parsed_Canto_Phrase, 'jyutping'>} Parsed_Cedict_Phrase */
-/**
- * @typedef {{
- *   id: string
- *   sense_group_id: string
- *   traditional: string
- *   simplified: string
- *   pinyin: string
- *   jyutping: string
- *   english: string
- *   senses: Parsed_Phrase[]
- * }} Parsed_Phrase
- */
+type Parsed_Cedict_Phrase = Omit<Parsed_Canto_Phrase, 'jyutping'>
 
-/** @type {(line: Canto_Line) => Parsed_Canto_Phrase} */
-const get_phrase = (line) => {
+interface Parsed_Phrase {
+  id: string
+  sense_group_id: string
+  traditional: string
+  simplified: string
+  pinyin: string
+  jyutping: string
+  english: string
+  senses: Parsed_Phrase[]
+}
+
+const get_phrase = (line: string): Parsed_Canto_Phrase => {
   const matches = line.match(
     /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\] {(?<jyutping>[^}]*)}.*$/i,
   )
@@ -37,18 +31,15 @@ const get_phrase = (line) => {
     throw `unable to parse ${JSON.stringify(line)} [@get_phrase]`
   }
 
-  const { traditional, simplified, pinyin, jyutping } = /**
-   * @type {{
-   *   traditional: string
-   *   simplified: string
-   *   pinyin: string
-   *   jyutping: string
-   * }}
-   */ (matches.groups)
+  const { traditional, simplified, pinyin, jyutping } = matches.groups as {
+    traditional: string
+    simplified: string
+    pinyin: string
+    jyutping: string
+  }
   const english_senses = get_english_senses(line)
 
-  /** @type {Parsed_Canto_Phrase} */
-  const canto_phrase = {
+  const canto_phrase: Parsed_Canto_Phrase = {
     traditional,
     simplified,
     pinyin,
@@ -58,8 +49,7 @@ const get_phrase = (line) => {
 
   return canto_phrase
 }
-/** @type {(line: Cedict_Line) => Parsed_Cedict_Phrase} */
-const get_cedict_phrase = (line) => {
+const get_cedict_phrase = (line: string): Parsed_Cedict_Phrase => {
   const matches = line.match(
     /^(?<traditional>[^\s]*) (?<simplified>[^\s]*) \[(?<pinyin>[^\]]*)\].*$/i,
   )
@@ -68,18 +58,15 @@ const get_cedict_phrase = (line) => {
     throw `unable to parse ${JSON.stringify(line)} [@get_phrase]`
   }
 
-  const { traditional, simplified, pinyin, jyutping } = /**
-   * @type {{
-   *   traditional: string
-   *   simplified: string
-   *   pinyin: string
-   *   jyutping: string
-   * }}
-   */ (matches.groups)
+  const { traditional, simplified, pinyin, jyutping } = matches.groups as {
+    traditional: string
+    simplified: string
+    pinyin: string
+    jyutping: string
+  }
   const english_senses = get_english_senses(line)
 
-  /** @type {Parsed_Canto_Phrase} */
-  const canto_phrase = {
+  const canto_phrase: Parsed_Canto_Phrase = {
     traditional,
     simplified,
     pinyin,
@@ -91,19 +78,15 @@ const get_cedict_phrase = (line) => {
 }
 
 // empty lines & commented lines aren't data
-/** @type {(file_line: string) => boolean} */
-const is_data_line = (file_line) => !!file_line && !file_line.startsWith('#')
+const is_data_line = (file_line: string) => !!file_line && !file_line.startsWith('#')
 
-/**
- * @type {(options: {
- *   traditional: string
- *   simplified: string
- *   pinyin: string
- *   jyutping: string
- *   english?: string
- * }) => string}
- */
-const get_id = (options) => {
+const get_id = (options: {
+  traditional: string
+  simplified: string
+  pinyin: string
+  jyutping: string
+  english?: string
+}) => {
   const hash = createHash('md5')
   hash.update(Object.values(options).join(' '))
   const id = hash.digest('hex')
@@ -111,18 +94,15 @@ const get_id = (options) => {
   return id
 }
 
-/** @type {(parsed_phrase: Parsed_Canto_Phrase) => Parsed_Phrase[]} */
-const get_phrases_from_parsed = (parsed_phrase) => {
+const get_phrases_from_parsed = (parsed_phrase: Parsed_Canto_Phrase): Parsed_Phrase[] => {
   const { jyutping, pinyin, simplified, traditional } = parsed_phrase
   const sense_group_id = get_id({ jyutping, pinyin, simplified, traditional })
 
   const phrases = parsed_phrase.english_senses.map((english) => {
     const id = get_id({ jyutping, pinyin, simplified, traditional, english })
-    /** @type {Parsed_Phrase[]} */
-    const senses = []
+    const senses: Parsed_Phrase[] = []
 
-    /** @type {Parsed_Phrase} */
-    const phrase = {
+    const phrase: Parsed_Phrase = {
       id,
       sense_group_id,
       traditional,
@@ -144,16 +124,14 @@ const get_phrases_from_parsed = (parsed_phrase) => {
   return phrases
 }
 
-/**
- * @type {(options: {
- *   cc_canto_file: Buffer
- *   cc_cedict_file: Buffer
- *   cc_cedict_canto_readings_file: Buffer
- * }) => Promise<Parsed_Phrase[]>}
- */
-export const get_phrases = async (options) => {
-  /** @type {Map<string, string>} */
-  const cedict_canto_readings_map = new Map()
+export const get_phrases = async (options: {
+  cc_canto_file: Buffer
+  cc_cedict_file: Buffer
+  cc_cedict_canto_readings_file: Buffer
+  ranking_simplified: Buffer
+  ranking_traditional: Buffer
+}): Promise<Parsed_Phrase[]> => {
+  const cedict_canto_readings_map = new Map<string, string>()
   for (const line of options.cc_cedict_canto_readings_file
     .toString()
     .split('\n')
@@ -166,31 +144,28 @@ export const get_phrases = async (options) => {
       throw `unable to match syntax of canto reading ${JSON.stringify(line)} [@get_phrases]`
     }
 
-    const { traditional, simplified, pinyin, jyutping } =
-      /** @type {{ traditional: string; simplified: string; pinyin: string; jyutping: string }} */ (
-        matches.groups
-      )
+    const { traditional, simplified, pinyin, jyutping } = matches.groups as {
+      traditional: string
+      simplified: string
+      pinyin: string
+      jyutping: string
+    }
 
     const reading_key = `${traditional} ${simplified} ${pinyin}`
     cedict_canto_readings_map.set(reading_key, jyutping)
   }
 
   const canto_file_string = options.cc_canto_file.toString()
-  const canto_lines = /** @type {Canto_Line[]} */ (
-    canto_file_string.split(/[\n\r]+/).filter(is_data_line)
-  )
+  const canto_lines = canto_file_string.split(/[\n\r]+/).filter(is_data_line)
   const parsed_canto_phrases = canto_lines.map((line) => get_phrase(line))
 
   const cedict_file_string = options.cc_cedict_file.toString()
-  const cedict_lines = /** @type {Cedict_Line[]} */ (
-    cedict_file_string.split(/[\n\r]+/).filter(is_data_line)
-  )
+  const cedict_lines = cedict_file_string.split(/[\n\r]+/).filter(is_data_line)
   const parsed_cedict_phrases = cedict_lines.map((line) => get_cedict_phrase(line))
 
   const no_canto_readings = []
 
-  /** @type {Parsed_Canto_Phrase[]} */
-  const parsed_cedict_phrases_with_readings = []
+  const parsed_cedict_phrases_with_readings: Parsed_Canto_Phrase[] = []
   for (const parsed_cedict_phrase of parsed_cedict_phrases) {
     const reading_key = `${parsed_cedict_phrase.traditional} ${parsed_cedict_phrase.simplified} ${parsed_cedict_phrase.pinyin}`
     const jyutping = cedict_canto_readings_map.get(reading_key)
@@ -222,10 +197,8 @@ export const get_phrases = async (options) => {
     .map((parsed_phrase) => get_phrases_from_parsed(parsed_phrase))
     .flat()
 
-  /** @type {Parsed_Phrase[]} */
-  let phrases = []
-  /** @type {Set<string>} */
-  const id_set = new Set()
+  const phrases: Parsed_Phrase[] = []
+  const id_set = new Set<string>()
   for (const phrase of canto_phrases) {
     if (!id_set.has(phrase.id)) {
       phrases.push(phrase)
