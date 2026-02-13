@@ -136,8 +136,8 @@ importers:
         specifier: 10.1.8
         version: 10.1.8(eslint@10.0.0(jiti@1.21.0))
       eslint-plugin-svelte:
-        specifier: 3.14.0
-        version: 3.14.0(eslint@10.0.0(jiti@1.21.0))(svelte@5.50.1)(ts-node@10.9.2(@types/node@24.10.12)(typescript@5.9.3))
+        specifier: 3.15.0
+        version: 3.15.0(eslint@10.0.0(jiti@1.21.0))(svelte@5.50.1)(ts-node@10.9.2(@types/node@24.10.12)(typescript@5.9.3))
       globals:
         specifier: 17.3.0
         version: 17.3.0
@@ -1644,11 +1644,11 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@3.14.0:
-    resolution: {integrity: sha512-Isw0GvaMm0yHxAj71edAdGFh28ufYs+6rk2KlbbZphnqZAzrH3Se3t12IFh2H9+1F/jlDhBBL4oiOJmLqmYX0g==}
+  eslint-plugin-svelte@3.15.0:
+    resolution: {integrity: sha512-QKB7zqfuB8aChOfBTComgDptMf2yxiJx7FE04nneCmtQzgTHvY8UJkuh8J2Rz7KB9FFV9aTHX6r7rdYGvG8T9Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.1 || ^9.0.0
+      eslint: ^8.57.1 || ^9.0.0 || ^10.0.0
       svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
       svelte:
@@ -4426,7 +4426,7 @@ snapshots:
     dependencies:
       eslint: 10.0.0(jiti@1.21.0)
 
-  eslint-plugin-svelte@3.14.0(eslint@10.0.0(jiti@1.21.0))(svelte@5.50.1)(ts-node@10.9.2(@types/node@24.10.12)(typescript@5.9.3)):
+  eslint-plugin-svelte@3.15.0(eslint@10.0.0(jiti@1.21.0))(svelte@5.50.1)(ts-node@10.9.2(@types/node@24.10.12)(typescript@5.9.3)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.0.0(jiti@1.21.0))
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -5231,7 +5231,7 @@ snapshots:
       nopt: 5.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
-      semver: 7.7.1
+      semver: 7.7.3
       tar: 6.2.1
       which: 2.0.2
     transitivePeerDependencies:
@@ -5595,7 +5595,7 @@ snapshots:
 
   simple-update-notifier@2.0.0:
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.3
 
   sirv@3.0.1:
     dependencies:
