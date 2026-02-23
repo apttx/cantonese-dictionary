@@ -205,8 +205,8 @@ importers:
         specifier: 17.3.0
         version: 17.3.0
       nodemon:
-        specifier: 3.1.13
-        version: 3.1.13
+        specifier: 3.1.14
+        version: 3.1.14
       prettier:
         specifier: 3.8.1
         version: 3.8.1
@@ -2260,8 +2260,8 @@ packages:
   node-html-parser@7.0.2:
     resolution: {integrity: sha512-DxodLVh7a6JMkYzWyc8nBX9MaF4M0lLFYkJHlWOiu7+9/I6mwNK9u5TbAMC7qfqDJEPX9OIoWA2A9t4C2l1mUQ==}
 
-  nodemon@3.1.13:
-    resolution: {integrity: sha512-nPN6L7A9cTA3BnJ3zZIibH5FiDh3GbmibeS17bl5YEU1IRO2mcfvR0ZJXH3ndoeKItjUcaX81FSKc/Kq/IiG6g==}
+  nodemon@3.1.14:
+    resolution: {integrity: sha512-jakjZi93UtB3jHMWsXL68FXSAosbLfY0In5gtKq3niLSkrWznrVBzXFNOEMJUfc9+Ke7SHWoAZsiMkNP3vq6Jw==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -5095,7 +5095,7 @@ snapshots:
       css-select: 5.2.2
       he: 1.2.0
 
-  nodemon@3.1.13:
+  nodemon@3.1.14:
     dependencies:
       chokidar: 3.6.0
       debug: 4.4.3(supports-color@5.5.0)
