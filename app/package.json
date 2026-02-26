@@ -45,7 +45,7 @@
     "prettier-plugin-css-order": "2.2.0",
     "prettier-plugin-jsdoc": "1.8.0",
     "prettier-plugin-svelte": "3.5.0",
-    "svelte": "5.53.2",
+    "svelte": "5.53.3",
     "svelte-check": "4.4.3",
     "svelte-eslint-parser": "1.4.1",
     "typescript": "5.9.3",
