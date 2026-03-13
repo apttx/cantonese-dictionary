@@ -16,7 +16,7 @@ jobs:
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         # https://github.com/pnpm/action-setup
         with:
-          version: 10.31.0
+          version: 10.32.0
 
       - name: set up node
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
@@ -50,7 +50,7 @@ jobs:
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         # https://github.com/pnpm/action-setup
         with:
-          version: 10.31.0
+          version: 10.32.0
 
       - name: set up node
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
@@ -84,7 +84,7 @@ jobs:
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         # https://github.com/pnpm/action-setup
         with:
-          version: 10.31.0
+          version: 10.32.0
 
       - name: set up node
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
@@ -124,7 +124,7 @@ jobs:
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         # https://github.com/pnpm/action-setup
         with:
-          version: 10.31.0
+          version: 10.32.0
 
       - name: set up node
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
