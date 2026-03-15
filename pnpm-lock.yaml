@@ -97,8 +97,8 @@ importers:
         specifier: 1.58.2
         version: 1.58.2
       '@storyblok/js':
-        specifier: 5.0.0
-        version: 5.0.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)
+        specifier: 5.1.0
+        version: 5.1.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)
       '@sveltejs/adapter-vercel':
         specifier: 6.3.3
         version: 6.3.3(@sveltejs/kit@2.53.4(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.53.10)(vite@7.3.1(@types/node@24.12.0)(terser@5.46.0)(tsx@4.21.0)))(svelte@5.53.10)(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(terser@5.46.0)(tsx@4.21.0)))(encoding@0.1.13)(rollup@4.59.0)
@@ -1011,11 +1011,11 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@storyblok/js@5.0.0':
-    resolution: {integrity: sha512-p78BHasr20px01gCmdl1NNMDQaLz+cyKLCC3b/OHxrk8XLlstoNr1AuC9Io4w69nplW9gvS1pHS0z0yGHMlPqg==}
+  '@storyblok/js@5.1.0':
+    resolution: {integrity: sha512-NqhKAlEd0/jiBqy0zDuKkflJL0gKNmNiMG/qVmEAzdnhFhYcwg+tTYp/hKb9voXLYfcsN2h+KglkFJ1iiTxeDQ==}
 
-  '@storyblok/richtext@4.0.0':
-    resolution: {integrity: sha512-hR/SSpyuZkj96Fw2+ViXtxwJACHvmkQuYQoyxeahbXzYPvH61jp4PkI4Dskk2r9m5KVJkrd8Nw/+ciniqhjkYw==}
+  '@storyblok/richtext@4.1.0':
+    resolution: {integrity: sha512-rqe+KEFbOnHyZgTLzJ643y7W3BJE8ZfXWqF8bEAtboBV1YFhTmL0CmaHnSkmxdo3h8czZcwSbWxa3izWzzD4HQ==}
 
   '@sveltejs/acorn-typescript@1.0.9':
     resolution: {integrity: sha512-lVJX6qEgs/4DOcRTpo56tmKzVPtoWAaVbL4hfO7t7NVwl9AAXzQR6cihesW1BmNMPl+bK6dreu2sOKBP2Q9CIA==}
@@ -2841,8 +2841,8 @@ packages:
   std-env@3.10.0:
     resolution: {integrity: sha512-5GS12FdOZNliM5mAOxFRg7Ir0pWz8MdpYm6AY6VPkGpbA7ZzmbzNcBJQ0GPvvyWgcY7QAhCgf9Uy89I03faLkg==}
 
-  storyblok-js-client@7.2.4:
-    resolution: {integrity: sha512-4ekSIFYY+7nv9XOkN0JUmlZhEEPaJV8OCsf0cRlh41lM0jNHE4qYoA34RGClKer+/f2QdfNASgNf31PrhpLt5A==}
+  storyblok-js-client@7.3.0:
+    resolution: {integrity: sha512-7mkPhpOQcQInP+fbxw0hUzfON5+h1YF6BB7rB7CI8a+1luH3k6t/URazmKvma87RtT0LBzPyid0+kj0KwBU6lg==}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -3793,17 +3793,17 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@storyblok/js@5.0.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)':
+  '@storyblok/js@5.1.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)':
     dependencies:
-      '@storyblok/richtext': 4.0.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)
-      storyblok-js-client: 7.2.4
+      '@storyblok/richtext': 4.1.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)
+      storyblok-js-client: 7.3.0
     transitivePeerDependencies:
       - '@tiptap/pm'
       - '@tiptap/suggestion'
       - emojibase
       - happy-dom
 
-  '@storyblok/richtext@4.0.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)':
+  '@storyblok/richtext@4.1.0(@tiptap/pm@3.20.1)(@tiptap/suggestion@3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1))(emojibase@17.0.0)(happy-dom@20.8.3)':
     dependencies:
       '@tiptap/core': 3.20.1(@tiptap/pm@3.20.1)
       '@tiptap/extension-blockquote': 3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))
@@ -3831,7 +3831,7 @@ snapshots:
       '@tiptap/extension-underline': 3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))
       '@tiptap/html': 3.20.1(@tiptap/core@3.20.1(@tiptap/pm@3.20.1))(@tiptap/pm@3.20.1)(happy-dom@20.8.3)
       markdown-it: 14.1.1
-      storyblok-js-client: 7.2.4
+      storyblok-js-client: 7.3.0
     transitivePeerDependencies:
       - '@tiptap/pm'
       - '@tiptap/suggestion'
@@ -5968,7 +5968,7 @@ snapshots:
 
   std-env@3.10.0: {}
 
-  storyblok-js-client@7.2.4: {}
+  storyblok-js-client@7.3.0: {}
 
   string-width@4.2.3:
     dependencies:
