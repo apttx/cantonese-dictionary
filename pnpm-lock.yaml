@@ -196,8 +196,8 @@ importers:
         specifier: 9.2.1
         version: 9.2.1
       dotenv:
-        specifier: 17.4.1
-        version: 17.4.1
+        specifier: 17.4.2
+        version: 17.4.2
       eslint:
         specifier: 10.2.0
         version: 10.2.0
@@ -1784,8 +1784,8 @@ packages:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
 
-  dotenv@17.4.1:
-    resolution: {integrity: sha512-k8DaKGP6r1G30Lx8V4+pCsLzKr8vLmV2paqEj1Y55GdAgJuIqpRp5FfajGF8KtwMxCz9qJc6wUIJnm053d/WCw==}
+  dotenv@17.4.2:
+    resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
     engines: {node: '>=12'}
 
   emoji-regex@10.6.0:
@@ -4720,7 +4720,7 @@ snapshots:
     dependencies:
       path-type: 4.0.0
 
-  dotenv@17.4.1: {}
+  dotenv@17.4.2: {}
 
   emoji-regex@10.6.0: {}
 
