@@ -29,7 +29,7 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@libsql/client": "0.17.2",
+    "@libsql/client": "0.17.3",
     "@typescript-eslint/parser": "8.59.0",
     "concurrently": "9.2.1",
     "dotenv": "17.4.2",
