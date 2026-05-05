@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "8.59.1",
     "concurrently": "9.2.1",
     "eslint": "10.3.0",
-    "globals": "17.5.0",
+    "globals": "17.6.0",
     "prettier": "3.8.3",
     "prettier-plugin-jsdoc": "1.8.0",
     "rollup": "4.60.2",
