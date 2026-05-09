@@ -125,7 +125,7 @@ importers:
         version: 66.6.8
       '@urql/core':
         specifier: 6.0.1
-        version: 6.0.1(graphql@16.13.2)
+        version: 6.0.1(graphql@16.14.0)
       concurrently:
         specifier: 9.2.1
         version: 9.2.1
@@ -142,8 +142,8 @@ importers:
         specifier: 17.6.0
         version: 17.6.0
       graphql:
-        specifier: 16.13.2
-        version: 16.13.2
+        specifier: 16.14.0
+        version: 16.14.0
       prettier:
         specifier: 3.8.3
         version: 3.8.3
@@ -2032,6 +2032,10 @@ packages:
     resolution: {integrity: sha512-5bJ+nf/UCpAjHM8i06fl7eLyVC9iuNAjm9qzkiu2ZGhM0VscSvS6WDPfAwkdkBuoXGM9FJSbKl6wylMwP9Ktig==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
+  graphql@16.14.0:
+    resolution: {integrity: sha512-BBvQ/406p+4CZbTpCbVPSxfzrZrbnuWSP1ELYgyS6B+hNeKzgrdB4JczCa5VZUBQrDa9hUngm0KnexY6pJRN5Q==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+
   happy-dom@20.9.0:
     resolution: {integrity: sha512-GZZ9mKe8r646NUAf/zemnGbjYh4Bt8/MqASJY+pSm5ZDtc3YQox+4gsLI7yi1hba6o+eCsGxpHn5+iEVn31/FQ==}
     engines: {node: '>=20.0.0'}
@@ -3175,9 +3179,9 @@ packages:
 
 snapshots:
 
-  '@0no-co/graphql.web@1.2.0(graphql@16.13.2)':
+  '@0no-co/graphql.web@1.2.0(graphql@16.14.0)':
     optionalDependencies:
-      graphql: 16.13.2
+      graphql: 16.14.0
 
   '@antfu/install-pkg@1.1.0':
     dependencies:
@@ -4206,9 +4210,9 @@ snapshots:
 
   '@unocss/reset@66.6.8': {}
 
-  '@urql/core@6.0.1(graphql@16.13.2)':
+  '@urql/core@6.0.1(graphql@16.14.0)':
     dependencies:
-      '@0no-co/graphql.web': 1.2.0(graphql@16.13.2)
+      '@0no-co/graphql.web': 1.2.0(graphql@16.14.0)
       wonka: 6.3.6
     transitivePeerDependencies:
       - graphql
@@ -4857,6 +4861,8 @@ snapshots:
       tslib: 2.8.1
 
   graphql@16.13.2: {}
+
+  graphql@16.14.0: {}
 
   happy-dom@20.9.0:
     dependencies:
