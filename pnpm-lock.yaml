@@ -97,8 +97,8 @@ importers:
         specifier: 1.60.0
         version: 1.60.0
       '@storyblok/js':
-        specifier: 5.1.4
-        version: 5.1.4
+        specifier: 5.1.5
+        version: 5.1.5
       '@sveltejs/adapter-vercel':
         specifier: 6.3.3
         version: 6.3.3(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.5(@typescript-eslint/types@8.59.3))(vite@8.0.12(@types/node@24.12.4)(esbuild@0.27.7)(terser@5.47.1)(tsx@4.21.0)))(svelte@5.55.5(@typescript-eslint/types@8.59.3))(typescript@6.0.3)(vite@8.0.12(@types/node@24.12.4)(esbuild@0.27.7)(terser@5.47.1)(tsx@4.21.0)))(rollup@4.60.3)
@@ -1117,11 +1117,11 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@storyblok/js@5.1.4':
-    resolution: {integrity: sha512-YK+Fb7t7bAQu2VlFO/6eWxOYx8JOGcsi8V5pePy2ZbrkCBGyQ+m09RFloFsJ4ytUvQelM0jo7+gYemk+cLST6g==}
+  '@storyblok/js@5.1.5':
+    resolution: {integrity: sha512-OTbu4eFFt7WRLBF5QhS09CvVo1/Cfd7xM1rpNnHJ1x66dc8v5+px5PBJEbr6+gkxTrE7GKs2POF2f0qwAvYA0w==}
 
-  '@storyblok/richtext@4.2.1':
-    resolution: {integrity: sha512-KXUroIhd6SheelujnTX7g5ArUwf1FNPHHrfYnGELtlFhADmfUOrn87OmY6EZ78m2dUbecxALK4daCFCcyxxnsg==}
+  '@storyblok/richtext@4.3.0':
+    resolution: {integrity: sha512-LClkQkPt35ZTMSU3TJhAIx0rAp1VA1lQm1whwQc0a/eTTeZa5kZj5AMxiipCzyUkeJvfsGm84qkZy1iqNbMMvQ==}
 
   '@sveltejs/acorn-typescript@1.0.9':
     resolution: {integrity: sha512-lVJX6qEgs/4DOcRTpo56tmKzVPtoWAaVbL4hfO7t7NVwl9AAXzQR6cihesW1BmNMPl+bK6dreu2sOKBP2Q9CIA==}
@@ -3818,15 +3818,15 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@storyblok/js@5.1.4':
+  '@storyblok/js@5.1.5':
     dependencies:
-      '@storyblok/richtext': 4.2.1
+      '@storyblok/richtext': 4.3.0
       storyblok-js-client: 7.3.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@storyblok/richtext@4.2.1':
+  '@storyblok/richtext@4.3.0':
     dependencies:
       '@tiptap/core': 3.23.1(@tiptap/pm@3.23.1)
       '@tiptap/extension-blockquote': 3.23.1(@tiptap/core@3.23.1(@tiptap/pm@3.23.1))
