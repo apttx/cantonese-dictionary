@@ -52,7 +52,7 @@
     "typescript-eslint": "8.59.4",
     "unplugin-icons": "23.0.1",
     "vite": "8.0.13",
-    "vitest": "4.1.6"
+    "vitest": "4.1.7"
   },
   "type": "module",
   "dependencies": {
