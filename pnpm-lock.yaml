@@ -54,8 +54,8 @@ importers:
         specifier: 3.8.3
         version: 3.8.3
       prettier-plugin-jsdoc:
-        specifier: 1.8.0
-        version: 1.8.0(prettier@3.8.3)
+        specifier: 1.8.1
+        version: 1.8.1(prettier@3.8.3)
       rollup:
         specifier: 4.60.4
         version: 4.60.4
@@ -151,8 +151,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(postcss@8.5.15)(prettier@3.8.3)
       prettier-plugin-jsdoc:
-        specifier: 1.8.0
-        version: 1.8.0(prettier@3.8.3)
+        specifier: 1.8.1
+        version: 1.8.1(prettier@3.8.3)
       prettier-plugin-svelte:
         specifier: 4.0.1
         version: 4.0.1(prettier@3.8.3)(svelte@5.55.10(@typescript-eslint/types@8.60.0))
@@ -211,8 +211,8 @@ importers:
         specifier: 3.8.3
         version: 3.8.3
       prettier-plugin-jsdoc:
-        specifier: 1.8.0
-        version: 1.8.0(prettier@3.8.3)
+        specifier: 1.8.1
+        version: 1.8.1(prettier@3.8.3)
       sqlite3:
         specifier: 6.0.1
         version: 6.0.1
@@ -2585,8 +2585,8 @@ packages:
     peerDependencies:
       prettier: 3.x
 
-  prettier-plugin-jsdoc@1.8.0:
-    resolution: {integrity: sha512-byW8EBZ1DSA3CPdDGBXfcdqqhh2eq0+HlIOPTGZ6rf9O2p/AwBmtS0e49ot5ZeOdcszj81FyzbyHr/VS0eYpCg==}
+  prettier-plugin-jsdoc@1.8.1:
+    resolution: {integrity: sha512-XuMqBWTc3b/8eCOe+OlZlFy9Z413a7WOmF4i5hDGtjbtIFOdvRrVtGjXR2Feye3TrLWhkkkHheNXPTyYKxw3nA==}
     engines: {node: '>=14.13.1 || >=16.0.0'}
     peerDependencies:
       prettier: ^3.0.0
@@ -5453,7 +5453,7 @@ snapshots:
     transitivePeerDependencies:
       - postcss
 
-  prettier-plugin-jsdoc@1.8.0(prettier@3.8.3):
+  prettier-plugin-jsdoc@1.8.1(prettier@3.8.3):
     dependencies:
       binary-searching: 2.0.5
       comment-parser: 1.4.7
