@@ -35,7 +35,7 @@
     "concurrently": "10.0.3",
     "eslint": "10.4.1",
     "globals": "17.6.0",
-    "prettier": "3.8.3",
+    "prettier": "3.8.4",
     "prettier-plugin-jsdoc": "1.8.1",
     "rollup": "4.61.1",
     "rollup-plugin-copy": "3.5.0",
