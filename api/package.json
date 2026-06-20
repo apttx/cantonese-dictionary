@@ -20,7 +20,7 @@
   "author": "aptt",
   "license": "GPL-3.0",
   "dependencies": {
-    "graphql": "^16.10.0",
+    "graphql": "^17.0.0",
     "graphql-yoga": "^5.13.4",
     "sqlite3": "^6.0.0"
   },
