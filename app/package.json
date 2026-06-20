@@ -24,7 +24,7 @@
     "@fontsource/noto-sans-sc": "5.2.9",
     "@fontsource/noto-serif-sc": "5.2.9",
     "@iconify-json/mingcute": "1.2.7",
-    "@playwright/test": "1.60.0",
+    "@playwright/test": "1.61.0",
     "@storyblok/js": "5.1.10",
     "@sveltejs/adapter-vercel": "6.3.3",
     "@sveltejs/kit": "2.65.2",
