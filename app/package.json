@@ -34,7 +34,7 @@
     "@types/node": "24.13.2",
     "@typescript-eslint/parser": "8.61.1",
     "@unocss/reset": "66.7.2",
-    "@urql/core": "6.0.2",
+    "@urql/core": "6.0.3",
     "concurrently": "10.0.3",
     "eslint": "10.5.0",
     "eslint-config-prettier": "10.1.8",
