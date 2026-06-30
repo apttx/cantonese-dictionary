@@ -41,7 +41,7 @@
     "eslint-plugin-svelte": "3.20.0",
     "globals": "17.7.0",
     "graphql": "17.0.1",
-    "prettier": "3.8.5",
+    "prettier": "3.9.0",
     "prettier-plugin-css-order": "2.2.0",
     "prettier-plugin-jsdoc": "1.8.1",
     "prettier-plugin-svelte": "4.1.1",
