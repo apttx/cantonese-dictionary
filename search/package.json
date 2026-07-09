@@ -30,7 +30,7 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@libsql/client": "0.17.4",
-    "@typescript-eslint/parser": "8.62.1",
+    "@typescript-eslint/parser": "8.63.0",
     "concurrently": "10.0.3",
     "dotenv": "17.4.2",
     "eslint": "10.6.0",
@@ -41,7 +41,7 @@
     "sqlite3": "6.0.1",
     "tsx": "4.23.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.62.1",
+    "typescript-eslint": "8.63.0",
     "vitest": "4.1.10"
   }
 }
