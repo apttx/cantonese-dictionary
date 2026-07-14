@@ -33,7 +33,7 @@
     "@rollup/plugin-virtual": "3.0.2",
     "@typescript-eslint/parser": "8.63.0",
     "concurrently": "10.0.3",
-    "eslint": "10.6.0",
+    "eslint": "10.7.0",
     "globals": "17.7.0",
     "prettier": "3.9.5",
     "prettier-plugin-jsdoc": "1.8.1",
