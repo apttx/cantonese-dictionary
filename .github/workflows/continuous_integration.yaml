@@ -9,7 +9,7 @@ jobs:
     if: github.ref == 'refs/heads/default'
     steps:
       - name: checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         # https://github.com/actions/checkout
 
       - name: set up pnpm
@@ -43,7 +43,7 @@ jobs:
       REMOTE_DATABASE_AUTH_TOKEN: ${{ secrets.REMOTE_DATABASE_AUTH_TOKEN }}
     steps:
       - name: checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         # https://github.com/actions/checkout
 
       - name: set up pnpm
@@ -77,7 +77,7 @@ jobs:
       REMOTE_DATABASE_AUTH_TOKEN: ${{ secrets.REMOTE_DATABASE_AUTH_TOKEN }}
     steps:
       - name: checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         # https://github.com/actions/checkout
 
       - name: set up pnpm
@@ -117,7 +117,7 @@ jobs:
       REMOTE_DATABASE_AUTH_TOKEN: ${{ secrets.REMOTE_DATABASE_AUTH_TOKEN }}
     steps:
       - name: checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         # https://github.com/actions/checkout
 
       - name: set up pnpm
