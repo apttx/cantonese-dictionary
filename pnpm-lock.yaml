@@ -79,17 +79,17 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(eslint@10.7.0)
       '@fontsource/dm-sans':
-        specifier: 5.2.8
-        version: 5.2.8
+        specifier: 5.3.0
+        version: 5.3.0
       '@fontsource/ma-shan-zheng':
-        specifier: 5.2.9
-        version: 5.2.9
+        specifier: 5.3.0
+        version: 5.3.0
       '@fontsource/noto-sans-sc':
-        specifier: 5.2.9
-        version: 5.2.9
+        specifier: 5.3.0
+        version: 5.3.0
       '@fontsource/noto-serif-sc':
-        specifier: 5.2.9
-        version: 5.2.9
+        specifier: 5.3.0
+        version: 5.3.0
       '@iconify-json/mingcute':
         specifier: 1.2.7
         version: 1.2.7
@@ -474,17 +474,17 @@ packages:
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
 
-  '@fontsource/dm-sans@5.2.8':
-    resolution: {integrity: sha512-tlovG42m9ESG28WiHpLq3F5umAlm64rv0RkqTbYowRn70e9OlRr5a3yTJhrhrY+k5lftR/OFJjPzOLQzk8EfCA==}
+  '@fontsource/dm-sans@5.3.0':
+    resolution: {integrity: sha512-lYJtMXXO28q1z+yz+z8XKd0s4hXaa9QdkETzkyD760sidCv5heI86weYA0sx0Nc4pAMAQTUuyf4gO44cYKKS9g==}
 
-  '@fontsource/ma-shan-zheng@5.2.9':
-    resolution: {integrity: sha512-5Pvpb5q6sq00/g+yLLE8iYWcsAqnoIqCloBsjN0bphkGWU3Wp3EfT0CgTsKOiLsPM8GN3AUP0ZaFM2/JR33C/g==}
+  '@fontsource/ma-shan-zheng@5.3.0':
+    resolution: {integrity: sha512-3p0aUEYOFBa4mvHIRDksZZ9Uf35jQdq5mpwp6NZHiNYt/jDj/g83OwTAWjzy+9ZJAxYC9NLLobIKuW1BEcnv0Q==}
 
-  '@fontsource/noto-sans-sc@5.2.9':
-    resolution: {integrity: sha512-bTUIWGBgJDpwi5qAr+x0/lcgv80IHTB9vl6s2f6EymZEa7qYV99yNRBZuKFT+SYDKVunZrjCEhWtpxqmbXWl5Q==}
+  '@fontsource/noto-sans-sc@5.3.0':
+    resolution: {integrity: sha512-HeqIlGm0+ohOKxZLuHj1qW6r6avHH0OWdKERAcSDI0RQ+MXrteuLKA+M+5eOA8rYy0MFvOR5AT0fQo2rUkye0Q==}
 
-  '@fontsource/noto-serif-sc@5.2.9':
-    resolution: {integrity: sha512-+wosdNmyrtRjnqJ/4A6i99jApm6ye34n8Nh7jUO3P/+6Hd1ZBY1gB9yGaI5jVxb56RS1lM2kTc0DzX1ifRO2MA==}
+  '@fontsource/noto-serif-sc@5.3.0':
+    resolution: {integrity: sha512-0/zaEFkidiWldE62rTeD74x8ygUsQvejiSNtO0LQxQk3qpaHnlMZ3w4C7yH80B4KTIg8VKeFP4oSgwWMchY9+g==}
 
   '@graphql-tools/executor@1.5.4':
     resolution: {integrity: sha512-6CdAENBTtVIXmOoJWJvYNFpE0b8zzwAMZ+VGkyLY2QT5dRGCjZTnGpDIFtxQa8IvRjnPpY3iUptgPlqTLOw3VA==}
@@ -3202,13 +3202,13 @@ snapshots:
 
   '@floating-ui/utils@0.2.11': {}
 
-  '@fontsource/dm-sans@5.2.8': {}
+  '@fontsource/dm-sans@5.3.0': {}
 
-  '@fontsource/ma-shan-zheng@5.2.9': {}
+  '@fontsource/ma-shan-zheng@5.3.0': {}
 
-  '@fontsource/noto-sans-sc@5.2.9': {}
+  '@fontsource/noto-sans-sc@5.3.0': {}
 
-  '@fontsource/noto-serif-sc@5.2.9': {}
+  '@fontsource/noto-serif-sc@5.3.0': {}
 
   '@graphql-tools/executor@1.5.4(graphql@17.0.2)':
     dependencies:
