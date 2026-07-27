@@ -31,7 +31,7 @@
     "@eslint/js": "10.0.1",
     "@libsql/client": "0.17.4",
     "@typescript-eslint/parser": "8.65.0",
-    "concurrently": "10.0.3",
+    "concurrently": "10.0.4",
     "dotenv": "17.4.2",
     "eslint": "10.7.0",
     "globals": "17.7.0",
