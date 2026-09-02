@@ -82,8 +82,8 @@ importers:
         specifier: 5.3.0
         version: 5.3.0
       '@fontsource/ma-shan-zheng':
-        specifier: 5.3.0
-        version: 5.3.0
+        specifier: 5.3.1
+        version: 5.3.1
       '@fontsource/noto-sans-sc':
         specifier: 5.3.0
         version: 5.3.0
@@ -468,8 +468,8 @@ packages:
   '@fontsource/dm-sans@5.3.0':
     resolution: {integrity: sha512-lYJtMXXO28q1z+yz+z8XKd0s4hXaa9QdkETzkyD760sidCv5heI86weYA0sx0Nc4pAMAQTUuyf4gO44cYKKS9g==}
 
-  '@fontsource/ma-shan-zheng@5.3.0':
-    resolution: {integrity: sha512-3p0aUEYOFBa4mvHIRDksZZ9Uf35jQdq5mpwp6NZHiNYt/jDj/g83OwTAWjzy+9ZJAxYC9NLLobIKuW1BEcnv0Q==}
+  '@fontsource/ma-shan-zheng@5.3.1':
+    resolution: {integrity: sha512-cGGn7Yje2RSduXVxEk+rCfNZyD/T/7FMGj03LNPiK8TRL9Sing0tq1zJF3n+W29szPqgb2RNs5oIvmm+ikeI+Q==}
 
   '@fontsource/noto-sans-sc@5.3.0':
     resolution: {integrity: sha512-HeqIlGm0+ohOKxZLuHj1qW6r6avHH0OWdKERAcSDI0RQ+MXrteuLKA+M+5eOA8rYy0MFvOR5AT0fQo2rUkye0Q==}
@@ -3170,7 +3170,7 @@ snapshots:
 
   '@fontsource/dm-sans@5.3.0': {}
 
-  '@fontsource/ma-shan-zheng@5.3.0': {}
+  '@fontsource/ma-shan-zheng@5.3.1': {}
 
   '@fontsource/noto-sans-sc@5.3.0': {}
 
