@@ -20,7 +20,7 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@fontsource/dm-sans": "5.3.0",
-    "@fontsource/ma-shan-zheng": "5.3.0",
+    "@fontsource/ma-shan-zheng": "5.3.1",
     "@fontsource/noto-sans-sc": "5.3.0",
     "@fontsource/noto-serif-sc": "5.3.0",
     "@iconify-json/mingcute": "1.2.8",
