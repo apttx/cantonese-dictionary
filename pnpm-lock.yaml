@@ -97,8 +97,8 @@ importers:
         specifier: 1.62.1
         version: 1.62.1
       '@storyblok/js':
-        specifier: 5.1.10
-        version: 5.1.10(@floating-ui/dom@1.8.0)
+        specifier: 6.3.2
+        version: 6.3.2(@floating-ui/dom@1.8.0)
       '@sveltejs/adapter-vercel':
         specifier: 6.3.4
         version: 6.3.4(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(terser@5.51.2)(tsx@4.23.13)))(svelte@5.57.0(@typescript-eslint/types@8.69.0))(typescript@6.0.3)(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(terser@5.51.2)(tsx@4.23.13)))(rollup@4.63.1)
@@ -963,11 +963,14 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@storyblok/js@5.1.10':
-    resolution: {integrity: sha512-cpiOSizLol8fPiiCLyNfy2Z18mzJDT2YD/WmmEEg+HdqBSx84r+GjdtfOfUo9KGe76tXv676amh6RW/bi9PBSw==}
+  '@storyblok/js@6.3.2':
+    resolution: {integrity: sha512-EHgsPbL4oeAOj+ijzX1mEjZuwe2H6Ua7AgDod2N9eofLf4YoLBFG34YwV2IM5POChjhlywT5cfrPiVAQUVK8Fg==}
 
-  '@storyblok/richtext@4.3.5':
-    resolution: {integrity: sha512-CSJUf+r6mjv4X6xvn2k9NWNfFoQ+FlWoubcp3Lmg5pIcK8CnJHICSgEBfiIqTzx4dgsAPF06OXaMEWyTTy9kMw==}
+  '@storyblok/preview-bridge@2.3.0':
+    resolution: {integrity: sha512-AeWDJljta1eyF0ZizVxxro9DszOlzCYH4QQ+WC6JE43sfzGgPUNBLZQF+6BqIAqs6FbPmoqY7f/qUXF17UCjAA==}
+
+  '@storyblok/richtext@5.3.0':
+    resolution: {integrity: sha512-UiJggZqBV7X4jg8/Z5I+WSFgnoIeobrx42K7BelvK9V0kXxY8hkpalcwcr1zE7HgRgeDF+jW0QPbtnYWY2jYgQ==}
 
   '@sveltejs/acorn-typescript@1.0.13':
     resolution: {integrity: sha512-wgKggnhZVL9Bfx1OaKKTrYY9BFRk6C8UAkQNUcIv1+llzYrIqy+RZm5HPKzn0NpEBvTVhTqB4kQyllZywsRBRQ==}
@@ -1033,13 +1036,6 @@ packages:
     resolution: {integrity: sha512-0dCt8eBo4sMtw+LjUu+0GF0JrTlREROdWoy8TM5kFPxJ5ZU2LKDiROXDPwXStaaoFFR/aStLH9xSpdz7cHUiUA==}
     peerDependencies:
       '@tiptap/core': 3.30.5
-
-  '@tiptap/extension-details@3.30.5':
-    resolution: {integrity: sha512-HV4k40xsLLxu30yZ+A9I9ybt+IBkYgOyrOKQUFCuCxR//O/b4ejMTTxwMPd3TPi4+3arDF0xuPp5u37ouJXGEw==}
-    peerDependencies:
-      '@tiptap/core': 3.30.5
-      '@tiptap/extension-text-style': 3.30.5
-      '@tiptap/pm': 3.30.5
 
   '@tiptap/extension-document@3.30.5':
     resolution: {integrity: sha512-4mKoD3bBr5W2AQ2Y/7amOqcVw0eqJbUwRtwvxypeo5Hi0PB9O5Ev8P05c3EUTo10bllqdKYXGeCU5AcgdQsHWQ==}
@@ -1123,11 +1119,6 @@ packages:
     peerDependencies:
       '@tiptap/core': 3.30.5
       '@tiptap/pm': 3.30.5
-
-  '@tiptap/extension-text-align@3.30.5':
-    resolution: {integrity: sha512-nRiAXqfpnuYkxOTFmK09vKf0Obv+yYA6UvmQ2yhjaThf7/i+ncxAbmxWttAV8GEy2fGpuXxkJYtIgDXXN7tVPg==}
-    peerDependencies:
-      '@tiptap/core': 3.30.5
 
   '@tiptap/extension-text-style@3.30.5':
     resolution: {integrity: sha512-libXk+nSBOQmUiKneMegnipSVz7n/YfCuSVUxXn4LjAdD9zdpWgH2uBXbxo2q211dA7KxJyUhkPGoCpG0RmPQA==}
@@ -2495,6 +2486,9 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  pure-parse@0.0.0-beta.8:
+    resolution: {integrity: sha512-9i10sb9eVsQ3RioUa8M5Y96HKW2Nw181xRdBDIwwkff9mOc4RxswXVfy2+76OgwOi6p0f8EqxlMZeK1paHfE2g==}
+
   quansync@0.2.11:
     resolution: {integrity: sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==}
 
@@ -2634,8 +2628,8 @@ packages:
   std-env@4.2.0:
     resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
 
-  storyblok-js-client@7.6.1:
-    resolution: {integrity: sha512-vwViT+Rehe6o0INeNL4KbdO00j/QCqrD/Dubvl9JLZtufmptJyT7DzXC9HQg//9JfyAYmfaizf4CH5Rrrgvtwg==}
+  storyblok-js-client@7.7.6:
+    resolution: {integrity: sha512-i0eIgMsPORN82Zn+rGztOk+lPd9YVCXuuJARmLBSLB+QSGV8QyPGNqSJey8JCCw/k5Y82q1iraTOSGmn26Q+rg==}
 
   string-width@7.2.0:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
@@ -3549,23 +3543,27 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@storyblok/js@5.1.10(@floating-ui/dom@1.8.0)':
+  '@storyblok/js@6.3.2(@floating-ui/dom@1.8.0)':
     dependencies:
-      '@storyblok/richtext': 4.3.5(@floating-ui/dom@1.8.0)
-      storyblok-js-client: 7.6.1
+      '@storyblok/preview-bridge': 2.3.0
+      '@storyblok/richtext': 5.3.0(@floating-ui/dom@1.8.0)
+      storyblok-js-client: 7.7.6
     transitivePeerDependencies:
       - '@floating-ui/dom'
       - bufferutil
       - utf-8-validate
 
-  '@storyblok/richtext@4.3.5(@floating-ui/dom@1.8.0)':
+  '@storyblok/preview-bridge@2.3.0':
+    dependencies:
+      pure-parse: 0.0.0-beta.8
+
+  '@storyblok/richtext@5.3.0(@floating-ui/dom@1.8.0)':
     dependencies:
       '@tiptap/core': 3.30.5(@tiptap/pm@3.30.5)
       '@tiptap/extension-blockquote': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/pm@3.30.5)
       '@tiptap/extension-bold': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
       '@tiptap/extension-code': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
       '@tiptap/extension-code-block': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/pm@3.30.5)
-      '@tiptap/extension-details': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/extension-text-style@3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5)))(@tiptap/pm@3.30.5)
       '@tiptap/extension-document': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
       '@tiptap/extension-emoji': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/pm@3.30.5)(@tiptap/suggestion@3.30.5(@floating-ui/dom@1.8.0)(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/pm@3.30.5))(emojibase@17.0.0)
       '@tiptap/extension-hard-break': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
@@ -3582,7 +3580,6 @@ snapshots:
       '@tiptap/extension-superscript': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/pm@3.30.5)
       '@tiptap/extension-table': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/pm@3.30.5)
       '@tiptap/extension-text': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
-      '@tiptap/extension-text-align': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
       '@tiptap/extension-text-style': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
       '@tiptap/extension-underline': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
       '@tiptap/html': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/pm@3.30.5)(happy-dom@20.12.0)
@@ -3591,7 +3588,6 @@ snapshots:
       emojibase: 17.0.0
       happy-dom: 20.12.0
       markdown-it: 14.3.1
-      storyblok-js-client: 7.6.1
     transitivePeerDependencies:
       - '@floating-ui/dom'
       - bufferutil
@@ -3663,12 +3659,6 @@ snapshots:
   '@tiptap/extension-code@3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))':
     dependencies:
       '@tiptap/core': 3.30.5(@tiptap/pm@3.30.5)
-
-  '@tiptap/extension-details@3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))(@tiptap/extension-text-style@3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5)))(@tiptap/pm@3.30.5)':
-    dependencies:
-      '@tiptap/core': 3.30.5(@tiptap/pm@3.30.5)
-      '@tiptap/extension-text-style': 3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))
-      '@tiptap/pm': 3.30.5
 
   '@tiptap/extension-document@3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))':
     dependencies:
@@ -3743,10 +3733,6 @@ snapshots:
     dependencies:
       '@tiptap/core': 3.30.5(@tiptap/pm@3.30.5)
       '@tiptap/pm': 3.30.5
-
-  '@tiptap/extension-text-align@3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))':
-    dependencies:
-      '@tiptap/core': 3.30.5(@tiptap/pm@3.30.5)
 
   '@tiptap/extension-text-style@3.30.5(@tiptap/core@3.30.5(@tiptap/pm@3.30.5))':
     dependencies:
@@ -5258,6 +5244,8 @@ snapshots:
 
   punycode@2.3.1: {}
 
+  pure-parse@0.0.0-beta.8: {}
+
   quansync@0.2.11: {}
 
   queue-microtask@1.2.3: {}
@@ -5431,7 +5419,7 @@ snapshots:
 
   std-env@4.2.0: {}
 
-  storyblok-js-client@7.6.1: {}
+  storyblok-js-client@7.7.6: {}
 
   string-width@7.2.0:
     dependencies:
