@@ -121,8 +121,8 @@ importers:
         specifier: 8.70.0
         version: 8.70.0(eslint@10.10.0)(typescript@6.0.3)
       '@unocss/reset':
-        specifier: 66.10.4
-        version: 66.10.4
+        specifier: 66.10.5
+        version: 66.10.5
       '@urql/core':
         specifier: 6.0.3
         version: 6.0.3(graphql@17.0.2)
@@ -1295,8 +1295,8 @@ packages:
     resolution: {integrity: sha512-BoC8PiO4Hkdo0TVJh9Ntxr5MxPDI7/oFsrygN5ADelFSeXG/qgNuucIGA+L5Z6JpPTE/uRfcTWtscjbUaufepQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@unocss/reset@66.10.4':
-    resolution: {integrity: sha512-XW3wZXdjHSsKqBCMrTasl5EeIzypFeFtM69lHszAFF6lk+EDg312mnvuT7vb1UhEbMl0cgq1j7lysxKRKe+keQ==}
+  '@unocss/reset@66.10.5':
+    resolution: {integrity: sha512-AElCFeXaK+3a8LX1obMSmhYhhlRKDXXVngn0Kse7XwxHOItQqpncTU6ZKUeNNGmeoE0Vwc6MfrLw6eGE7EEpgw==}
 
   '@urql/core@6.0.3':
     resolution: {integrity: sha512-0F39XWR21+IVLJfsqBvLShvoSzxT6h6wWXwrDhN8j9J+IEVOpQIUNHwpgjsp+2ePzn9aCH+rpDonn3HOAUnn9A==}
@@ -4006,7 +4006,7 @@ snapshots:
       '@typescript-eslint/types': 8.70.0
       eslint-visitor-keys: 5.0.1
 
-  '@unocss/reset@66.10.4': {}
+  '@unocss/reset@66.10.5': {}
 
   '@urql/core@6.0.3(graphql@17.0.2)':
     dependencies:
