@@ -15,7 +15,7 @@ importers:
         version: 17.0.2
       graphql-yoga:
         specifier: ^5.13.4
-        version: 5.24.0(graphql@17.0.2)
+        version: 5.24.1(graphql@17.0.2)
       sqlite3:
         specifier: ^6.0.0
         version: 6.0.1
@@ -1854,8 +1854,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  graphql-yoga@5.24.0:
-    resolution: {integrity: sha512-OI6Q4Zh46/r3/ReTDROeQSiNhXqgTvI0aOSUDP2PZ/MRkxevMBbY7Z8dbNWbp3yEfhrldV+I+L0mZp/FM1y6oA==}
+  graphql-yoga@5.24.1:
+    resolution: {integrity: sha512-NA2aQ4sZvR/bniCCLOlMG6OSZf5hPg3mUf3Phm33ObqRMZEq6WtZrj2hTcHfT2ZEFVV5FRCbcMb4NB1w7BIKaA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0 || ^17.0.0
@@ -4576,7 +4576,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graphql-yoga@5.24.0(graphql@17.0.2):
+  graphql-yoga@5.24.1(graphql@17.0.2):
     dependencies:
       '@envelop/core': 5.6.1
       '@envelop/instrumentation': 1.0.1
