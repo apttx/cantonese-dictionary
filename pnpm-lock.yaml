@@ -196,8 +196,8 @@ importers:
         specifier: 10.0.5
         version: 10.0.5
       dotenv:
-        specifier: 18.0.3
-        version: 18.0.3
+        specifier: 18.0.4
+        version: 18.0.4
       eslint:
         specifier: 10.11.0
         version: 10.11.0
@@ -1593,8 +1593,8 @@ packages:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
 
-  dotenv@18.0.3:
-    resolution: {integrity: sha512-/8CJTyL817qPnfbQrJgOEcrU3fDrJkRIoXBE566wHuvIXKOCHUZhPqGPbCPi9SogjdGnreF0TlvnTgK6J/8zpA==}
+  dotenv@18.0.4:
+    resolution: {integrity: sha512-jGt9uI5BIxpVO15kvy+iEFqNAwxYClKWnkptLjSNPnFLC003Imd0ofr3aEVsbpHdSBdSsbcApNIlz4nbyGMwdA==}
     engines: {node: '>=12'}
     hasBin: true
 
@@ -4285,7 +4285,7 @@ snapshots:
     dependencies:
       path-type: 4.0.0
 
-  dotenv@18.0.3: {}
+  dotenv@18.0.4: {}
 
   emoji-regex@10.6.0: {}
 
