@@ -85,11 +85,11 @@ importers:
         specifier: 5.3.1
         version: 5.3.1
       '@fontsource/noto-sans-sc':
-        specifier: 5.3.0
-        version: 5.3.0
+        specifier: 5.3.1
+        version: 5.3.1
       '@fontsource/noto-serif-sc':
-        specifier: 5.3.0
-        version: 5.3.0
+        specifier: 5.3.1
+        version: 5.3.1
       '@iconify-json/mingcute':
         specifier: 1.2.8
         version: 1.2.8
@@ -480,11 +480,11 @@ packages:
   '@fontsource/ma-shan-zheng@5.3.1':
     resolution: {integrity: sha512-cGGn7Yje2RSduXVxEk+rCfNZyD/T/7FMGj03LNPiK8TRL9Sing0tq1zJF3n+W29szPqgb2RNs5oIvmm+ikeI+Q==}
 
-  '@fontsource/noto-sans-sc@5.3.0':
-    resolution: {integrity: sha512-HeqIlGm0+ohOKxZLuHj1qW6r6avHH0OWdKERAcSDI0RQ+MXrteuLKA+M+5eOA8rYy0MFvOR5AT0fQo2rUkye0Q==}
+  '@fontsource/noto-sans-sc@5.3.1':
+    resolution: {integrity: sha512-YxZ/VWAWo9FWzH08Q6fGTzIW6vYNP2TMhUFCnfhlimbhdXnWrxJLrzX3KWt2FKnV0s8XiM5vjpGHQiyFRlTj0w==}
 
-  '@fontsource/noto-serif-sc@5.3.0':
-    resolution: {integrity: sha512-0/zaEFkidiWldE62rTeD74x8ygUsQvejiSNtO0LQxQk3qpaHnlMZ3w4C7yH80B4KTIg8VKeFP4oSgwWMchY9+g==}
+  '@fontsource/noto-serif-sc@5.3.1':
+    resolution: {integrity: sha512-nIK2HyNGcUi2TGwIfrk2MItkh0O3Y5+TI8iPfPSzoNY6uyXYfQ9qqch8czk3aa1VhV4EU52uwCYCe1UDKJELpg==}
 
   '@graphql-tools/executor@2.0.4':
     resolution: {integrity: sha512-Rr0Q69vP9zE2svHibKi2bFsO4DF97JmlSvrTKBj4ldDuQqygeOWB7SxjQrAMNQHm/b9UjFYD36Rk5RRhi3lL3A==}
@@ -3228,9 +3228,9 @@ snapshots:
 
   '@fontsource/ma-shan-zheng@5.3.1': {}
 
-  '@fontsource/noto-sans-sc@5.3.0': {}
+  '@fontsource/noto-sans-sc@5.3.1': {}
 
-  '@fontsource/noto-serif-sc@5.3.0': {}
+  '@fontsource/noto-serif-sc@5.3.1': {}
 
   '@graphql-tools/executor@2.0.4(graphql@17.0.2)':
     dependencies:
