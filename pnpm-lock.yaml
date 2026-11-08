@@ -12,10 +12,10 @@ importers:
     dependencies:
       graphql:
         specifier: ^17.0.0
-        version: 17.0.2
+        version: 17.1.0
       graphql-yoga:
         specifier: ^6.0.0
-        version: 6.0.1(graphql@17.0.2)
+        version: 6.0.1(graphql@17.1.0)
       sqlite3:
         specifier: ^6.0.0
         version: 6.0.1
@@ -1863,10 +1863,6 @@ packages:
     peerDependencies:
       graphql: ^16.0.0 || ^17.0.0
 
-  graphql@17.0.2:
-    resolution: {integrity: sha512-FRWbddMxfkjiB7z+aQDWIR+E34xo9I8c9mtK2RPv8PmMzKRvrdsreHL/Ui/TmwHJfhHChEtsFPyMHKI+xuarQQ==}
-    engines: {node: ^22.0.0 || ^24.0.0 || ^25.0.0 || >=26.0.0}
-
   graphql@17.1.0:
     resolution: {integrity: sha512-JKCOa7rSQNrket/JFhuua86hljUO+IIpyUHfKxlKD6FEfbrLX8jc1FDrA0KPKI+s8OspBCF/5npYccAICHXPpQ==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
@@ -3246,39 +3242,39 @@ snapshots:
 
   '@graphql-hive/logger@1.1.1': {}
 
-  '@graphql-tools/executor@4.1.7(graphql@17.0.2)':
+  '@graphql-tools/executor@4.1.7(graphql@17.1.0)':
     dependencies:
-      '@graphql-tools/utils': 13.2.1(graphql@17.0.2)
-      '@graphql-typed-document-node/core': 3.2.0(graphql@17.0.2)
+      '@graphql-tools/utils': 13.2.1(graphql@17.1.0)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@17.1.0)
       '@repeaterjs/repeater': 3.1.0
       '@whatwg-node/disposablestack': 0.1.0
       '@whatwg-node/promise-helpers': 2.0.1
-      graphql: 17.0.2
+      graphql: 17.1.0
       tslib: 2.9.1
 
-  '@graphql-tools/merge@10.0.8(graphql@17.0.2)':
+  '@graphql-tools/merge@10.0.8(graphql@17.1.0)':
     dependencies:
-      '@graphql-tools/utils': 13.2.1(graphql@17.0.2)
-      graphql: 17.0.2
+      '@graphql-tools/utils': 13.2.1(graphql@17.1.0)
+      graphql: 17.1.0
       tslib: 2.9.1
 
-  '@graphql-tools/schema@11.0.8(graphql@17.0.2)':
+  '@graphql-tools/schema@11.0.8(graphql@17.1.0)':
     dependencies:
-      '@graphql-tools/merge': 10.0.8(graphql@17.0.2)
-      '@graphql-tools/utils': 13.2.1(graphql@17.0.2)
-      graphql: 17.0.2
+      '@graphql-tools/merge': 10.0.8(graphql@17.1.0)
+      '@graphql-tools/utils': 13.2.1(graphql@17.1.0)
+      graphql: 17.1.0
       tslib: 2.9.1
 
-  '@graphql-tools/utils@13.2.1(graphql@17.0.2)':
+  '@graphql-tools/utils@13.2.1(graphql@17.1.0)':
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@17.0.2)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@17.1.0)
       '@whatwg-node/promise-helpers': 2.0.1
-      graphql: 17.0.2
+      graphql: 17.1.0
       tslib: 2.9.1
 
-  '@graphql-typed-document-node/core@3.2.0(graphql@17.0.2)':
+  '@graphql-typed-document-node/core@3.2.0(graphql@17.1.0)':
     dependencies:
-      graphql: 17.0.2
+      graphql: 17.1.0
 
   '@graphql-yoga/subscription@6.0.0':
     dependencies:
@@ -4574,27 +4570,25 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graphql-yoga@6.0.1(graphql@17.0.2):
+  graphql-yoga@6.0.1(graphql@17.1.0):
     dependencies:
       '@envelop/core': 6.0.0
       '@envelop/instrumentation': 2.0.0
       '@graphql-hive/logger': 1.1.1
-      '@graphql-tools/executor': 4.1.7(graphql@17.0.2)
-      '@graphql-tools/schema': 11.0.8(graphql@17.0.2)
-      '@graphql-tools/utils': 13.2.1(graphql@17.0.2)
+      '@graphql-tools/executor': 4.1.7(graphql@17.1.0)
+      '@graphql-tools/schema': 11.0.8(graphql@17.1.0)
+      '@graphql-tools/utils': 13.2.1(graphql@17.1.0)
       '@graphql-yoga/subscription': 6.0.0
       '@whatwg-node/fetch': 0.12.1
       '@whatwg-node/promise-helpers': 2.0.1
       '@whatwg-node/server': 0.13.2
-      graphql: 17.0.2
+      graphql: 17.1.0
       lru-cache: 10.4.3
       tslib: 2.9.1
     transitivePeerDependencies:
       - '@logtape/logtape'
       - pino
       - winston
-
-  graphql@17.0.2: {}
 
   graphql@17.1.0: {}
 
