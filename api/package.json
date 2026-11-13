@@ -31,7 +31,7 @@
     "@rollup/plugin-terser": "1.0.2",
     "@rollup/plugin-typescript": "12.3.1",
     "@rollup/plugin-virtual": "3.0.3",
-    "@typescript-eslint/parser": "8.72.1",
+    "@typescript-eslint/parser": "8.72.2",
     "concurrently": "10.0.7",
     "eslint": "10.14.0",
     "globals": "17.14.0",
@@ -40,6 +40,6 @@
     "rollup": "4.68.2",
     "rollup-plugin-copy": "3.5.0",
     "tsx": "4.23.15",
-    "typescript-eslint": "8.72.1"
+    "typescript-eslint": "8.72.2"
   }
 }
