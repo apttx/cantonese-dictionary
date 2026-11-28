@@ -97,8 +97,8 @@ importers:
         specifier: 1.65.1
         version: 1.65.1
       '@storyblok/js':
-        specifier: 5.1.10
-        version: 5.1.10(@floating-ui/dom@1.8.0)
+        specifier: 6.5.0
+        version: 6.5.0
       '@sveltejs/adapter-vercel':
         specifier: 6.3.5
         version: 6.3.5(@sveltejs/kit@2.70.4(@sveltejs/vite-plugin-svelte@7.3.2(svelte@5.59.1(@typescript-eslint/types@8.74.0))(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15)))(svelte@5.59.1(@typescript-eslint/types@8.74.0))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15)))(rollup@4.68.8)
@@ -179,7 +179,7 @@ importers:
         version: 8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15)
       vitest:
         specifier: 5.1.1
-        version: 5.1.1(@types/node@26.6.10)(happy-dom@20.14.6)(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15))
+        version: 5.1.1(@types/node@26.6.10)(happy-dom@21.0.4)(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15))
 
   search:
     devDependencies:
@@ -227,7 +227,7 @@ importers:
         version: 8.74.0(eslint@10.15.0)(typescript@6.0.3)
       vitest:
         specifier: 5.1.1
-        version: 5.1.1(@types/node@26.6.10)(happy-dom@20.14.6)(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15))
+        version: 5.1.1(@types/node@26.6.10)(happy-dom@21.0.4)(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15))
 
 packages:
 
@@ -1008,11 +1008,14 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@storyblok/js@5.1.10':
-    resolution: {integrity: sha512-cpiOSizLol8fPiiCLyNfy2Z18mzJDT2YD/WmmEEg+HdqBSx84r+GjdtfOfUo9KGe76tXv676amh6RW/bi9PBSw==}
+  '@storyblok/js@6.5.0':
+    resolution: {integrity: sha512-Up0Ip1rWxSlsSXfYyjnhFaJHgU4zMVjxSc4ALTWrcV+sxZ0hYLOuHFWv3I+qoV5DnEJqd+hHnq5upH1wzKngEg==}
 
-  '@storyblok/richtext@4.3.5':
-    resolution: {integrity: sha512-CSJUf+r6mjv4X6xvn2k9NWNfFoQ+FlWoubcp3Lmg5pIcK8CnJHICSgEBfiIqTzx4dgsAPF06OXaMEWyTTy9kMw==}
+  '@storyblok/preview-bridge@2.10.0':
+    resolution: {integrity: sha512-wjGYG+KBYr8wYP9H61fB7Hqjcc12P41q+5Xq1ihlHxYjhfbLzeciYpft/iDetnzUeHlXN7FaspV9nBHCqnBgZQ==}
+
+  '@storyblok/richtext@5.5.2':
+    resolution: {integrity: sha512-fEcsUW5cyv8O0ZeMe1cDRYNG79qthfwFV53wgYFoBMvAHb1iyDPGe1tg5o4vnIx392ssCbA+1IyaQyoSnBczGg==}
 
   '@sveltejs/acorn-typescript@1.0.13':
     resolution: {integrity: sha512-wgKggnhZVL9Bfx1OaKKTrYY9BFRk6C8UAkQNUcIv1+llzYrIqy+RZm5HPKzn0NpEBvTVhTqB4kQyllZywsRBRQ==}
@@ -1078,13 +1081,6 @@ packages:
     resolution: {integrity: sha512-QehRbI1qFEGyhPicb7AVb2G1R3BsGH0W9yndRuw0fHM0+Fy5hDGGcs2umuZsE9TMoyXo3sxau7szYhNZ0ZKzTA==}
     peerDependencies:
       '@tiptap/core': 3.35.0
-
-  '@tiptap/extension-details@3.35.0':
-    resolution: {integrity: sha512-TU13uwNTkrrYDm84lh+6ximblwbxJeBvXurUoXyDKbXOPLprfZkV0HL0mRdKaTDwHrD75nw/1AKNU4rI0E6JZg==}
-    peerDependencies:
-      '@tiptap/core': 3.35.0
-      '@tiptap/extension-text-style': 3.35.0
-      '@tiptap/pm': 3.35.0
 
   '@tiptap/extension-document@3.35.0':
     resolution: {integrity: sha512-DOyA27ChJMpFjmIDpA33Vdf4UycfWops8FHbezBCBkNtZv/Og7+FLGnpcmo1X0QiBSOpH5p7wRmA/pRPz+daZw==}
@@ -1168,11 +1164,6 @@ packages:
     peerDependencies:
       '@tiptap/core': 3.35.0
       '@tiptap/pm': 3.35.0
-
-  '@tiptap/extension-text-align@3.35.0':
-    resolution: {integrity: sha512-5Zfbc7OfK+cXvrGtjzgsjcbr73r/9dzg4df96LcJFrTd1i5lGS1o1mIBUqWSVrIUiGBwYDt6mTf5hh9Zslg6Tw==}
-    peerDependencies:
-      '@tiptap/core': 3.35.0
 
   '@tiptap/extension-text-style@3.35.0':
     resolution: {integrity: sha512-fqqGhIVMuIWgi+YR1iNJPGN7sqOt8hQF4oXKmz1jhrDmEody62wOBIe72dXbPTZxp0i5RWljGx7qgotFe8EsBw==}
@@ -1890,8 +1881,8 @@ packages:
     resolution: {integrity: sha512-JKCOa7rSQNrket/JFhuua86hljUO+IIpyUHfKxlKD6FEfbrLX8jc1FDrA0KPKI+s8OspBCF/5npYccAICHXPpQ==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
 
-  happy-dom@20.14.6:
-    resolution: {integrity: sha512-5DDsf4QmEIlRL6NkCv/fxSjYHHkZceL/IaYQdJc2h3G7DRTEai++VTjbfL0LB9geW2VrA3+vrjF3Efx+OTtX0Q==}
+  happy-dom@21.0.4:
+    resolution: {integrity: sha512-tFm+GaLBgo6o0awHnvHaNoraVo27qJ+2tZEtZ+cIa08hXbeitrxAJajLI05hsUy/2/YTKcUjQYzHe5mCcraLBw==}
     engines: {node: '>=20.0.0'}
 
   has-flag@3.0.0:
@@ -2535,6 +2526,9 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  pure-parse@0.0.0-beta.8:
+    resolution: {integrity: sha512-9i10sb9eVsQ3RioUa8M5Y96HKW2Nw181xRdBDIwwkff9mOc4RxswXVfy2+76OgwOi6p0f8EqxlMZeK1paHfE2g==}
+
   qified@0.10.1:
     resolution: {integrity: sha512-+Owyggi9IxT1ePKGafcI87ubSmxol6smwJ+RAHDQlx9+9cPwFWDiKFFCPuWhr9ignlGpZ9vDQLw67N4dcTVFEA==}
     engines: {node: '>=20'}
@@ -2672,8 +2666,8 @@ packages:
   std-env@4.3.0:
     resolution: {integrity: sha512-OtU/EgQ1kIm5KwqQpBC6ZEMXrZRui11w8zgfTWp8cdO9B8OaPsbA8bTHO2P+HNo1VlUTGMVBwPhydu6poeXiag==}
 
-  storyblok-js-client@7.6.1:
-    resolution: {integrity: sha512-vwViT+Rehe6o0INeNL4KbdO00j/QCqrD/Dubvl9JLZtufmptJyT7DzXC9HQg//9JfyAYmfaizf4CH5Rrrgvtwg==}
+  storyblok-js-client@7.9.1:
+    resolution: {integrity: sha512-SZebYdrPdLohetEvmEbHmNniJJeGI0od/MQ1zHGJ6USceGBDIILQF6OVOf15FbbZQTQoSMCiCUGH1+teNjp4EQ==}
 
   string-width@7.2.0:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
@@ -3665,23 +3659,27 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@storyblok/js@5.1.10(@floating-ui/dom@1.8.0)':
+  '@storyblok/js@6.5.0':
     dependencies:
-      '@storyblok/richtext': 4.3.5(@floating-ui/dom@1.8.0)
-      storyblok-js-client: 7.6.1
+      '@storyblok/preview-bridge': 2.10.0
+      '@storyblok/richtext': 5.5.2
+      storyblok-js-client: 7.9.1
     transitivePeerDependencies:
-      - '@floating-ui/dom'
       - bufferutil
       - utf-8-validate
 
-  '@storyblok/richtext@4.3.5(@floating-ui/dom@1.8.0)':
+  '@storyblok/preview-bridge@2.10.0':
     dependencies:
+      pure-parse: 0.0.0-beta.8
+
+  '@storyblok/richtext@5.5.2':
+    dependencies:
+      '@floating-ui/dom': 1.8.0
       '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
       '@tiptap/extension-blockquote': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)
       '@tiptap/extension-bold': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
       '@tiptap/extension-code': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
       '@tiptap/extension-code-block': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)
-      '@tiptap/extension-details': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/extension-text-style@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0)))(@tiptap/pm@3.35.0)
       '@tiptap/extension-document': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
       '@tiptap/extension-emoji': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)(@tiptap/suggestion@3.35.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0))(emojibase@17.0.0)
       '@tiptap/extension-hard-break': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
@@ -3698,18 +3696,15 @@ snapshots:
       '@tiptap/extension-superscript': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)
       '@tiptap/extension-table': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)
       '@tiptap/extension-text': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
-      '@tiptap/extension-text-align': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
       '@tiptap/extension-text-style': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
       '@tiptap/extension-underline': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
-      '@tiptap/html': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)(happy-dom@20.14.6)
+      '@tiptap/html': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)(happy-dom@21.0.4)
       '@tiptap/pm': 3.35.0
       '@tiptap/suggestion': 3.35.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)
       emojibase: 17.0.0
-      happy-dom: 20.14.6
+      happy-dom: 21.0.4
       markdown-it: 14.3.3
-      storyblok-js-client: 7.6.1
     transitivePeerDependencies:
-      - '@floating-ui/dom'
       - bufferutil
       - utf-8-validate
 
@@ -3778,12 +3773,6 @@ snapshots:
   '@tiptap/extension-code@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))':
     dependencies:
       '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
-
-  '@tiptap/extension-details@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/extension-text-style@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0)))(@tiptap/pm@3.35.0)':
-    dependencies:
-      '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
-      '@tiptap/extension-text-style': 3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))
-      '@tiptap/pm': 3.35.0
 
   '@tiptap/extension-document@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))':
     dependencies:
@@ -3859,10 +3848,6 @@ snapshots:
       '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
       '@tiptap/pm': 3.35.0
 
-  '@tiptap/extension-text-align@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))':
-    dependencies:
-      '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
-
   '@tiptap/extension-text-style@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))':
     dependencies:
       '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
@@ -3875,11 +3860,11 @@ snapshots:
     dependencies:
       '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
 
-  '@tiptap/html@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)(happy-dom@20.14.6)':
+  '@tiptap/html@3.35.0(@tiptap/core@3.35.0(@tiptap/pm@3.35.0))(@tiptap/pm@3.35.0)(happy-dom@21.0.4)':
     dependencies:
       '@tiptap/core': 3.35.0(@tiptap/pm@3.35.0)
       '@tiptap/pm': 3.35.0
-      happy-dom: 20.14.6
+      happy-dom: 21.0.4
 
   '@tiptap/pm@3.35.0':
     dependencies:
@@ -4651,7 +4636,7 @@ snapshots:
 
   graphql@17.1.0: {}
 
-  happy-dom@20.14.6:
+  happy-dom@21.0.4:
     dependencies:
       '@types/node': 26.6.10
       '@types/whatwg-mimetype': 3.0.2
@@ -5370,6 +5355,8 @@ snapshots:
 
   punycode@2.3.1: {}
 
+  pure-parse@0.0.0-beta.8: {}
+
   qified@0.10.1:
     dependencies:
       hookified: 2.2.0
@@ -5544,7 +5531,7 @@ snapshots:
 
   std-env@4.3.0: {}
 
-  storyblok-js-client@7.6.1: {}
+  storyblok-js-client@7.9.1: {}
 
   string-width@7.2.0:
     dependencies:
@@ -5778,7 +5765,7 @@ snapshots:
     optionalDependencies:
       vite: 8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15)
 
-  vitest@5.1.1(@types/node@26.6.10)(happy-dom@20.14.6)(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15)):
+  vitest@5.1.1(@types/node@26.6.10)(happy-dom@21.0.4)(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15)):
     dependencies:
       '@types/chai': 5.2.3
       '@vitest/mocker': 5.1.1(vite@8.3.8(@types/node@26.6.10)(esbuild@0.28.2)(terser@5.51.4)(tsx@4.23.15))
@@ -5796,7 +5783,7 @@ snapshots:
       why-is-node-running: 3.2.1
     optionalDependencies:
       '@types/node': 26.6.10
-      happy-dom: 20.14.6
+      happy-dom: 21.0.4
     transitivePeerDependencies:
       - msw
 
